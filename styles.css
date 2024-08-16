@@ -3,17 +3,12 @@ body {
     margin: 0;
     padding: 0;
     background-color: #f4f4f4;
-    color: #333;
-    min-height: 100vh;
-    display: flex;
-    flex-direction: column;
 }
 
 header {
     background-color: #333;
     color: #fff;
-    padding: 20px;
-    text-align: center;
+    padding: 1em 0;
     position: relative;
 }
 
@@ -21,20 +16,14 @@ nav {
     display: flex;
     justify-content: space-between;
     align-items: center;
-    margin-bottom: 10px;
+    padding: 0 2em;
 }
 
 nav a {
     color: #fff;
     text-decoration: none;
-    padding: 10px;
-    transition: background-color 0.3s;
+    margin: 0 1em;
 }
-
-nav a:hover {
-    background-color: #444;
-}
-
 
 .language-selector {
     position: absolute;
@@ -53,38 +42,34 @@ nav a:hover {
     border-radius: 5px;
 }
 
+main {
+    padding: 2em;
+}
 
 section {
-    padding: 20px;
-    flex: 1;
+    margin-bottom: 2em;
 }
 
-h2 {
-    color: #333;
-}
-
-.work {
-    margin-bottom: 20px;
-}
-
-.work img {
-    max-width: 100%;
-    height: auto;
+footer {
+    background-color: #333;
+    color: #fff;
+    text-align: center;
+    padding: 1em 0;
+    position: relative;
 }
 
 form {
     display: flex;
     flex-direction: column;
-    max-width: 400px;
-    margin: 0 auto;
 }
 
-label, input, textarea {
-    margin-bottom: 10px;
+label {
+    margin-bottom: 0.5em;
 }
 
-input, textarea {
-    padding: 10px;
+input, textarea, button {
+    margin-bottom: 1em;
+    padding: 0.5em;
     border: 1px solid #ccc;
     border-radius: 5px;
 }
@@ -92,21 +77,10 @@ input, textarea {
 button {
     background-color: #333;
     color: #fff;
-    padding: 10px;
     border: none;
     cursor: pointer;
-    border-radius: 5px;
 }
 
 button:hover {
     background-color: #555;
-}
-
-footer {
-    background-color: #333;
-    color: #fff;
-    text-align: center;
-    padding: 10px;
-    position: static;
-    width: 100%;
 }
