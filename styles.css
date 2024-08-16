@@ -1,70 +1,37 @@
 body {
     font-family: Arial, sans-serif;
+    line-height: 1.6;
     margin: 0;
     padding: 0;
-    background-color: #f4f4f4;
 }
 
 header {
-    background-color: #333;
+    background: #333;
     color: #fff;
     padding: 1em 0;
-    position: relative;
-}
-
-nav {
-    display: flex;
-    justify-content: space-between;
-    align-items: center;
-    padding: 0 2em;
+    text-align: center;
 }
 
 nav a {
     color: #fff;
     text-decoration: none;
-    margin: 0 1em;
+    padding: 0.5em 1em;
+}
+
+nav a:hover {
+    background: #555;
 }
 
 .language-selector {
-    position: absolute;
-    top: 20px;
-    right: 20px;
-    background-color: #fff;
-    border: 1px solid #ddd;
-    border-radius: 5px;
-}
-
-.language-selector select {
-    padding: 5px;
-    background-color: #fff;
-    color: #333;
-    border: none;
-    border-radius: 5px;
+    margin-top: 10px;
 }
 
 main {
-    padding: 2em;
+    padding: 1em;
 }
 
 section {
-    margin-bottom: 2em;
-}
-
-footer {
-    background-color: #333;
-    color: #fff;
-    text-align: center;
-    padding: 1em 0;
-    position: relative;
-}
-
-form {
-    display: flex;
-    flex-direction: column;
-}
-
-label {
-    margin-bottom: 0.5em;
+    margin-bottom: 1em;
 }
 
 input, textarea, button {
@@ -83,4 +50,14 @@ button {
 
 button:hover {
     background-color: #555;
+}
+
+footer {
+    background: #333;
+    color: #fff;
+    text-align: center;
+    padding: 1em 0;
+    position: fixed;
+    width: 100%;
+    bottom: 0;
 }
