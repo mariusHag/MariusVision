@@ -3,15 +3,16 @@
 <head>
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <title>Page Not Found</title>
+    <title>Redirecting...</title>
     <script>
-        // Redirect based on URL
+        // Redirect based on URL path
         const url = window.location.pathname;
+
         if (url === '/' || url === '/index.html') {
             window.location.replace('/'); // Redirect to home without index.html
-        } else if (url.startsWith('/about')) {
+        } else if (url.startsWith('/about') || url.startsWith('/about.html')) {
             window.location.replace('/about/index.html'); // Redirect to about page
-        } else if (url.startsWith('/work')) {
+        } else if (url.startsWith('/work') || url.startsWith('/work.html')) {
             window.location.replace('/work/index.html'); // Redirect to work page
         } else {
             // Handle other cases if needed
