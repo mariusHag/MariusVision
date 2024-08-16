@@ -1,0 +1,26 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Page Not Found</title>
+    <script>
+        // Redirect based on URL
+        const url = window.location.pathname;
+        if (url === '/' || url === '/index.html') {
+            window.location.replace('/'); // Redirect to home without index.html
+        } else if (url.startsWith('/about')) {
+            window.location.replace('/about/index.html'); // Redirect to about page
+        } else if (url.startsWith('/work')) {
+            window.location.replace('/work/index.html'); // Redirect to work page
+        } else {
+            // Handle other cases if needed
+            document.body.innerHTML = '<h1>Page Not Found</h1>';
+        }
+    </script>
+</head>
+<body>
+    <h1>Page Not Found</h1>
+    <p>The page you are looking for does not exist.</p>
+</body>
+</html>
