@@ -8,14 +8,14 @@
         // Redirect based on URL path
         const url = window.location.pathname;
 
+        // Handle clean URLs
         if (url === '/' || url === '/index.html') {
-            window.location.replace('/'); // Redirect to home without index.html
-        } else if (url.startsWith('/about') || url.startsWith('/about.html')) {
-            window.location.replace('/about/index.html'); // Redirect to about page
-        } else if (url.startsWith('/work') || url.startsWith('/work.html')) {
-            window.location.replace('/work/index.html'); // Redirect to work page
+            window.location.replace('/'); // Redirect to home
+        } else if (url.startsWith('/about') || url === '/about.html') {
+            window.location.replace('/about'); // Redirect to about page
+        } else if (url.startsWith('/work') || url === '/work.html') {
+            window.location.replace('/work'); // Redirect to work page
         } else {
-            // Handle other cases if needed
             document.body.innerHTML = '<h1>Page Not Found</h1>';
         }
     </script>
