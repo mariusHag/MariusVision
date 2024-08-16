@@ -4,31 +4,25 @@ const translations = {
         home: 'Home',
         about: 'About Me',
         work: 'My Work',
-        contactTitle: 'Get a Quote',
-        nameLabel: 'Name:',
-        emailLabel: 'Email:',
-        messageLabel: 'Project Details:',
-        submitButton: 'Submit'
+        aboutTitle: 'About Me',
+        aboutText1: 'Hello! I am Marius, a web developer.',
+        aboutText2: 'I enjoy creating and improving websites.'
     },
     es: {
         home: 'Inicio',
         about: 'Sobre Mí',
         work: 'Mi Trabajo',
-        contactTitle: 'Solicitar Presupuesto',
-        nameLabel: 'Nombre:',
-        emailLabel: 'Correo Electrónico:',
-        messageLabel: 'Detalles del Proyecto:',
-        submitButton: 'Enviar'
+        aboutTitle: 'Sobre Mí',
+        aboutText1: '¡Hola! Soy Marius, un desarrollador web.',
+        aboutText2: 'Disfruto creando y mejorando sitios web.'
     },
     da: {
         home: 'Hjem',
         about: 'Om Mig',
         work: 'Mit Arbejde',
-        contactTitle: 'Få et Tilbud',
-        nameLabel: 'Navn:',
-        emailLabel: 'Email:',
-        messageLabel: 'Projekt Detaljer:',
-        submitButton: 'Send'
+        aboutTitle: 'Om Mig',
+        aboutText1: 'Hej! Jeg er Marius, en webudvikler.',
+        aboutText2: 'Jeg nyder at skabe og forbedre hjemmesider.'
     }
 };
 
@@ -57,6 +51,7 @@ document.querySelectorAll('.language-selector .flag').forEach(flag => {
         location.reload(); // Reload the page to apply language changes
     });
 });
+
 
 // Handle Form Submission
 document.addEventListener('submit', function(event) {
