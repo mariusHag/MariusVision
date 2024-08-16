@@ -12,6 +12,9 @@ const translations = {
         footerText: "© 2024 My Portfolio",
         aboutTitle: "Who I Am",
         aboutDescription: "Add a brief introduction about yourself here...",
+        homeLink: "Home",
+        aboutLink: "About Me",
+        workLink: "My Work"
     },
     es: {
         title: "Mi Portafolio",
@@ -26,6 +29,9 @@ const translations = {
         footerText: "© 2024 Mi Portafolio",
         aboutTitle: "Quién Soy",
         aboutDescription: "Agrega una breve introducción sobre ti aquí...",
+        homeLink: "Inicio",
+        aboutLink: "Sobre Mí",
+        workLink: "Mi Trabajo"
     },
     da: {
         title: "Min Portfolio",
@@ -40,6 +46,9 @@ const translations = {
         footerText: "© 2024 Min Portfolio",
         aboutTitle: "Hvem Jeg Er",
         aboutDescription: "Tilføj en kort introduktion om dig selv her...",
+        homeLink: "Hjem",
+        aboutLink: "Om Mig",
+        workLink: "Mit Arbejde"
     }
 };
 
