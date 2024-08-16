@@ -1,81 +1,108 @@
-// Translations
+// Language Translations
 const translations = {
     en: {
-        home: 'Home',
-        about: 'About Me',
-        work: 'My Work',
+        homeTitle: 'My Portfolio',
+        homeLink: 'Home',
+        aboutLink: 'About Me',
+        workLink: 'My Work',
+        portfolioTitle: 'My Work',
+        workProject1Title: 'Project 1',
+        workDescription1: 'Project description in English.',
+        workProject2Title: 'Project 2',
+        workDescription2: 'Another project description in English.',
+        contactTitle: 'Get a Quote',
+        nameLabel: 'Name:',
+        emailLabel: 'Email:',
+        messageLabel: 'Project Details:',
+        submitButton: 'Submit',
+        footerText: '© 2024 Marius Vision',
         aboutTitle: 'About Me',
         aboutText1: 'Hello! I am Marius, a web developer.',
-        aboutText2: 'I enjoy creating and improving websites.'
+        aboutText2: 'I enjoy creating and improving websites.',
+        workTitle: 'My Work',
+        workDescription: 'Here you can view some of the projects I have worked on.',
     },
     es: {
-        home: 'Inicio',
-        about: 'Sobre Mí',
-        work: 'Mi Trabajo',
+        homeTitle: 'Mi Portafolio',
+        homeLink: 'Inicio',
+        aboutLink: 'Sobre Mí',
+        workLink: 'Mi Trabajo',
+        portfolioTitle: 'Mi Trabajo',
+        workProject1Title: 'Proyecto 1',
+        workDescription1: 'Descripción del proyecto en español.',
+        workProject2Title: 'Proyecto 2',
+        workDescription2: 'Otra descripción del proyecto en español.',
+        contactTitle: 'Obtener una Cotización',
+        nameLabel: 'Nombre:',
+        emailLabel: 'Correo Electrónico:',
+        messageLabel: 'Detalles del Proyecto:',
+        submitButton: 'Enviar',
+        footerText: '© 2024 Marius Visión',
         aboutTitle: 'Sobre Mí',
         aboutText1: '¡Hola! Soy Marius, un desarrollador web.',
-        aboutText2: 'Disfruto creando y mejorando sitios web.'
+        aboutText2: 'Disfruto creando y mejorando sitios web.',
+        workTitle: 'Mi Trabajo',
+        workDescription: 'Aquí puedes ver algunos de los proyectos en los que he trabajado.',
     },
     da: {
-        home: 'Hjem',
-        about: 'Om Mig',
-        work: 'Mit Arbejde',
+        homeTitle: 'Min Portefølje',
+        homeLink: 'Hjem',
+        aboutLink: 'Om Mig',
+        workLink: 'Mit Arbejde',
+        portfolioTitle: 'Mit Arbejde',
+        workProject1Title: 'Projekt 1',
+        workDescription1: 'Projektbeskrivelse på dansk.',
+        workProject2Title: 'Projekt 2',
+        workDescription2: 'En anden projektbeskrivelse på dansk.',
+        contactTitle: 'Få et Tilbud',
+        nameLabel: 'Navn:',
+        emailLabel: 'E-mail:',
+        messageLabel: 'Projekt Detaljer:',
+        submitButton: 'Send',
+        footerText: '© 2024 Marius Vision',
         aboutTitle: 'Om Mig',
         aboutText1: 'Hej! Jeg er Marius, en webudvikler.',
-        aboutText2: 'Jeg nyder at skabe og forbedre hjemmesider.'
+        aboutText2: 'Jeg nyder at skabe og forbedre hjemmesider.',
+        workTitle: 'Mit Arbejde',
+        workDescription: 'Her kan du se nogle af de projekter, jeg har arbejdet på.',
     }
 };
 
 // Set Language Function
 function setLanguage(language) {
     localStorage.setItem('language', language);
-    document.querySelectorAll('[data-translate]').forEach(element => {
+    updateText();
+}
+
+// Update Text Function
+function updateText() {
+    const language = localStorage.getItem('language') || 'en';
+    const elements = document.querySelectorAll('[data-translate]');
+    
+    elements.forEach(element => {
         const key = element.getAttribute('data-translate');
-        if (translations[language][key]) {
-            element.textContent = translations[language][key];
-        }
+        element.innerHTML = translations[language][key] || '';
     });
 }
 
-// Set Initial Language on Page Load
-document.addEventListener("DOMContentLoaded", function() {
-    const savedLanguage = localStorage.getItem('language') || 'en';
-    setLanguage(savedLanguage);
-});
-
-// Handle Language Flag Click
-document.querySelectorAll('.language-selector .flag').forEach(flag => {
+// Handle Flag Clicks
+document.querySelectorAll('.flag').forEach(flag => {
     flag.addEventListener('click', () => {
-        const lang = flag.getAttribute('data-lang');
-        setLanguage(lang);
-        location.reload(); // Reload the page to apply language changes
+        setLanguage(flag.getAttribute('data-lang'));
     });
 });
 
-
 // Handle Form Submission
-document.addEventListener('submit', function(event) {
-    if (event.target.matches('#quote-form')) {
-        event.preventDefault(); // Prevent default form submission
-        
-        const form = event.target;
-        const formData = new FormData(form);
-        const formAction = form.getAttribute('action');
-        
-        fetch(formAction, {
-            method: 'POST',
-            body: formData
-        })
-        .then(response => {
-            if (response.ok) {
-                const currentLang = localStorage.getItem('language') || 'en';
-                window.location.href = `https://mariushag.github.io/MariusVision/index.html?lang=${currentLang}`;
-            } else {
-                alert("There was a problem with your submission. Please try again.");
-            }
-        })
-        .catch(error => {
-            alert("There was a problem with your submission. Please try again.");
-        });
-    }
+function handleFormSubmit(event) {
+    event.preventDefault(); // Prevent the default form submission
+    const form = event.target;
+    
+    // Here you could use AJAX or another method to handle form submission
+    // For demonstration, just showing an alert
+    alert('Form submitted in ' + (localStorage.getItem('language') || 'en') + ' language');
+}
+
+// Initial Setup
+document.addEventListener('DOMContentLoaded', () => {
+    updateText();
 });
