@@ -4,6 +4,9 @@ body {
     padding: 0;
     background-color: #f4f4f4;
     color: #333;
+    min-height: 100vh;
+    display: flex;
+    flex-direction: column;
 }
 
 header {
@@ -11,27 +14,38 @@ header {
     color: #fff;
     padding: 20px;
     text-align: center;
+    position: relative;
 }
 
-.language-selector {
-    text-align: right;
+nav {
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
     margin-bottom: 10px;
 }
 
-.language-selector button {
-    background-color: #fff;
-    border: none;
-    color: #333;
+nav a {
+    color: #fff;
+    text-decoration: none;
     padding: 10px;
-    cursor: pointer;
+    transition: background-color 0.3s;
 }
 
-.language-selector button:hover {
-    background-color: #ddd;
+nav a:hover {
+    background-color: #444;
+}
+
+.language-selector select {
+    padding: 5px;
+    background-color: #fff;
+    color: #333;
+    border: none;
+    border-radius: 5px;
 }
 
 section {
     padding: 20px;
+    flex: 1;
 }
 
 h2 {
@@ -82,7 +96,6 @@ footer {
     color: #fff;
     text-align: center;
     padding: 10px;
-    position: absolute;
+    position: static;
     width: 100%;
-    bottom: 0;
 }
