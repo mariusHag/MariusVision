@@ -84,7 +84,10 @@ function updateText() {
         element.innerHTML = translations[language][key] || '';
     });
 
-    document.getElementById('title').textContent = translations[language].homeTitle;
+    const titleElement = document.querySelector('title');
+    if (titleElement) {
+        titleElement.textContent = translations[language][titleElement.getAttribute('data-translate')] || 'My Portfolio';
+    }
 }
 
 // Handle Flag Clicks
