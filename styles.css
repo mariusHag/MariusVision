@@ -1,3 +1,4 @@
+/* General Styles */
 body {
     font-family: Arial, sans-serif;
     line-height: 1.6;
@@ -5,6 +6,7 @@ body {
     padding: 0;
 }
 
+/* Header Section */
 header {
     background: #333;
     color: #fff;
@@ -12,6 +14,7 @@ header {
     text-align: center;
 }
 
+/* Navigation Links */
 nav a {
     color: #fff;
     text-decoration: none;
@@ -22,25 +25,37 @@ nav a:hover {
     background: #555;
 }
 
+/* Language Selector */
 .language-selector {
     margin-top: 10px;
 }
 
+/* Main Section */
 main {
     padding: 1em;
 }
 
+/* Form Section */
 section {
     margin-bottom: 1em;
 }
 
-input, textarea, button {
+/* Form Grouping */
+.form-group {
     margin-bottom: 1em;
+}
+
+/* Form Elements */
+input, textarea, button {
+    display: block;
+    width: 100%;
     padding: 0.5em;
+    margin-top: 0.5em;
     border: 1px solid #ccc;
     border-radius: 5px;
 }
 
+/* Submit Button */
 button {
     background-color: #333;
     color: #fff;
@@ -52,6 +67,7 @@ button:hover {
     background-color: #555;
 }
 
+/* Footer Section */
 footer {
     background: #333;
     color: #fff;
