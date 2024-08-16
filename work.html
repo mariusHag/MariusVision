@@ -13,13 +13,13 @@
             <a href="index.html" id="home-link" data-translate="homeLink">Home</a>
             <a href="about.html" id="about-link" data-translate="aboutLink">About Me</a>
             <a href="work.html" id="work-link" data-translate="workLink">My Work</a>
-            <div class="language-selector">
-                <select id="language-select" onchange="setLanguage(this.value)">
-                    <option value="en">English</option>
-                    <option value="es">Español</option>
-                    <option value="da">Dansk</option>
-                </select>
-            </div>
+<!-- Language Selector -->
+<div class="language-selector">
+    <button onclick="changeLanguage('en')" aria-label="Change to English">🇺🇸</button>
+    <button onclick="changeLanguage('es')" aria-label="Change to Spanish">🇪🇸</button>
+    <button onclick="changeLanguage('da')" aria-label="Change to Danish">🇩🇰</button>
+</div>
+
         </nav>
     </header>
 
