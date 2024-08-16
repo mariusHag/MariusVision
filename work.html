@@ -3,15 +3,15 @@
 <head>
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <title>Portfolio - My Work</title>
+    <title id="title">My Work</title>
     <link rel="stylesheet" href="styles.css">
 </head>
 <body>
     <header>
         <nav>
-            <a href="index.html" id="home-link">Home</a>
-            <a href="about.html" id="about-link">About Me</a>
-            <a href="work.html" id="work-link">My Work</a>
+            <a href="index.html" id="home-link" data-translate="homeLink">Home</a>
+            <a href="about.html" id="about-link" data-translate="aboutLink">About Me</a>
+            <a href="work.html" id="work-link" data-translate="workLink">My Work</a>
             <div class="language-selector">
                 <select id="language-select" onchange="setLanguage(this.value)">
                     <option value="en">English</option>
@@ -20,25 +20,23 @@
                 </select>
             </div>
         </nav>
-        <h1 id="title">My Work</h1>
     </header>
-
-    <section id="portfolio">
-        <h2 id="portfolio-title">My Projects</h2>
-        <div class="work">
-            <img src="work1.jpg" alt="Work 1">
-            <p id="work-description-1">Project description in English.</p>
-        </div>
-        <div class="work">
-            <img src="work2.jpg" alt="Work 2">
-            <p id="work-description-2">Another project description in English.</p>
-        </div>
-    </section>
-
+    <main>
+        <section id="portfolio">
+            <h2 id="portfolio-title" data-translate="portfolioTitle">My Work</h2>
+            <div class="work-item">
+                <h3>Project 1</h3>
+                <p id="work-description-1" data-translate="workDescription1">Project description in English.</p>
+            </div>
+            <div class="work-item">
+                <h3>Project 2</h3>
+                <p id="work-description-2" data-translate="workDescription2">Another project description in English.</p>
+            </div>
+        </section>
+    </main>
     <footer>
-        <p id="footer-text">© 2024 My Portfolio</p>
+        <p id="footer-text" data-translate="footerText">© 2024 My Portfolio</p>
     </footer>
-
     <script src="script.js"></script>
 </body>
 </html>
