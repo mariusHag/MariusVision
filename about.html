@@ -3,15 +3,15 @@
 <head>
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <title>Portfolio - About Me</title>
+    <title id="title">About Me</title>
     <link rel="stylesheet" href="styles.css">
 </head>
 <body>
     <header>
         <nav>
-            <a href="index.html" id="home-link">Home</a>
-            <a href="about.html" id="about-link">About Me</a>
-            <a href="work.html" id="work-link">My Work</a>
+            <a href="index.html" id="home-link" data-translate="homeLink">Home</a>
+            <a href="about.html" id="about-link" data-translate="aboutLink">About Me</a>
+            <a href="work.html" id="work-link" data-translate="workLink">My Work</a>
             <div class="language-selector">
                 <select id="language-select" onchange="setLanguage(this.value)">
                     <option value="en">English</option>
@@ -20,18 +20,16 @@
                 </select>
             </div>
         </nav>
-        <h1 id="title">About Me</h1>
     </header>
-
-    <section id="about">
-        <h2 id="about-title">Who I Am</h2>
-        <p id="about-description">[Add a brief introduction about yourself here...]</p>
-    </section>
-
+    <main>
+        <section id="about">
+            <h2 id="about-title" data-translate="aboutTitle">Who I Am</h2>
+            <p id="about-description" data-translate="aboutDescription">Add a brief introduction about yourself here...</p>
+        </section>
+    </main>
     <footer>
-        <p id="footer-text">© 2024 My Portfolio</p>
+        <p id="footer-text" data-translate="footerText">© 2024 My Portfolio</p>
     </footer>
-
     <script src="script.js"></script>
 </body>
 </html>
