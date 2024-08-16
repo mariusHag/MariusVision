@@ -44,7 +44,7 @@ const translations = {
 };
 
 function setLanguage(language) {
-    document.getElementById("title").textContent = translations[language].title;
+    document.getElementById("title") && (document.getElementById("title").textContent = translations[language].title);
     document.getElementById("portfolio-title") && (document.getElementById("portfolio-title").textContent = translations[language].portfolioTitle);
     document.getElementById("work-description-1") && (document.getElementById("work-description-1").textContent = translations[language].workDescription1);
     document.getElementById("work-description-2") && (document.getElementById("work-description-2").textContent = translations[language].workDescription2);
@@ -53,7 +53,26 @@ function setLanguage(language) {
     document.getElementById("email-label") && (document.getElementById("email-label").textContent = translations[language].emailLabel);
     document.getElementById("message-label") && (document.getElementById("message-label").textContent = translations[language].messageLabel);
     document.getElementById("submit-button") && (document.getElementById("submit-button").textContent = translations[language].submitButton);
-    document.getElementById("footer-text").textContent = translations[language].footerText;
+    document.getElementById("footer-text") && (document.getElementById("footer-text").textContent = translations[language].footerText);
     document.getElementById("about-title") && (document.getElementById("about-title").textContent = translations[language].aboutTitle);
     document.getElementById("about-description") && (document.getElementById("about-description").textContent = translations[language].aboutDescription);
+}
+
+// Detect the language and apply it when the page loads
+document.addEventListener("DOMContentLoaded", function() {
+    const savedLanguage = localStorage.getItem('language') || 'en';
+    setLanguage(savedLanguage);
+    document.getElementById("language-select").value = savedLanguage;
+});
+
+// Save language preference
+function setLanguage(language) {
+    localStorage.setItem('language', language);
+    // Update page content
+    document.querySelectorAll('[data-translate]').forEach(element => {
+        const key = element.getAttribute('data-translate');
+        if (translations[language][key]) {
+            element.textContent = translations[language][key];
+        }
+    });
 }
