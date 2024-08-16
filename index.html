@@ -3,23 +3,22 @@
 <head>
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <title id="title">My Portfolio</title>
+    <title data-translate="homeTitle">My Portfolio</title>
     <link rel="stylesheet" href="styles.css">
 </head>
 <body>
     <!-- Header Section -->
     <header>
-<nav>
-    <a href="/" id="home-link" data-translate="homeLink">Home</a>
-    <a href="/about" id="about-link" data-translate="aboutLink">About Me</a>
-    <a href="/work" id="work-link" data-translate="workLink">My Work</a>
-    <div class="language-selector">
-        <img src="images/usa-flag.png" alt="English" class="flag" data-lang="en" title="English">
-        <img src="images/spain-flag.png" alt="Spanish" class="flag" data-lang="es" title="Spanish">
-        <img src="images/denmark-flag.png" alt="Danish" class="flag" data-lang="da" title="Danish">
-    </div>
-</nav>
-
+        <nav>
+            <a href="/" id="home-link" data-translate="homeLink">Home</a>
+            <a href="/about" id="about-link" data-translate="aboutLink">About Me</a>
+            <a href="/work" id="work-link" data-translate="workLink">My Work</a>
+            <div class="language-selector">
+                <img src="images/usa-flag.png" alt="English" class="flag" data-lang="en" title="English">
+                <img src="images/spain-flag.png" alt="Spanish" class="flag" data-lang="es" title="Spanish">
+                <img src="images/denmark-flag.png" alt="Danish" class="flag" data-lang="da" title="Danish">
+            </div>
+        </nav>
     </header>
 
     <!-- Portfolio Section -->
@@ -39,22 +38,19 @@
         <!-- Contact Form Section -->
         <section id="contact">
             <h2 id="contact-title" data-translate="contactTitle">Get a Quote</h2>
-            <form id="quote-form" action="https://formsubmit.co/d456ab339a3fabb235380605179108c2 " method="POST">
+            <form id="quote-form" action="https://formsubmit.co/d456ab339a3fabb235380605179108c2" method="POST">
                 <div class="form-group">
                     <label for="name" id="name-label" data-translate="nameLabel">Name:</label>
                     <input type="text" id="name" name="name" required>
                 </div>
-
                 <div class="form-group">
                     <label for="email" id="email-label" data-translate="emailLabel">Email:</label>
                     <input type="email" id="email" name="email" required>
                 </div>
-
                 <div class="form-group">
                     <label for="message" id="message-label" data-translate="messageLabel">Project Details:</label>
                     <textarea id="message" name="message" rows="4" required></textarea>
                 </div>
-
                 <button type="submit" id="submit-button" data-translate="submitButton">Submit</button>
             </form>
         </section>
