@@ -38,6 +38,7 @@ main {
 /* Form Section */
 section {
     margin-bottom: 1em;
+    padding-bottom: 5em; /* Add padding to prevent the footer from covering the form */
 }
 
 /* Form Grouping */
@@ -53,14 +54,15 @@ input, textarea, button {
     margin-top: 0.5em;
     border: 1px solid #ccc;
     border-radius: 5px;
+    box-sizing: border-box;
 }
 
 /* Submit Button */
 button {
-    display: block; /* Ensure the button is displayed as a block element */
-    width: 100%; /* Full width to match other input fields */
+    display: block;
+    width: 100%;
     padding: 0.5em;
-    margin-top: 1em; /* Add margin to prevent overlap or disappearance */
+    margin-top: 1em;
     background-color: #333;
     color: #fff;
     border: none;
@@ -72,18 +74,13 @@ button:hover {
     background-color: #555;
 }
 
-
-button:hover {
-    background-color: #555;
-}
-
 /* Footer Section */
 footer {
     background: #333;
     color: #fff;
     text-align: center;
     padding: 1em 0;
-    position: fixed;
     width: 100%;
+    position: relative; /* Changed to relative to avoid covering content */
     bottom: 0;
 }
