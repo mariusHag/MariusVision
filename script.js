@@ -83,6 +83,8 @@ function updateText() {
         const key = element.getAttribute('data-translate');
         element.innerHTML = translations[language][key] || '';
     });
+
+    document.getElementById('title').textContent = translations[language].homeTitle;
 }
 
 // Handle Flag Clicks
@@ -92,17 +94,16 @@ document.querySelectorAll('.flag').forEach(flag => {
     });
 });
 
-// Handle Form Submission
-function handleFormSubmit(event) {
-    event.preventDefault(); // Prevent the default form submission
-    const form = event.target;
-    
-    // Here you could use AJAX or another method to handle form submission
-    // For demonstration, just showing an alert
-    alert('Form submitted in ' + (localStorage.getItem('language') || 'en') + ' language');
-}
-
 // Initial Setup
 document.addEventListener('DOMContentLoaded', () => {
     updateText();
 });
+
+// Preserve language selection across form submissions
+const form = document.getElementById('quote-form');
+if (form) {
+    form.addEventListener('submit', function () {
+        const storedLanguage = localStorage.getItem('language') || 'en';
+        localStorage.setItem('selectedLanguage', storedLanguage);
+    });
+}
