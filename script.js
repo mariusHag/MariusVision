@@ -1,3 +1,4 @@
+// Translation Data
 const translations = {
     en: {
         title: "My Portfolio",
@@ -52,6 +53,7 @@ const translations = {
     }
 };
 
+// Set Language Function
 function setLanguage(language) {
     localStorage.setItem('language', language);
     document.querySelectorAll('[data-translate]').forEach(element => {
@@ -62,12 +64,14 @@ function setLanguage(language) {
     });
 }
 
+// Set Initial Language on Page Load
 document.addEventListener("DOMContentLoaded", function() {
     const savedLanguage = localStorage.getItem('language') || 'en';
     setLanguage(savedLanguage);
     document.getElementById("language-select").value = savedLanguage;
 });
 
+// Handle Form Submission
 function handleFormSubmit(event) {
     event.preventDefault(); // Prevent default form submission
     
@@ -79,15 +83,13 @@ function handleFormSubmit(event) {
     })
     .then(response => {
         if (response.ok) {
-            // Redirect to the specific URL
-            window.location.href = "https://mariushag.github.io/MariusVision/index.html";
+            const currentLang = localStorage.getItem('language') || 'en';
+            window.location.href = `https://mariushag.github.io/MariusVision/index.html?lang=${currentLang}`;
         } else {
-            // Handle error
             alert("There was a problem with your submission. Please try again.");
         }
     })
     .catch(error => {
-        // Handle fetch error
         alert("There was a problem with your submission. Please try again.");
     });
 }
