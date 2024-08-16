@@ -57,11 +57,21 @@ input, textarea, button {
 
 /* Submit Button */
 button {
+    display: block; /* Ensure the button is displayed as a block element */
+    width: 100%; /* Full width to match other input fields */
+    padding: 0.5em;
+    margin-top: 1em; /* Add margin to prevent overlap or disappearance */
     background-color: #333;
     color: #fff;
     border: none;
+    border-radius: 5px;
     cursor: pointer;
 }
+
+button:hover {
+    background-color: #555;
+}
+
 
 button:hover {
     background-color: #555;
