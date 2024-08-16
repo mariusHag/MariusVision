@@ -27,23 +27,22 @@ nav a:hover {
 
 /* Language Selector */
 .language-selector {
-    text-align: right;
+    display: flex;
+    justify-content: center; /* Center the flags horizontally */
     margin-top: 10px;
 }
 
-.language-selector button {
-    background: none;
-    border: none;
-    font-size: 1.5em;
+.language-selector .flag {
+    width: 30px; /* Set a fixed width for flags */
+    height: auto; /* Maintain aspect ratio */
+    margin: 0 0.5em; /* Add space between flags */
     cursor: pointer;
-    margin: 0 5px;
-    padding: 0;
+    transition: opacity 0.3s;
 }
 
-.language-selector button:hover {
-    opacity: 0.7;
+.language-selector .flag:hover {
+    opacity: 0.7; /* Add hover effect */
 }
-
 
 /* Main Section */
 main {
