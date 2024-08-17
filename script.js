@@ -7,7 +7,7 @@ const translations = {
         informationLink: "Information",
         workLink: "My Work",
         homeTitle: "My Portfolio",
-        homeDescription: "Transforming creative ideas into stunning images.",
+        homeDescription: "At Marius Vision, I’m dedicated to turning your creative ideas into stunning still images. I’m Marius Hagelskjær and I have the expertise to bring any concept to life—no matter how complex or detailed—so long as it’s a still image. If you can imagine it, I can make it a reality.",
         readMoreButton: "Read More",
         informationTitle: "Information",
         contactTitle: "Contact Me",
