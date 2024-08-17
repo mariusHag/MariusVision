@@ -23,39 +23,44 @@ nav {
     padding: 0.5em 2em;
     border: 2px solid #E8ECEC; /* Bright Gray square frame */
     margin: 10px auto;
-}
-
-nav::before {
-    content: '';
-    position: absolute;
-    top: 50%;
-    left: 0;
-    width: 100%;
-    height: 2px;
-    background-color: #E8ECEC; /* Bright Gray line in the middle of the frame */
-    transform: translateY(-50%);
+    height: 60px; /* Set a fixed height for the navigation box */
 }
 
 /* Navigation Links */
 nav a {
     color: #D5AE6A; /* Earth Yellow for the navigation text */
     text-decoration: none;
-    padding: 0.5em 1em;
+    padding: 1em 1.5em; /* Increase padding to make buttons almost as tall as the box */
     font-family: 'Times New Roman', serif; /* Classy font for the text */
     font-weight: bold;
     position: relative;
     z-index: 1; /* Ensure text appears above the middle line */
+    height: 100%; /* Make the link fill the entire height of the nav box */
+    display: inline-flex; /* Align the text vertically */
+    align-items: center;
+    justify-content: center;
 }
 
 nav a:hover {
     background: #7F1A1C; /* Falu Red background on hover */
 }
 
-/* Language Selector */
+/* Language Section */
+.language-container {
+    margin-top: 10px;
+    text-align: center;
+}
+
+.language-container .language-label {
+    font-size: 0.75em; /* Tiny text for the "Language" label */
+    color: #D5AE6A; /* Earth Yellow color for the label */
+    margin-bottom: 5px;
+    display: block;
+}
+
 .language-selector {
     display: flex;
     justify-content: center; /* Center the flags horizontally */
-    margin-top: 10px;
 }
 
 .language-selector .flag {
