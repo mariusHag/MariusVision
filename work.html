@@ -3,7 +3,7 @@
 <head>
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <title data-translate="workTitle">My Work</title>
+    <title data-translate="portfolioTitle">My Work</title>
     <link rel="stylesheet" href="styles.css">
 </head>
 <body>
@@ -11,8 +11,8 @@
     <header>
         <nav>
             <a href="/" id="home-link" data-translate="homeLink">Home</a>
-            <a href="/about" id="about-link" data-translate="aboutLink">About Me</a>
-            <a href="/work" id="work-link" data-translate="workLink">My Work</a>
+            <a href="/information.html" id="information-link" data-translate="informationLink">Information</a>
+            <a href="/work.html" id="work-link" data-translate="workLink">My Work</a>
             <div class="language-selector">
                 <img src="images/usa-flag.png" alt="English" class="flag" data-lang="en" title="English">
                 <img src="images/spain-flag.png" alt="Spanish" class="flag" data-lang="es" title="Spanish">
@@ -21,19 +21,26 @@
         </nav>
     </header>
 
-    <!-- Work Section -->
+    <!-- Work Page Content -->
     <main>
-        <section id="work">
-            <h1 data-translate="workTitle">My Work</h1>
-            <p data-translate="workDescription">Here you can view some of the projects I have worked on.</p>
+        <section id="portfolio">
+            <h1 data-translate="portfolioTitle">My Work</h1>
+            <div class="portfolio-item">
+                <h2 data-translate="workProject1Title">Project 1</h2>
+                <p data-translate="workDescription1">Project description in English.</p>
+            </div>
+            <div class="portfolio-item">
+                <h2 data-translate="workProject2Title">Project 2</h2>
+                <p data-translate="workDescription2">Another project description in English.</p>
+            </div>
         </section>
     </main>
 
     <!-- Footer Section -->
     <footer>
-        <p data-translate="footerText">© 2024 Marius Vision</p>
+        <p id="footer-text" data-translate="footerText">© 2024 Marius Vision</p>
     </footer>
-    
+
     <script src="script.js"></script>
 </body>
 </html>
