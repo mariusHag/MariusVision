@@ -4,51 +4,72 @@ body {
     line-height: 1.6;
     margin: 0;
     padding: 0;
-    background-color: #FFFFFF; /* White */
-    color: #2E2D29; /* Pine Tree */
+    background-color: #FFFFFF; /* White background for the entire site */
+    color: #2E2D29; /* Pine Tree as the default text color */
 }
 
 /* Header Section */
 header {
-    background: #8C1515; /* Falu Red */
-    color: #FFFFFF; /* White */
+    background: #8C1515; /* Falu Red background for the header */
+    color: #FFFFFF; /* White text color in the header */
     padding: 1em 0;
     text-align: center;
 }
 
+/* Navigation Bar Container */
+.nav-container {
+    display: flex;
+    justify-content: flex-start; /* Align items to the left */
+    align-items: center;
+    border: 2px solid #FFFFFF; /* White frame around the entire nav bar */
+    padding: 0;
+    margin: 0 auto; /* Center the entire navigation container */
+    max-width: 800px; /* Limit the width of the navigation container */
+}
+
 /* Navigation Links */
+nav {
+    display: flex;
+    flex-grow: 1; /* Allow the nav section to grow and fill the space */
+}
+
 nav a {
-    color: #D2C295; /* Tan */
+    color: #D2C295; /* Tan for the navigation text */
     text-decoration: none;
-    padding: 0.5em 1em;
-    display: inline-block;
-    height: 100%; /* Make the links as tall as their container */
-    box-sizing: border-box;
+    padding: 1em 2em; /* Increase padding to match the height of the language selector */
+    font-family: 'Times New Roman', serif; /* Classy font for the text */
+    font-weight: bold;
+    text-align: center;
+    display: flex;
+    align-items: center; /* Center the text vertically */
+    justify-content: center; /* Center the text horizontally */
+    height: 100%;
 }
 
 nav a:hover {
-    background: #2E2D29; /* Pine Tree */
-    color: #FFFFFF; /* White */
+    background: #2E2D29; /* Pine Tree background on hover */
 }
 
-/* Language Selector */
+/* Language Section */
 .language-container {
     display: flex;
+    flex-direction: column;
     align-items: center;
-    border: 2px solid #D2C295; /* Tan border around the language selector */
-    padding: 0.5em;
-    margin-left: auto;
+    padding: 0 1em;
+    border-left: 2px solid #FFFFFF; /* Separate the language section with a vertical line */
 }
 
-.language-label {
-    color: #D2C295; /* Tan */
-    margin-right: 10px;
-    font-size: 0.85em; /* Smaller font for the label */
+.language-container .language-label {
+    font-size: 0.75em; /* Tiny text for the "Language" label */
+    color: #D2C295; /* Tan color for the label */
+    margin-bottom: 5px;
 }
 
 .language-selector {
     display: flex;
     justify-content: center; /* Center the flags horizontally */
+    height: 100%; /* Ensure the flags container matches the height of the navigation links */
+    align-items: center;
 }
 
 .language-selector .flag {
@@ -66,12 +87,14 @@ nav a:hover {
 /* Main Section */
 main {
     padding: 1em;
+    background-color: #FFFFFF; /* White background for the main content */
 }
 
 /* Form Section */
 section {
     margin-bottom: 1em;
     padding-bottom: 5em; /* Add padding to prevent the footer from covering the form */
+    background-color: #FFFFFF; /* White background for sections */
 }
 
 /* Form Grouping */
@@ -91,11 +114,9 @@ input, textarea, button {
     width: 100%;
     padding: 0.5em;
     margin-top: 0.5em;
-    border: 1px solid #D2C295; /* Tan border */
+    border: 1px solid #2E2D29; /* Pine Tree borders */
     border-radius: 5px;
     box-sizing: border-box;
-    background-color: #FFFFFF; /* White */
-    color: #2E2D29; /* Pine Tree */
 }
 
 /* Submit Button */
@@ -104,30 +125,35 @@ button {
     width: 100%;
     padding: 0.5em;
     margin-top: 1em;
-    background-color: #8C1515; /* Falu Red */
-    color: #FFFFFF; /* White */
+    background-color: #8C1515; /* Falu Red background for the button */
+    color: #FFFFFF; /* White text color for the button */
     border: none;
     border-radius: 5px;
     cursor: pointer;
 }
 
 button:hover {
-    background-color: #2E2D29; /* Pine Tree */
+    background-color: #D2C295; /* Tan background on hover */
+    color: #2E2D29; /* Pine Tree text color on hover */
 }
 
 /* Footer Section */
 footer {
-    background: #8C1515; /* Falu Red */
-    color: #FFFFFF; /* White */
+    background: #8C1515; /* Falu Red background for the footer */
+    color: #FFFFFF; /* White text color in the footer */
     text-align: center;
     padding: 1em 0;
     width: 100%;
-    position: relative;
+    position: relative; /* Changed to relative to avoid covering content */
     bottom: 0;
 }
 
 /* Responsive Design */
 @media (max-width: 768px) {
+    .nav-container {
+        flex-direction: column;
+    }
+    
     form {
         max-width: 100%; /* Allow form to be full-width on smaller screens */
         padding: 0 1em; /* Add some padding on mobile for better spacing */
