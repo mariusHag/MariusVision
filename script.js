@@ -1,5 +1,8 @@
 const translations = {
     en: {
+        homeLink: "Home",
+        informationLink: "Information",
+        workLink: "My Work",
         homeTitle: "My Portfolio",
         homeDescription: "Transforming creative ideas into stunning images.",
         readMoreButton: "Read More",
@@ -38,6 +41,9 @@ const translations = {
         finalDeliveryText: "Once the project is complete and all feedback has been incorporated, you’ll receive the final product. We’ll ensure that everything meets your expectations before finalizing the project."
     },
     es: {
+        homeLink: "Inicio",
+        informationLink: "Información",
+        workLink: "Mi Trabajo",        
         homeTitle: "Mi Portafolio",
         homeDescription: "Transformando ideas creativas en imágenes impresionantes.",
         readMoreButton: "Leer Más",
@@ -76,6 +82,9 @@ const translations = {
         finalDeliveryText: "Una vez que el proyecto esté completo y todos los comentarios se hayan incorporado, recibirás el producto final. Nos aseguraremos de que todo cumpla con tus expectativas antes de finalizar el proyecto."
     },
     da: {
+        homeLink: "Hjem",
+        informationLink: "Information",
+        workLink: "Mit Arbejde",
         homeTitle: "Min Portefølje",
         homeDescription: "Forvandler kreative ideer til fantastiske billeder.",
         readMoreButton: "Læs Mere",
