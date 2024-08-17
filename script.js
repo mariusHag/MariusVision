@@ -1,5 +1,8 @@
 const translations = {
     en: {
+        processTitle: "The Process",
+        initialContactTitle: "Initial Contact",
+        initialContactText: "The first step is reaching out to me with your project idea. This can be done via the contact form or directly through email. I'll then set up a shared workspace on Notion for us to collaborate effectively.",
         homeLink: "Home",
         informationLink: "Information",
         workLink: "My Work",
@@ -41,6 +44,9 @@ const translations = {
         finalDeliveryText: "Once the project is complete and all feedback has been incorporated, you’ll receive the final product. We’ll ensure that everything meets your expectations before finalizing the project."
     },
     es: {
+        processTitle: "El Proceso",
+        initialContactTitle: "Contacto Inicial",
+        initialContactText: "El primer paso es contactarme con tu idea de proyecto. Esto se puede hacer a través del formulario de contacto o directamente por correo electrónico. Luego, configuraré un espacio compartido en Notion para que colaboremos de manera efectiva.",
         homeLink: "Inicio",
         informationLink: "Información",
         workLink: "Mi Trabajo",        
@@ -82,6 +88,9 @@ const translations = {
         finalDeliveryText: "Una vez que el proyecto esté completo y todos los comentarios se hayan incorporado, recibirás el producto final. Nos aseguraremos de que todo cumpla con tus expectativas antes de finalizar el proyecto."
     },
     da: {
+        processTitle: "Processen",
+        initialContactTitle: "Indledende Kontakt",
+        initialContactText: "Det første skridt er at kontakte mig med din projektidé. Dette kan gøres via kontaktformularen eller direkte via e-mail. Jeg vil derefter opsætte et delt arbejdsområde på Notion, så vi effektivt kan samarbejde.",
         homeLink: "Hjem",
         informationLink: "Information",
         workLink: "Mit Arbejde",
