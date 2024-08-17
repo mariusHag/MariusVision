@@ -51,7 +51,7 @@ const translations = {
         informationLink: "Información",
         workLink: "Mi Trabajo",        
         homeTitle: "Mi Portafolio",
-        homeDescription: "Transformando ideas creativas en imágenes impresionantes.",
+        homeDescription: "Transformando ideas creativas en imágenes impresionantes. aqui",
         readMoreButton: "Leer Más",
         informationTitle: "Información",
         contactTitle: "Contáctame",
