@@ -88,4 +88,52 @@ const translations = {
         footerText: "© 2024 Marius Vision",
         portfolioTitle: "Mit Arbejde",
         workProject1Title: "Projekt 1",
-        workDescription1: "Projekt
+        workDescription1: "Projektbeskrivelse på dansk.",
+        workProject2Title: "Projekt 2",
+        workDescription2: "En anden projektbeskrivelse på dansk.",
+        idealClientsTitle: "Ideelle Klienter",
+        idealClientsText: "Jeg elsker at arbejde med klienter, der værdsætter samarbejde og er åbne for kreative input. Hvis du er komfortabel med at dele dine tanker og byder velkommen til vejledning om komposition, farveteori og designæstetik, er jeg sikker på, at vi sammen kan bringe din vision til live på en måde, der virkelig fanger dens essens og følelser.",
+        commonChallengesTitle: "Almindelige Klientudfordringer",
+        commonChallengesText: "Har du været frustreret over designere, der siger, at dine ideer er for komplicerede? Er du træt af at høre, at de eneste løsninger, der er tilgængelige, indebærer høje omkostninger og kompromiser? Eller måske har du arbejdet med designere, der simpelthen ikke 'forstår' den følelse, du forsøger at formidle. Hvis noget af dette resonerer med dig, er du det rette sted.",
+        whyChooseTitle: "Hvorfor Vælge Marius Vision?",
+        whyChooseText: "Med over 50 afsluttede projekter og mit arbejde præsenteret i Women's Wear Daily, er jeg dedikeret til at presse grænserne for grafisk design. Uanset om det er foto redigering og manipulation, produktfotografi eller arkitektonisk rendering, omfavner jeg enhver udfordring—ingen idé er for svær. Hos Marius Vision er fantasi den eneste grænse. Lad os starte en samtale om dit næste projekt.",
+        whatIDontDoTitle: "Hvad Jeg Ikke Gør",
+        whatIDontDoText: "Hvis du leder efter CGI-videoer eller forventer en engangs-transaktion uden løbende samarbejde, er jeg måske ikke det bedste valg for dig. At opnå det perfekte resultat kræver din feedback undervejs—bare et par enkle kommentarer for at sikre, at vi er på rette vej.",
+        aboutMeTitle: "Om Mig",
+        aboutMeText: "Jeg er Marius Hagelskjær, en erfaren grafisk designer fra Danmark. Med erfaring på platforme som Fiverr har jeg forfinet mine færdigheder i Adobe Photoshop, Adobe Illustrator og forskellige aspekter af 3D-modellering og rendering. Når jeg ikke skaber visuelle, finder du mig med et kamera i hånden, på rejse eller kæmpende på tatami.",
+        processTitle: "Processen",
+        initialContactTitle: "Indledende Kontakt",
+        initialContactText: "Det første skridt er at kontakte mig med din projektidé. Dette kan gøres via kontaktformularen eller direkte via e-mail. Jeg vil derefter opsætte et delt arbejdsområde på Notion, så vi effektivt kan samarbejde.",
+        sharedWorkspaceTitle: "Delt Arbejdsområde",
+        sharedWorkspaceText: "I Notion vil du have adgang til et dedikeret område, hvor du kan følge projektets fremskridt. Her vil vi diskutere og blive enige om projektets omfang, stemning og budget. *(Et eksempel på et Notion-arbejdsområdebillede kan inkluderes her.)*",
+        upfrontPaymentTitle: "Forudbetaling",
+        upfrontPaymentText: "For at fortsætte kræves en forudbetaling på $5. Dette hjælper med at sikre din plads i projektkøen og igangsætter vores samarbejde.",
+        feedbackProcessTitle: "Feedbackproces",
+        feedbackProcessText: "Feedbackprocessen er, hvor magien sker. Det er en samarbejdsfase, hvor du gennemgår fremskridtene og giver feedback. Din involvering er afgørende for at sikre, at det endelige produkt stemmer overens med din vision.",
+        finalDeliveryTitle: "Endelig Levering",
+        finalDeliveryText: "Når projektet er færdigt, og alle kommentarer er indarbejdet, vil du modtage det endelige produkt. Vi sikrer, at alt lever op til dine forventninger, før projektet afsluttes."
+    }
+};
+
+document.addEventListener("DOMContentLoaded", function() {
+    const lang = localStorage.getItem("lang") || "en";
+    setLanguage(lang);
+
+    document.querySelectorAll(".flag").forEach(flag => {
+        flag.addEventListener("click", function() {
+            const selectedLang = this.dataset.lang;
+            localStorage.setItem("lang", selectedLang);
+            setLanguage(selectedLang);
+        });
+    });
+});
+
+function setLanguage(lang) {
+    const elements = document.querySelectorAll("[data-translate]");
+    elements.forEach(element => {
+        const key = element.getAttribute("data-translate");
+        if (translations[lang] && translations[lang][key]) {
+            element.textContent = translations[lang][key];
+        }
+    });
+}
