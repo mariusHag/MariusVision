@@ -1,68 +1,74 @@
 <!DOCTYPE html>
 <html lang="en">
 <head>
-  <meta charset="UTF-8">
-  <meta name="viewport" content="width=device-width, initial-scale=1.0">
-  <title data-translate="homeTitle">My Portfolio</title>
-  <link rel="stylesheet" href="styles.css">
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title data-translate="homeTitle">My Portfolio</title>
+    <link rel="stylesheet" href="styles.css">
 </head>
 <body>
-  <header>
-    <nav>
-      <a href="/" id="home-link" data-translate="homeLink">Home</a>
-      <a href="/information.html" id="information-link" data-translate="informationLink">Information</a>
-      <a href="/work.html" id="work-link" data-translate="workLink">My Work</a>
-      <div class="language-selector">
-        <img src="images/usa-flag.png" alt="English" class="flag" data-lang="en" title="English">
-        <img src="images/spain-flag.png" alt="Spanish" class="flag" data-lang="es" title="Spanish">
-        <img src="images/denmark-flag.png" alt="Danish" class="flag" data-lang="da" title="Danish">
-      </div>
-    </nav>
-  </header>
+    <!-- Header Section -->
+    <header>
+        <nav>
+            <a href="/" id="home-link" data-translate="homeLink">Home</a>
+            <a href="/information.html" id="information-link" data-translate="informationLink">Information</a>
+            <a href="/work.html" id="work-link" data-translate="workLink">My Work</a>
+            <div class="language-selector">
+                <img src="images/usa-flag.png" alt="English" class="flag" data-lang="en" title="English">
+                <img src="images/spain-flag.png" alt="Spanish" class="flag" data-lang="es" title="Spanish">
+                <img src="images/denmark-flag.png" alt="Danish" class="flag" data-lang="da" title="Danish">
+            </div>
+        </nav>
+    </header>
 
-  <main>
-    <section id="intro">
-      <h1 data-translate="homeTitle">Welcome to Marius Vision</h1>
-      <p data-translate="homeDescription">Transforming creative ideas into stunning images.</p>
-      <a href="/information.html" class="button" id="read-more-button" data-translate="readMoreButton">Read More</a>
-    </section>
+    <!-- Homepage Content -->
+    <main>
+        <section id="intro">
+            <h1 data-translate="homeTitle">Welcome to Marius Vision</h1>
+            <p data-translate="homeDescription">Transforming creative ideas into stunning images.</p>
+            <a href="/information.html" class="button" id="read-more-button" data-translate="readMoreButton">Read More</a>
+        </section>
 
-    <section id="portfolio">
-      <h2 id="portfolio-title" data-translate="portfolioTitle">My Work</h2>
-      <div class="project-container">
-        <div class="project">
-          <img src="images/project1.jpg" alt="Project 1">
-          <h3><a href="#" class="project-link" data-project-id="1">Project 1</a></h3>
-          <p id="work-description-1" data-translate="workDescription1">Project description in English.</p>
-        </div>
-        <div class="project">
-          <img src="images/project2.jpg" alt="Project 2">
-          <h3><a href="#" class="project-link" data-project-id="2">Project 2</a></h3>
-          <p id="work-description-2" data-translate="workDescription2">Another project description in English.</p>
-        </div>
-        </div>
-    </section>
+        <!-- Portfolio Section -->
+        <section id="portfolio">
+            <h2 id="portfolio-title" data-translate="portfolioTitle">My Work</h2>
+            <div class="work-item">
+                <h3 data-translate="workProject1Title">Project 1</h3>
+                <p id="work-description-1" data-translate="workDescription1">Project description in English.</p>
+            </div>
+            <div class="work-item">
+                <h3 data-translate="workProject2Title">Project 2</h3>
+                <p id="work-description-2" data-translate="workDescription2">Another project description in English.</p>
+            </div>
+        </section>
 
-    <section id="contact">
-      <h2 id="contact-title" data-translate="contactTitle">Get a Quote</h2>
-      <form id="quote-form" action="https://formsubmit.co/d456ab339a3fabb235380605179108c2" method="POST">
-        <div class="form-group">
-          <label for="name" id="name-label" data-translate="nameLabel">Name:</label>
-          <input type="text" id="name" name="name" required>
-        </div>
-        <div class="form-group">
-          <label for="email" id="email-label" data-translate="emailLabel">Email:</label>
-          <input type="email" id="email" name="email" required>
-        </div>
-        <div class="form-group">
-          <label for="message" id="message-label" data-translate="messageLabel">Project Details:</label>
-          <textarea id="message" name="message" rows="4" required></textarea>
-        </div>
-        <button type="submit" id="submit-button" data-translate="submitButton">Submit</button>
-      </form>
-    </section>
-  </main>
+        <!-- Contact Form Section -->
+        <section id="contact">
+            <h2 id="contact-title" data-translate="contactTitle">Get a Quote</h2>
+            <form id="quote-form" action="https://formsubmit.co/d456ab339a3fabb235380605179108c2" method="POST">
+                <div class="form-group">
+                    <label for="name" id="name-label" data-translate="nameLabel">Name:</label>
+                    <input type="text" id="name" name="name" required>
+                </div>
+                <div class="form-group">
+                    <label for="email" id="email-label" data-translate="emailLabel">Email:</label>
+                    <input type="email" id="email" name="email" required>
+                </div>
+                <div class="form-group">
+                    <label for="message" id="message-label" data-translate="messageLabel">Project Details:</label>
+                    <textarea id="message" name="message" rows="4" required></textarea>
+                </div>
+                <button type="submit" id="submit-button" data-translate="submitButton">Submit</button>
+            </form>
+            
+        </section>
+    </main>
 
-  <footer>
-    <p id="footer-text" data-translate="footerText">© 2024 Marius Vision</p>
-  </footer>
+    <!-- Footer Section -->
+    <footer>
+        <p id="footer-text" data-translate="footerText">© 2024 Marius Vision</p>
+    </footer>
+
+    <script src="script.js"></script>
+</body>
+</html>
