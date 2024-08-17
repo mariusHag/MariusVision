@@ -16,29 +16,34 @@ header {
     text-align: center;
 }
 
-/* Navigation Bar */
-nav {
-    position: relative;
-    display: inline-block;
-    padding: 0.5em 2em;
-    border: 2px solid #E8ECEC; /* Bright Gray square frame */
-    margin: 10px auto;
-    height: 60px; /* Set a fixed height for the navigation box */
+/* Navigation Bar Container */
+.nav-container {
+    display: flex;
+    justify-content: flex-start; /* Align items to the left */
+    align-items: center;
+    border: 2px solid #E8ECEC; /* Bright Gray frame around the entire nav bar */
+    padding: 0;
+    margin: 0 auto; /* Center the entire navigation container */
+    max-width: 800px; /* Limit the width of the navigation container */
 }
 
 /* Navigation Links */
+nav {
+    display: flex;
+    flex-grow: 1; /* Allow the nav section to grow and fill the space */
+}
+
 nav a {
     color: #D5AE6A; /* Earth Yellow for the navigation text */
     text-decoration: none;
-    padding: 1em 1.5em; /* Increase padding to make buttons almost as tall as the box */
+    padding: 1em 2em; /* Increase padding to match the height of the language selector */
     font-family: 'Times New Roman', serif; /* Classy font for the text */
     font-weight: bold;
-    position: relative;
-    z-index: 1; /* Ensure text appears above the middle line */
-    height: 100%; /* Make the link fill the entire height of the nav box */
-    display: inline-flex; /* Align the text vertically */
-    align-items: center;
-    justify-content: center;
+    text-align: center;
+    display: flex;
+    align-items: center; /* Center the text vertically */
+    justify-content: center; /* Center the text horizontally */
+    height: 100%;
 }
 
 nav a:hover {
@@ -47,20 +52,24 @@ nav a:hover {
 
 /* Language Section */
 .language-container {
-    margin-top: 10px;
-    text-align: center;
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    padding: 0 1em;
+    border-left: 2px solid #E8ECEC; /* Separate the language section with a vertical line */
 }
 
 .language-container .language-label {
     font-size: 0.75em; /* Tiny text for the "Language" label */
     color: #D5AE6A; /* Earth Yellow color for the label */
     margin-bottom: 5px;
-    display: block;
 }
 
 .language-selector {
     display: flex;
     justify-content: center; /* Center the flags horizontally */
+    height: 100%; /* Ensure the flags container matches the height of the navigation links */
+    align-items: center;
 }
 
 .language-selector .flag {
@@ -141,6 +150,10 @@ footer {
 
 /* Responsive Design */
 @media (max-width: 768px) {
+    .nav-container {
+        flex-direction: column;
+    }
+    
     form {
         max-width: 100%; /* Allow form to be full-width on smaller screens */
         padding: 0 1em; /* Add some padding on mobile for better spacing */
