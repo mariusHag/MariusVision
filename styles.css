@@ -4,14 +4,14 @@ body {
     line-height: 1.6;
     margin: 0;
     padding: 0;
-    background-color: #F5F5DD; /* Beige background for the entire site */
-    color: #76303D; /* Puce Red as the default text color */
+    background-color: #c5efcb; /* Light Mint background for the entire site */
+    color: #020402; /* Dark Charcoal as the default text color */
 }
 
 /* Header Section */
 header {
-    background: #76303D; /* Puce Red background for the header */
-    color: #F5F5DD; /* Beige text color in the header */
+    background: #020402; /* Dark Charcoal background for the header */
+    color: #c5efcb; /* Light Mint text color in the header */
     padding: 1em 0;
     text-align: center;
 }
@@ -21,10 +21,11 @@ header {
     display: flex;
     justify-content: flex-start; /* Align items to the left */
     align-items: center;
-    border: 2px solid #F5F5DD; /* Beige frame around the entire nav bar */
+    border: 2px solid #a9c5a0; /* Soft Green frame around the entire nav bar */
     padding: 0;
     margin: 0 auto; /* Center the entire navigation container */
     max-width: 800px; /* Limit the width of the navigation container */
+    background-color: #c6dec6; /* Light Sage background for the nav bar */
 }
 
 /* Navigation Links */
@@ -34,7 +35,7 @@ nav {
 }
 
 nav a {
-    color: #D9C6A1; /* Dark Vanilla for the navigation text */
+    color: #a9c5a0; /* Soft Green for the navigation text */
     text-decoration: none;
     padding: 1em 2em; /* Increase padding to match the height of the language selector */
     font-family: 'Times New Roman', serif; /* Classy font for the text */
@@ -44,10 +45,12 @@ nav a {
     align-items: center; /* Center the text vertically */
     justify-content: center; /* Center the text horizontally */
     height: 100%;
+    background-color: #c6dec6; /* Light Sage background for each link */
 }
 
 nav a:hover {
-    background: #893D48; /* Cordovan background on hover */
+    background: #758173; /* Slate Gray background on hover */
+    color: #c5efcb; /* Light Mint text color on hover */
 }
 
 /* Language Section */
@@ -56,12 +59,12 @@ nav a:hover {
     flex-direction: column;
     align-items: center;
     padding: 0 1em;
-    border-left: 2px solid #F5F5DD; /* Separate the language section with a vertical line */
+    border-left: 2px solid #a9c5a0; /* Soft Green vertical line */
 }
 
 .language-container .language-label {
     font-size: 0.75em; /* Tiny text for the "Language" label */
-    color: #D9C6A1; /* Dark Vanilla color for the label */
+    color: #a9c5a0; /* Soft Green color for the label */
     margin-bottom: 5px;
 }
 
@@ -87,14 +90,14 @@ nav a:hover {
 /* Main Section */
 main {
     padding: 1em;
-    background-color: #F5F5DD; /* Beige background for the main content */
+    background-color: #c5efcb; /* Light Mint background for the main content */
 }
 
 /* Form Section */
 section {
     margin-bottom: 1em;
     padding-bottom: 5em; /* Add padding to prevent the footer from covering the form */
-    background-color: #F5F5DD; /* Beige background for sections */
+    background-color: #c5efcb; /* Light Mint background for sections */
 }
 
 /* Form Grouping */
@@ -114,7 +117,7 @@ input, textarea, button {
     width: 100%;
     padding: 0.5em;
     margin-top: 0.5em;
-    border: 1px solid #76303D; /* Puce Red borders */
+    border: 1px solid #020402; /* Dark Charcoal borders */
     border-radius: 5px;
     box-sizing: border-box;
 }
@@ -125,22 +128,22 @@ button {
     width: 100%;
     padding: 0.5em;
     margin-top: 1em;
-    background-color: #893D48; /* Cordovan background for the button */
-    color: #F5F5DD; /* Beige text color for the button */
+    background-color: #758173; /* Slate Gray background for the button */
+    color: #c5efcb; /* Light Mint text color for the button */
     border: none;
     border-radius: 5px;
     cursor: pointer;
 }
 
 button:hover {
-    background-color: #D9C6A1; /* Dark Vanilla background on hover */
-    color: #76303D; /* Puce Red text color on hover */
+    background-color: #a9c5a0; /* Soft Green background on hover */
+    color: #020402; /* Dark Charcoal text color on hover */
 }
 
 /* Footer Section */
 footer {
-    background: #76303D; /* Puce Red background for the footer */
-    color: #F5F5DD; /* Beige text color in the footer */
+    background: #020402; /* Dark Charcoal background for the footer */
+    color: #c5efcb; /* Light Mint text color in the footer */
     text-align: center;
     padding: 1em 0;
     width: 100%;
