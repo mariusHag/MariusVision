@@ -3,25 +3,33 @@
 <head>
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <title>Redirecting...</title>
-    <script>
-        // Redirect based on URL path
-        const url = window.location.pathname;
-
-        // Handle clean URLs
-        if (url === '/' || url === '/index.html') {
-            window.location.replace('/'); // Redirect to home
-        } else if (url.startsWith('/about') || url === '/about.html') {
-            window.location.replace('/about'); // Redirect to about page
-        } else if (url.startsWith('/work') || url === '/work.html') {
-            window.location.replace('/work'); // Redirect to work page
-        } else {
-            document.body.innerHTML = '<h1>Page Not Found</h1>';
-        }
-    </script>
+    <title>404 - Page Not Found</title>
+    <link rel="stylesheet" href="styles.css">
 </head>
 <body>
-    <h1>Page Not Found</h1>
-    <p>The page you are looking for does not exist.</p>
+    <header>
+        <nav>
+            <a href="/" id="home-link">Home</a>
+            <a href="/information" id="information-link">Information</a>
+            <a href="/work" id="work-link">My Work</a>
+            <div class="language-selector">
+                <img src="images/usa-flag.png" alt="English" class="flag" data-lang="en" title="English">
+                <img src="images/spain-flag.png" alt="Spanish" class="flag" data-lang="es" title="Spanish">
+                <img src="images/denmark-flag.png" alt="Danish" class="flag" data-lang="da" title="Danish">
+            </div>
+        </nav>
+    </header>
+    
+    <main>
+        <h1>404 - Page Not Found</h1>
+        <p>Sorry, but the page you were trying to view does not exist.</p>
+        <a href="/" class="button">Go to Home</a>
+    </main>
+
+    <footer>
+        <p>© 2024 Marius Vision</p>
+    </footer>
+
+    <script src="script.js"></script>
 </body>
 </html>
