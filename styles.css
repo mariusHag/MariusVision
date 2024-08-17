@@ -8,6 +8,12 @@ body {
     color: #075644; /* Castleton Green as the default text color */
 }
 
+/* Smooth Scrolling */
+html {
+    scroll-behavior: smooth;
+}
+
+
 /* Header Section */
 header {
     background: #075644; /* Castleton Green background for the header */
