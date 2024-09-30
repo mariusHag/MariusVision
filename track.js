@@ -1,5 +1,3 @@
-// track.js
-
 // Track parameters
 const originalWidth = 782; // Original width of the track image
 const originalHeight = 981; // Original height of the track image
@@ -26,9 +24,11 @@ function createTracks() {
         const track = document.createElement('img');
         track.src = 'images/track1.png'; // Path to your track image
         track.className = 'track';
-        // Set initial positions based on spacing
+        
+        // Set initial positions to be fully visible
         track.style.left = `${i * trackSpacingX}px`;
-        track.style.top = `${i * trackSpacingY}px`;
+        track.style.top = `${(trackSpacingY * i) + (desiredTrackHeight / 2)}px`; // Center vertically based on the track height
+        
         trackContainer.appendChild(track);
         tracks.push(track);
     }
@@ -40,11 +40,10 @@ function updateTracks() {
         const track = tracks[i];
 
         // Move track based on speed
-        track.style.left = `${parseFloat(track.style.left) + (trackSpeed * 3)}px`;
-        track.style.top = `${parseFloat(track.style.top) - (trackSpeed * 2)}px`;
-
+        track.style.left = `${parseFloat(track.style.left) + trackSpeed}px`; // Move right
+        
         // Check if the track has gone out of the view to reposition it
-        if (parseFloat(track.style.left) > window.innerWidth || parseFloat(track.style.top) < -desiredTrackHeight) {
+        if (parseFloat(track.style.left) > window.innerWidth) {
             // Reposition the track to the left side in line with original spacing
             track.style.left = `-${desiredTrackWidth}px`; // Start from the left side
             track.style.top = `${(i * trackSpacingY) + (desiredTrackHeight / 2)}px`; // Maintain the vertical spacing
