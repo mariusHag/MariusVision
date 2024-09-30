@@ -16,6 +16,19 @@ header {
     text-align: center;
 }
 
+/* Styles for centering the image */
+#center-image {
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    height: 50vh; /* Adjust to your preference */
+}
+
+#middle-image {
+    max-width: 100%;
+    height: auto;
+}
+
 /* Navigation Bar Container */
 .nav-container {
     display: flex;
