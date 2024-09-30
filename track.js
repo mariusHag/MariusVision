@@ -27,7 +27,7 @@ function createTracks() {
         
         // Set initial positions to be fully visible
         track.style.left = `${i * trackSpacingX}px`;
-        track.style.top = `${(trackSpacingY * i) + (desiredTrackHeight / 2)}px`; // Center vertically based on the track height
+        track.style.top = `${(desiredTrackHeight / 2) + (i * trackSpacingY)}px`; // Maintain consistent vertical offset
         
         trackContainer.appendChild(track);
         tracks.push(track);
@@ -47,7 +47,7 @@ function updateTracks() {
         if (parseFloat(track.style.left) < -desiredTrackWidth) {
             // Reposition the track to the right side with correct vertical spacing
             track.style.left = `${window.innerWidth}px`; // Start from the right side
-            track.style.top = `${(i * trackSpacingY) + (desiredTrackHeight / 2)}px`; // Maintain the vertical spacing
+            track.style.top = `${(desiredTrackHeight / 2) + (i * trackSpacingY)}px`; // Maintain the vertical spacing
         }
     }
 }
