@@ -47,6 +47,8 @@ function updateTracks() {
         if (parseFloat(track.style.left) < -desiredTrackWidth) {
             // Reposition the track to the right side with correct vertical spacing
             track.style.left = `${window.innerWidth}px`; // Start from the right side
+            
+            // Repositioning should keep the vertical offset based on initial spacing
             track.style.top = `${(desiredTrackHeight / 2) + (i * trackSpacingY)}px`; // Maintain the vertical spacing
         }
     }
