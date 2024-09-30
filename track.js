@@ -11,9 +11,13 @@ const tracks = [];
 const desiredTrackWidth = 300; // Desired width of the track images
 const desiredTrackHeight = (desiredTrackWidth / originalWidth) * originalHeight; // Maintain aspect ratio
 
-// Calculate spacing based on the size
-const trackSpacingX = (desiredTrackWidth * 3); // Horizontal spacing based on the 3x factor
-const trackSpacingY = (desiredTrackHeight * -2); // Vertical spacing based on the 2x factor
+// Original spacing values
+const originalTrackSpacingX = 705; // Original horizontal spacing
+const originalTrackSpacingY = -470; // Original vertical spacing
+
+// Calculate the new spacing based on the desired width while maintaining the ratio
+const trackSpacingX = (desiredTrackWidth / originalWidth) * originalTrackSpacingX; // Adjusted horizontal spacing
+const trackSpacingY = (desiredTrackHeight / originalHeight) * originalTrackSpacingY; // Adjusted vertical spacing
 
 // Create the track elements
 function createTracks() {
