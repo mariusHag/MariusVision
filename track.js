@@ -5,9 +5,9 @@ let spt = 1; // Speed variable that can be changed dynamically
 
 const trackContainer = document.getElementById('track-container');
 const tracks = [];
-const trackCount = 6; // Number of tracks (change as needed)
-const trackWidth = 300; // Width of each track
-const trackHeight = 150; // Height of each track
+const trackCount = 6; // Number of tracks (you can adjust this)
+const trackWidth = 300; // Width of each track (set according to your image)
+const trackHeight = 150; // Height of each track (set according to your image)
 
 // Create the tracks
 for (let i = 0; i < trackCount; i++) {
@@ -44,11 +44,11 @@ function updateTracks() {
 
         // Check if the last track has moved out of the viewport
         if (i === tracks.length - 1 && (tracks[i].x > window.innerWidth || tracks[i].y < -trackHeight)) {
-            // Reposition all tracks as a group
+            // Reposition all tracks as a group based on the last track's position
             for (let j = 0; j < tracks.length; j++) {
-                tracks[j].x = tracks[j].x - (trackCount * trackSpacingX);
-                tracks[j].y = tracks[j].y - (trackCount * trackSpacingY);
-                
+                tracks[j].x -= (trackCount * trackSpacingX); // Shift back to the start
+                tracks[j].y -= (trackCount * trackSpacingY); // Maintain vertical spacing
+
                 // Update the position again after repositioning
                 tracks[j].element.style.left = `${tracks[j].x}px`;
                 tracks[j].element.style.top = `${tracks[j].y}px`;
