@@ -1,6 +1,6 @@
 // track.js
 
-// Define the track parameters
+// Track parameters
 const originalWidth = 782; // Original width of the track image
 const originalHeight = 981; // Original height of the track image
 const trackCount = 6; // Total number of tracks to create
@@ -15,7 +15,7 @@ const desiredTrackHeight = (desiredTrackWidth / originalWidth) * originalHeight;
 const originalTrackSpacingX = 705; // Original horizontal spacing
 const originalTrackSpacingY = -470; // Original vertical spacing
 
-// Calculate the new spacing based on the desired width while maintaining the ratio
+// Calculate the new spacing based on the desired width
 const trackSpacingX = (desiredTrackWidth / originalWidth) * originalTrackSpacingX; // Adjusted horizontal spacing
 const trackSpacingY = (desiredTrackHeight / originalHeight) * originalTrackSpacingY; // Adjusted vertical spacing
 
@@ -26,8 +26,9 @@ function createTracks() {
         const track = document.createElement('img');
         track.src = 'images/track1.png'; // Path to your track image
         track.className = 'track';
-        track.style.left = `${i * trackSpacingX}px`; // Initial left position based on spacing
-        track.style.top = `${i * trackSpacingY}px`; // Initial top position based on spacing
+        // Set initial positions based on spacing
+        track.style.left = `${i * trackSpacingX}px`;
+        track.style.top = `${i * trackSpacingY}px`;
         trackContainer.appendChild(track);
         tracks.push(track);
     }
@@ -37,15 +38,16 @@ function createTracks() {
 function updateTracks() {
     for (let i = 0; i < tracks.length; i++) {
         const track = tracks[i];
+
         // Move track based on speed
         track.style.left = `${parseFloat(track.style.left) + (trackSpeed * 3)}px`;
         track.style.top = `${parseFloat(track.style.top) - (trackSpeed * 2)}px`;
 
         // Check if the track has gone out of the view to reposition it
         if (parseFloat(track.style.left) > window.innerWidth || parseFloat(track.style.top) < -desiredTrackHeight) {
-            // Reposition the track to the left side
-            track.style.left = `-${trackSpacingX}px`; // Start from the left side
-            track.style.top = `${(Math.floor(Math.random() * (window.innerHeight / 2))) + 50}px`; // Randomize the y position within a reasonable range
+            // Reposition the track to the left side in line with original spacing
+            track.style.left = `-${desiredTrackWidth}px`; // Start from the left side
+            track.style.top = `${(i * trackSpacingY) + (desiredTrackHeight / 2)}px`; // Maintain the vertical spacing
         }
     }
 }
