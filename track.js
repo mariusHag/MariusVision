@@ -5,18 +5,12 @@ let spt = 1; // Speed variable that can be changed dynamically
 
 const trackContainer = document.getElementById('track-container');
 const tracks = [];
-const trackCount = 6; // Number of tracks (you can adjust this)
-const trackWidth = 782; // Width of each track (set according to your image)
-const trackHeight = 981; // Height of each track (set according to your image)
+const trackCount = 6; // Number of tracks
 
 // Create the tracks
 for (let i = 0; i < trackCount; i++) {
     const track = document.createElement('div');
-    track.classList.add('track'); // Make sure this class has appropriate styles in your CSS
-
-    // Set the size of the track
-    track.style.width = `${trackWidth}px`;
-    track.style.height = `${trackHeight}px`;
+    track.classList.add('track');
 
     // Initial position for each track
     track.style.left = `${i * trackSpacingX}px`;
@@ -42,12 +36,15 @@ function updateTracks() {
         tracks[i].element.style.left = `${tracks[i].x}px`;
         tracks[i].element.style.top = `${tracks[i].y}px`;
 
-        // Check if the last track has moved out of the viewport
-        if (i === tracks.length - 1 && (tracks[i].x > window.innerWidth || tracks[i].y < -trackHeight)) {
-            // Reposition all tracks as a group based on the last track's position
+        // Check if the track has moved out of the viewport
+        if (tracks[i].x > window.innerWidth || tracks[i].y < -150) {
+            // Reposition all tracks
+            const lastTrackX = tracks[trackCount - 1].x; // Get the position of the last track
+
+            // Calculate new positions for all tracks based on the last track
             for (let j = 0; j < tracks.length; j++) {
-                tracks[j].x -= (trackCount * trackSpacingX); // Shift back to the start
-                tracks[j].y -= (trackCount * trackSpacingY); // Maintain vertical spacing
+                tracks[j].x = lastTrackX - ((trackCount - j) * trackSpacingX);
+                tracks[j].y = tracks[j].y + trackSpacingY; // Maintain vertical spacing
 
                 // Update the position again after repositioning
                 tracks[j].element.style.left = `${tracks[j].x}px`;
