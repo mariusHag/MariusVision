@@ -27,8 +27,8 @@ header {
 /* Styles for each track */
 .track {
     position: absolute; /* Position tracks absolutely within the container */
-    width: 200px; /* Adjust to your desired width */
-    height: 100px; /* Adjust to your desired height */
+    width: 782px; /* Adjust to your desired width */
+    height: 981px; /* Adjust to your desired height */
     background-image: url('images/track1.png'); /* Replace with your track image */
     background-size: contain; /* Ensure the entire image is visible */
     background-repeat: no-repeat; /* Prevent image repetition */
