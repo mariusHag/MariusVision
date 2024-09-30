@@ -34,7 +34,8 @@ function createTracks() {
     }
 }
 
-// Update the positions of the tracks
+// Update the positions of the track
+/*
 function updateTracks() {
     for (let i = 0; i < tracks.length; i++) {
         const track = tracks[i];
@@ -52,11 +53,11 @@ function updateTracks() {
             track.style.top = `${(desiredTrackHeight / 2) + (i * trackSpacingY)}px`; // Maintain the vertical spacing based on index
         }
     }
-}
+}*/
 
 // Animation loop
 function animate() {
-    updateTracks();
+    //updateTracks();
     requestAnimationFrame(animate);
 }
 
