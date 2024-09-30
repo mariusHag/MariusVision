@@ -20,16 +20,17 @@ header {
     position: relative;
     width: 100%;
     height: 100vh; /* Full viewport height */
-    overflow: hidden; /* Hide any overflow */
+    overflow: hidden; /* Hide overflow */
 }
 
 .track {
     position: absolute;
     background-size: cover;
     background-repeat: no-repeat;
-    width: 500px; /* Example: Adjust as needed */
-    height: 250px; /* Example: Adjust as needed */
+    width: 40vw; /* 40% of the viewport width */
+    height: calc(40vw * 2 / 3); /* Maintain a 3:2 width-to-height ratio */
 }
+
 
 
 
