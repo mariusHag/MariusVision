@@ -5,7 +5,7 @@ let spt = 1; // Speed variable that can be changed dynamically
 
 const trackContainer = document.getElementById('track-container');
 const tracks = [];
-const trackCount = 6; // Number of tracks
+const trackCount = 12; // Number of tracks
 
 // Create the tracks
 for (let i = 0; i < trackCount; i++) {
