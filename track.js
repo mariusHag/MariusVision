@@ -6,8 +6,8 @@ function calculateTrackSpacing(track) {
     const trackWidth = track.clientWidth;  // Get dynamic track width
     const trackHeight = track.clientHeight;  // Get dynamic track height
 
-    const trackSpacingX = trackWidth + 50; // Horizontal spacing (adding a buffer of 50px to avoid overlap)
-    const trackSpacingY = -(trackHeight + 50); // Vertical spacing (negative for upward movement, with a buffer)
+    const trackSpacingX = trackWidth; // Horizontal spacing matches width
+    const trackSpacingY = -trackHeight; // Vertical spacing matches height (negative for upward movement)
 
     return { trackSpacingX, trackSpacingY };
 }
@@ -54,8 +54,21 @@ window.addEventListener('load', () => {
 
             // Check if the track has moved out of view, and reposition it if needed
             if (currentX > window.innerWidth || currentY < -track.clientHeight) {
-                // Find the farthest track (the one on the bottom-left) and reposition relative to it
-                const lastTrack = tracks.reduce((farthest, t) => {
-                    const farthestX = parseFloat(farthest.style.left);
-                    const farthestY = parseFloat(farthest.style.top);
-                    const trackX = parseFloat(t.style.left);
+                // Find the last track's position for reference
+                const lastTrack = tracks[trackCount - 1];
+                const lastX = parseFloat(lastTrack.style.left);
+                const lastY = parseFloat(lastTrack.style.top);
+
+                // Reposition the current track just behind the last one
+                track.style.left = `${lastX - trackSpacingX}px`;
+                track.style.top = `${lastY - trackSpacingY}px`;
+            }
+        }
+
+        // Request the next animation frame
+        requestAnimationFrame(animate);
+    }
+
+    // Start the animation loop
+    animate();
+});
