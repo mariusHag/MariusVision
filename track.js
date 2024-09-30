@@ -39,13 +39,14 @@ function updateTracks() {
     for (let i = 0; i < tracks.length; i++) {
         const track = tracks[i];
 
-        // Move track based on speed
-        track.style.left = `${parseFloat(track.style.left) + trackSpeed}px`; // Move right
-        
+        // Move track diagonally down and to the left based on speed
+        track.style.left = `${parseFloat(track.style.left) - (trackSpeed * 3)}px`; // Move left
+        track.style.top = `${parseFloat(track.style.top) + (trackSpeed * 2)}px`; // Move down
+
         // Check if the track has gone out of the view to reposition it
-        if (parseFloat(track.style.left) > window.innerWidth) {
-            // Reposition the track to the left side in line with original spacing
-            track.style.left = `-${desiredTrackWidth}px`; // Start from the left side
+        if (parseFloat(track.style.left) < -desiredTrackWidth || parseFloat(track.style.top) > window.innerHeight) {
+            // Reposition the track to the right side
+            track.style.left = `${window.innerWidth}px`; // Start from the right side
             track.style.top = `${(i * trackSpacingY) + (desiredTrackHeight / 2)}px`; // Maintain the vertical spacing
         }
     }
