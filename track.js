@@ -1,50 +1,72 @@
-// Speed variable to control the movement speed
-let speed = 1; // Adjust this value to change the speed
+// Parameters for track size and spacing with 3:2 ratio
+const trackWidth = 300;  // Fixed width, can be adjusted but respects 3:2 ratio
+const trackHeight = trackWidth * (2 / 3);  // Height based on 3:2 ratio
+const horizontalSpacing = trackWidth; // Space between tracks horizontally
+const verticalSpacing = trackHeight;  // Space between tracks vertically
+const speed = 1; // Adjust speed as needed
 
 // Array to hold track elements
 const tracks = [];
 const trackContainer = document.getElementById('track-container');
 
-// Set the number of tracks to display
+// Set the number of tracks to display (you can adjust this number)
 const trackCount = 6;
 
-// Create and position initial tracks
+// Create and position the initial tracks
 for (let i = 0; i < trackCount; i++) {
     const track = document.createElement('div');
-    track.classList.add('track'); // Add .track class to div
-    track.style.backgroundImage = 'url(images/track1.png)'; // Ensure correct image path
+    track.classList.add('track');
+    track.style.backgroundImage = 'url(images/track1.png)'; // Set the track image
+    track.style.width = `${trackWidth}px`;  // Set width and height based on fixed ratio
+    track.style.height = `${trackHeight}px`;
     trackContainer.appendChild(track);
     tracks.push(track);
 }
 
-// Function to calculate the track spacing based on the CSS sizes
-function calculateTrackSpacing() {
-    const trackWidth = 300;  // Fixed width as set in CSS (300px)
-    const trackHeight = 200; // Fixed height as set in CSS (200px)
-
-    const trackSpacingX = trackWidth + 100; // Horizontal spacing
-    const trackSpacingY = -(trackHeight + 50); // Vertical spacing (negative for upward movement)
-
-    return { trackSpacingX, trackSpacingY };
-}
-
-// Wait for the tracks to render, then calculate spacing and position them
-window.addEventListener('load', () => {
-    const { trackSpacingX, trackSpacingY } = calculateTrackSpacing();
-
-    // Set initial positions for the tracks in a straight line
-    for (let i = 0; i < trackCount; i++) {
+// Function to calculate track positions and move them
+function calculateAndMoveTracks() {
+    for (let i = 0; i < tracks.length; i++) {
         const track = tracks[i];
-        track.style.left = `${i * trackSpacingX}px`; // Initial horizontal positioning
-        track.style.top = `${i * trackSpacingY}px`;  // Initial vertical positioning
+        let currentX = parseFloat(track.style.left) || 0;
+        let currentY = parseFloat(track.style.top) || 0;
+
+        // Move tracks along the 3:2 isometric path
+        currentX += speed * 3;  // Move right (positive X)
+        currentY -= speed * 2;  // Move up (negative Y)
+        track.style.left = `${currentX}px`;
+        track.style.top = `${currentY}px`;
+
+        // Check if the track has moved out of view, and reposition if necessary
+        if (currentX > window.innerWidth || currentY < -trackHeight) {
+            const lastTrack = tracks.reduce((farthest, t) => {
+                const farthestX = parseFloat(farthest.style.left) || 0;
+                const farthestY = parseFloat(farthest.style.top) || 0;
+                const trackX = parseFloat(t.style.left) || 0;
+                const trackY = parseFloat(t.style.top) || 0;
+                return (trackX < farthestX || trackY > farthestY) ? t : farthest;
+            }, tracks[0]);
+
+            const lastX = parseFloat(lastTrack.style.left) || 0;
+            const lastY = parseFloat(lastTrack.style.top) || 0;
+
+            // Reposition the current track relative to the farthest one
+            track.style.left = `${lastX - horizontalSpacing}px`;
+            track.style.top = `${lastY - verticalSpacing}px`;
+        }
     }
 
-    // Animation loop to move and reposition tracks
-    function animate() {
-        for (let i = 0; i < tracks.length; i++) {
-            const track = tracks[i];
-            let currentX = parseFloat(track.style.left);
-            let currentY = parseFloat(track.style.top);
+    // Request the next frame for the animation
+    requestAnimationFrame(calculateAndMoveTracks);
+}
 
-            // Move tracks along the isometric path (3x2 movement)
-            currentX += speed * 3
+// Start the animation loop
+window.addEventListener('load', () => {
+    for (let i = 0; i < tracks.length; i++) {
+        // Set initial positions for the tracks (evenly spaced)
+        const track = tracks[i];
+        track.style.left = `${i * horizontalSpacing}px`;
+        track.style.top = `${i * verticalSpacing}px`;
+    }
+
+    calculateAndMoveTracks();
+});
