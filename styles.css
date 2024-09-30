@@ -20,13 +20,13 @@ header {
     position: relative;
     overflow: hidden; /* Ensures tracks that move outside are hidden */
     width: 100vw; /* Full viewport width */
-    height: 100vh; /* Full viewport height */
+    height: auto; /* Full viewport height */
 }
 
 .track {
     position: absolute; /* Allows for free positioning */
-    width: auto; /* Same as desiredTrackWidth */
-    height: 400px; /* Maintain aspect ratio */
+    width: 300px; /* Same as desiredTrackWidth */
+    height: auto; /* Maintain aspect ratio */
 }
 
 
