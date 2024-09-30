@@ -1,7 +1,7 @@
 // Track parameters
 const originalWidth = 782; // Original width of the track image
 const originalHeight = 981; // Original height of the track image
-const trackCount = 6; // Total number of tracks to create
+const trackCount = 9; // Total number of tracks to create
 const trackSpeed = 3; // Speed of the tracks
 const tracks = [];
 
@@ -45,11 +45,11 @@ function updateTracks() {
 
         // Check if the track has gone out of the view to reposition it
         if (parseFloat(track.style.left) < -desiredTrackWidth) {
-            // Reposition the track to the right side
+            // Reposition the track to the right side of the screen
             track.style.left = `${window.innerWidth}px`; // Start from the right side
             
-            // Reset vertical position to its original offset
-            track.style.top = `${(desiredTrackHeight / 2) + (i * trackSpacingY)}px`; // Maintain the original vertical alignment
+            // Reset the vertical position based on its index without using original positioning
+            track.style.top = `${(desiredTrackHeight / 2) + (i * trackSpacingY)}px`; // Maintain the vertical spacing based on index
         }
     }
 }
