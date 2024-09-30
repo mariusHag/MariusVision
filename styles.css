@@ -16,21 +16,25 @@ header {
     text-align: center;
 }
 
+/* Styles for the track container */
 #track-container {
-    position: relative;
-    width: 100vw;
-    height: 100vh;
-    overflow: hidden;
+    position: relative; /* Allow absolutely positioned children */
+    width: 100vw; /* Full width of the viewport */
+    height: 100vh; /* Full height of the viewport */
+    overflow: hidden; /* Hide any overflow */
 }
 
+/* Styles for each track */
 .track {
-    position: absolute;
-    background-image: url('images/track1.png'); /* Ensure this path is correct */
-    background-size: contain; /* Prevent cropping */
-    background-repeat: no-repeat; /* Prevent tiling of the image */
-    background-position: center; /* Center the image */
-    border: 1px solid #ccc; /* Optional: Add a border for visibility */
+    position: absolute; /* Position tracks absolutely within the container */
+    width: 200px; /* Adjust to your desired width */
+    height: 100px; /* Adjust to your desired height */
+    background-image: url('images/track1.png'); /* Replace with your track image */
+    background-size: contain; /* Ensure the entire image is visible */
+    background-repeat: no-repeat; /* Prevent image repetition */
+    background-position: center; /* Center the image within the div */
 }
+
 
 
 
