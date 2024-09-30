@@ -35,7 +35,7 @@ function createTracks() {
 }
 
 // Update the positions of the track
-/*
+
 function updateTracks() {
     for (let i = 0; i < tracks.length; i++) {
         const track = tracks[i];
@@ -44,7 +44,7 @@ function updateTracks() {
         track.style.left = `${parseFloat(track.style.left) - (trackSpeed * 3)}px`; // Move left
         track.style.top = `${parseFloat(track.style.top) + (trackSpeed * 2)}px`; // Move down
 
-        // Check if the track has gone out of the view to reposition it
+        /*Check if the track has gone out of the view to reposition it
         if (parseFloat(track.style.left) < -desiredTrackWidth) {
             // Reposition the track to the right side of the screen
             track.style.left = `${window.innerWidth}px`; // Start from the right side
@@ -52,12 +52,13 @@ function updateTracks() {
             // Reset the vertical position based on its index without using original positioning
             track.style.top = `${(desiredTrackHeight / 2) + (i * trackSpacingY)}px`; // Maintain the vertical spacing based on index
         }
+        */
     }
-}*/
+}
 
 // Animation loop
 function animate() {
-    //updateTracks();
+    updateTracks();
     requestAnimationFrame(animate);
 }
 
