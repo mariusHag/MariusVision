@@ -5,23 +5,29 @@ let spt = 1; // Speed variable that can be changed dynamically
 
 const trackContainer = document.getElementById('track-container');
 const tracks = [];
-const numTracks = 5; // Number of tracks you want to display
+const numTracks = Math.ceil(window.innerWidth / trackSpacingX) + 1; // Number of tracks based on the window width
+const trackWidth = 200; // Width of each track
+const trackHeight = 100; // Height of each track
 
 // Create the tracks
 for (let i = 0; i < numTracks; i++) {
     const track = document.createElement('div');
-    track.classList.add('track');
-    
+    track.classList.add('track'); // Make sure this class has appropriate styles in your CSS
+
+    // Set the size of the track
+    track.style.width = `${trackWidth}px`;
+    track.style.height = `${trackHeight}px`;
+
     // Initial position for each track
     track.style.left = `${i * trackSpacingX}px`;
-    track.style.top = `${Math.random() * window.innerHeight}px`; // Randomize initial Y position for better visibility
-    
+    track.style.top = `${Math.floor(i * trackSpacingY)}px`; // Space them vertically
+
     // Add track to container and to the tracks array
     trackContainer.appendChild(track);
     tracks.push({
         element: track,
         x: i * trackSpacingX,
-        y: Math.random() * window.innerHeight // Start with random Y
+        y: Math.floor(i * trackSpacingY)
     });
 }
 
@@ -37,10 +43,10 @@ function updateTracks() {
         tracks[i].element.style.top = `${tracks[i].y}px`;
 
         // When the track moves out of the viewport, reposition it
-        if (tracks[i].x > window.innerWidth || tracks[i].y < -100) { // Changed from 0 to -100 for better visibility
-            // Reposition track to the left and randomize its Y coordinate
-            tracks[i].x = -100; // Move it back to the left, allowing some overlap
-            tracks[i].y = Math.random() * window.innerHeight; // Randomize Y position for variety
+        if (tracks[i].x > window.innerWidth) {
+            // Reposition track to the left, allowing for continuous scrolling
+            tracks[i].x = -trackWidth; // Move it back to the left
+            tracks[i].y = Math.floor((i - 1) * trackSpacingY); // Keep vertical positioning
         }
     }
 
