@@ -37,6 +37,7 @@ function updateTracks() {
         tracks[i].element.style.top = `${tracks[i].y}px`;
 
         // Check if the track has moved out of the viewport
+        // Define conditions for repositioning
         if (tracks[i].x > window.innerWidth || tracks[i].y < -150) {
             // Calculate new position for the track that moved out
             const newX = (i === 0) 
@@ -45,7 +46,7 @@ function updateTracks() {
             
             const newY = tracks[i].y + trackSpacingY; // Maintain vertical spacing
 
-            // Reposition the track
+            // Reposition the track without changing the movement of other tracks
             tracks[i].x = newX;
             tracks[i].y = newY;
 
