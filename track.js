@@ -5,12 +5,12 @@ let spt = 1; // Speed variable that can be changed dynamically
 
 const trackContainer = document.getElementById('track-container');
 const tracks = [];
-const numTracks = Math.ceil(window.innerWidth / trackSpacingX) + 1; // Number of tracks based on the window width
-const trackWidth = 200; // Width of each track
-const trackHeight = 100; // Height of each track
+const trackCount = 6; // Number of tracks (change as needed)
+const trackWidth = 300; // Width of each track
+const trackHeight = 150; // Height of each track
 
 // Create the tracks
-for (let i = 0; i < numTracks; i++) {
+for (let i = 0; i < trackCount; i++) {
     const track = document.createElement('div');
     track.classList.add('track'); // Make sure this class has appropriate styles in your CSS
 
@@ -42,11 +42,17 @@ function updateTracks() {
         tracks[i].element.style.left = `${tracks[i].x}px`;
         tracks[i].element.style.top = `${tracks[i].y}px`;
 
-        // When the track moves out of the viewport, reposition it
-        if (tracks[i].x > window.innerWidth) {
-            // Reposition track to the left, allowing for continuous scrolling
-            tracks[i].x = -trackWidth; // Move it back to the left
-            tracks[i].y = Math.floor((i - 1) * trackSpacingY); // Keep vertical positioning
+        // Check if the last track has moved out of the viewport
+        if (i === tracks.length - 1 && (tracks[i].x > window.innerWidth || tracks[i].y < -trackHeight)) {
+            // Reposition all tracks as a group
+            for (let j = 0; j < tracks.length; j++) {
+                tracks[j].x = tracks[j].x - (trackCount * trackSpacingX);
+                tracks[j].y = tracks[j].y - (trackCount * trackSpacingY);
+                
+                // Update the position again after repositioning
+                tracks[j].element.style.left = `${tracks[j].x}px`;
+                tracks[j].element.style.top = `${tracks[j].y}px`;
+            }
         }
     }
 
