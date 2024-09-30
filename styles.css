@@ -25,11 +25,13 @@ header {
 
 .track {
     position: absolute;
-    background-size: cover;
+    background-size: contain; /* Prevent cropping: fit image within the div */
     background-repeat: no-repeat;
-    width: 40vw; /* 40% of the viewport width */
-    height: calc(40vw * 2 / 3); /* Maintain a 3:2 width-to-height ratio */
+    background-position: center;
+    width: auto; /* Auto width to maintain aspect ratio */
+    height: auto; /* Auto height to maintain aspect ratio */
 }
+
 
 
 
