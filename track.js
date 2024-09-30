@@ -1,15 +1,13 @@
 // Speed variable to control the movement speed
 let speed = 1; // You can adjust this value to change the speed
 
-// Create a function to calculate spacing based on the track size
+// Function to calculate the dynamic track spacing based on the track size
 function calculateTrackSpacing(track) {
-    // Get the actual width and height of the track
-    const trackWidth = track.clientWidth;
-    const trackHeight = track.clientHeight;
+    const trackWidth = track.clientWidth;  // Get dynamic track width
+    const trackHeight = track.clientHeight;  // Get dynamic track height
 
-    // Set dynamic spacing based on track size
-    const trackSpacingX = trackWidth; // Horizontal spacing should match track width
-    const trackSpacingY = -trackHeight; // Vertical spacing should match track height (negative for upward movement)
+    const trackSpacingX = trackWidth; // Horizontal spacing matches width
+    const trackSpacingY = -trackHeight; // Vertical spacing matches height (negative for upward movement)
 
     return { trackSpacingX, trackSpacingY };
 }
@@ -25,56 +23,52 @@ const trackCount = 6;
 for (let i = 0; i < trackCount; i++) {
     const track = document.createElement('div');
     track.classList.add('track'); // Add .track class to div
-    track.style.backgroundImage = 'url(images/track1.png)'; // Ensure the image path is correct
-    track.style.backgroundSize = 'cover'; // Make sure the image covers the div
-    track.style.position = 'absolute'; // Position tracks absolutely
-
-    // Append each track to the container
+    track.style.backgroundImage = 'url(images/track1.png)'; // Ensure correct image path
     trackContainer.appendChild(track);
     tracks.push(track);
 }
 
-// Wait for the tracks to render, then calculate the spacing
+// Wait for the tracks to render, then calculate spacing and position them
 window.addEventListener('load', () => {
     const { trackSpacingX, trackSpacingY } = calculateTrackSpacing(tracks[0]);
 
-    // Set initial position of tracks based on dynamic spacing
+    // Set initial positions for the tracks
     for (let i = 0; i < trackCount; i++) {
         const track = tracks[i];
         track.style.left = `${i * trackSpacingX}px`;
         track.style.top = `${i * trackSpacingY}px`;
     }
 
-    // Animation loop to move and reposition the tracks
+    // Animation loop to move and reposition tracks
     function animate() {
         for (let i = 0; i < tracks.length; i++) {
             const track = tracks[i];
             let currentX = parseFloat(track.style.left);
             let currentY = parseFloat(track.style.top);
 
-            // Move the tracks along the isometric path
-            currentX += speed * 3; // Move right
-            currentY -= speed * 2; // Move up
+            // Move tracks along the isometric path
+            currentX += speed * 3; // Move right (positive X)
+            currentY -= speed * 2; // Move up (negative Y)
             track.style.left = `${currentX}px`;
             track.style.top = `${currentY}px`;
 
-            // Reposition tracks once they move out of the screen
+            // Check if the track has moved out of view, and reposition it if needed
             if (currentX > window.innerWidth || currentY < -track.clientHeight) {
-                // Find the last track's position
+                // Find the last track's position for reference
                 const lastTrack = tracks[trackCount - 1];
                 const lastX = parseFloat(lastTrack.style.left);
                 const lastY = parseFloat(lastTrack.style.top);
 
-                // Reposition the current track to follow the last one
+                // Reposition the current track just behind the last one
                 track.style.left = `${lastX - trackSpacingX}px`;
                 track.style.top = `${lastY - trackSpacingY}px`;
             }
         }
 
-        // Call animate function again to keep the loop going
+        // Request the next animation frame
         requestAnimationFrame(animate);
     }
 
-    // Start the animation
+    // Start the animation loop
     animate();
 });
