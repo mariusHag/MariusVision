@@ -19,8 +19,8 @@ header {
 #track-container {
     position: relative;
     overflow: hidden; /* Ensures tracks that move outside are hidden */
-    width: 100vw; /* Full viewport width */
-    height: auto; /* Full viewport height */
+    width: 120vw; /* Full viewport width */
+    height: 100hw; /* Full viewport height */
 }
 
 .track {
