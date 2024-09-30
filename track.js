@@ -44,8 +44,8 @@ function updateTracks() {
         track.style.top = `${parseFloat(track.style.top) + (trackSpeed * 2)}px`; // Move down
 
         // Check if the track has gone out of the view to reposition it
-        if (parseFloat(track.style.left) < -desiredTrackWidth || parseFloat(track.style.top) > window.innerHeight) {
-            // Reposition the track to the right side
+        if (parseFloat(track.style.left) < -desiredTrackWidth) {
+            // Reposition the track to the right side with correct vertical spacing
             track.style.left = `${window.innerWidth}px`; // Start from the right side
             track.style.top = `${(i * trackSpacingY) + (desiredTrackHeight / 2)}px`; // Maintain the vertical spacing
         }
