@@ -6,8 +6,8 @@ let spt = 1; // Speed variable that can be changed dynamically
 const trackContainer = document.getElementById('track-container');
 const tracks = [];
 const trackCount = 6; // Number of tracks (you can adjust this)
-const trackWidth = 300; // Width of each track (set according to your image)
-const trackHeight = 150; // Height of each track (set according to your image)
+const trackWidth = 782; // Width of each track (set according to your image)
+const trackHeight = 981; // Height of each track (set according to your image)
 
 // Create the tracks
 for (let i = 0; i < trackCount; i++) {
