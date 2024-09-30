@@ -38,18 +38,20 @@ function updateTracks() {
 
         // Check if the track has moved out of the viewport
         if (tracks[i].x > window.innerWidth || tracks[i].y < -150) {
-            // Reposition all tracks
-            const lastTrackX = tracks[trackCount - 1].x; // Get the position of the last track
+            // Calculate new position for the track that moved out
+            const newX = (i === 0) 
+                ? tracks[trackCount - 1].x - trackSpacingX // Place new track directly to the left of the last track
+                : tracks[i - 1].x - trackSpacingX; // Place each track based on the previous one
+            
+            const newY = tracks[i].y + trackSpacingY; // Maintain vertical spacing
 
-            // Calculate new positions for all tracks based on the last track
-            for (let j = 0; j < tracks.length; j++) {
-                tracks[j].x = lastTrackX - ((trackCount - j) * trackSpacingX);
-                tracks[j].y = tracks[j].y + trackSpacingY; // Maintain vertical spacing
+            // Reposition the track
+            tracks[i].x = newX;
+            tracks[i].y = newY;
 
-                // Update the position again after repositioning
-                tracks[j].element.style.left = `${tracks[j].x}px`;
-                tracks[j].element.style.top = `${tracks[j].y}px`;
-            }
+            // Update the position of the track after repositioning
+            tracks[i].element.style.left = `${tracks[i].x}px`;
+            tracks[i].element.style.top = `${tracks[i].y}px`;
         }
     }
 
