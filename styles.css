@@ -29,6 +29,22 @@ header {
     height: auto;
 }
 
+#track-container {
+    position: relative;
+    width: 100vw;
+    height: 100vh;
+    overflow: hidden;
+}
+
+.track {
+    position: absolute;
+    width: 100px; /* Example size */
+    height: 100px; /* Example size */
+    background-image: url('images/track1.png'); /* Replace with your track image */
+    background-size: cover;
+}
+
+
 /* Navigation Bar Container */
 .nav-container {
     display: flex;
