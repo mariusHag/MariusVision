@@ -16,19 +16,6 @@ header {
     text-align: center;
 }
 
-/* Styles for centering the image */
-#center-image {
-    display: flex;
-    justify-content: center;
-    align-items: center;
-    height: 50vh; /* Adjust to your preference */
-}
-
-#middle-image {
-    max-width: 100%;
-    height: auto;
-}
-
 #track-container {
     position: relative;
     width: 100vw;
@@ -42,7 +29,11 @@ header {
     height: 100px; /* Example size */
     background-image: url('images/track1.png'); /* Replace with your track image */
     background-size: cover;
+    background-position: center;
 }
+
+
+
 
 
 /* Navigation Bar Container */
