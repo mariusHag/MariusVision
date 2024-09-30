@@ -1,17 +1,6 @@
 // Speed variable to control the movement speed
 let speed = 1; // You can adjust this value to change the speed
 
-// Function to calculate the dynamic track spacing based on the track size
-function calculateTrackSpacing(track) {
-    const trackWidth = track.clientWidth;  // Get dynamic track width
-    const trackHeight = track.clientHeight;  // Get dynamic track height
-
-    const trackSpacingX = trackWidth; // Horizontal spacing matches width
-    const trackSpacingY = -trackHeight; // Vertical spacing matches height (negative for upward movement)
-
-    return { trackSpacingX, trackSpacingY };
-}
-
 // Array to hold track elements
 const tracks = [];
 const trackContainer = document.getElementById('track-container');
@@ -26,6 +15,17 @@ for (let i = 0; i < trackCount; i++) {
     track.style.backgroundImage = 'url(images/track1.png)'; // Ensure correct image path
     trackContainer.appendChild(track);
     tracks.push(track);
+}
+
+// Function to calculate the track spacing based on the CSS sizes
+function calculateTrackSpacing(track) {
+    const trackWidth = 300;  // Fixed width as set in CSS (300px)
+    const trackHeight = 200; // Fixed height as set in CSS (200px)
+
+    const trackSpacingX = trackWidth + 20; // Horizontal spacing
+    const trackSpacingY = -(trackHeight + 20); // Vertical spacing (negative for upward movement)
+
+    return { trackSpacingX, trackSpacingY };
 }
 
 // Wait for the tracks to render, then calculate spacing and position them
@@ -54,12 +54,19 @@ window.addEventListener('load', () => {
 
             // Check if the track has moved out of view, and reposition it if needed
             if (currentX > window.innerWidth || currentY < -track.clientHeight) {
-                // Find the last track's position for reference
-                const lastTrack = tracks[trackCount - 1];
+                // Find the farthest track (the one on the bottom-left) and reposition relative to it
+                const lastTrack = tracks.reduce((farthest, t) => {
+                    const farthestX = parseFloat(farthest.style.left);
+                    const farthestY = parseFloat(farthest.style.top);
+                    const trackX = parseFloat(t.style.left);
+                    const trackY = parseFloat(t.style.top);
+                    return (trackX < farthestX || trackY > farthestY) ? t : farthest;
+                }, tracks[0]);
+
                 const lastX = parseFloat(lastTrack.style.left);
                 const lastY = parseFloat(lastTrack.style.top);
 
-                // Reposition the current track just behind the last one
+                // Reposition the current track behind the farthest one
                 track.style.left = `${lastX - trackSpacingX}px`;
                 track.style.top = `${lastY - trackSpacingY}px`;
             }
