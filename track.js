@@ -1,4 +1,3 @@
-
 // Constants for track spacing and movement
 const trackSpacingX = 705; // Horizontal spacing between tracks
 const trackSpacingY = -470; // Vertical spacing between tracks
@@ -15,14 +14,14 @@ for (let i = 0; i < numTracks; i++) {
     
     // Initial position for each track
     track.style.left = `${i * trackSpacingX}px`;
-    track.style.top = `${i * trackSpacingY}px`;
+    track.style.top = `${Math.random() * window.innerHeight}px`; // Randomize initial Y position for better visibility
     
     // Add track to container and to the tracks array
     trackContainer.appendChild(track);
     tracks.push({
         element: track,
         x: i * trackSpacingX,
-        y: i * trackSpacingY
+        y: Math.random() * window.innerHeight // Start with random Y
     });
 }
 
@@ -30,17 +29,17 @@ for (let i = 0; i < numTracks; i++) {
 function updateTracks() {
     for (let i = 0; i < tracks.length; i++) {
         // Move the tracks based on the direction (3x-2y) and speed
-        tracks[i].x += 3 * spt;
-        tracks[i].y -= 2 * spt;
+        tracks[i].x += 3 * spt;  // Horizontal movement
+        tracks[i].y -= 2 * spt;  // Vertical movement
 
         // Update the track's position
         tracks[i].element.style.left = `${tracks[i].x}px`;
         tracks[i].element.style.top = `${tracks[i].y}px`;
 
         // When the track moves out of the viewport, reposition it
-        if (tracks[i].x > window.innerWidth || tracks[i].y > window.innerHeight || tracks[i].y < -trackSpacingY) {
-            // Reposition track to the left and reset its y-coordinate
-            tracks[i].x = -trackSpacingX; // Move it back to the left
+        if (tracks[i].x > window.innerWidth || tracks[i].y < -100) { // Changed from 0 to -100 for better visibility
+            // Reposition track to the left and randomize its Y coordinate
+            tracks[i].x = -100; // Move it back to the left, allowing some overlap
             tracks[i].y = Math.random() * window.innerHeight; // Randomize Y position for variety
         }
     }
