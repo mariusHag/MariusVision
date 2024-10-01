@@ -91,30 +91,24 @@ header {
     height: auto; /* Maintain aspect ratio */
 }
 
-
-/* General Styles */
-body {
-    margin: 0;
-    font-family: Arial, sans-serif;
-}
-
 /* Navigation Bar Styles */
 .nav-container {
     display: flex;
     align-items: center;
-    justify-content: flex-end; /* Align the items to the right */
-    background-color: transparent; /* Let the background gradient show */
+    justify-content: flex-end;
+    background-color: transparent;
     padding: 1em 2em;
     position: absolute;
     width: 100%;
-    z-index: 10; /* Ensure the navbar is on top */
+    z-index: 10;
+    border-bottom: 2px solid #a9c5a0;
 }
 
 /* Globe Icon */
 .globe-icon img {
-    width: 25px; /* Adjust the size of the globe icon */
+    width: 25px;
     height: auto;
-    margin-right: 1em; /* Space between the globe icon and the languages */
+    margin-right: 1.5em;
 }
 
 /* Language Selector Styles */
@@ -124,16 +118,16 @@ body {
 }
 
 .language-option {
-    color: #fff; /* White text */
+    color: #fff;
     text-decoration: none;
-    margin: 0 1em;
+    margin: 0 1.5em;
     font-size: 1em;
     position: relative;
     font-weight: normal;
 }
 
 .language-option:hover {
-    color: #c5efcb; /* Light Mint color on hover */
+    color: #c5efcb;
 }
 
 .language-option.active {
@@ -148,21 +142,30 @@ body {
     right: 0;
     bottom: -3px;
     height: 2px;
-    background-color: #fff; /* White underline for the active language */
+    background-color: #fff;
     width: 100%;
 }
-    .language-option {
-        margin: 0 0.5em;
-    }
 
-/* Responsive Adjustments */
+/* Mobile and Laptop Adjustments */
 @media (max-width: 768px) {
+    /* For mobile view, center the language buttons */
     .nav-container {
-        justify-content: center; /* Center the items on smaller screens */
+        justify-content: center;
     }
 
     .language-option {
         margin: 0 0.5em;
+    }
+}
+
+@media (min-width: 769px) {
+    /* For larger screens, position the buttons at the top-right */
+    .nav-container {
+        justify-content: flex-end;
+    }
+
+    .language-option {
+        margin: 0 1em;
     }
 }
 
