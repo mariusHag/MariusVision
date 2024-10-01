@@ -83,7 +83,7 @@ header {
     width: 300px; /* Same as desiredTrackWidth */
     height: auto; /* Maintain aspect ratio */
 }
-}
+
 
 /* Navigation Bar Container */
 .nav-container {
