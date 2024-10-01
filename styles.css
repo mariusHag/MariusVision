@@ -131,19 +131,7 @@ body {
     font-family: Arial, sans-serif;
 }
 
-/* Navigation Bar Styles */
-.nav-container {
-    display: flex;
-    align-items: center;
-    justify-content: flex-end;
-    background-color: transparent;
-    padding: 1em 2em;
-    position: absolute;
-    width: 100%;
-    z-index: 10;
-    border-bottom: 2px solid #a9c5a0;
-    box-sizing: border-box; /* Ensure padding is included in width */
-}
+
 
 /* Globe Icon */
 .globe-icon img {
@@ -186,12 +174,27 @@ body {
     background-color: #fff;
     width: 100%;
 }
+/* Navigation Bar Styles */
+.nav-container {
+    display: flex;
+    align-items: center;
+    justify-content: flex-end;
+    background-color: transparent;
+    padding: 1em 2em;
+    position: absolute;
+    width: 100%;
+    z-index: 10;
+    box-sizing: border-box; /* Ensure padding is included in width */
+    border-bottom: none; /* Remove the green line (border-bottom) */
+}
 
 /* Mobile and Laptop Adjustments */
 @media (max-width: 768px) {
     /* For mobile view, center the language buttons */
     .nav-container {
         justify-content: center;
+        padding-top: 1.5em; /* Move navbar higher on mobile */
+        padding-bottom: 0.5em; /* Adjust bottom padding for consistency */
     }
 
     .language-option {
@@ -210,6 +213,7 @@ body {
         margin: 0 0.8em; /* Adjust margin for desktop */
     }
 }
+
 
 
 /* Main Section */
