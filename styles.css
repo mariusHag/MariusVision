@@ -11,15 +11,41 @@ body {
     color: #020402; /* Dark Charcoal as the default text color */
 }
 
+/* Ensure that all flag text is white */
 .flag {
-    text-decoration: none; /* Default to no underline */
+    color: white; /* Text color for all flags */
+    text-decoration: none; /* Remove default underline */
     padding-bottom: 2px; /* Adds space for underline */
     margin-right: 10px; /* Spacing between flags */
+    position: relative; /* Required for underline animation */
+    transition: color 0.3s ease; /* Smooth color change */
 }
 
-.flag.active {
-    border-bottom: 2px solid white; /* Adds the white underline to the active flag */
+/* Add the white underline to the active flag with an animation */
+.flag.active::after {
+    content: '';
+    position: absolute;
+    left: 0;
+    bottom: 0;
+    width: 100%;
+    height: 2px;
+    background-color: white;
+    transform: scaleX(0); /* Start with no underline */
+    transform-origin: bottom right; /* Start from the right */
+    transition: transform 0.3s ease-out; /* Animation for the line */
 }
+
+/* When the flag is active, the underline grows from right to left */
+.flag.active::after {
+    transform: scaleX(1); /* Full underline */
+    transform-origin: bottom left; /* Grow from left to right */
+}
+
+/* Optional hover effect (if desired) */
+.flag:hover {
+    color: #f0f0f0; /* Slightly lighter color on hover */
+}
+
 
 /* Header Section */
 header {
