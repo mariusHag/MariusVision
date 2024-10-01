@@ -2,7 +2,7 @@
 const originalWidth = 782; // Original width of the track image
 const originalHeight = 981; // Original height of the track image
 const trackCount = 90; // Total number of tracks to create
-const trackSpeed = 3; // Speed of the tracks
+const trackSpeed = 0.5; // Speed of the tracks
 const tracks = [];
 
 // Set the desired size for the track images
