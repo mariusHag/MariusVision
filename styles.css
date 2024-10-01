@@ -19,7 +19,7 @@ header {
     text-align: center;
 }
 
-/* Starry Night Section */
+/* Starry Night Section 
 .starry-night-section {
     position: relative;
     width: 100vw;
@@ -30,7 +30,7 @@ header {
     align-items: center;
 }
 
-/* Centered text in the starry night section */
+ Centered text in the starry night section */
 .centered-text {
     position: absolute;
     font-size: 3rem;
@@ -92,76 +92,77 @@ header {
 }
 
 
-/* Navigation Bar Container */
+/* General Styles */
+body {
+    margin: 0;
+    font-family: Arial, sans-serif;
+}
+
+/* Navigation Bar Styles */
 .nav-container {
     display: flex;
-    justify-content: flex-start; /* Align items to the left */
     align-items: center;
-    border: 2px solid #a9c5a0; /* Soft Green frame around the entire nav bar */
-    padding: 0;
-    margin: 0 auto; /* Center the entire navigation container */
-    max-width: 800px; /* Limit the width of the navigation container */
-    background-color: #c6dec6; /* Light Sage background for the nav bar */
+    justify-content: flex-end; /* Align the items to the right */
+    background-color: transparent; /* Let the background gradient show */
+    padding: 1em 2em;
+    position: absolute;
+    width: 100%;
+    z-index: 10; /* Ensure the navbar is on top */
 }
 
-/* Navigation Links */
-nav {
-    display: flex;
-    flex-grow: 1; /* Allow the nav section to grow and fill the space */
+/* Globe Icon */
+.globe-icon img {
+    width: 25px; /* Adjust the size of the globe icon */
+    height: auto;
+    margin-right: 1em; /* Space between the globe icon and the languages */
 }
 
-nav a {
-    color: #a9c5a0; /* Soft Green for the navigation text */
-    text-decoration: none;
-    padding: 1em 2em; /* Increase padding to match the height of the language selector */
-    font-family: 'Times New Roman', serif; /* Classy font for the text */
-    font-weight: bold;
-    text-align: center;
-    display: flex;
-    align-items: center; /* Center the text vertically */
-    justify-content: center; /* Center the text horizontally */
-    height: 100%;
-    background-color: #c6dec6; /* Light Sage background for each link */
-}
-
-nav a:hover {
-    background: #758173; /* Slate Gray background on hover */
-    color: #c5efcb; /* Light Mint text color on hover */
-}
-
-/* Language Section */
-.language-container {
-    display: flex;
-    flex-direction: column;
-    align-items: center;
-    padding: 0 1em;
-    border-left: 2px solid #a9c5a0; /* Soft Green vertical line */
-}
-
-.language-container .language-label {
-    font-size: 0.75em; /* Tiny text for the "Language" label */
-    color: #a9c5a0; /* Soft Green color for the label */
-    margin-bottom: 5px;
-}
-
+/* Language Selector Styles */
 .language-selector {
     display: flex;
-    justify-content: center; /* Center the flags horizontally */
-    height: 100%; /* Ensure the flags container matches the height of the navigation links */
     align-items: center;
 }
 
-.language-selector .flag {
-    width: 30px; /* Set a fixed width for flags */
-    height: auto; /* Maintain aspect ratio */
-    margin: 0 0.5em; /* Add space between flags */
-    cursor: pointer;
-    transition: opacity 0.3s;
+.language-option {
+    color: #fff; /* White text */
+    text-decoration: none;
+    margin: 0 1em;
+    font-size: 1em;
+    position: relative;
+    font-weight: normal;
 }
 
-.language-selector .flag:hover {
-    opacity: 0.7; /* Add hover effect */
+.language-option:hover {
+    color: #c5efcb; /* Light Mint color on hover */
 }
+
+.language-option.active {
+    font-weight: bold;
+    color: #fff;
+}
+
+.language-option.active::after {
+    content: '';
+    position: absolute;
+    left: 0;
+    right: 0;
+    bottom: -3px;
+    height: 2px;
+    background-color: #fff; /* White underline for the active language */
+    width: 100%;
+}
+
+/* Responsive Adjustments */
+@media (max-width: 768px) {
+    .nav-container {
+        justify-content: center; /* Center the items on smaller screens */
+    }
+
+    .language-option {
+        margin: 0 0.5em;
+    }
+}
+
 
 /* Main Section */
 main {
