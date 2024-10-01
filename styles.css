@@ -11,6 +11,16 @@ body {
     color: #020402; /* Dark Charcoal as the default text color */
 }
 
+.flag {
+    text-decoration: none; /* Default to no underline */
+    padding-bottom: 2px; /* Adds space for underline */
+    margin-right: 10px; /* Spacing between flags */
+}
+
+.flag.active {
+    border-bottom: 2px solid white; /* Adds the white underline to the active flag */
+}
+
 /* Header Section */
 header {
     background: transparent; /* Let the gradient show through */
