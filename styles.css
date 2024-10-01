@@ -32,7 +32,7 @@ body {
     background-color: white;
     transform: scaleX(0); /* Start with no underline */
     transform-origin: bottom right; /* Start from the right */
-    transition: transform 0.3s ease-out; /* Animation for the line */
+    transition: transform 0.6s cubic-bezier(0.68, -0.55, 0.27, 1.55); /* Bouncy animation */
 }
 
 /* When the flag is active, the underline grows from right to left */
@@ -45,7 +45,6 @@ body {
 .flag:hover {
     color: #f0f0f0; /* Slightly lighter color on hover */
 }
-
 
 /* Header Section */
 header {
