@@ -37,6 +37,17 @@ header {
     z-index: 2;
     color: #ffffff; /* White text */
 }
+/* Centered globe image in the starry night section */
+.centered-image {
+    position: absolute;
+    z-index: 2;
+    width: 200px;
+    height: auto;
+    background-image: url('images/globe.png');
+    background-size: contain;
+    background-repeat: no-repeat;
+    background-position: center;
+}
 
 /* Starry background */
 .starry-background {
