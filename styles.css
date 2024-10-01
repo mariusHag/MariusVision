@@ -151,6 +151,9 @@ body {
     background-color: #fff; /* White underline for the active language */
     width: 100%;
 }
+    .language-option {
+        margin: 0 0.5em;
+    }
 
 /* Responsive Adjustments */
 @media (max-width: 768px) {
