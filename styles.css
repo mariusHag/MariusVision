@@ -5,16 +5,15 @@ body {
     font-family: Arial, sans-serif;
     line-height: 1.6;
     margin: 0;
-    height: 200vh;
+    min-height: 100vh; /* Ensure it covers the full viewport */
     background: linear-gradient(to bottom, #001533, #0b2049 60%, #1b375c 80%, #2b4a71 100%);
-    background-color: #1e1e1e; /* Dark grey at the bottom */
     padding: 0;
     color: #020402; /* Dark Charcoal as the default text color */
 }
 
 /* Header Section */
 header {
-    background: #020402; /* Dark Charcoal background for the header */
+    background: transparent; /* Let the gradient show through */
     color: #c5efcb; /* Light Mint text color in the header */
     padding: 1em 0;
     text-align: center;
@@ -77,12 +76,6 @@ header {
     overflow: hidden; /* Ensures tracks that move outside are hidden */
     width: 100vw; /* Full viewport width */
     height: 100vh; /* Full viewport height */
-}
-
-.track {
-    position: absolute; /* Allows for free positioning */
-    width: 300px; /* Same as desiredTrackWidth */
-    height: auto; /* Maintain aspect ratio */
 }
 
 /* Navigation Bar Container */
@@ -159,14 +152,14 @@ nav a:hover {
 /* Main Section */
 main {
     padding: 1em;
-    background-color: #c5efcb; /* Light Mint background for the main content */
+    background: transparent; /* Ensure the gradient shows */
 }
 
 /* Form Section */
 section {
     margin-bottom: 1em;
     padding-bottom: 5em; /* Add padding to prevent the footer from covering the form */
-    background-color: #c5efcb; /* Light Mint background for sections */
+    background: transparent; /* Let the gradient pass through */
 }
 
 /* Form Grouping */
@@ -211,7 +204,7 @@ button:hover {
 
 /* Footer Section */
 footer {
-    background: #020402; /* Dark Charcoal background for the footer */
+    background: transparent; /* Let the gradient pass through */
     color: #c5efcb; /* Light Mint text color in the footer */
     text-align: center;
     padding: 1em 0;
