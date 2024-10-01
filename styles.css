@@ -6,7 +6,7 @@ body {
     line-height: 1.6;
     margin: 0;
     min-height: 100vh; /* Ensure it covers the full viewport */
-    background: linear-gradient(to bottom, #001533, #0b2049 60%, #1b375c 80%, #2b4a71 100%);
+    background: linear-gradient(to bottom, #1f243a, #1f243a 55%, #1c517d 65%, #1c517d 100%);
     padding: 0;
     color: #020402; /* Dark Charcoal as the default text color */
 }
@@ -37,16 +37,12 @@ header {
     z-index: 2;
     color: #ffffff; /* White text */
 }
-/* Centered globe image in the starry night section */
+/* Centered image (globe.png) */
 .centered-image {
     position: absolute;
     z-index: 2;
-    width: 200px;
+    width: 200px; /* Adjust the size of the image as needed */
     height: auto;
-    background-image: url('images/globe.png');
-    background-size: contain;
-    background-repeat: no-repeat;
-    background-position: center;
 }
 
 /* Starry background */
