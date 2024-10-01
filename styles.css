@@ -7,7 +7,7 @@ body {
     margin: 0;
     height: 200vh;
     background: linear-gradient(to bottom, #001533, #0b2049 60%, #1b375c 80%, #2b4a71 100%);
-    background-color: #1e1e1e; /* Fallback dark grey */
+    background-color: #1e1e1e; /* Dark grey at the bottom */
     padding: 0;
     color: #020402; /* Dark Charcoal as the default text color */
 }
@@ -20,7 +20,7 @@ header {
     text-align: center;
 }
 
-/* The container for the starry night section */
+/* Starry Night Section */
 .starry-night-section {
     position: relative;
     width: 100vw;
@@ -29,7 +29,6 @@ header {
     display: flex;
     justify-content: center;
     align-items: center;
-    background: transparent; /* Ensures it doesn't override the body background */
 }
 
 /* Centered text in the starry night section */
@@ -72,11 +71,18 @@ header {
     }
 }
 
+/* Track Container */
 #track-container {
     position: relative;
     overflow: hidden; /* Ensures tracks that move outside are hidden */
     width: 100vw; /* Full viewport width */
     height: 100vh; /* Full viewport height */
+}
+
+.track {
+    position: absolute; /* Allows for free positioning */
+    width: 300px; /* Same as desiredTrackWidth */
+    height: auto; /* Maintain aspect ratio */
 }
 
 /* Navigation Bar Container */
@@ -91,17 +97,116 @@ header {
     background-color: #c6dec6; /* Light Sage background for the nav bar */
 }
 
+/* Navigation Links */
+nav {
+    display: flex;
+    flex-grow: 1; /* Allow the nav section to grow and fill the space */
+}
+
+nav a {
+    color: #a9c5a0; /* Soft Green for the navigation text */
+    text-decoration: none;
+    padding: 1em 2em; /* Increase padding to match the height of the language selector */
+    font-family: 'Times New Roman', serif; /* Classy font for the text */
+    font-weight: bold;
+    text-align: center;
+    display: flex;
+    align-items: center; /* Center the text vertically */
+    justify-content: center; /* Center the text horizontally */
+    height: 100%;
+    background-color: #c6dec6; /* Light Sage background for each link */
+}
+
+nav a:hover {
+    background: #758173; /* Slate Gray background on hover */
+    color: #c5efcb; /* Light Mint text color on hover */
+}
+
+/* Language Section */
+.language-container {
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    padding: 0 1em;
+    border-left: 2px solid #a9c5a0; /* Soft Green vertical line */
+}
+
+.language-container .language-label {
+    font-size: 0.75em; /* Tiny text for the "Language" label */
+    color: #a9c5a0; /* Soft Green color for the label */
+    margin-bottom: 5px;
+}
+
+.language-selector {
+    display: flex;
+    justify-content: center; /* Center the flags horizontally */
+    height: 100%; /* Ensure the flags container matches the height of the navigation links */
+    align-items: center;
+}
+
+.language-selector .flag {
+    width: 30px; /* Set a fixed width for flags */
+    height: auto; /* Maintain aspect ratio */
+    margin: 0 0.5em; /* Add space between flags */
+    cursor: pointer;
+    transition: opacity 0.3s;
+}
+
+.language-selector .flag:hover {
+    opacity: 0.7; /* Add hover effect */
+}
+
 /* Main Section */
 main {
     padding: 1em;
-    background-color: transparent; /* Remove background here if not necessary */
+    background-color: #c5efcb; /* Light Mint background for the main content */
 }
 
 /* Form Section */
 section {
     margin-bottom: 1em;
     padding-bottom: 5em; /* Add padding to prevent the footer from covering the form */
-    background-color: transparent; /* Remove background here if not necessary */
+    background-color: #c5efcb; /* Light Mint background for sections */
+}
+
+/* Form Grouping */
+.form-group {
+    margin-bottom: 1em;
+}
+
+/* Form Container */
+form {
+    max-width: 600px; /* Limit the form width on larger screens */
+    margin: 0 auto; /* Center the form horizontally */
+}
+
+/* Form Elements */
+input, textarea, button {
+    display: block;
+    width: 100%;
+    padding: 0.5em;
+    margin-top: 0.5em;
+    border: 1px solid #020402; /* Dark Charcoal borders */
+    border-radius: 5px;
+    box-sizing: border-box;
+}
+
+/* Submit Button */
+button {
+    display: block;
+    width: 100%;
+    padding: 0.5em;
+    margin-top: 1em;
+    background-color: #758173; /* Slate Gray background for the button */
+    color: #c5efcb; /* Light Mint text color for the button */
+    border: none;
+    border-radius: 5px;
+    cursor: pointer;
+}
+
+button:hover {
+    background-color: #a9c5a0; /* Soft Green background on hover */
+    color: #020402; /* Dark Charcoal text color on hover */
 }
 
 /* Footer Section */
