@@ -72,13 +72,7 @@ header {
     z-index: 2;
     color: #ffffff; /* White text */
 }
-/* Centered image (globe.png) */
-.centered-image {
-    position: absolute;
-    z-index: 2;
-    width: 200px; /* Adjust the size of the image as needed */
-    height: auto;
-}
+
 
 /* Starry background */
 .starry-background {
@@ -133,20 +127,7 @@ body {
 
 
 
-/* Container for the globe icon */
-.globe-container {
-    display: flex;
-    align-items: center; /* Center vertically */
-    justify-content: center; /* Center horizontally if needed */
-    height: 100px; /* Set a specific height for the container */
-}
 
-/* Globe Icon */
-.globe-icon img {
-    width: 25px;
-    height: auto;
-    margin-right: 1.5em;
-}
 
 /* Language Selector Styles */
 .language-selector {
@@ -185,16 +166,23 @@ body {
 /* Navigation Bar Styles */
 .nav-container {
     display: flex;
-    align-items: center;
-    justify-content: flex-end;
+    align-items: center; /* Center items vertically */
+    justify-content: flex-end; /* Align to the right */
     background-color: transparent;
     padding: 1em 2em;
     position: absolute;
     width: 100%;
     z-index: 10;
     box-sizing: border-box; /* Ensure padding is included in width */
-    border-bottom: none; /* Remove the green line (border-bottom) */
 }
+
+/* Globe Icon */
+.globe-icon img {
+    width: 25px;
+    height: auto;
+    margin-right: 1em; /* Space between globe and text */
+}
+
 
 /* Mobile and Laptop Adjustments */
 @media (max-width: 768px) {
