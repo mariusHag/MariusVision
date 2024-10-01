@@ -90,6 +90,11 @@ header {
     width: 300px; /* Same as desiredTrackWidth */
     height: auto; /* Maintain aspect ratio */
 }
+/* General Styles */
+body {
+    margin: 0;
+    font-family: Arial, sans-serif;
+}
 
 /* Navigation Bar Styles */
 .nav-container {
@@ -102,6 +107,7 @@ header {
     width: 100%;
     z-index: 10;
     border-bottom: 2px solid #a9c5a0;
+    box-sizing: border-box; /* Ensure padding is included in width */
 }
 
 /* Globe Icon */
@@ -120,7 +126,7 @@ header {
 .language-option {
     color: #fff;
     text-decoration: none;
-    margin: 0 1.5em;
+    margin: 0 0.8em; /* Reduced margin to avoid cropping */
     font-size: 1em;
     position: relative;
     font-weight: normal;
@@ -154,7 +160,7 @@ header {
     }
 
     .language-option {
-        margin: 0 0.5em;
+        margin: 0 0.5em; /* Adjust margin for mobile */
     }
 }
 
@@ -162,10 +168,11 @@ header {
     /* For larger screens, position the buttons at the top-right */
     .nav-container {
         justify-content: flex-end;
+        padding-right: 3em; /* Added extra padding to prevent cutting */
     }
 
     .language-option {
-        margin: 0 1em;
+        margin: 0 0.8em; /* Adjust margin for desktop */
     }
 }
 
@@ -232,16 +239,4 @@ footer {
     width: 100%;
     position: relative; /* Changed to relative to avoid covering content */
     bottom: 0;
-}
-
-/* Responsive Design */
-@media (max-width: 768px) {
-    .nav-container {
-        flex-direction: column;
-    }
-    
-    form {
-        max-width: 100%; /* Allow form to be full-width on smaller screens */
-        padding: 0 1em; /* Add some padding on mobile for better spacing */
-    }
 }
