@@ -40,6 +40,7 @@ function updateActiveFlag(lang) {
 }
 
 
+
 const translations = {
     en: {
         languageLabel: "Language",
@@ -63,29 +64,3 @@ const translations = {
         // Add all other translations here...
     }
 };
-
-document.addEventListener("DOMContentLoaded", function() {
-    // Check if language is stored in localStorage, default to 'en'
-    const lang = localStorage.getItem("lang") || "en";
-    setLanguage(lang); // Set initial language based on stored preference or default
-
-    // Add event listeners to the flag buttons
-    document.querySelectorAll(".flag").forEach(flag => {
-        flag.addEventListener("click", function(event) {
-            event.preventDefault(); // Prevent the default anchor behavior
-            const selectedLang = this.dataset.lang;
-            localStorage.setItem("lang", selectedLang); // Store the selected language
-            setLanguage(selectedLang); // Change the language
-        });
-    });
-});
-
-function setLanguage(lang) {
-    const elements = document.querySelectorAll("[data-translate]");
-    elements.forEach(element => {
-        const key = element.getAttribute("data-translate");
-        if (translations[lang] && translations[lang][key]) {
-            element.textContent = translations[lang][key];
-        }
-    });
-}
