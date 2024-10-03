@@ -32,9 +32,19 @@
     <!-- Homepage Content -->
     <main>
         
-        <div class="full-height-container">
-            <img src="images/imgg.svg" alt="Description of the image" class="container-image">
-        </div>
+<div class="full-height-container">
+    <picture>
+        <!-- Spanish Image -->
+        <source srcset="images/spanish.svg" type="image/svg+xml" media="[lang=es]">
+
+        <!-- Danish Image -->
+        <source srcset="images/danish.svg" type="image/svg+xml" media="[lang=da]">
+
+        <!-- English Image (Default) -->
+        <img src="images/english.svg" alt="Description of the image" class="container-image">
+    </picture>
+</div>
+
 
 
 <!-- Starry Night Section (Replace this before the tracks container) -->
