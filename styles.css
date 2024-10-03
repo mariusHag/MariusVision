@@ -17,6 +17,11 @@ body {
     background-color: transparent; /* Change this to any color if needed */
     position: relative; /* Positioning context for absolute positioning if needed */
 }
+.container-image {
+    max-width: 100%; /* Make the image responsive */
+    max-height: 100%; /* Ensure the image does not exceed the height of the container */
+    object-fit: cover; /* Maintain aspect ratio and cover the entire area */
+}
 
 
 /* Navigation Bar Styles */
