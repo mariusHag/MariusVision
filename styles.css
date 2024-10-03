@@ -245,7 +245,6 @@ header {
 
 /* Main Section */
 main {
-    padding: 1em;
     background: transparent; /* Ensure the gradient shows */
 }
 
