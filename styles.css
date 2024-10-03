@@ -153,7 +153,6 @@ body {
 header {
     background: transparent; /* Let the gradient show through */
     color: #c5efcb; /* Light Mint text color in the header */
-    padding: 1em 0;
     text-align: center;
 }
 
