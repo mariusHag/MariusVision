@@ -27,8 +27,7 @@ body {
 /* Image settings */
 .container-image {
     width: 100%; /* Default to full width */
-    height: auto; /* Maintain aspect ratio */
-    max-height: 60vh; /* Maximum height is 60% of the viewport */
+    height: 100%; /* Ensure the image fills the height of the container */
     object-fit: cover; /* Cover the area while maintaining aspect ratio */
     position: absolute; /* Positioning relative to the container */
     bottom: 0; /* Align the image to the bottom of the container */
@@ -40,6 +39,7 @@ body {
 @media (max-width: 768px) { /* Adjust this breakpoint as needed */
     .container-image {
         width: 300%; /* Make it 3 times the width to crop */
+        height: auto; /* Maintain aspect ratio for height */
         left: 50%; /* Center the image horizontally */
         transform: translateX(-50%); /* Adjust centering */
         bottom: 0; /* Keep the image aligned to the bottom */
