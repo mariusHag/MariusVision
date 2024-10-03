@@ -65,14 +65,6 @@ header {
     align-items: center;
 }
 
- Centered text in the starry night section */
-.centered-text {
-    position: absolute;
-    font-size: 3rem;
-    z-index: 2;
-    color: #ffffff; /* White text */
-}
-
 
 /* Starry background */
 .starry-background {
@@ -179,9 +171,12 @@ body {
 /* Globe Icon */
 .globe-icon img {
     width: 25px;
-    height: auto;
+    height: 25px; /* Set a fixed height to match the width */
     margin-right: 1em; /* Space between globe and text */
+    vertical-align: middle; /* Ensures the icon aligns with the text */
+    display: inline-block;
 }
+
 
 
 /* Mobile and Laptop Adjustments */
