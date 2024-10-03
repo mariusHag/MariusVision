@@ -24,7 +24,15 @@ function setLanguage(lang) {
             element.textContent = translations[lang][key];
         }
     });
+
+    // Change the image source based on the selected language
+    const image = document.querySelector(".container-image");
+    if (image) {
+        const imagePath = `images/${lang}.svg`; // Assuming images are named after the language code
+        image.src = imagePath;
+    }
 }
+
 
 function updateActiveFlag(lang) {
     // Remove the 'active' class from all flags
