@@ -220,7 +220,7 @@ header {
     /* For mobile view, center the language buttons */
     .nav-container {
         justify-content: center;
-        padding-top: 0.2em; /* Move navbar higher on mobile */
+        padding-top: 1.5em; /* Move navbar higher on mobile */
         padding-bottom: 0.5em; /* Adjust bottom padding for consistency */
     }
 
@@ -233,6 +233,7 @@ header {
     /* For larger screens, position the buttons at the top-right */
     .nav-container {
         justify-content: flex-end;
+          padding-top: 1.5em;
         padding-right: 3em; /* Added extra padding to prevent cutting */
     }
 
