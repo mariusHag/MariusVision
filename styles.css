@@ -16,7 +16,7 @@ body {
     align-items: center; /* Center items vertically */
     justify-content: flex-end; /* Align to the right */
     background-color: transparent;
-    padding: 1em 2em;
+    padding: 0.5em 2em;
     position: absolute;
     width: 100%;
     z-index: 10;
