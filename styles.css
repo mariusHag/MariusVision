@@ -6,7 +6,8 @@ body {
     line-height: 1.6;
     margin: 0;
     min-height: 100vh; /* Ensure it covers the full viewport */
-    background: linear-gradient(to bottom, #1f243a, #1f243a 55%, #1c517d 65%, #1c517d 100%);
+    background-color:  #1f243a;
+    /*background: linear-gradient(to bottom, #1f243a, #1f243a 55%, #1c517d 65%, #1c517d 100%);*/
     padding: 0;
     color: #020402; /* Dark Charcoal as the default text color */
 }
