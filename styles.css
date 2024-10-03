@@ -10,6 +10,68 @@ body {
     padding: 0;
     color: #020402; /* Dark Charcoal as the default text color */
 }
+/* Navigation Bar Styles */
+.nav-container {
+    display: flex;
+    align-items: center; /* Center items vertically */
+    justify-content: flex-end; /* Align to the right */
+    background-color: transparent;
+    padding: 1em 2em;
+    position: absolute;
+    width: 100%;
+    z-index: 10;
+    box-sizing: border-box; /* Ensure padding is included in width */
+}
+
+/* Globe Icon */
+.globe-icon {
+    display: flex; /* Use flexbox to center items */
+    align-items: center; /* Center the globe vertically with text */
+}
+
+.globe-icon img {
+    width: 25px;
+    height: 25px; /* Set a fixed height to match the width */
+    margin-right: 0.5em; /* Reduced margin for better alignment */
+}
+
+/* Language Selector Styles */
+.language-selector {
+    display: flex;
+    align-items: center; /* Center items vertically */
+}
+
+.language-option {
+    color: #fff;
+    text-decoration: none;
+    margin: 0 0.8em; /* Ensure there's space around options */
+    font-size: 1em;
+    position: relative;
+    font-weight: normal;
+    display: flex; /* Use flexbox for alignment */
+    align-items: center; /* Align text and underline properly */
+    padding-bottom: 3px; /* Space for underline */
+}
+
+.language-option:hover {
+    color: #c5efcb;
+}
+
+.language-option.active {
+    font-weight: bold;
+    color: #fff;
+}
+
+.language-option.active::after {
+    content: '';
+    position: absolute;
+    left: 0;
+    right: 0;
+    bottom: -3px; /* Adjust to line up with the globe icon */
+    height: 2px;
+    background-color: #fff;
+    width: 100%;
+}
 
 /* Ensure that all flag text is white */
 .flag {
@@ -111,72 +173,6 @@ header {
     width: 300px; /* Same as desiredTrackWidth */
     height: auto; /* Maintain aspect ratio */
 }
-/* General Styles */
-body {
-    margin: 0;
-    font-family: Arial, sans-serif;
-}
-
-
-
-
-
-/* Language Selector Styles */
-.language-selector {
-    display: flex;
-    align-items: center;
-}
-
-.language-option {
-    color: #fff;
-    text-decoration: none;
-    margin: 0 0.8em; /* Reduced margin to avoid cropping */
-    font-size: 1em;
-    position: relative;
-    font-weight: normal;
-}
-
-.language-option:hover {
-    color: #c5efcb;
-}
-
-.language-option.active {
-    font-weight: bold;
-    color: #fff;
-}
-
-.language-option.active::after {
-    content: '';
-    position: absolute;
-    left: 0;
-    right: 0;
-    bottom: -3px;
-    height: 2px;
-    background-color: #fff;
-    width: 100%;
-}
-/* Navigation Bar Styles */
-.nav-container {
-    display: flex;
-    align-items: center; /* Center items vertically */
-    justify-content: flex-end; /* Align to the right */
-    background-color: transparent;
-    padding: 1em 2em;
-    position: absolute;
-    width: 100%;
-    z-index: 10;
-    box-sizing: border-box; /* Ensure padding is included in width */
-}
-
-/* Globe Icon */
-.globe-icon img {
-    width: 25px;
-    height: 25px; /* Set a fixed height to match the width */
-    margin-right: 1em; /* Space between globe and text */
-    vertical-align: middle; /* Ensures the icon aligns with the text */
-    display: inline-block;
-}
-
 
 
 /* Mobile and Laptop Adjustments */
