@@ -13,15 +13,26 @@ body {
 }
 
 .full-height-container {
-    height: 100vh; /* 100% of the viewport height */
-    background-color: transparent; /* Change this to any color if needed */
-    position: relative; /* Positioning context for absolute positioning if needed */
+    height: 100vh; /* Full height of the viewport */
+    display: flex; /* Use flexbox for centering */
+    justify-content: center; /* Center the image horizontally */
+    align-items: flex-end; /* Align the image at the bottom */
+    overflow: hidden; /* Hide overflow to prevent scrolling */
+    background-color: transparent; /* Optional background color */
+    position: relative; /* For positioning child elements */
 }
+
 .container-image {
-    max-width: 100%; /* Make the image responsive */
-    max-height: 100%; /* Ensure the image does not exceed the height of the container */
-    object-fit: cover; /* Maintain aspect ratio and cover the entire area */
+    width: 100vw; /* Full width of the viewport */
+    height: auto; /* Maintain aspect ratio */
+    max-height: 60vh; /* Maximum height is 60% of the viewport */
+    object-fit: cover; /* Cover the entire area while maintaining aspect ratio */
+    position: absolute; /* Positioning relative to the container */
+    bottom: 0; /* Align the image to the bottom of the container */
+    left: 50%; /* Center the image horizontally */
+    transform: translateX(-50%); /* Adjust for centering */
 }
+
 
 
 /* Navigation Bar Styles */
