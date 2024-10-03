@@ -10,6 +10,14 @@ body {
     padding: 0;
     color: #020402; /* Dark Charcoal as the default text color */
 }
+
+.full-height-container {
+    height: 100vh; /* 100% of the viewport height */
+    background-color: transparent; /* Change this to any color if needed */
+    position: relative; /* Positioning context for absolute positioning if needed */
+}
+
+
 /* Navigation Bar Styles */
 .nav-container {
     display: flex;
