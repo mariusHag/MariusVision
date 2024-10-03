@@ -28,10 +28,27 @@ function setLanguage(lang) {
     // Change the image source based on the selected language
     const image = document.querySelector(".container-image");
     if (image) {
-        const imagePath = `images/${lang}.svg`; // Assuming images are named after the language code
+        let imagePath = '';
+
+        // Map the language code to the corresponding image file
+        switch (lang) {
+            case 'en':
+                imagePath = 'images/english.svg';
+                break;
+            case 'es':
+                imagePath = 'images/spanish.svg';
+                break;
+            case 'da':
+                imagePath = 'images/danish.svg';
+                break;
+            default:
+                imagePath = 'images/english.svg'; // Fallback to English if unknown
+        }
+
         image.src = imagePath;
     }
 }
+
 
 
 function updateActiveFlag(lang) {
