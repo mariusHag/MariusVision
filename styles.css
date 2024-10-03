@@ -64,6 +64,7 @@ body {
     box-sizing: border-box; /* Ensure padding is included in width */
 }
 
+/*
 /* Globe Icon */
 .globe-icon {
     display: flex; /* Use flexbox to center items */
@@ -75,6 +76,7 @@ body {
     height: 25px; /* Set a fixed height to match the width */
     margin-right: 0.5em; /* Reduced margin for better alignment */
 }
+*/
 
 /* Language Selector Styles */
 .language-selector {
