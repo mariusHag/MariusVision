@@ -85,7 +85,7 @@ const translations = {
     },
     da: {
         languageLabel: "Sprog",
-        homeTitle: "Min Portefølje",
+        homeTitle: "Marius-Vision",
         homeDescription: "Forvandler kreative ideer til fantastiske billeder.",
         readMoreButton: "Læs Mere",
         ScrollDown: "Scroll ned ↓",
