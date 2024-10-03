@@ -69,16 +69,18 @@ function updateActiveFlag(lang) {
 const translations = {
     en: {
         languageLabel: "Language",
-        homeTitle: "My Portfolio",
+        homeTitle: "Marius-Vision",
         homeDescription: "At Marius Vision, I’m dedicated to turning your creative ideas into stunning still images.",
         readMoreButton: "Read More",
+        ScrollDown: "Scroll down ↓",
         // Add all other translations here...
     },
     es: {
         languageLabel: "Idioma",
-        homeTitle: "Mi Portafolio",
+        homeTitle: "Marius-Vision",
         homeDescription: "Transformando ideas creativas en imágenes impresionantes.",
         readMoreButton: "Leer Más",
+        ScrollDown: "Desliza hacia abajo ↓",
         // Add all other translations here...
     },
     da: {
@@ -86,6 +88,7 @@ const translations = {
         homeTitle: "Min Portefølje",
         homeDescription: "Forvandler kreative ideer til fantastiske billeder.",
         readMoreButton: "Læs Mere",
+        ScrollDown: "Scroll ned ↓",
         // Add all other translations here...
     }
 };
