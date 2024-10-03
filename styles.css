@@ -179,7 +179,7 @@ header {
     /* For mobile view, center the language buttons */
     .nav-container {
         justify-content: center;
-        padding-top: 0.5em; /* Move navbar higher on mobile */
+        padding-top: 0.2em; /* Move navbar higher on mobile */
         padding-bottom: 0.5em; /* Adjust bottom padding for consistency */
     }
 
