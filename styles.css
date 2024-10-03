@@ -14,6 +14,7 @@ body {
 
 .full-height-container {
     height: 100vh; /* Full height of the viewport */
+    width: 100vw; /* Full width of the viewport */
     display: flex; /* Use flexbox for layout */
     justify-content: center; /* Center the image horizontally */
     align-items: flex-end; /* Align the image at the bottom of the container */
@@ -29,17 +30,20 @@ body {
     object-fit: cover; /* Cover the area while maintaining aspect ratio */
     position: absolute; /* Positioning relative to the container */
     bottom: 0; /* Align the image to the bottom of the container */
+    left: 50%; /* Center the image horizontally */
+    transform: translateX(-50%); /* Adjust centering */
 }
 
 /* Mobile styles */
 @media (max-width: 768px) { /* Adjust this breakpoint as needed */
     .container-image {
         width: 300%; /* Make it 3 times the width to crop */
-        left: 0; /* Align to the left */
-        transform: none; /* Remove centering transform */
+        left: 50%; /* Center the image horizontally */
+        transform: translateX(-50%); /* Adjust centering */
         bottom: 0; /* Keep the image aligned to the bottom */
     }
 }
+
 
 
 
