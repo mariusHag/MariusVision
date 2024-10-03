@@ -1,24 +1,21 @@
+
 /* General Styles */
-/* Add this to the beginning of your CSS file */
-* {
-    box-sizing: border-box; /* Apply border-box model to all elements */
-}
 body {
-    overflow-x: hidden;
+    overflow-x: hidden; /* Prevents horizontal overflow */
+    margin: 0; /* Ensure no margin on body */
+    padding: 0; /* No padding */
     width: 100%;
     font-family: Arial, sans-serif;
     line-height: 1.6;
-    margin: 0;
     min-height: 100vh; /* Ensure it covers the full viewport */
-    background-color:  #1f243a;
-    /*background: linear-gradient(to bottom, #1f243a, #1f243a 55%, #1c517d 65%, #1c517d 100%);*/
-    padding: 0;
+    background-color: #1f243a; /* Background color */
     color: #020402; /* Dark Charcoal as the default text color */
 }
 
+/* Full-height container */
 .full-height-container {
     height: 100vh; /* Full height of the viewport */
-    width: 100%; /* Full width of the viewport */
+    width: 100%; /* Ensure it spans the full width */
     display: flex; /* Use flexbox for layout */
     justify-content: center; /* Center the image horizontally */
     align-items: flex-end; /* Align the image at the bottom of the container */
@@ -27,6 +24,7 @@ body {
     position: relative; /* For absolute positioning of the image */
 }
 
+/* Image settings */
 .container-image {
     width: 100%; /* Default to full width */
     height: auto; /* Maintain aspect ratio */
@@ -47,6 +45,7 @@ body {
         bottom: 0; /* Keep the image aligned to the bottom */
     }
 }
+
 
 
 
