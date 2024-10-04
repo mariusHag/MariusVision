@@ -14,16 +14,17 @@ body {
 
 /* Full-height container */
 .full-height-container {
-    height: auto; /* Remove fixed 100vh to avoid cropping */
-    width: 100%; /* Ensure it spans the full width */
-    display: flex; /* Use flexbox for layout */
-    justify-content: center; /* Center the image horizontally */
-    align-items: flex-end; /* Align the image at the bottom of the container */
-    overflow: hidden; /* Hide any overflow */
-    background-color: transparent; /* Optional background color */
-    position: relative; /* For absolute positioning of the image */
-    min-height: 100%; /* Ensure it doesn’t shrink */
+    height: calc(var(--vh, 1vh) * 100); /* Dynamically calculate height based on real viewport */
+    width: 100%;
+    display: flex;
+    justify-content: center;
+    align-items: flex-end;
+    overflow: hidden;
+    background-color: transparent;
+    position: relative;
+    min-height: 100%;
 }
+
 
 
 /* Fade-in animation */
