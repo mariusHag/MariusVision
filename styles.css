@@ -54,7 +54,7 @@ body {
 
     opacity: 0; /* Initially hidden */
     animation: fadeIn 1s ease-in forwards; /* Fades in over 1 second */
-    animation-delay: 2s; /* Starts after 2 seconds */
+    animation-delay: 5s; /* Starts after 5 seconds */
 }
 
 
