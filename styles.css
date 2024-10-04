@@ -13,8 +13,7 @@ body {
 }
 
 /* Full-height container */
-.full-height-container {
-    box-sizing: border-box;
+.full-height-container { 
     height: calc(var(--vh, 1vh) * 100); /* Dynamically calculate height based on real viewport */
     width: 100%;
     display: flex;
@@ -25,8 +24,8 @@ body {
     position: relative;
     min-height: 100%;
 }
+
 .intro-container {
-    box-sizing: border-box;
     height: calc(var(--vh, 1vh) * 100); /* Dynamically calculate height based on real viewport */
     width: 100%;
     display: flex;
@@ -74,14 +73,16 @@ body {
 
 /* Image settings */
 .container-image {
-    width: 100%; /* Default to full width */
-    height: 100%; /* Ensure the image fills the height of the container */
-    object-fit: cover; /* Cover the area while maintaining aspect ratio */
-    position: absolute; /* Positioning relative to the container */
-    bottom: 0; /* Align the image to the bottom of the container */
-    left: 50%; /* Center the image horizontally */
-    transform: translateX(-50%); /* Adjust centering */
+    width: 101%; /* Slightly larger width to cover the gap */
+    height: 101%; /* Slightly larger height */
+    object-fit: cover;
+    position: absolute;
+    bottom: 0;
+    left: 50%;
+    transform: translateX(-50%);
+    overflow: hidden; /* Ensures no extra overflow shows */
 }
+
 
 /* Mobile styles */
 @media (max-width: 768px) { /* Adjust this breakpoint as needed */
