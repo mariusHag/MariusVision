@@ -24,6 +24,18 @@ body {
     position: relative;
     min-height: 100%;
 }
+.intro-container {
+    height: calc(var(--vh, 1vh) * 100); /* Dynamically calculate height based on real viewport */
+    width: 100%;
+    display: flex;
+    justify-content: center;
+    align-items: flex-end;
+    overflow: hidden;
+    background: linear-gradient(to bottom, #1f5382, #3896e8);
+    position: relative;
+    min-height: 100%;
+}
+
 
 
 
