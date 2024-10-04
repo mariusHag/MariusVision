@@ -17,16 +17,29 @@ document.addEventListener("DOMContentLoaded", function() {
 });
 
 document.addEventListener("DOMContentLoaded", function() {
+    let previousHeight = window.innerHeight;
+
     function setFullHeight() {
         const vh = window.innerHeight * 0.01;
         document.documentElement.style.setProperty('--vh', `${vh}px`);
     }
 
-    setFullHeight(); // Set height on load
+    // Set height on initial load
+    setFullHeight();
 
-    // Recalculate on window resize (in case address bar disappears when scrolling)
-    window.addEventListener('resize', setFullHeight);
+    // Only recalculate height if a true resize happens (e.g., turning the screen, or resizing the browser window)
+    window.addEventListener('resize', function() {
+        const currentHeight = window.innerHeight;
+
+        // Recalculate height only if the window height changes significantly
+        // Prevent recalculating during scroll-induced changes (e.g., address bar hiding in mobile browsers)
+        if (Math.abs(currentHeight - previousHeight) > 100) {
+            setFullHeight();
+            previousHeight = currentHeight; // Update the stored height
+        }
+    });
 });
+
 
 
 function setLanguage(lang) {
