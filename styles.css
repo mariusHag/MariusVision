@@ -193,50 +193,6 @@ header {
     text-align: center;
 }
 
-/* Starry Night Section 
-.starry-night-section {
-    position: relative;
-    width: 100vw;
-    height: 60vh;
-    overflow: hidden;
-    display: flex;
-    justify-content: center;
-    align-items: center;
-}
-
-
-/* Starry background */
-.starry-background {
-    position: absolute;
-    width: 100%;
-    height: 100%;
-    top: 0;
-    left: 0;
-    z-index: 1;
-}
-
-/* Individual stars */
-.star {
-    position: absolute;
-    background-image: url('images/star.png'); /* Assuming star.png is in the images folder */
-    background-size: cover;
-    opacity: 0;
-    animation: fade-in-out 4s infinite;
-}
-
-/* Star fade in and out animation */
-@keyframes fade-in-out {
-    0% {
-        opacity: 0;
-    }
-    50% {
-        opacity: 1;
-    }
-    100% {
-        opacity: 0;
-    }
-}
-
 /* Track Container */
 #track-container {
     position: relative;
