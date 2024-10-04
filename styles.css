@@ -25,6 +25,19 @@ body {
     min-height: 100%;
 }
 
+/* General Styles */
+body {
+    overflow-x: hidden;
+    margin: 0;
+    padding: 0;
+    width: 100%;
+    font-family: Arial, sans-serif;
+    line-height: 1.6;
+    min-height: 100vh;
+    background-color: #031231;
+    color: #020402;
+}
+
 /* Intro Container */
 .intro-container {
     display: flex;
@@ -33,19 +46,21 @@ body {
     align-items: center;
     padding: 20px;
     gap: 20px; /* Gap between elements */
+    width: 100%;
 }
 
 /* Image Box */
 .image-box {
     width: 100%;
-    max-width: 400px; /* Set max size for the image */
-    aspect-ratio: 1 / 1; /* Keep square aspect ratio */
+    max-width: 400px; /* Limit maximum width */
+    height: auto;
     display: flex;
     justify-content: center;
     align-items: center;
     background-color: #fff;
     box-shadow: 0 4px 6px rgba(0, 0, 0, 0.1); /* Image shadow */
     border-radius: 10px;
+    overflow: hidden; /* Ensures the image fits nicely inside the box */
     flex: 1; /* Make element flexible to fill available space */
 }
 
@@ -60,12 +75,12 @@ body {
 /* Text Box */
 .text-box {
     width: 100%;
-    max-width: 400px; /* Same size as image box */
-    aspect-ratio: 1 / 1; /* Ensure square aspect ratio */
+    max-width: 400px; /* Limit maximum width, same as image box */
+    padding: 20px;
     display: flex;
     justify-content: center;
     align-items: center;
-    background-color: rgba(255, 255, 255, 0.0); /* Transparent background */
+    background-color: rgba(255, 255, 255, 0); /* Transparent background */
     font-size: 16px;
     color: #ffffff; /* White text color */
     text-align: center;
@@ -82,8 +97,10 @@ body {
 
     .image-box, .text-box {
         max-width: 500px; /* Increase size on larger screens */
+        height: auto; /* Maintain aspect ratio */
     }
 }
+
 
 
 
