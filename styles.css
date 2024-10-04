@@ -32,6 +32,7 @@ body {
     justify-content: center;
     align-items: center;
     padding: 20px;
+    background: linear-gradient(to bottom, #1f5382, #3896e8);
     gap: 40px; /* Increase gap between elements */
 }
 
