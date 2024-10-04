@@ -16,6 +16,19 @@ document.addEventListener("DOMContentLoaded", function() {
     });
 });
 
+document.addEventListener("DOMContentLoaded", function() {
+    function setFullHeight() {
+        const vh = window.innerHeight * 0.01;
+        document.documentElement.style.setProperty('--vh', `${vh}px`);
+    }
+
+    setFullHeight(); // Set height on load
+
+    // Recalculate on window resize (in case address bar disappears when scrolling)
+    window.addEventListener('resize', setFullHeight);
+});
+
+
 function setLanguage(lang) {
     const elements = document.querySelectorAll("[data-translate]");
     elements.forEach(element => {
