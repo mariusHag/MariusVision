@@ -59,7 +59,7 @@ body {
     background-color: #fff; /* Background for text box */
     box-shadow: 0 4px 6px rgba(0, 0, 0, 0.1); /* Shadow for text box */
     border-radius: 10px; /* Rounded corners for text box */
-    position: absolute; /* Positioning to allow independent styling */
+    position: relative; /* Positioning to allow independent styling */
 }
 
 /* Image Styling */
