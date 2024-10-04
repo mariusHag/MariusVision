@@ -37,7 +37,32 @@ body {
     min-height: 100%;
 }
 
+.quadratic-element {
+    width: 100%; /* Initially full width for mobile */
+    max-width: 300px; /* Limit the max width to keep it quadratic (square) */
+    aspect-ratio: 1 / 1; /* This ensures the element stays square (1:1 aspect ratio) */
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    background-color: #fff; /* Background for the text box */
+    box-shadow: 0 4px 6px rgba(0, 0, 0, 0.1); /* Some shadow for a nice effect */
+    border-radius: 10px; /* Rounded corners for a smoother look */
+}
 
+.text-box {
+    padding: 10px;
+    font-size: 16px;
+    color: #031231;
+    text-align: center;
+}
+
+/* On larger screens, layout the image and text side by side */
+@media(min-width: 768px) {
+    .intro-container {
+        flex-direction: row; /* Horizontal layout */
+        justify-content: space-around; /* Space between image and text */
+    }
+}
 
 
 /* Fade-in animation */
