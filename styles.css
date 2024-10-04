@@ -25,79 +25,68 @@ body {
     min-height: 100%;
 }
 
-/* General Styles */
-body {
-    overflow-x: hidden;
-    margin: 0;
-    padding: 0;
-    width: 100%;
-    font-family: Arial, sans-serif;
-    line-height: 1.6;
-    min-height: 100vh;
-    background-color: #031231;
-    color: #020402;
-}
 
 /* Intro Container */
 .intro-container {
     display: flex;
-    flex-direction: column; /* Stack on mobile */
+    flex-direction: column; /* Stacks on mobile */
     justify-content: center;
     align-items: center;
     padding: 20px;
-    gap: 20px; /* Gap between elements */
+    gap: 20px;
     width: 100%;
+    min-height: 100vh;
+    background: linear-gradient(to bottom, #1f5382, #3896e8); /* Gradient background */
 }
 
 /* Image Box */
 .image-box {
+    flex: 1;
     width: 100%;
-    max-width: 400px; /* Limit maximum width */
-    height: auto;
+    max-width: 400px; /* Maximum width constraint */
     display: flex;
     justify-content: center;
     align-items: center;
     background-color: #fff;
     box-shadow: 0 4px 6px rgba(0, 0, 0, 0.1); /* Image shadow */
     border-radius: 10px;
-    overflow: hidden; /* Ensures the image fits nicely inside the box */
-    flex: 1; /* Make element flexible to fill available space */
+    overflow: hidden;
 }
 
 /* Image Styling */
 .image-box img {
     width: 100%;
     height: 100%;
-    object-fit: cover; /* Ensure the image covers the container */
+    object-fit: cover; /* Ensures the image covers the container */
     border-radius: 10px;
 }
 
 /* Text Box */
 .text-box {
+    flex: 1;
     width: 100%;
-    max-width: 400px; /* Limit maximum width, same as image box */
+    max-width: 400px; /* Matches the image size */
     padding: 20px;
     display: flex;
     justify-content: center;
     align-items: center;
-    background-color: rgba(255, 255, 255, 0); /* Transparent background */
+    background-color: transparent; /* Transparent text box */
     font-size: 16px;
-    color: #ffffff; /* White text color */
+    color: #ffffff; /* White text */
     text-align: center;
-    flex: 1; /* Flex to make it equal height with the image box */
 }
 
 /* Media Query for Larger Screens */
 @media (min-width: 768px) {
     .intro-container {
-        flex-direction: row; /* Horizontal layout on larger screens */
+        flex-direction: row; /* Align elements horizontally on larger screens */
         justify-content: space-between;
-        gap: 40px; /* Space between the elements */
+        gap: 40px; /* Increase gap on larger screens */
     }
 
     .image-box, .text-box {
         max-width: 500px; /* Increase size on larger screens */
-        height: auto; /* Maintain aspect ratio */
+        height: auto;
     }
 }
 
