@@ -23,6 +23,22 @@ body {
     background-color: transparent; /* Optional background color */
     position: relative; /* For absolute positioning of the image */
 }
+/* Text at the bottom of the full-height container */
+.full-height-container .bottom-text {
+    position: absolute;
+    bottom: 20px; /* Adjust the distance from the bottom */
+    left: 50%;
+    transform: translateX(-50%); /* Center the text horizontally */
+    color: white; /* Ensure the text is visible (adjust to fit your design) */
+    font-size: 1.2em; /* Adjust font size as needed */
+    text-align: center;
+    padding: 10px;
+    background-color: rgba(0, 0, 0, 0.5); /* Optional: Add a semi-transparent background */
+    width: 90%; /* Optional: Adjust the width to control text wrapping */
+    max-width: 600px; /* Optional: Limit the max width */
+    border-radius: 5px; /* Optional: Rounded corners */
+}
+
 
 /* Image settings */
 .container-image {
