@@ -14,7 +14,7 @@ body {
 
 /* Full-height container */
 .full-height-container {
-    height: 100vh; /* Full height of the viewport */
+    height: calc(100vh - env(safe-area-inset-bottom)); /* Adjust for mobile viewport height */
     width: 100%; /* Ensure it spans the full width */
     display: flex; /* Use flexbox for layout */
     justify-content: center; /* Center the image horizontally */
@@ -22,7 +22,9 @@ body {
     overflow: hidden; /* Hide any overflow */
     background-color: transparent; /* Optional background color */
     position: relative; /* For absolute positioning of the image */
+    min-height: 100%; /* Ensure it doesn’t shrink */
 }
+
 /* Fade-in animation */
 @keyframes fadeIn {
     from {
