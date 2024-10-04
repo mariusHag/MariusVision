@@ -25,42 +25,56 @@ body {
     min-height: 100%;
 }
 
+/* Intro Container */
 .intro-container {
-    height: calc(var(--vh, 1vh) * 100); /* Dynamically calculate height based on real viewport */
-    width: 100%;
     display: flex;
+    flex-direction: column; /* Stack items on mobile */
     justify-content: center;
-    align-items: flex-end;
-    overflow: hidden;
-    background: linear-gradient(to bottom, #1f5382, #3896e8);
-    position: relative;
-    min-height: 100%;
+    align-items: center;
+    padding: 20px;
+    gap: 40px; /* Increase gap between elements */
 }
 
+/* Quadratic Elements */
 .quadratic-element {
-    width: 100%; /* Initially full width for mobile */
-    max-width: 300px; /* Limit the max width to keep it quadratic (square) */
-    aspect-ratio: 1 / 1; /* This ensures the element stays square (1:1 aspect ratio) */
+    width: 100%;
+    max-width: 400px; /* Larger width for the squares */
+    aspect-ratio: 1 / 1; /* Ensure square aspect ratio */
     display: flex;
     justify-content: center;
     align-items: center;
-    background-color: #fff; /* Background for the text box */
-    box-shadow: 0 4px 6px rgba(0, 0, 0, 0.1); /* Some shadow for a nice effect */
-    border-radius: 10px; /* Rounded corners for a smoother look */
+    background-color: #fff;
+    box-shadow: 0 4px 6px rgba(0, 0, 0, 0.1);
+    border-radius: 10px;
+    margin: 10px;
 }
 
+/* Text Box */
 .text-box {
-    padding: 10px;
+    padding: 20px; /* Increased padding for more space */
     font-size: 16px;
     color: #031231;
     text-align: center;
 }
 
-/* On larger screens, layout the image and text side by side */
-@media(min-width: 768px) {
+/* Image Styling */
+.quadratic-element img {
+    width: 100%;
+    height: 100%;
+    object-fit: cover;
+    border-radius: 10px;
+}
+
+/* Media Query for Larger Screens */
+@media (min-width: 768px) {
     .intro-container {
-        flex-direction: row; /* Horizontal layout */
-        justify-content: space-around; /* Space between image and text */
+        flex-direction: row; /* Horizontal layout for larger screens */
+        justify-content: space-between; /* Spread out items */
+        gap: 60px; /* Increase space between items */
+    }
+
+    .quadratic-element {
+        max-width: 500px; /* Make boxes larger on larger screens */
     }
 }
 
