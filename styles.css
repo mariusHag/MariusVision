@@ -14,7 +14,7 @@ body {
 
 /* Full-height container */
 .full-height-container {
-    height: calc(100vh - env(safe-area-inset-bottom)); /* Adjust for mobile viewport height */
+    height: auto; /* Remove fixed 100vh to avoid cropping */
     width: 100%; /* Ensure it spans the full width */
     display: flex; /* Use flexbox for layout */
     justify-content: center; /* Center the image horizontally */
@@ -24,6 +24,7 @@ body {
     position: relative; /* For absolute positioning of the image */
     min-height: 100%; /* Ensure it doesn’t shrink */
 }
+
 
 /* Fade-in animation */
 @keyframes fadeIn {
