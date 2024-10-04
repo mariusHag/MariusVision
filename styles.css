@@ -14,6 +14,7 @@ body {
 
 /* Full-height container */
 .full-height-container {
+    box-sizing: border-box;
     height: calc(var(--vh, 1vh) * 100); /* Dynamically calculate height based on real viewport */
     width: 100%;
     display: flex;
@@ -25,6 +26,7 @@ body {
     min-height: 100%;
 }
 .intro-container {
+    box-sizing: border-box;
     height: calc(var(--vh, 1vh) * 100); /* Dynamically calculate height based on real viewport */
     width: 100%;
     display: flex;
