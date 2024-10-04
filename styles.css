@@ -45,6 +45,9 @@ body {
     display: flex;
     justify-content: center;
     align-items: center;
+    background-color: #fff;
+    box-shadow: 0 4px 6px rgba(0, 0, 0, 0.1);
+    border-radius: 10px;
     margin: 10px;
     flex: 1; /* Make elements flexible */
 }
@@ -56,10 +59,6 @@ body {
     color: #031231;
     text-align: center;
     overflow-wrap: break-word; /* Ensure long text wraps */
-    background-color: #fff; /* Background for text box */
-    box-shadow: 0 4px 6px rgba(0, 0, 0, 0.1); /* Shadow for text box */
-    border-radius: 10px; /* Rounded corners for text box */
-    position: relative; /* Positioning to allow independent styling */
 }
 
 /* Image Styling */
@@ -67,16 +66,7 @@ body {
     width: 100%;
     height: 100%;
     object-fit: cover; /* Ensures image covers the box */
-    border-radius: 10px; /* Ensure image also has rounded corners */
-}
-
-/* Add shadow to image box */
-.quadratic-element {
-    position: relative; /* Position relative for absolute text box */
-    background-color: #fff; /* Background color for image box */
-    box-shadow: 0 4px 6px rgba(0, 0, 0, 0.1); /* Shadow for image box */
-    border-radius: 10px; /* Rounded corners for image box */
-    overflow: hidden; /* Prevent overflow of children */
+    border-radius: 10px;
 }
 
 /* Media Query for Larger Screens */
