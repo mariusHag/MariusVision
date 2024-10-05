@@ -116,36 +116,25 @@ body {
 
 /* Default Image settings (fill the viewport with no gaps) */
 .container-image {
-    width: 101%; /* Slightly larger to cover gaps on sides */
-    height: 101%; /* Slightly larger to cover gaps on bottom */
-    object-fit: cover; /* Ensure the image covers the viewport */
+    width: 101%; /* Slightly larger to cover any gaps */
+    height: 101%; /* Slightly larger height to cover gaps */
+    object-fit: cover; /* Ensure the image fills the container */
     position: absolute;
     bottom: 0; /* Align the image to the bottom */
-    left: 50%; /* Center horizontally */
+    left: 50%;
     transform: translateX(-50%);
-    object-position: center top; /* Focus on the globe and hands */
-    overflow: hidden; /* Hide overflow beyond the image container */
-    background-color: black; /* Prevent any gaps from showing as white */
+    object-position: top center; /* Focus on the important graphic */
+    overflow: hidden; /* Hide any overflow beyond the container */
 }
 
-/* For very tall screens (portrait mode), allow top black bar */
+/* For very tall screens (portrait mode), scale down the image but maintain 30% width */
 @media (max-aspect-ratio: 9/16) {
     .container-image {
-        width: 101%; /* Slightly larger to ensure no gaps on sides */
-        height: 101%; /* Slightly larger height to cover the bottom */
-        object-fit: cover; /* Still cover the screen to avoid cutting */
-        object-position: top center; /* Critical content stays at the top */
-        background-color: black; /* Black bar will appear at the top */
-    }
-}
-
-/* For extra tall screens, black bar only at the top */
-@media (min-height: 800px) { 
-    .container-image {
-        width: 101%; /* No gaps on the sides */
-        height: 101%; /* Ensure no gaps on bottom */
-        object-fit: cover; /* Maintain cover behavior */
-        object-position: center top; /* Keep globe and hands visible */
+        width: 30%; /* Maintain at least 30% width */
+        height: auto; /* Scale height proportionally */
+        object-fit: contain; /* Contain the image without cropping */
+        object-position: top center; /* Keep the critical part visible */
+        
     }
 }
 
