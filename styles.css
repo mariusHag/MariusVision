@@ -117,8 +117,8 @@ body {
 
 /* Default Image settings */
 .container-image {
-    width: 100%; /* Full width */
-    height: 100%; /* Full height */
+    width: 101%; /* Full width */
+    height: 101%; /* Full height */
     object-fit: contain; /* Ensure the entire image is visible */
     position: absolute;
     bottom: 0;
@@ -130,7 +130,7 @@ body {
 /* Mobile styles */
 @media (max-width: 768px) {
     .container-image {
-        width: 100%; /* Maintain full width */
+        width: 101%; /* Maintain full width */
         height: auto; /* Auto-adjust height to preserve aspect ratio */
         object-fit: contain; /* Ensure the graphic part is always fully visible */
         left: 50%;
@@ -143,7 +143,7 @@ body {
 @media (max-aspect-ratio: 4/3) {
     .container-image {
         width: auto; /* Adjust the width based on the aspect ratio */
-        height: 100%; /* Ensure the image fits the height */
+        height: 101%; /* Ensure the image fits the height */
         object-fit: contain; /* Contain the entire image without cropping */
         left: 50%;
         transform: translateX(-50%);
