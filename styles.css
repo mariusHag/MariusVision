@@ -114,56 +114,50 @@ body {
     animation-delay: 5s; /* Starts after 5 seconds */
 }
 
-
-/* Default Image settings */
+/* Default Image settings (slightly oversized to cover the gap) */
 .container-image {
-    width: 101%; /* Full width */
-    height: 101%; /* Full height */
-    object-fit: contain; /* Ensure the entire image is visible */
+    width: 101%; /* Slightly larger width to cover any gaps */
+    height: 101%; /* Slightly larger height to avoid gaps */
+    object-fit: cover; /* Cover the container */
     position: absolute;
     bottom: 0;
     left: 50%;
     transform: translateX(-50%);
-    overflow: hidden; /* Hide any overflow */
+    overflow: hidden; /* Ensure no extra overflow shows */
 }
 
-/* Mobile styles */
+/* Mobile styles for smaller screens */
 @media (max-width: 768px) {
     .container-image {
-        width: 101%; /* Maintain full width */
-        height: auto; /* Auto-adjust height to preserve aspect ratio */
-        object-fit: contain; /* Ensure the graphic part is always fully visible */
+        width: 101%; /* Keep slightly larger to cover any gaps */
+        height: auto; /* Maintain aspect ratio */
+        object-fit: cover; /* Ensure full coverage without gaps */
         left: 50%;
         transform: translateX(-50%);
         bottom: 0;
     }
 }
 
-/* Adjustments for more square-like aspect ratios */
-@media (max-aspect-ratio: 4/3) {
+/* Adjustment to ensure critical graphics area is always visible */
+@media (max-height: 800px), (max-width: 1200px) { /* Adjust breakpoints as needed */
     .container-image {
-        width: auto; /* Adjust the width based on the aspect ratio */
-        height: 101%; /* Ensure the image fits the height */
-        object-fit: contain; /* Contain the entire image without cropping */
+        width: 90%; /* Make width dynamic to ensure critical width is visible */
+        height: 90%; /* Ensure the critical height is visible */
+        object-fit: contain; /* Scale the image to fit both dimensions */
         left: 50%;
         transform: translateX(-50%);
         bottom: 0;
     }
 }
 
-/* Prevent black bars for very wide aspect ratios */
+/* Prevent black bars in very wide aspect ratios */
 @media (min-aspect-ratio: 16/9) {
     .container-image {
-        width: 100%; /* Ensure full width for wider screens */
-        height: auto; /* Auto adjust the height */
-        object-fit: contain; /* Contain the image properly */
+        width: 101%; /* Ensure full width to cover gaps in wide screens */
+        height: auto; /* Maintain aspect ratio */
+        object-fit: cover; /* Cover the screen */
     }
 }
-
-
-
-
-
 
 
 
