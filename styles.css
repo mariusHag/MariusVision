@@ -43,7 +43,6 @@ body {
     max-width: 400px; /* Maximum width */
     aspect-ratio: 1 / 1; /* Ensure square aspect ratio */
     display: flex;
-    justify-content: center;
     align-items: center;
     background-color: #fff;
     box-shadow: 0 4px 6px rgba(0, 0, 0, 0.1);
@@ -55,6 +54,7 @@ body {
 /* Text Box */
 .text-box {
     font-size: 16px;
+    text-align: center;
     background-color: rgba(255, 255, 255, 0.8); /* Semi-transparent white background */
     overflow-wrap: break-word; /* Ensure long text wraps */
 }
