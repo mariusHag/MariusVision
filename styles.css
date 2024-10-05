@@ -127,29 +127,27 @@ body {
     overflow: hidden; /* Hide any overflow beyond the container */
 }
 
-/* For very tall screens (portrait mode), scale height and maintain cropping */
+
+/* For very tall screens (portrait mode), allow cropping but limit scaling */
 @media (max-aspect-ratio: 9/16) {
     .container-image {
-        width: auto; /* Allow width to adjust automatically */
-        max-width: 100%; /* Limit width to the full viewport width */
-        height: auto; /* Let height scale accordingly */
-        max-height: 100vh; /* Ensure it doesn't exceed viewport height */
-        object-fit: cover; /* Allow cropping as needed */
+        width: 100%; /* Full width to prevent gaps */
+        height: auto; /* Height adjusts proportionally */
+        max-height: calc(100vh - 30%); /* Allow for the black bar space */
+        object-fit: cover; /* Allow cropping while focusing on the top */
         object-position: top center; /* Keep the top part visible */
     }
 
-    /* Prevent width from going below 30% of the image */
+    /* Add a top black bar when necessary */
     .container-image:before {
         content: '';
-        display: block;
-        height: calc(30vw); /* Minimum height to maintain aspect ratio */
-        background-color: black; /* This will fill the black space */
         position: absolute;
-        top: 0;
-        left: 50%;
-        transform: translateX(-50%);
-        width: 100%; /* Fills full width */
-        z-index: 1; /* Ensure this is above the image */
+        top: 0; /* Position at the top */
+        left: 0; /* Fill the width */
+        right: 0; /* Fill the width */
+        height: 30%; /* Height of the black bar */
+        background-color: black; /* Black background for the bar */
+        z-index: 1; /* Place above the image */
     }
 }
 
