@@ -127,14 +127,14 @@ body {
     overflow: hidden; /* Hide any overflow beyond the container */
 }
 
-/* For very tall screens (portrait mode), scale down the image but maintain 30% width */
+/* For very tall screens (portrait mode), crop but allow the top black bar */
 @media (max-aspect-ratio: 9/16) {
     .container-image {
-        width: 30%; /* Maintain at least 30% width */
-        height: auto; /* Scale height proportionally */
-        object-fit: contain; /* Contain the image without cropping */
-        object-position: top center; /* Keep the critical part visible */
-        
+        width: 101%; /* Ensure no gaps, allow some cropping */
+        height: 100%; /* Fill the height of the screen */
+        object-fit: cover; /* Allow cropping */
+        object-position: top center; /* Keep the top part visible */
+        max-width: calc(100% + 30vw); /* Limit how much is cropped (max 30%) */
     }
 }
 
