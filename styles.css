@@ -28,6 +28,8 @@ body {
 
 /* Intro Container */
 .intro-container {
+    height: calc(var(--vh, 1vh) * 100); /* Dynamically calculate height based on real viewport */
+    width: 100%;
     display: flex;
     flex-direction: column; /* Stack on mobile */
     justify-content: center;
