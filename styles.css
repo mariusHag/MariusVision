@@ -131,7 +131,7 @@ body {
 /* For very tall screens (portrait mode), ensure the image is cropped correctly */
 @media (max-aspect-ratio: 9/16) {
     .container-image {
-        width: calc(100vw - 30%); /* Allow cropping until 30% of width is visible */
+        width: 301%; /* Slightly larger to cover any gaps */
         height: auto; /* Let height adjust accordingly */
         max-height: 100vh; /* Limit height to fill viewport */
         object-fit: cover; /* Allow cropping to maintain aspect ratio */
