@@ -116,46 +116,38 @@ body {
 
 /* Default Image settings (fill the viewport) */
 .container-image {
-    width: 101%; /* Slightly larger width to avoid gaps */
-    height: 101%; /* Slightly larger height to avoid gaps */
-    object-fit: cover; /* Ensure no black bars */
+    width: 101%; /* Slightly larger width to cover gaps */
+    height: 101%; /* Slightly larger height to cover gaps */
+    object-fit: cover; /* Ensure no black bars by default */
     position: absolute;
-    bottom: 0;
+    bottom: 0; /* Align image to the bottom */
     left: 50%;
     transform: translateX(-50%);
-    object-position: center top; /* Focus on the critical content area */
+    object-position: center top; /* Focus on the critical graphic area */
     overflow: hidden; /* Hide overflow */
 }
 
-/* Adjustments for smaller screens */
-@media (max-aspect-ratio: 4/3) {
-    .container-image {
-        object-fit: cover; /* Ensure no black bars */
-        object-position: center top; /* Keep the globe and hands visible */
-        width: 101%; /* Keep width larger to cover the gap */
-        height: 101%; /* Keep height slightly larger */
-    }
-}
-
-/* For taller screens (portrait mode), prioritize the graphic visibility */
+/* Allow black bar on top for very tall screens */
 @media (max-aspect-ratio: 9/16) {
     .container-image {
-        width: 101%; /* Ensure full width coverage */
-        height: 101%; /* Ensure full height coverage */
-        object-fit: cover; /* Cover the screen */
-        object-position: center top; /* Ensure globe and hands are visible */
+        width: 100%; /* Full width, no gaps on sides */
+        height: 100%; /* Full height by default */
+        object-fit: contain; /* Allow the top bar */
+        object-position: center top; /* Critical area stays visible */
+        background-color: black; /* Set background to avoid gaps */
     }
 }
 
-/* Wide landscape screens */
+/* Wider or standard screens */
 @media (min-aspect-ratio: 16/9) {
     .container-image {
-        width: 101%; /* Make sure no gaps appear */
-        height: 101%; /* Full height */
-        object-fit: cover; /* Cover the whole viewport */
-        object-position: center top; /* Keep the important area visible */
+        width: 101%; /* Slight oversize to prevent gaps */
+        height: 101%; /* Slight oversize for height */
+        object-fit: cover; /* Fill the screen without black bars */
+        object-position: center top; /* Keep the globe and hands centered */
     }
 }
+
 
 
 
