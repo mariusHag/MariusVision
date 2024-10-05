@@ -123,8 +123,6 @@ body {
     bottom: 0; /* Align the image to the bottom */
     left: 50%;
     transform: translateX(-50%);
-    object-position: top center; /* Focus on the important graphic */
-    background-color: black; /* Black background to prevent any gaps */
     overflow: hidden; /* Hide any overflow beyond the container */
 }
 
@@ -136,7 +134,6 @@ body {
         max-height: 100vh; /* Limit height to fill viewport */
         object-fit: cover; /* Allow cropping to maintain aspect ratio */
         object-position: top center; /* Keep the top part visible */
-        background-color: black; /* Ensure background remains black */
     }
 }
 
