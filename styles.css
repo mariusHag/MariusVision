@@ -41,7 +41,7 @@ body {
 
 /* Quadratic Elements (Equal size for image and text box) */
 .quadratic-element {
-    width: 0.5vh
+    width: 0.5vh; /* Corrected: Added semicolon and used period for decimal */
     aspect-ratio: 1 / 1; /* Ensure square aspect ratio */
     display: flex;
     align-items: center;
