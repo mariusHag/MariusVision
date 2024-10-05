@@ -54,10 +54,8 @@ body {
 
 /* Text Box */
 .text-box {
-    padding: 20px; /* Padding for text box */
     font-size: 16px;
     background-color: rgba(255, 255, 255, 0.8); /* Semi-transparent white background */
-    text-align: center;
     overflow-wrap: break-word; /* Ensure long text wraps */
 }
 
