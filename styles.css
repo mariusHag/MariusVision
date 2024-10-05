@@ -77,9 +77,7 @@ body {
         gap: 60px; /* Same gap between and outside the elements */
     }
 
-    .quadratic-element {
-        max-width: 500px; /* Same size for both elements on larger screens */
-    }
+
 }
 
 
