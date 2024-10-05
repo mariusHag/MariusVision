@@ -114,37 +114,38 @@ body {
     animation-delay: 5s; /* Starts after 5 seconds */
 }
 
-/* Default Image settings (fill the viewport) */
+/* Default Image settings (fill the viewport with no gaps) */
 .container-image {
-    width: 101%; /* Slightly larger width to cover gaps */
-    height: 101%; /* Slightly larger height to cover gaps */
-    object-fit: cover; /* Ensure no black bars by default */
+    width: 101%; /* Slightly larger to cover gaps on sides */
+    height: 101%; /* Slightly larger to cover gaps on bottom */
+    object-fit: cover; /* Ensure the image covers the viewport */
     position: absolute;
-    bottom: 0; /* Align image to the bottom */
-    left: 50%;
+    bottom: 0; /* Align the image to the bottom */
+    left: 50%; /* Center horizontally */
     transform: translateX(-50%);
-    object-position: center top; /* Focus on the critical graphic area */
-    overflow: hidden; /* Hide overflow */
+    object-position: center top; /* Focus on the globe and hands */
+    overflow: hidden; /* Hide overflow beyond the image container */
+    background-color: black; /* Prevent any gaps from showing as white */
 }
 
-/* Allow black bar on top for very tall screens */
+/* For very tall screens (portrait mode), allow top black bar */
 @media (max-aspect-ratio: 9/16) {
     .container-image {
-        width: 100%; /* Full width, no gaps on sides */
-        height: 100%; /* Full height by default */
-        object-fit: contain; /* Allow the top bar */
-        object-position: center top; /* Critical area stays visible */
-        background-color: black; /* Set background to avoid gaps */
+        width: 101%; /* Slightly larger to ensure no gaps on sides */
+        height: 101%; /* Slightly larger height to cover the bottom */
+        object-fit: cover; /* Still cover the screen to avoid cutting */
+        object-position: top center; /* Critical content stays at the top */
+        background-color: black; /* Black bar will appear at the top */
     }
 }
 
-/* Wider or standard screens */
-@media (min-aspect-ratio: 16/9) {
+/* For extra tall screens, black bar only at the top */
+@media (min-height: 800px) { 
     .container-image {
-        width: 101%; /* Slight oversize to prevent gaps */
-        height: 101%; /* Slight oversize for height */
-        object-fit: cover; /* Fill the screen without black bars */
-        object-position: center top; /* Keep the globe and hands centered */
+        width: 101%; /* No gaps on the sides */
+        height: 101%; /* Ensure no gaps on bottom */
+        object-fit: cover; /* Maintain cover behavior */
+        object-position: center top; /* Keep globe and hands visible */
     }
 }
 
