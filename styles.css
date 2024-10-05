@@ -42,7 +42,7 @@ body {
 /* Quadratic Elements (Equal size for image and text box) */
 .quadratic-element {
     width: 100%;
-    max-width: 400px; /* Maximum width */
+    max-width: 0.8vh; /* Maximum width */
     aspect-ratio: 1 / 1; /* Ensure square aspect ratio */
     display: flex;
     align-items: center;
