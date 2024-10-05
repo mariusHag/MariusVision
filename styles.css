@@ -117,35 +117,46 @@ body {
 
 /* Default Image settings */
 .container-image {
-    width: 101%; /* Slightly larger width to cover the gap */
-    height: 101%; /* Slightly larger height */
-    object-fit: cover;
+    width: 100%; /* Full width */
+    height: 100%; /* Full height */
+    object-fit: contain; /* Ensure the entire image is visible */
     position: absolute;
     bottom: 0;
     left: 50%;
     transform: translateX(-50%);
-    overflow: hidden; /* Ensures no extra overflow shows */
+    overflow: hidden; /* Hide any overflow */
 }
 
-/* Mobile styles for smaller screens */
+/* Mobile styles */
 @media (max-width: 768px) {
     .container-image {
-        width: 300%; /* Make it 3 times the width to crop */
-        height: auto; /* Maintain aspect ratio */
+        width: 100%; /* Maintain full width */
+        height: auto; /* Auto-adjust height to preserve aspect ratio */
+        object-fit: contain; /* Ensure the graphic part is always fully visible */
         left: 50%;
         transform: translateX(-50%);
         bottom: 0;
     }
 }
 
-/* General adjustment for square-like aspect ratios (like 4:3) */
-@media (max-height: 800px) {
+/* Adjustments for more square-like aspect ratios */
+@media (max-aspect-ratio: 4/3) {
     .container-image {
-        width: auto; /* Let the width adjust automatically */
-        height: 90%; /* Reduce height to make room for text */
+        width: auto; /* Adjust the width based on the aspect ratio */
+        height: 100%; /* Ensure the image fits the height */
+        object-fit: contain; /* Contain the entire image without cropping */
         left: 50%;
         transform: translateX(-50%);
         bottom: 0;
+    }
+}
+
+/* Prevent black bars for very wide aspect ratios */
+@media (min-aspect-ratio: 16/9) {
+    .container-image {
+        width: 100%; /* Ensure full width for wider screens */
+        height: auto; /* Auto adjust the height */
+        object-fit: contain; /* Contain the image properly */
     }
 }
 
