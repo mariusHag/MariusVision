@@ -84,6 +84,7 @@ body {
 
     .text-box {
         width: 40%; /* Make the text box take up remaining width */
+        height: 80vh; /* Match height with the image container */
         padding: 20px; /* Add padding to give some space around the text */
     }
 }
