@@ -77,11 +77,13 @@ body {
     }
 
     .quadratic-element {
-     
+    width: 40vw; /* Adjust as needed */
+    height: 40vw; /* To keep it quadratic */
     }
 
     .text-box {
-        
+    width: 40vw; /* Adjust as needed */
+    height: 40vw; /* To keep it quadratic */
         display: flex;
         align-items: center;
         justify-content: center; /* Center-align text vertically */
