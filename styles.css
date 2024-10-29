@@ -70,17 +70,21 @@ body {
 
 /* Media Query for Landscape / Desktop-style layout */
 @media (min-aspect-ratio: 4/3) {
-    .quadratic-element {
-        width: 48%; /* Two elements side-by-side in landscape */
-        height: 80vh; /* Fill 80% of screen height */
-        max-width: 400px; /* Prevents excessive width */
+    .intro-container {
+        display: flex;
+        flex-direction: row;
+        align-items: flex-start; /* Align items to the top */
+        gap: 20px; /* Smaller gap between image and text */
     }
 
-    .intro-container {
-        flex-direction: row; /* Horizontal layout in landscape */
-        justify-content: space-between;
-        align-items: center;
-        gap: 60px; /* Gap between elements */
+    .quadratic-element {
+        width: 60%; /* Larger width for the image container */
+        height: 80vh; /* Keep height at 80% of the viewport */
+    }
+
+    .text-box {
+        width: 40%; /* Make the text box take up remaining width */
+        padding: 20px; /* Add padding to give some space around the text */
     }
 }
 
