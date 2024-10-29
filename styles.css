@@ -73,20 +73,29 @@ body {
     .intro-container {
         display: flex;
         flex-direction: row;
-        align-items: flex-start; /* Align items to the top */
-        gap: 20px; /* Smaller gap between image and text */
+        gap: 20px; /* Gap between image and text */
+        margin: 0 20px; /* Margin on left and right of the container */
     }
 
     .quadratic-element {
-        width: 60%; /* Larger width for the image container */
-        height: 80vh; /* Keep height at 80% of the viewport */
+        width: 40vw; /* Width to maintain quadratic aspect ratio */
+        height: 40vw; /* Make height equal to width for a square */
+        max-height: 80vh; /* Max height at 80% of the viewport */
+        margin: 0 auto; /* Center horizontally */
     }
 
     .text-box {
-        width: 40%; /* Make the text box take up remaining width */
-        height: 80vh; /* Match height with the image container */
+        width: calc(60vw - 40px); /* Adjust width to accommodate margins */
+        height: 40vw; /* Match height with the image container */
+        max-height: 80vh; /* Match max height with the image container */
+        display: flex;
+        align-items: center;
+        justify-content: center; /* Center-align text vertically */
+        box-sizing: border-box; /* Ensure padding doesn’t increase height */
+        margin-left: 20px; /* Match left margin of image */
     }
 }
+
 
 
 
