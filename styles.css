@@ -39,19 +39,17 @@ body {
     background: linear-gradient(to bottom, #1f5382, #3896e8); /* Gradient background */
 }
 
-/* Quadratic Elements (Equal size for image and text box) */
+/* Default (Mobile-first) Styles for Quadratic Elements */
 .quadratic-element {
-    width: 48%; /* Use percentage for responsive sizing */
-    max-width: 150px; /* Set a reasonable max width for larger screens */
-    min-width: 80px; /* Ensure elements don’t shrink too small */
-    aspect-ratio: 1 / 1; /* Ensure square aspect ratio */
+    width: 100%; /* Full width for mobile */
+    aspect-ratio: 1 / 1; /* Ensure square shape */
     display: flex;
     align-items: center;
     background-color: #fff;
     box-shadow: 0 4px 6px rgba(0, 0, 0, 0.1);
     border-radius: 10px;
-    margin: 10px;
-    flex: 1; /* Make elements flexible */
+    margin: 10px 0;
+    flex: 1; /* Flexibly adjusts */
 }
 
 /* Text Box */
@@ -72,12 +70,20 @@ body {
 
 /* Media Query for Larger Screens */
 @media (min-width: 768px) {
+    .quadratic-element {
+        width: 48%; /* For two elements side-by-side */
+        height: 80vh; /* 80% of the viewport height */
+        max-width: 400px; /* Restrict maximum width for larger screens */
+    }
+
     .intro-container {
         flex-direction: row; /* Horizontal layout on larger screens */
         justify-content: space-between;
-        gap: 60px; /* Same gap between and outside the elements */
+        align-items: center;
+        gap: 60px; /* Same gap between elements */
     }
 }
+
 
 
 
