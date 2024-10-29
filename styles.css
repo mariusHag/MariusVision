@@ -39,10 +39,10 @@ body {
     background: linear-gradient(to bottom, #1f5382, #3896e8); /* Gradient background */
 }
 
-/* Default (Mobile-first) Styles for Quadratic Elements */
+/* Default (Portrait / Mobile-first) Styles */
 .quadratic-element {
-    width: 100%; /* Full width for mobile */
-    aspect-ratio: 1 / 1; /* Ensure square shape */
+    width: 100%; /* Full width in portrait mode */
+    aspect-ratio: 1 / 1; /* Square shape */
     display: flex;
     align-items: center;
     background-color: #fff;
@@ -68,21 +68,22 @@ body {
     border-radius: 10px;
 }
 
-/* Media Query for Larger Screens */
-@media (min-width: 768px) {
+/* Media Query for Landscape / Desktop-style layout */
+@media (min-aspect-ratio: 4/3) {
     .quadratic-element {
-        width: 48%; /* For two elements side-by-side */
-        height: 80vh; /* 80% of the viewport height */
-        max-width: 400px; /* Restrict maximum width for larger screens */
+        width: 48%; /* Two elements side-by-side in landscape */
+        height: 80vh; /* Fill 80% of screen height */
+        max-width: 400px; /* Prevents excessive width */
     }
 
     .intro-container {
-        flex-direction: row; /* Horizontal layout on larger screens */
+        flex-direction: row; /* Horizontal layout in landscape */
         justify-content: space-between;
         align-items: center;
-        gap: 60px; /* Same gap between elements */
+        gap: 60px; /* Gap between elements */
     }
 }
+
 
 
 
