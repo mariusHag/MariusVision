@@ -34,7 +34,7 @@ body {
     flex-direction: column; /* Stack on mobile */
     justify-content: center;
     align-items: center;
-    padding: 20px;
+    padding: 40px;
     gap: 40px; /* Gap between elements */
     background: linear-gradient(to bottom, #1f5382, #3896e8); /* Gradient background */
 }
