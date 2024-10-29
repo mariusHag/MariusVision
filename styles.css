@@ -41,7 +41,9 @@ body {
 
 /* Quadratic Elements (Equal size for image and text box) */
 .quadratic-element {
-    width: 0.5vh; /* Corrected: Added semicolon and used period for decimal */
+    width: 48%; /* Use percentage for responsive sizing */
+    max-width: 150px; /* Set a reasonable max width for larger screens */
+    min-width: 80px; /* Ensure elements don’t shrink too small */
     aspect-ratio: 1 / 1; /* Ensure square aspect ratio */
     display: flex;
     align-items: center;
@@ -75,9 +77,8 @@ body {
         justify-content: space-between;
         gap: 60px; /* Same gap between and outside the elements */
     }
-
-
 }
+
 
 
 
