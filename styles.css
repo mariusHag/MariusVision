@@ -73,30 +73,20 @@ body {
     .intro-container {
         display: flex;
         flex-direction: row;
-        align-items: flex-start; /* Align items to the top */
-        gap: 20px; /* Gap between image and text */
-        margin: 0 20px; /* Margin on left and right of the container */
+        align-items: center; /* Align items to the top */
     }
 
     .quadratic-element {
-        width: calc(40vw - 20px); /* Width to maintain quadratic aspect ratio */
-        height: calc(40vw - 20px); /* Height equal to width for a square */
-        max-height: 80vh; /* Max height at 80% of the viewport */
-        margin: 0; /* No margin to keep it aligned */
-        background-color: lightgray; /* For visualization; can be removed */
+     
     }
 
     .text-box {
-        width: calc(60vw - 20px); /* Adjust width to accommodate margins */
-        height: calc(40vw - 20px); /* Match height with the image container */
-        max-height: 80vh; /* Match max height with the image container */
+        
         display: flex;
         align-items: center;
         justify-content: center; /* Center-align text vertically */
         box-sizing: border-box; /* Ensure the box model is set correctly */
-        margin-left: 20px; /* Margin for spacing between image and text */
-        overflow: hidden; /* Ensure content does not overflow */
-        /* No padding added */
+
     }
 }
 
