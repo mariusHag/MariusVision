@@ -39,18 +39,7 @@ body {
     background: linear-gradient(to bottom, #1f5382, #3896e8);
 }
 
-/* Media Query for Landscape / Desktop-style layout */
-@media (min-aspect-ratio: 4/3) {
-    .intro-container {
-        flex-direction: row;
-    }
 
-    .quadratic-element,
-    .text-box {
-        width: var(--box-width); /* Dynamically set width based on variable */
-        aspect-ratio: 1 / 1; /* Maintain square shape */
-    }
-}
 
 /* Quadratic Elements */
 .quadratic-element,
@@ -82,7 +71,18 @@ body {
     border-radius: 10px;
 }
 
+/* Media Query for Landscape / Desktop-style layout */
+@media (min-aspect-ratio: 4/3) {
+    .intro-container {
+        flex-direction: row;
+    }
 
+    .quadratic-element,
+    .text-box {
+        width: var(--box-width); /* Dynamically set width based on variable */
+        aspect-ratio: 1 / 1; /* Maintain square shape */
+    }
+}
 
 /* Fade-in animation */
 @keyframes fadeIn {
