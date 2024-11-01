@@ -51,11 +51,25 @@ body {
 }
 
 /* Text Box Styling */
+/* Text Box Styling */
 .text-box {
-    font-size: 16px;
-    text-align: center;
-    background-color: rgba(255, 255, 255, 0.8);
-    overflow-wrap: break-word;
+    display: flex;
+    flex-direction: column; /* Stack header and paragraph vertically */
+    padding: 20px; /* Add padding for better spacing */
+}
+
+/* Header Styling */
+.header {
+    font-size: 1.5em; /* Adjust the size as needed */
+    margin-bottom: 10px; /* Space between header and paragraph */
+    color: #333; /* Change this to match your design */
+    text-align: center; /* Center the header */
+}
+
+/* Paragraph Styling */
+.text-box p {
+    font-size: 16px; /* Maintain consistent font size */
+    text-align: center; /* Center the paragraph text */
 }
 
 /* Image Styling */
