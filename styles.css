@@ -106,11 +106,12 @@ body {
 /* Mobile Styles */
 @media (max-aspect-ratio: 4/3) {
     :root {
-        --box-width: 80vw; /* Adjust the box width for mobile */
+        --box-width: 35vh; /* Adjust the box width for mobile */
     }
     
     .intro-container {
         flex-direction: column; /* Stack elements vertically */
+        gap: calc((100vh - 2 * var(--box-width)) / 3); /* Keep original gap for desktop */
     }
     
     .quadratic-element,
@@ -127,6 +128,7 @@ body {
 
     .intro-container {
         flex-direction: row; /* Align elements horizontally */
+        gap: calc((100vw - 2 * var(--box-width)) / 3); /* Keep original gap for desktop */
     }
 
     .quadratic-element,
