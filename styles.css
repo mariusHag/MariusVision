@@ -28,14 +28,28 @@ body {
 
 /* Intro Container */
 .intro-container {
+    --box-width: 15vw; /* Set the box width here; adjust as desired */
+    
     height: 100vh;
     display: flex;
     flex-direction: column;
     justify-content: center;
     align-items: center;
-    padding: 40px;
-    gap: 40px;
+    gap: calc((100% - 3 * var(--box-width)) / 4); /* Dynamic gap calculation */
     background: linear-gradient(to bottom, #1f5382, #3896e8);
+}
+
+/* Media Query for Landscape / Desktop-style layout */
+@media (min-aspect-ratio: 4/3) {
+    .intro-container {
+        flex-direction: row;
+    }
+
+    .quadratic-element,
+    .text-box {
+        width: var(--box-width); /* Dynamically set width based on variable */
+        aspect-ratio: 1 / 1; /* Maintain square shape */
+    }
 }
 
 /* Quadratic Elements */
@@ -68,15 +82,7 @@ body {
     border-radius: 10px;
 }
 
-/* Media Query for Landscape / Desktop-style layout */
-@media (min-aspect-ratio: 4/3) {
-    .intro-container {
-        flex-direction: row;
-    }
-    .quadratic-element, .text-box {
-        width: 20vw; /* Smaller size for larger screens */
-    }
-}
+
 
 /* Fade-in animation */
 @keyframes fadeIn {
