@@ -10,11 +10,9 @@ body {
     background-color: #031231;
     color: #020402;
 }
-
 /* Base Styles */
 :root {
-    --box-width: 35vw; /* Set the box width here; adjust as desired */
-    --quadratic-width: 30vw; /* Adjustable width for quadratic elements */
+    --box-width: 35vw; /* Default box width for desktop */
 }
 
 /* Full-height container */
@@ -42,7 +40,7 @@ body {
 /* Quadratic Elements */
 .quadratic-element,
 .text-box {
-    width: var(--quadratic-width); /* Use variable for width */
+    width: var(--box-width); /* Use the responsive box width */
     aspect-ratio: 1 / 1;
     display: flex;
     align-items: center;
@@ -107,18 +105,26 @@ body {
 
 /* Mobile Styles */
 @media (max-aspect-ratio: 4/3) {
+    :root {
+        --box-width: 80vw; /* Adjust the box width for mobile */
+    }
+    
     .intro-container {
         flex-direction: column; /* Stack elements vertically */
     }
     
     .quadratic-element,
     .text-box {
-        width: var(--quadratic-width); /* Use variable for width */
+        width: var(--box-width); /* Maintain the same width for mobile */
     }
 }
 
 /* Desktop Styles */
 @media (min-aspect-ratio: 4/3) {
+    :root {
+        --box-width: 35vw; /* Set the box width for desktop */
+    }
+
     .intro-container {
         flex-direction: row; /* Align elements horizontally */
     }
