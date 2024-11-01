@@ -118,6 +118,13 @@ body {
     .text-box {
         width: var(--box-width); /* Maintain the same width for mobile */
     }
+        .container-image 
+    {
+        width: 301%;
+        height: auto;
+        max-height: 100vh;
+        object-position: top center;
+    }
 }
 
 /* Desktop Styles */
