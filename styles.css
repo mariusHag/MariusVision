@@ -11,8 +11,10 @@ body {
     color: #020402;
 }
 
-* {
-    box-sizing: border-box;
+/* Base Styles */
+:root {
+    --box-width: 35vw; /* Set the box width here; adjust as desired */
+    --quadratic-width: 30vw; /* Adjustable width for quadratic elements */
 }
 
 /* Full-height container */
@@ -28,8 +30,6 @@ body {
 
 /* Intro Container */
 .intro-container {
-    --box-width: 35vw; /* Set the box width here; adjust as desired */
-    
     height: 100vh;
     display: flex;
     flex-direction: column;
@@ -39,12 +39,10 @@ body {
     background: linear-gradient(to bottom, #1f5382, #3896e8);
 }
 
-
-
 /* Quadratic Elements */
 .quadratic-element,
 .text-box {
-    width: 30vw; /* Adjustable width */
+    width: var(--quadratic-width); /* Use variable for width */
     aspect-ratio: 1 / 1;
     display: flex;
     align-items: center;
@@ -70,25 +68,13 @@ body {
     border-radius: 10px;
 }
 
-/* Media Query for Landscape / Desktop-style layout */
-@media (min-aspect-ratio: 4/3) {
-    .intro-container {
-        flex-direction: row;
-    }
-
-    .quadratic-element,
-    .text-box {
-        width: var(--box-width); /* Dynamically set width based on variable */
-        aspect-ratio: 1 / 1; /* Maintain square shape */
-    }
-}
-
 /* Fade-in animation */
 @keyframes fadeIn {
     from { opacity: 0; }
     to { opacity: 1; }
 }
 
+/* Bottom text styling */
 .full-height-container .bottom-text {
     position: absolute;
     bottom: 20px;
@@ -117,13 +103,29 @@ body {
     transform: translateX(-50%);
 }
 
-/* For tall screens */
-@media (max-aspect-ratio: 9/16) {
-    .container-image {
-        width: 301%;
-        height: auto;
-        max-height: 100vh;
-        object-position: top center;
+/* Media Queries */
+
+/* Mobile Styles */
+@media (max-aspect-ratio: 4/3) {
+    .intro-container {
+        flex-direction: column; /* Stack elements vertically */
+    }
+    
+    .quadratic-element,
+    .text-box {
+        width: var(--quadratic-width); /* Use variable for width */
+    }
+}
+
+/* Desktop Styles */
+@media (min-aspect-ratio: 4/3) {
+    .intro-container {
+        flex-direction: row; /* Align elements horizontally */
+    }
+
+    .quadratic-element,
+    .text-box {
+        width: var(--box-width); /* Use dynamic width */
     }
 }
 
