@@ -28,14 +28,14 @@ body {
 
 /* Intro Container */
 .intro-container {
-    --box-width: 15vw; /* Set the box width here; adjust as desired */
+    --box-width: 35vw; /* Set the box width here; adjust as desired */
     
     height: 100vh;
     display: flex;
     flex-direction: column;
     justify-content: center;
     align-items: center;
-    gap: calc((100vw - 2 * var(--box-width)) / 3);
+    gap: calc((100vw - 2 * var(--box-width)) / 4);
     background: linear-gradient(to bottom, #1f5382, #3896e8);
 }
 
