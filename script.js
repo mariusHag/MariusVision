@@ -99,6 +99,10 @@ const translations = {
         homeDescription: "At Marius Vision, I’m dedicated to turning your creative ideas into stunning still images.",
         readMoreButton: "Read More",
         ScrollDown: "Scroll down ↓",
+        header1: "Let’s bring your vision to life!",
+        text1: "At Marius Vision, I create stunning still images that capture your ideas and enhance your brand. Every visual element on this website is designed by me, showcasing my dedication to quality. I invite you to explore my portfolio below, where you’ll find examples of my work. I’m eager to learn about your project and discuss how we can turn your vision into reality. Don’t hesitate to reach out—I’m here to help you every step of the way!
+
+",        
         // Add all other translations here...
     },
     es: {
@@ -107,6 +111,8 @@ const translations = {
         homeDescription: "Transformando ideas creativas en imágenes impresionantes.",
         readMoreButton: "Leer Más",
         ScrollDown: "Desliza hacia abajo ↓",
+        header1: "¡Tu visión hecha realidad!",
+        Texto1:"En Marius Vision, creo impresionantes imágenes estáticas que capturan tus ideas y mejoran tu marca. Cada elemento visual en este sitio web está diseñado por mí, mostrando mi dedicación a la calidad. Te invito a explorar mi portafolio a continuación, donde encontrarás ejemplos de mi trabajo. Estoy ansioso por conocer tu proyecto y discutir cómo podemos convertir tu visión en realidad. No dudes en contactarme—¡estoy aquí para ayudarte en cada paso del camino!"
         // Add all other translations here...
     },
     da: {
@@ -115,6 +121,8 @@ const translations = {
         homeDescription: "Forvandler kreative ideer til fantastiske billeder.",
         readMoreButton: "Læs Mere",
         ScrollDown: "Scroll ned ↓",
+        header1: "Din vision gjort til virkelighed!",
+        Text1:"Hos Marius Vision skaber jeg fantastiske stillbilleder, der fanger dine idéer og styrker dit brand. Hvert visuelle element på denne hjemmeside er designet af mig, hvilket viser min dedikation til kvalitet. Jeg inviterer dig til at udforske mit portfolio nedenfor, hvor du finder eksempler på mit arbejde. Jeg er ivrig efter at høre om dit projekt og diskutere, hvordan vi kan gøre din vision til virkelighed. Tøv ikke med at kontakte mig – jeg er her for at hjælpe dig hele vejen!"
         // Add all other translations here...
     }
 };
