@@ -35,7 +35,7 @@ body {
     flex-direction: column;
     justify-content: center;
     align-items: center;
-    gap: calc((100vw - 2 * var(--box-width)) / 4);
+    gap: calc((100vw - 2 * var(--box-width)) / 3);
     background: linear-gradient(to bottom, #1f5382, #3896e8);
 }
 
@@ -52,7 +52,6 @@ body {
     background-color: #fff;
     box-shadow: 0 4px 6px rgba(0, 0, 0, 0.1);
     border-radius: 10px;
-    margin: 10px;
 }
 
 /* Text Box Styling */
