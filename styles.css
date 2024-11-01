@@ -35,7 +35,7 @@ body {
     flex-direction: column;
     justify-content: center;
     align-items: center;
-    gap: calc((100% - 3 * var(--box-width)) / 4); /* Dynamic gap calculation */
+    gap: calc((100vw - 2 * var(--box-width)) / 3);
     background: linear-gradient(to bottom, #1f5382, #3896e8);
 }
 
