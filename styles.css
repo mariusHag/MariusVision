@@ -45,31 +45,30 @@ body {
     display: flex;
     align-items: center;
     justify-content: center;
-    background-color: #fff;
-    box-shadow: 0 4px 6px rgba(0, 0, 0, 0.1);
-    border-radius: 10px;
+
+
 }
 
-/* Text Box Styling */
+
 /* Text Box Styling */
 .text-box {
     display: flex;
     flex-direction: column; /* Stack header and paragraph vertically */
-    padding: 20px; /* Add padding for better spacing */
+
 }
 
 /* Header Styling */
 .header {
-    font-size: 1.5em; /* Adjust the size as needed */
+    font-size: 2.9em; /* Adjust the size as needed */
     margin-bottom: 10px; /* Space between header and paragraph */
     color: #333; /* Change this to match your design */
-    text-align: center; /* Center the header */
+   
 }
 
 /* Paragraph Styling */
 .text-box p {
-    font-size: 16px; /* Maintain consistent font size */
-    text-align: center; /* Center the paragraph text */
+    font-size: 20px; /* Maintain consistent font size */
+    
 }
 
 /* Image Styling */
