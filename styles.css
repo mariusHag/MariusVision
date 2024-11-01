@@ -14,7 +14,18 @@ body {
     background-color: #031231;
     color: #020402;
 }
-
+/* Full-height container */
+.full-height-container { 
+    height: calc(var(--vh, 1vh) * 100); /* Dynamically calculate height based on real viewport */
+    
+    display: flex;
+    justify-content: center;
+    align-items: flex-end;
+    overflow: hidden;
+    background-color: transparent;
+    position: relative;
+    min-height: 100%;
+}
 .quadratic-element,
 .text-box {
     width: 30vw; /* Control size here; adjust as needed */
@@ -51,18 +62,7 @@ body {
     }
 }
 
-/* Full-height container */
-.full-height-container { 
-    height: calc(var(--vh, 1vh) * 100); /* Dynamically calculate height based on real viewport */
-    
-    display: flex;
-    justify-content: center;
-    align-items: flex-end;
-    overflow: hidden;
-    background-color: transparent;
-    position: relative;
-    min-height: 100%;
-}
+
 
 
 
