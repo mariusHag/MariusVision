@@ -61,14 +61,14 @@ body {
 .text-box h1 {
     font-size: 2em; /* Adjust the size as needed */
     margin-bottom: 10px; /* Space between header and paragraph */
-    color: #fff; /* Change this to match your design */
+    color:000000; /* Change this to match your design */
    
 }
 
 /* Paragraph Styling */
 .text-box p {
     font-size: 20px; /* Maintain consistent font size */
-    color: #fff; /* Change this to match your design */
+    color:000000; /* Change this to match your design */
     
 }
 
