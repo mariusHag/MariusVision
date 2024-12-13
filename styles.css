@@ -108,7 +108,7 @@ body {
 .container-image {
     width: 40%;
     height: 101%;
-    bottom: 20;
+    bottom: 20px;
     transform: translateX(-50%);
 }
 
