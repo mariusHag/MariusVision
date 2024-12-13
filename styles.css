@@ -250,19 +250,6 @@ header {
     text-align: center;
 }
 
-/* Track Container */
-#track-container {
-    position: relative;
-    overflow: hidden; /* Ensures tracks that move outside are hidden */
-    width: 100vw; /* Full viewport width */
-    height: 100vh; /* Full viewport height */
-}
-
-.track {
-    position: absolute; /* Allows for free positioning */
-    width: 300px; /* Same as desiredTrackWidth */
-    height: auto; /* Maintain aspect ratio */
-}
 
 
 /* Mobile and Laptop Adjustments */
