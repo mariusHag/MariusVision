@@ -7,7 +7,7 @@ body {
     font-family: Arial, sans-serif;
     line-height: 1.6;
     min-height: 100vh;
-    background-color: #031231;
+    background-color: f1e2cf;
     color: #020402;
 }
 /* Base Styles */
@@ -106,12 +106,10 @@ body {
 
 /* Container Image */
 .container-image {
-    width: 101%;
+    width: 40%;
     height: 101%;
-    object-fit: cover;
     position: absolute;
-    bottom: 0;
-    left: 50%;
+    bottom: 20;
     transform: translateX(-50%);
 }
 
