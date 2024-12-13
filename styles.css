@@ -57,7 +57,7 @@ body {
     justify-content: center;
     align-items: center;
     gap: calc((100vw - 2 * var(--box-width)) / 3);
-    background: linear-gradient(to bottom, #f1e2cf, #eebc7d);
+    /*background: linear-gradient(to bottom, #f1e2cf, #eebc7d);*/
 }
 
 /* Quadratic Elements */
