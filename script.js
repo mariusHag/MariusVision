@@ -59,16 +59,16 @@ function setLanguage(lang) {
         // Map the language code to the corresponding image file
         switch (lang) {
             case 'en':
-                imagePath = 'images/english.svg';
+                imagePath = 'images/mv2.svg';
                 break;
             case 'es':
-                imagePath = 'images/spanish.svg';
+                imagePath = 'images/mv2.svg';
                 break;
             case 'da':
-                imagePath = 'images/danish.svg';
+                imagePath = 'images/mv2.svg';
                 break;
             default:
-                imagePath = 'images/english.svg'; // Fallback to English if unknown
+                imagePath = 'images/mv2.svg'; // Fallback to English if unknown
         }
 
         image.src = imagePath;
