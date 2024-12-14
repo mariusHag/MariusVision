@@ -106,5 +106,43 @@
     <script src="script.js"></script> <!-- Your existing script -->
     <script src="track.js"></script> <!-- New script for track functionality -->
     <script src="stars.js"></script> <!-- Script for star generation -->
+    <script>
+    // Smooth scrolling and section-lock behavior
+    document.addEventListener("DOMContentLoaded", function () {
+        const sections = document.querySelectorAll("section"); // Adjust selector if your sections use different tags
+        const options = {
+            threshold: 0.6, // Trigger when 60% of the section is in view
+        };
+
+        let observer = new IntersectionObserver((entries) => {
+            entries.forEach((entry) => {
+                if (entry.isIntersecting) {
+                    sections.forEach((sec) => sec.classList.remove("active")); // Remove active from all sections
+                    entry.target.classList.add("active"); // Add active to the current section
+                }
+            });
+        }, options);
+
+        sections.forEach((section) => {
+            observer.observe(section);
+        });
+
+        // Optional: Lock the scroll to sections on manual scrolling
+        let isScrolling = false;
+        window.addEventListener("scroll", () => {
+            if (!isScrolling) {
+                isScrolling = true;
+                setTimeout(() => {
+                    const currentSection = document.querySelector("section.active");
+                    if (currentSection) {
+                        currentSection.scrollIntoView({ behavior: "smooth", block: "start" });
+                    }
+                    isScrolling = false;
+                }, 200); // Adjust timing as needed
+            }
+        });
+    });
+</script>
+
 </body>
 </html>
