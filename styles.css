@@ -15,6 +15,11 @@ body {
     --box-width: 35vw; /* Default box width for desktop */
 }
 
+/* Enable smooth scrolling */
+html {
+    scroll-behavior: smooth;
+}
+
 .portfolio-section-1 {
     position: relative;
     width: 100vw;
