@@ -32,7 +32,7 @@
 
     <!-- Homepage Content -->
     <main>
-<section class="startcontainer">     
+  
 <div class="full-height-container">
     <picture>
         <!-- Spanish Image -->
@@ -63,14 +63,14 @@
         <p data-translate="text1"></p>
     </div>
 </div>
-</section>
 
-<section class="portfolio-section-1">
+
+<div class="portfolio-section-1">
     <img src="images/Port_image1.jpg" alt="Image 1" class="active">
     <img src="images/Port_image2.jpg" alt="Image 2">
     <img src="images/Port_image3.jpg" alt="Image 3">
     <img src="images/Port_image4.jpg" alt="Image 4">
-</section>
+</div>
 
 
 
@@ -107,43 +107,7 @@
     <script src="script.js"></script> <!-- Your existing script -->
     <script src="track.js"></script> <!-- New script for track functionality -->
     <script src="stars.js"></script> <!-- Script for star generation -->
-    <script>
-    // Smooth scrolling and section-lock behavior
-    document.addEventListener("DOMContentLoaded", function () {
-        const sections = document.querySelectorAll("section"); // Adjust selector if your sections use different tags
-        const options = {
-            threshold: 0.6, // Trigger when 60% of the section is in view
-        };
-
-        let observer = new IntersectionObserver((entries) => {
-            entries.forEach((entry) => {
-                if (entry.isIntersecting) {
-                    sections.forEach((sec) => sec.classList.remove("active")); // Remove active from all sections
-                    entry.target.classList.add("active"); // Add active to the current section
-                }
-            });
-        }, options);
-
-        sections.forEach((section) => {
-            observer.observe(section);
-        });
-
-        // Optional: Lock the scroll to sections on manual scrolling
-        let isScrolling = false;
-        window.addEventListener("scroll", () => {
-            if (!isScrolling) {
-                isScrolling = true;
-                setTimeout(() => {
-                    const currentSection = document.querySelector("section.active");
-                    if (currentSection) {
-                        currentSection.scrollIntoView({ behavior: "smooth", block: "start" });
-                    }
-                    isScrolling = false;
-                }, 200); // Adjust timing as needed
-            }
-        });
-    });
-</script>
+   
 
 </body>
 </html>
