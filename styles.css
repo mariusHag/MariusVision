@@ -64,6 +64,15 @@ body {
     position: absolute;
     transform: translateX(-50%);
 }
+/* paralex Image */
+.paralex-image {
+    width: 40%;
+    height: 101%;
+    bottom: 20px;
+    position: absolute;
+    transform: translateX(-50%);
+}
+
 
 /* Media Queries */
 
