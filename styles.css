@@ -67,6 +67,7 @@ body {
 /* Parallax Image */
 .paralex-image {
     height: 120%;
+    bottom: -50px;
     position: absolute;
     transform: translate(-37%, -50px); /* Initial position */
     will-change: transform; /* Optimizes animation performance */
