@@ -66,11 +66,10 @@ body {
 }
 /* paralex Image */
 .paralex-image {
-    width: 40%;
     height: 101%;
-    bottom: 20px;
+    bottom: 0px;
     position: absolute;
-    transform: translateX(-50%);
+    transform: translateX(-37%);
 }
 
 
