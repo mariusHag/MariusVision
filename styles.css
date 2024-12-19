@@ -64,13 +64,14 @@ body {
     position: absolute;
     transform: translateX(-50%);
 }
-/* paralex Image */
+/* Parallax Image */
 .paralex-image {
     height: 120%;
-    bottom: -50px;
     position: absolute;
-    transform: translateX(-37%);
+    transform: translate(-37%, -50px); /* Initial position */
+    will-change: transform; /* Optimizes animation performance */
 }
+
 
 
 /* Media Queries */
