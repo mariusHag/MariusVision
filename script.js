@@ -23,7 +23,7 @@ document.addEventListener('scroll', () => {
 
     // Map the scroll position to the transform range
     const newY = Math.min(maxY, minY + scrollTop * 0.2); // Adjust 0.2 to control speed
-    paralexImage.style.transform = `translate(-37%, ${newY}px)`;
+    paralexImage.style.transform = `translate(0%, ${newY}px)`;
 });
 
 
