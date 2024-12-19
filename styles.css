@@ -51,59 +51,7 @@ body {
     position: relative;
 }
 
-/* Intro Container */
-.intro-container {
-    height: 100vh;
-    display: flex;
-    flex-direction: column;
-    justify-content: center;
-    align-items: center;
-    gap: calc((100vw - 2 * var(--box-width)) / 3);
-    /*background: linear-gradient(to bottom, #f1e2cf, #eebc7d);*/
-}
 
-/* Quadratic Elements */
-.quadratic-element,
-.text-box {
-    width: var(--box-width); /* Use the responsive box width */
-    aspect-ratio: 1 / 1;
-    display: flex;
-    align-items: center;
-    justify-content: center;
-
-
-}
-
-
-/* Text Box Styling */
-.text-box {
-    display: flex;
-    flex-direction: column; /* Stack header and paragraph vertically */
-
-}
-
-/* Header Styling */
-.text-box h1 {
-    font-size: 2em; /* Adjust the size as needed */
-    margin-bottom: 10px; /* Space between header and paragraph */
-    color:000000; /* Change this to match your design */
-   
-}
-
-/* Paragraph Styling */
-.text-box p {
-    font-size: 20px; /* Maintain consistent font size */
-    color:000000; /* Change this to match your design */
-    
-}
-
-/* Image Styling */
-.quadratic-element img {
-    width: 100%;
-    height: 100%;
-    object-fit: cover;
-    border-radius: 10px;
-}
 
 /* Fade-in animation */
 @keyframes fadeIn {
