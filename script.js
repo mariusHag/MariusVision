@@ -19,12 +19,13 @@ document.addEventListener('scroll', () => {
     const paralexImage = document.querySelector('.paralex-image');
     const scrollTop = window.scrollY; // Get the vertical scroll position
     const minY = 0; // Start position
-    const maxY = 130; // End position
-    
+    const maxY = 150; // End position
+
     // Map the scroll position to the transform range
-    const newY = Math.max(maxY, minY + scrollTop * 0.2); // Adjust 0.2 to control speed
+    const newY = Math.min(maxY, minY + scrollTop * 0.2); // Adjust 0.2 to control speed
     paralexImage.style.transform = `translate(-37%, ${newY}px)`;
 });
+
 
 document.addEventListener("DOMContentLoaded", function() {
     let previousHeight = window.innerHeight;
