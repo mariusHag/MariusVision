@@ -16,6 +16,12 @@ body {
 }
 
 
+/* first header */
+.intro-title {
+
+    color: #000000; /* black*/
+    text-align: center;
+}
 
 .portfolio-section-1 {
     position: relative;
