@@ -83,8 +83,8 @@ body {
 /* logo Image */
 .logo-image {
     
-    height: 40%;
-    bottom: 20px;
+    width: 95vw;
+    bottom: 25px;
     left: 50%; /* Center horizontally */
     transform: translateX(-50%); /* Adjust position to account for the element's width */
     position: absolute; 
