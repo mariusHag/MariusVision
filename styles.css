@@ -72,7 +72,14 @@ body {
     transform: translate(0%, 0px); /* Initial position */
     will-change: transform; /* Optimizes animation performance */
 }
-
+/* cover Image */
+.cover-image {
+    
+    height: 101%;
+    bottom: 0px;
+    position: absolute;
+    
+}
 
 
 /* Media Queries */
