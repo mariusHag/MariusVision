@@ -75,7 +75,8 @@ body {
 /* cover Image */
 .cover-image {
     
-    height: 101%;
+    height: 100%;
+    left: 0px;
     bottom: 0px;
     position: absolute;
     
