@@ -52,18 +52,6 @@ body {
 }
 
 
-
-
-
-
-/* Container Image */
-.container-image {
-    width: 40%;
-    height: 101%;
-    bottom: 20px;
-    position: absolute;
-    transform: translateX(-50%);
-}
 /* Parallax Image */
 .paralex-image {
     height: 120%;
