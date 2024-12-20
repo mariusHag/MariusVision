@@ -60,7 +60,7 @@ function changeImage() {
     images[currentIndex].classList.add('active');
 }
 
-setInterval(changeImage, 5000); // Change image every 5 seconds
+setInterval(changeImage, 2500); // Change image every 2.5 seconds
 
 
 function setLanguage(lang) {
