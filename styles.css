@@ -18,11 +18,11 @@ body {
 
 #intro-title {
     position: absolute;
-    top: 50%; /* Center vertically */
-    left: 50%; /* Center horizontally */
+    top: 17%; /* Center vertically */
+    left: 22%; /* Center horizontally */
     transform: translate(-50%, -50%); /* Adjust for center alignment */
     color: black; /* Ensure the text contrasts with the background */
-    font-size: 2rem; /* Adjust as needed */
+    font-size: 1.8rem; /* Adjust as needed */
     z-index: 10; /* Make sure the text appears above other elements */
 }
 .portfolio-section-1 {
