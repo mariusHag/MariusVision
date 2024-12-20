@@ -19,7 +19,7 @@ document.addEventListener('scroll', () => {
     const paralexImage = document.querySelector('.paralex-image');
     const scrollTop = window.scrollY; // Get the vertical scroll position
     const minY = 0; // Start position
-    const maxY = 150; // End position
+    const maxY = 150*2; // End position
 
     // Map the scroll position to the transform range
     const newY = Math.min(maxY, minY + scrollTop * 0.2); // Adjust 0.2 to control speed
