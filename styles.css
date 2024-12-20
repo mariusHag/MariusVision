@@ -78,10 +78,15 @@ body {
     height: 100%;
     left: 0px;
     bottom: 0px;
-    position: absolute;
-    
+    position: absolute; 
 }
-
+/* logo Image */
+.logo-image {
+    
+    height: 100%;
+    bottom: 0px;
+    position: absolute; 
+}
 
 /* Media Queries */
 
