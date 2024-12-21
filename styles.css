@@ -37,6 +37,15 @@ body {
 .portfolio-section-1 img.active {
     opacity: 1;
 }
+/* cover2 Image */
+.cover2-image {
+    
+    height: 100%;
+    left: 50%; /* Center horizontally */
+    transform: translateX(-50%); /* Adjust position to account for the element's width */
+    bottom: 0px;
+    position: absolute; 
+}
 
 /* Intro Container */
 #intro-container {
