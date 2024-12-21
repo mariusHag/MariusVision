@@ -27,7 +27,7 @@ body {
 }
 #intro-text {
     position: absolute;
-    top: 19%; /* Center vertically */
+    top: 22%; /* Center vertically */
     left: 22%; /* Center horizontally */
     transform: translate(-50%, -50%); /* Adjust for center alignment */
     color: black; /* Ensure the text contrasts with the background */
