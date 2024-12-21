@@ -51,14 +51,22 @@ document.addEventListener("DOMContentLoaded", function() {
     });
 });
 
-const images = document.querySelectorAll('.portfolio-section-1 img');
+
+
+// Get all images within the .image-slider container
+const imageSlider = document.querySelector('.image-slider');
+const images = imageSlider.querySelectorAll('img'); // Select only images inside .image-slider
 let currentIndex = 0;
 
 function changeImage() {
-    images[currentIndex].classList.remove('active');
-    currentIndex = (currentIndex + 1) % images.length;
-    images[currentIndex].classList.add('active');
+    images[currentIndex].classList.remove('active'); // Remove 'active' from the current image
+    currentIndex = (currentIndex + 1) % images.length; // Increment the index
+    images[currentIndex].classList.add('active'); // Add 'active' to the next image
 }
+
+// Set an interval to change images every 1.5 seconds
+setInterval(changeImage, 1500);
+
 
 setInterval(changeImage, 1500); // Change image every 1.5 seconds
 
