@@ -16,23 +16,26 @@ body {
 }
 
 
-#intro-title {
-    position: absolute;
-    top: 17%; /* Center vertically */
-    left: 22%; /* Center horizontally */
-    transform: translate(-50%, -50%); /* Adjust for center alignment */
-    color: black; /* Ensure the text contrasts with the background */
-    font-size: 1.8rem; /* Adjust as needed */
-    z-index: 10; /* Make sure the text appears above other elements */
+#intro-container {
+    display: flex;
+    flex-direction: column; /* Stack items vertically */
+    align-items: center; /* Center items horizontally */
+    justify-content: center; /* Center items vertically */
+    height: 100vh; /* Full viewport height */
+    text-align: center; /* Center text alignment */
 }
+
+#intro-title {
+    color: black;
+    font-size: 1.8rem; /* Adjust as needed */
+    margin-bottom: 1rem; /* Dynamic space between title and text */
+    z-index: 10;
+}
+
 #intro-text {
-    position: absolute;
-    top: 22%; /* Center vertically */
-    left: 22%; /* Center horizontally */
-    transform: translate(-50%, -50%); /* Adjust for center alignment */
-    color: black; /* Ensure the text contrasts with the background */
+    color: black;
     font-size: 1rem; /* Adjust as needed */
-    z-index: 10; /* Make sure the text appears above other elements */
+    z-index: 10;
 }
 
 
