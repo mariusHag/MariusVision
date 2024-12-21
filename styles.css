@@ -16,29 +16,6 @@ body {
 }
 
 
-#intro-container {
-    display: flex;
-    flex-direction: column; /* Stack items vertically */
-    align-items: center; /* Center items horizontally */
-    justify-content: center; /* Center items vertically */
-    height: 100vh; /* Full viewport height */
-    text-align: center; /* Center text alignment */
-}
-
-#intro-title {
-    color: black;
-    font-size: 1.8rem; /* Adjust as needed */
-    margin-bottom: 1rem; /* Dynamic space between title and text */
-    z-index: 10;
-}
-
-#intro-text {
-    color: black;
-    font-size: 1rem; /* Adjust as needed */
-    z-index: 10;
-}
-
-
 .portfolio-section-1 {
     position: relative;
     width: 100vw;
@@ -59,6 +36,32 @@ body {
 
 .portfolio-section-1 img.active {
     opacity: 1;
+}
+
+/* Intro Container */
+#intro-container {
+    position: absolute; /* Layer it on top without pushing other elements */
+    top: 50%; /* Center vertically */
+    left: 50%; /* Center horizontally */
+    transform: translate(-50%, -50%); /* Perfect centering */
+    display: flex;
+    flex-direction: column; /* Stack the title and text */
+    align-items: center; /* Center horizontally */
+    text-align: center;
+    z-index: 4; /* Ensure it's above all images */
+}
+
+/* Intro Title */
+#intro-title {
+    color: black;
+    font-size: 1.8rem;
+    margin-bottom: 1rem;
+}
+
+/* Intro Text */
+#intro-text {
+    color: black;
+    font-size: 1rem;
 }
 
 
