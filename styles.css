@@ -102,7 +102,7 @@ body {
 /* cover Image */
 .cover-image {
     
-    height: 100.01%;
+    height: 100.1%;
     left: 50%; /* Center horizontally */
     transform: translateX(-50%); /* Adjust position to account for the element's width */
     bottom: -1px;
