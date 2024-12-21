@@ -41,8 +41,8 @@ body {
 /* Intro Container */
 #intro-container {
     position: absolute; /* Layer it on top without pushing other elements */
-    top: 50%; /* Center vertically */
-    left: 50%; /* Center horizontally */
+    top: 35%; /* Center vertically */
+    left: 20%; /* Center horizontally */
     transform: translate(-50%, -50%); /* Perfect centering */
     display: flex;
     flex-direction: column; /* Stack the title and text */
