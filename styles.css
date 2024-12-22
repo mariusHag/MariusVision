@@ -91,6 +91,33 @@ body {
 }
 
 
+/* pt Container */
+#pt1-container {
+    position: absolute; /* Layer it on top without pushing other elements */
+    top: 35%; /* Center vertically */
+    left: 20%; /* Center horizontally */
+    transform: translate(-50%, -50%); /* Perfect centering */
+    display: flex;
+    flex-direction: column; /* Stack the title and text */
+    align-items: center; /* Center horizontally */
+    text-align: center;
+    z-index: 4; /* Ensure it's above all images */
+}
+
+/* pt Title */
+#pt1-header {
+    color: black;
+    font-size: 1.8rem;
+    margin-bottom: 1rem;
+}
+
+/* pt Text */
+#pt1-text {
+    color: black;
+    font-size: 1rem;
+}
+
+
 /* Parallax Image */
 .paralex-image {
     height: 120%;
