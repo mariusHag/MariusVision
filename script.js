@@ -68,41 +68,8 @@ function changeImage() {
 setInterval(changeImage, 1500);
 
 
-setInterval(changeImage, 1500); // Change image every 1.5 seconds
 
 
-function setLanguage(lang) {
-    const elements = document.querySelectorAll("[data-translate]");
-    elements.forEach(element => {
-        const key = element.getAttribute("data-translate");
-        if (translations[lang] && translations[lang][key]) {
-            element.textContent = translations[lang][key];
-        }
-    });
-
-    // Change the image source based on the selected language
-    const image = document.querySelector(".container-image");
-    if (image) {
-        let imagePath = '';
-
-        // Map the language code to the corresponding image file
-        switch (lang) {
-            case 'en':
-                imagePath = 'images/mv2.svg';
-                break;
-            case 'es':
-                imagePath = 'images/mv2.svg';
-                break;
-            case 'da':
-                imagePath = 'images/mv2.svg';
-                break;
-            default:
-                imagePath = 'images/mv2.svg'; // Fallback to English if unknown
-        }
-
-        image.src = imagePath;
-    }
-}
 
 
 
