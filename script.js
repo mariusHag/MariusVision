@@ -58,14 +58,18 @@ const imageSlider = document.querySelector('.image-slider');
 const images = imageSlider.querySelectorAll('img'); // Select only images inside .image-slider
 let currentIndex = 0;
 
+// Ensure the first image is active on page load
+images[currentIndex].classList.add('active');
+
 function changeImage() {
     images[currentIndex].classList.remove('active'); // Remove 'active' from the current image
-    currentIndex = (currentIndex + 1) % images.length; // Increment the index
+    currentIndex = (currentIndex + 1) % images.length; // Increment the index (cyclically)
     images[currentIndex].classList.add('active'); // Add 'active' to the next image
 }
 
 // Set an interval to change images every 1.5 seconds
 setInterval(changeImage, 1500);
+
 
 
 
