@@ -55,7 +55,7 @@ body {
 /* Intro Container */
 #intro-container {
     position: absolute; /* Layer it on top without pushing other elements */
-    top: 35%; /* Center vertically */
+    top: 50%; /* Center vertically */
     left: 20%; /* Center horizontally */
     transform: translate(-50%, -50%); /* Perfect centering */
     display: flex;
