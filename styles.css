@@ -54,15 +54,20 @@ body {
 
 /* Intro Container */
 #intro-container {
-    position: absolute; /* Layer it on top without pushing other elements */
-    top: 35%; /* Center vertically */
-    left: 20%; /* Center horizontally */
-    transform: translate(-50%, -50%); /* Perfect centering */
-    display: flex;
-    flex-direction: column; /* Stack the title and text */
-    align-items: center; /* Center horizontally */
-    text-align: center;
-    z-index: 4; /* Ensure it's above all images */
+    position: absolute;
+top: 35%;
+left: 27.5%; /* Half of the left container's width (55%) */
+transform: translate(-50%, -50%);
+width: 45%; /* Ensures the box fills a portion of the left container */
+max-width: calc(55% - 40px); /* Dynamic max-width based on the container */
+padding: 20px; /* Internal spacing for equal distance to the sides */
+box-sizing: border-box; /* Ensures padding is included in dimensions */
+display: flex;
+flex-direction: column;
+align-items: center;
+text-align: center;
+z-index: 4;
+
 }
 
 /* Intro Title */
