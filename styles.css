@@ -54,19 +54,23 @@ body {
 
 /* Intro Container */
 #intro-container {
-    position: absolute;
-top: 35%;
-left: 27.5%; /* Half of the left container's width (55%) */
-transform: translate(-50%, -50%);
-width: 45%; /* Ensures the box fills a portion of the left container */
-max-width: calc(55% - 40px); /* Dynamic max-width based on the container */
-padding: 20px; /* Internal spacing for equal distance to the sides */
-box-sizing: border-box; /* Ensures padding is included in dimensions */
-display: flex;
-flex-direction: column;
-align-items: center;
-text-align: center;
-z-index: 4;
+  --container-width: 51%; /* The variable is now scoped to this box */
+
+  position: absolute;
+  top: 35%; /* Vertical positioning */
+  left: calc(var(--container-width) / 2); /* Half of the container width */
+  transform: translate(-50%, -50%); /* Center horizontally and vertically */
+  width: calc(var(--container-width) * 0.8); /* Adjust width as a percentage of the container */
+  max-width: calc(var(--container-width) - 40px); /* Ensure it stays within the container */
+  padding: 20px; /* Internal spacing */
+  box-sizing: border-box; /* Include padding in size calculations */
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  text-align: center;
+  z-index: 4;
+  background-color: white; /* Optional for visualization */
+  border: 1px solid #ccc; /* Optional for visualization */
 
 }
 
