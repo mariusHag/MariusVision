@@ -69,8 +69,6 @@ body {
   align-items: center;
   text-align: center;
   z-index: 4;
-  background-color: white; /* Optional for visualization */
-  border: 1px solid #ccc; /* Optional for visualization */
 
 }
 
