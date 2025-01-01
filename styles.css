@@ -15,6 +15,63 @@ body {
     --box-width: 35vw; /* Default box width for desktop */
 }
 
+/* New Section*/
+.project-section {
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    text-align: center;
+    padding: 5vw;
+    background-color: #f8f8f8;
+}
+
+.image-container {
+    max-width: 40%;
+    aspect-ratio: 1 / 1.5; /* Adjust ratio as needed */
+}
+
+.image-container img {
+    width: 100%;
+    height: auto;
+    object-fit: cover;
+    border-radius: 8px;
+    box-shadow: 0 4px 6px rgba(0, 0, 0, 0.1);
+}
+
+.text-container {
+    margin-top: 3vw;
+    max-width: 60%;
+}
+
+.text-container h1 {
+    font-size: 2.5vw;
+    color: #7a5230;
+    border-bottom: 2px solid #d0a578;
+    display: inline-block;
+    padding-bottom: 0.5vw;
+}
+
+.text-container p {
+    font-size: 1.2vw;
+    margin: 2vw 0;
+    color: #5e5e5e;
+}
+
+.client-quote {
+    font-size: 1.2vw;
+    background-color: #d0a578;
+    color: #fff;
+    padding: 1.5vw;
+    border-radius: 8px;
+    box-shadow: 0 4px 6px rgba(0, 0, 0, 0.1);
+}
+/*end*/
+
+
+
+
+
+
 
 .portfolio-section-1 {
     position: relative;
