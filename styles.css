@@ -16,11 +16,6 @@ body {
 }
 
 /* New Section*/
-body {
-    margin: 0;
-    font-family: Arial, sans-serif;
-    line-height: 1.6;
-}
 
 .project-section {
     display: flex;
@@ -50,6 +45,15 @@ body {
     position: absolute;
     top: 5vw;
     left: 5vw;
+}
+
+.line {
+    position: absolute;
+    top: 50%;
+    left: 5%;
+    width: 95%; /* Adjusted to fill 95% width */
+    height: 2px;
+    background-color: #7a5230;
 }
 
 .image-container {
