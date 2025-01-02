@@ -20,8 +20,16 @@ body {
 .project-section {
     display: flex;
     flex-direction: row;
-    width: 100%;
     height: 100vh;
+    position: absolute; /* Layer it on top without pushing other elements */
+    top: 50%; /* Center vertically */
+    right: 77%; /* Center horizontally */
+    transform: translate(-50%, -50%); /* Perfect centering */
+    display: flex;
+    flex-direction: column; /* Stack the title and text */
+    align-items: center; /* Center horizontally */
+    text-align: center;
+    z-index: 4; /* Ensure it's above all images */
 }
 
 .left-section, .right-section {
@@ -203,18 +211,7 @@ body {
     text-align: center;
     z-index: 4; /* Ensure it's above all images */
 }
-/* pt Container */
-#pt2-container {
-    position: absolute; /* Layer it on top without pushing other elements */
-    top: 50%; /* Center vertically */
-    right: 77%; /* Center horizontally */
-    transform: translate(-50%, -50%); /* Perfect centering */
-    display: flex;
-    flex-direction: column; /* Stack the title and text */
-    align-items: center; /* Center horizontally */
-    text-align: center;
-    z-index: 4; /* Ensure it's above all images */
-}
+
 
 /* pt Title */
 #pt1-header {
