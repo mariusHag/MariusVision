@@ -20,9 +20,7 @@ body {
 /* Intro Container */
 #pt2-container {
   --container2-width: 51%; /* The variable is now scoped to this box */
-
   position: absolute;
-  top: 35%; /* Vertical positioning */
   left: calc(var(--container2-width) / 2); /* Half of the container width */
   transform: translate(-50%, -50%); /* Center horizontally and vertically */
   width: calc(var(--container2-width) * 0.8); /* Adjust width as a percentage of the container */
@@ -34,7 +32,7 @@ body {
   align-items: center;
   text-align: center;
   z-index: 4;
-
+  background: #e5e5e5;
 }
 .project-section {
     height: 100vh;
