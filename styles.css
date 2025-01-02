@@ -205,15 +205,25 @@ body {
 }
 /* pt Container */
 #pt2-container {
-    position: absolute; /* Layer it on top without pushing other elements */
-    top: 50%; /* Center vertically */
-    right: 77%; /* Center horizontally */
-    transform: translate(-50%, -50%); /* Perfect centering */
-    display: flex;
-    flex-direction: column; /* Stack the title and text */
-    align-items: center; /* Center horizontally */
-    text-align: center;
-    z-index: 4; /* Ensure it's above all images */
+/* Intro Container */
+#intro-container {
+  --container2-width: 51%; /* The variable is now scoped to this box */
+
+  position: absolute;
+  top: 35%; /* Vertical positioning */
+  left: calc(var(--container-width) / 2); /* Half of the container width */
+  transform: translate(-50%, -50%); /* Center horizontally and vertically */
+  width: calc(var(--container2-width) * 0.8); /* Adjust width as a percentage of the container */
+  max-width: calc(var(--container2-width) - 40px); /* Ensure it stays within the container */
+  padding: 20px; /* Internal spacing */
+  box-sizing: border-box; /* Include padding in size calculations */
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  text-align: center;
+  z-index: 4;
+
+}
 }
 
 /* pt Title */
