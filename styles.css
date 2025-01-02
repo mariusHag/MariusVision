@@ -203,10 +203,9 @@ body {
     text-align: center;
     z-index: 4; /* Ensure it's above all images */
 }
-/* pt Container */
-#pt2-container {
+
 /* Intro Container */
-#intro-container {
+#pt2-container {
   --container2-width: 51%; /* The variable is now scoped to this box */
 
   position: absolute;
@@ -224,7 +223,7 @@ body {
   z-index: 4;
 
 }
-}
+
 
 /* pt Title */
 #pt1-header {
