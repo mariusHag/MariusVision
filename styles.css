@@ -21,6 +21,8 @@ body {
 /* pt Container */
 .white-cover {
   background-color: #ffffff; /* White background */
+position: relative;
+    z-index: 3;
   width: 200px; /* Example width */
   height: 100px; /* Example height */
 }
@@ -136,7 +138,6 @@ body {
 
 .portfolio-section-1 {
     position: relative;
-    width: 100vw;
     height: 100vh;
     overflow: hidden;
 }
