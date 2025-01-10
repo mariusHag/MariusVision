@@ -31,21 +31,7 @@ body {
 
 }
 
-/* Intro Container */
-.pt2-container {
-  position: absolute;
-  left: 0;
-  width: 50%;
-  height: 100vh;
-  padding: 20px;
-  box-sizing: border-box;
-  display: flex;
-  flex-direction: column;
-  align-items: center;
-  text-align: center;
-  z-index: 4;
-  background: #e5e5e5;
-}
+
 .project-section {
     height: 100vh;
     display: flex;
@@ -55,6 +41,16 @@ body {
     background-color: #d9d9d9;
     position: relative;
 }
+.pt2-container {
+  position: relative; /* Relative positioning */
+  margin-left: auto; /* Automatically push the box to the right */
+  margin-right: 0; /* Optional, to ensure no extra space on the right */
+  width: 50%; /* Example width */
+  height: 100%; /* Example height */
+  z-index: 4;
+  background-color: #e5e5e5;
+}
+
 
 .left-section, .right-section {
     flex: 1;
