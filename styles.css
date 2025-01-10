@@ -19,19 +19,12 @@ body {
 
 
 /* pt Container */
-#white-cover {
-      background: rgba(229, 229, 229, 0.4);
-
-    position: absolute; /* Layer it on top without pushing other elements */
-    top: 0%; /* Center vertically */
-    left: 77%; /* Center horizontally */
-height: 100%
-    display: flex;
-    flex-direction: column; /* Stack the title and text */
-    align-items: center; /* Center horizontally */
-    text-align: center;
-    z-index: 4; /* Ensure it's above all images */
+.white-cover {
+  background-color: #ffffff; /* White background */
+  width: 200px; /* Example width */
+  height: 100px; /* Example height */
 }
+
 /* Intro Container */
 #pt2-container {
   position: absolute;
