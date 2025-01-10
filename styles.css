@@ -17,19 +17,20 @@ body {
 
 /* New Section*/
 
+
+/* pt Container */
 #white-cover {
-  position: absolute;
-  right: 0;
-  width: 50%;
-  padding: 20px; /* Internal spacing */
-  box-sizing: border-box; /* Include padding in size calculations */
-  display: flex;
-  flex-direction: column;
-  align-items: center;
-  text-align: center;
-  z-index: 3;
-  background: rgba(229, 229, 229, 0.4);
-  height: 100vh;
+      background: rgba(229, 229, 229, 0.4);
+
+    position: absolute; /* Layer it on top without pushing other elements */
+    top: 0%; /* Center vertically */
+    left: 77%; /* Center horizontally */
+height: 100%
+    display: flex;
+    flex-direction: column; /* Stack the title and text */
+    align-items: center; /* Center horizontally */
+    text-align: center;
+    z-index: 4; /* Ensure it's above all images */
 }
 /* Intro Container */
 #pt2-container {
