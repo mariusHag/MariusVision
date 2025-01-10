@@ -21,10 +21,14 @@ body {
 /* pt Container */
 .white-cover {
   background-color: #ffffff; /* White background */
-position: relative;
-    z-index: 3;
-  width: 200px; /* Example width */
+  position: relative; /* Relative positioning */
+  margin-left: auto; /* Automatically push the box to the right */
+  margin-right: 0; /* Optional, to ensure no extra space on the right */
+  width: 50%; /* Example width */
   height: 100px; /* Example height */
+  z-index: 3;
+}
+
 }
 
 /* Intro Container */
