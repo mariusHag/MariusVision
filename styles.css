@@ -33,6 +33,7 @@ body {
   text-align: center;
   z-index: 4;
   background: #e5e5e5;
+  height: 100vh;
 }
 .project-section {
     height: 100vh;
