@@ -21,8 +21,7 @@ body {
 #pt2-container {
   --container2-width: 51%; /* The variable is now scoped to this box */
   position: absolute;
-  left: calc(var(--container2-width) / 2); /* Half of the container width */
-  transform: translate(-50%, -50%); /* Center horizontally and vertically */
+  left: 0
   width: calc(var(--container2-width) * 0.8); /* Adjust width as a percentage of the container */
   max-width: calc(var(--container2-width) - 40px); /* Ensure it stays within the container */
   padding: 20px; /* Internal spacing */
