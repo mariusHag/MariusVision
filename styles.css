@@ -30,24 +30,24 @@ body {
 
 }
 
-
 .project-section {
-    height: 100vh;
-    display: flex;
-    justify-content: center;
-    align-items: flex-end;
-    overflow: hidden;
-    background-color: #d9d9d9;
-    position: relative;
+  height: 100vh;
+  display: flex;
+  justify-content: center;
+  align-items: flex-end;
+  background-color: #d9d9d9;
+  position: relative;
 }
+
 .pt2-container {
   position: relative; /* Relative positioning */
   margin-left: auto; /* Automatically push the box to the right */
   margin-right: 0; /* Optional, to ensure no extra space on the right */
   width: 50%; /* Example width */
-  height: 100%; /* Example height */
+  height: 80%; /* Example height to test visibility */
   z-index: 4;
   background-color: #e5e5e5;
+  border: 2px solid red; /* Temporary border for visibility */
 }
 
 
