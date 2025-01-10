@@ -20,7 +20,7 @@ body {
 /* Intro Container */
 #pt2-container {
   position: absolute;
-  left: 0
+  left: 0;
   width: 50%;
   padding: 20px; /* Internal spacing */
   box-sizing: border-box; /* Include padding in size calculations */
