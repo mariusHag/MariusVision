@@ -106,18 +106,14 @@ body {
 
 /* logo Image */
 .bt1-image {
-    height: 88vh;
-    top: 12%;
+    height: 97vh;
+    top: 4%;
     left: 25%;
-    transform: translateX(-50%);
-    position: absolute;
-}
 
-.bt2-image {
-    height: 60vh;
-    top: 25%;
-    left: 25%;
+    /* Center horizontally */
     transform: translateX(-50%);
+
+    /* Adjust position to account for the element's width */
     position: absolute;
 }
 
