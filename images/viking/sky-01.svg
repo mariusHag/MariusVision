@@ -1,0 +1,143 @@
+<svg xmlns="http://www.w3.org/2000/svg" xmlns:xlink="http://www.w3.org/1999/xlink" viewBox="0 0 981.52568 1243.06656">
+  <defs>
+    <style>
+      .a {
+        fill: url(#a);
+      }
+
+      .b {
+        fill: #fff;
+      }
+
+      .c {
+        fill: #bdceff;
+      }
+
+      .d {
+        fill: #766887;
+      }
+
+      .e {
+        fill: #786a8b;
+      }
+
+      .f {
+        fill: #ffd5b6;
+      }
+
+      .g {
+        fill: #776888;
+      }
+
+      .h {
+        fill: #a99fb0;
+      }
+
+      .i {
+        fill: #b8ffdd;
+      }
+
+      .j {
+        fill: #a79dab;
+      }
+
+      .k {
+        fill: #d7bbff;
+      }
+
+      .l {
+        fill: #ffffb3;
+      }
+
+      .m {
+        fill: #78698a;
+      }
+
+      .n {
+        fill: #aaa0b2;
+      }
+
+      .o {
+        fill: #a79dac;
+      }
+
+      .p {
+        fill: #a89eae;
+      }
+
+      .q {
+        fill: #796c8e;
+      }
+
+      .r {
+        fill: #786b8e;
+      }
+
+      .s {
+        fill: #766886;
+      }
+
+      .t {
+        fill: #a9a0b2;
+      }
+
+      .u {
+        fill: #756784;
+      }
+
+      .v {
+        fill: #766785;
+      }
+
+      .w {
+        fill: #a99faf;
+      }
+    </style>
+    <linearGradient id="a" x1="490.76283" y1="616.84229" x2="490.76283" y2="-1.25769" gradientUnits="userSpaceOnUse">
+      <stop offset="0" stop-color="#5f579e"/>
+      <stop offset="0.16366" stop-color="#5c5295"/>
+      <stop offset="0.43638" stop-color="#54457b"/>
+      <stop offset="0.78237" stop-color="#463152"/>
+      <stop offset="1" stop-color="#3d2234"/>
+    </linearGradient>
+  </defs>
+  <title>sky</title>
+  <rect class="a" x="0.00282" width="981.52002" height="618.09998"/>
+  <g>
+    <circle class="b" cx="867.52879" cy="34.85106" r="0.73404"/>
+    <circle class="b" cx="864.44368" cy="94.64894" r="0.71277"/>
+    <circle class="c" cx="970.63517" cy="183.76596" r="0.82979"/>
+    <circle class="d" cx="849.26283" cy="244.12766" r="0.74468"/>
+    <circle class="e" cx="800.3373" cy="281.3617" r="0.76596"/>
+    <circle class="f" cx="747.86921" cy="230.85106" r="0.78723"/>
+    <circle class="g" cx="730.26283" cy="247.78723" r="0.89362"/>
+    <circle class="h" cx="720.37985" cy="192.2766" r="0.7234"/>
+    <circle class="c" cx="737.50751" cy="165.95745" r="0.82979"/>
+    <circle class="i" cx="777.18836" cy="146.53191" r="0.89362"/>
+    <circle class="j" cx="778.4224" cy="131.85106" r="0.76596"/>
+    <circle class="k" cx="750.29474" cy="115.38298" r="0.85106"/>
+    <circle class="b" cx="789.31602" cy="97.04255" r="0.89362"/>
+    <circle class="b" cx="755.18836" cy="67.78723" r="0.95745"/>
+    <circle class="b" cx="679.51815" cy="90.39894" r="0.73404"/>
+    <circle class="l" cx="677.60325" cy="139.81915" r="0.76596"/>
+    <circle class="l" cx="664.29474" cy="196.65957" r="1.02128"/>
+    <circle class="m" cx="586.86921" cy="266.17021" r="0.76596"/>
+    <circle class="n" cx="576.99687" cy="213.6383" r="0.87234"/>
+    <circle class="f" cx="548.31602" cy="164.74468" r="0.82979"/>
+    <circle class="o" cx="579.43304" cy="138.51064" r="0.73404"/>
+    <circle class="p" cx="506.20964" cy="162.93617" r="0.80851"/>
+    <circle class="q" cx="506.18836" cy="305.10638" r="0.76596"/>
+    <circle class="r" cx="476.28411" cy="297.2234" r="0.8617"/>
+    <circle class="s" cx="486.03943" cy="241.68085" r="0.85106"/>
+    <circle class="b" cx="482.98623" cy="31.14894" r="0.82979"/>
+    <circle class="b" cx="450.08198" cy="66.57447" r="0.85106"/>
+    <circle class="f" cx="473.25219" cy="86.71277" r="0.79787"/>
+    <circle class="l" cx="391.44368" cy="166.74468" r="0.93617"/>
+    <path class="t" d="M401.9969,210.0213a.766.766,0,1,0-.766.76593A.766.766,0,0,0,401.9969,210.0213Z"/>
+    <circle class="l" cx="338.93304" cy="237.46809" r="0.93617"/>
+    <circle class="u" cx="293.82666" cy="223.40426" r="0.76596"/>
+    <circle class="v" cx="211.52879" cy="228.95745" r="1.02128"/>
+    <circle class="w" cx="162.59262" cy="180.82979" r="0.89362"/>
+    <circle class="l" cx="92.24288" cy="257.17952" r="0.90293"/>
+  </g>
+</svg>

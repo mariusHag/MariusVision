@@ -17,36 +17,44 @@ document.addEventListener("DOMContentLoaded", function() {
 });
 
 document.addEventListener('scroll', () => {
-    // Handle .paralex-image elements (original code)
+    // Handle .paralex-image elements
     const paralexImages = document.querySelectorAll('.paralex-image');
     paralexImages.forEach(image => {
         const speed = parseFloat(image.dataset.scrollSpeed) || 0.2;
         const scrollTop = window.scrollY;
-        const newY = Math.min(300, scrollTop * speed); // Max 300px movement
+        const minY = 0;
+        const maxY = 300;
+
+        const newY = Math.min(maxY, minY + scrollTop * speed);
         image.style.transform = `translate(0%, ${newY}px)`;
     });
 
-    // Handle .paralex-image2 elements (updated code)
+    // Handle .paralex-image2 elements
     const paralexImages2 = document.querySelectorAll('.paralex-image2');
     const portfolioSection2 = document.querySelector('.portfolio-section-2');
 
     if (portfolioSection2) {
-        const sectionTop = portfolioSection2.offsetTop;
-        const sectionHeight = portfolioSection2.offsetHeight;
-        const scrollTop = window.scrollY;
-        const windowHeight = window.innerHeight;
+        const sectionTop = portfolioSection2.offsetTop; // Top position of the section
+        const sectionHeight = portfolioSection2.offsetHeight; // Height of the section
+        const scrollTop = window.scrollY; // Current scroll position
+        const windowHeight = window.innerHeight; // Height of the viewport
 
-        // Calculate how far the user has scrolled INSIDE the section
-        let sectionScroll = scrollTop - sectionTop;
-
-        // Clamp the scroll value between 0 and section height
-        sectionScroll = Math.max(0, Math.min(sectionScroll, sectionHeight));
+        // Calculate the scroll position relative to the section
+        const sectionScroll = scrollTop - sectionTop + windowHeight;
 
         paralexImages2.forEach(image => {
             const speed = parseFloat(image.dataset.scrollSpeed) || 0.2;
-            // Translate the image based on scroll progress within the section
-            const translateY = sectionScroll * speed;
-            image.style.transform = `translate(0%, ${translateY}px)`;
+            const minY = 0;
+            const maxY = 300;
+
+            // Only apply the parallax effect when the section is in view
+            if (scrollTop >= sectionTop - windowHeight && scrollTop <= sectionTop + sectionHeight) {
+                const newY = Math.min(maxY, minY + sectionScroll * speed);
+                image.style.transform = `translate(0%, ${newY}px)`;
+            } else {
+                // Reset the position if the section is not in view
+                image.style.transform = `translate(0%, 0px)`;
+            }
         });
     }
 });

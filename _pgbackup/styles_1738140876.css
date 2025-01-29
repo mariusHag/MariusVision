@@ -405,8 +405,56 @@ body {
 
 .paralex-image2 {
     position: absolute;
+    top: 0;
     left: 0;
     width: 100%;
+    object-fit: cover;
+
+    /* Initial position */
+    will-change: transform;
+}
+
+.paralex-image3 {
+    position: absolute;
+    top: 0;
+    left: 0;
+    width: 100%;
+    object-fit: cover;
+
+    /* Initial position */
+    will-change: transform;
+}
+
+.paralex-image4 {
+    position: absolute;
+    top: 0;
+    left: 0;
+    width: 100%;
+    object-fit: cover;
+
+    /* Initial position */
+    will-change: transform;
+}
+
+.paralex-image5 {
+    position: absolute;
+    top: 0;
+    left: 0;
+    width: 100%;
+    object-fit: cover;
+
+    /* Initial position */
+    will-change: transform;
+}
+
+.paralex-image6 {
+    position: absolute;
+    top: 0;
+    left: 0;
+    width: 100%;
+    object-fit: cover;
+
+    /* Initial position */
     will-change: transform;
 }
 

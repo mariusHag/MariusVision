@@ -405,8 +405,13 @@ body {
 
 .paralex-image2 {
     position: absolute;
+    top: 0;
     left: 0;
     width: 100%;
+    transform: translate(0%, 0px);
+    //object-fit: cover;
+
+    /* Initial position */
     will-change: transform;
 }
 

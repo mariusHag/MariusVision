@@ -244,6 +244,14 @@ body {
     overflow: hidden;
 }
 
+.portfolio-section-2 img {
+    position: absolute;
+    top: 0;
+    left: 0;
+    width: 100%;
+    object-fit: cover;
+}
+
 /* General styles for slideshow images in .portfolio-section-1 */
 .portfolio-section-1 img:not(.cover2-image) {
     position: absolute;
@@ -401,13 +409,6 @@ body {
     will-change: transform;
 
     /* Optimizes animation performance */
-}
-
-.paralex-image2 {
-    position: absolute;
-    left: 0;
-    width: 100%;
-    will-change: transform;
 }
 
 /* cover Image */

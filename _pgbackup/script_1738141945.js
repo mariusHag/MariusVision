@@ -15,41 +15,37 @@ document.addEventListener("DOMContentLoaded", function() {
         });
     });
 });
-
 document.addEventListener('scroll', () => {
-    // Handle .paralex-image elements (original code)
     const paralexImages = document.querySelectorAll('.paralex-image');
+
     paralexImages.forEach(image => {
-        const speed = parseFloat(image.dataset.scrollSpeed) || 0.2;
-        const scrollTop = window.scrollY;
-        const newY = Math.min(300, scrollTop * speed); // Max 300px movement
+        const speed = parseFloat(image.dataset.scrollSpeed) || 0.2; // Default speed is 0.2 if not set
+        const scrollTop = window.scrollY; // Get the vertical scroll position
+        const minY = 0; // Start position
+        const maxY = 300; // Adjust max position as needed
+
+        // Map the scroll position to the transform range
+        const newY = Math.min(maxY, minY + scrollTop * speed);
         image.style.transform = `translate(0%, ${newY}px)`;
     });
-
-    // Handle .paralex-image2 elements (updated code)
-    const paralexImages2 = document.querySelectorAll('.paralex-image2');
-    const portfolioSection2 = document.querySelector('.portfolio-section-2');
-
-    if (portfolioSection2) {
-        const sectionTop = portfolioSection2.offsetTop;
-        const sectionHeight = portfolioSection2.offsetHeight;
-        const scrollTop = window.scrollY;
-        const windowHeight = window.innerHeight;
-
-        // Calculate how far the user has scrolled INSIDE the section
-        let sectionScroll = scrollTop - sectionTop;
-
-        // Clamp the scroll value between 0 and section height
-        sectionScroll = Math.max(0, Math.min(sectionScroll, sectionHeight));
-
-        paralexImages2.forEach(image => {
-            const speed = parseFloat(image.dataset.scrollSpeed) || 0.2;
-            // Translate the image based on scroll progress within the section
-            const translateY = sectionScroll * speed;
-            image.style.transform = `translate(0%, ${translateY}px)`;
-        });
-    }
 });
+
+document.addEventListener('scroll2', () => {
+    const paralexImages = document.querySelectorAll('.paralex-image2');
+
+    paralexImages.forEach(image => {
+        const speed = parseFloat(image.dataset.scrollSpeed) || 0.2; // Default speed if not set
+        const rect = image.getBoundingClientRect(); // Get element position relative to viewport
+        const startY = rect.top + window.scrollY; // Get element's absolute position
+        const scrollPosition = window.scrollY - startY; // Calculate scroll effect based on element position
+        const maxY = 300; // Limit movement range
+
+        // Map the scroll position to the transform range
+        const newY = Math.min(maxY, Math.max(0, scrollPosition * speed));
+        image.style.transform = `translate(0%, ${newY}px)`;
+    });
+});
+
 
 
 

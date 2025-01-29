@@ -228,19 +228,12 @@ body {
     padding: 1.5vw;
     border-radius: 8px;
     box-shadow: 0 4px 6px rgba(0, 0, 0, 0.1);
-    align-items: center;
 }
 
 /* end */
 .portfolio-section-1 {
     position: relative;
     height: 100vh;
-    overflow: hidden;
-}
-
-.portfolio-section-2 {
-    position: relative;
-    height: 400vh;
     overflow: hidden;
 }
 
@@ -350,33 +343,6 @@ body {
     /* Ensure it's above all images */
 }
 
-/* pt Container */
-#pt1-container2 {
-    position: absolute;
-
-    /* Layer it on top without pushing other elements */
-    top: 14%;
-
-    /* Center vertically */
-    left: 50%;
-
-    /* Center horizontally */
-    transform: translate(-50%, -50%);
-
-    /* Perfect centering */
-    display: flex;
-    flex-direction: column;
-
-    /* Stack the title and text */
-    align-items: center;
-
-    /* Center horizontally */
-    text-align: center;
-    z-index: 4;
-
-    /* Ensure it's above all images */
-}
-
 /* pt Title */
 #pt1-header {
     color: black;
@@ -401,13 +367,6 @@ body {
     will-change: transform;
 
     /* Optimizes animation performance */
-}
-
-.paralex-image2 {
-    position: absolute;
-    left: 0;
-    width: 100%;
-    will-change: transform;
 }
 
 /* cover Image */

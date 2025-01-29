@@ -15,41 +15,17 @@ document.addEventListener("DOMContentLoaded", function() {
         });
     });
 });
-
 document.addEventListener('scroll', () => {
-    // Handle .paralex-image elements (original code)
-    const paralexImages = document.querySelectorAll('.paralex-image');
-    paralexImages.forEach(image => {
-        const speed = parseFloat(image.dataset.scrollSpeed) || 0.2;
-        const scrollTop = window.scrollY;
-        const newY = Math.min(300, scrollTop * speed); // Max 300px movement
-        image.style.transform = `translate(0%, ${newY}px)`;
-    });
+    const paralexImage = document.querySelector('.paralex-image');
+    const scrollTop = window.scrollY; // Get the vertical scroll position
+    const minY = 0; // Start position
+    const maxY = 150*2; // End position
 
-    // Handle .paralex-image2 elements (updated code)
-    const paralexImages2 = document.querySelectorAll('.paralex-image2');
-    const portfolioSection2 = document.querySelector('.portfolio-section-2');
-
-    if (portfolioSection2) {
-        const sectionTop = portfolioSection2.offsetTop;
-        const sectionHeight = portfolioSection2.offsetHeight;
-        const scrollTop = window.scrollY;
-        const windowHeight = window.innerHeight;
-
-        // Calculate how far the user has scrolled INSIDE the section
-        let sectionScroll = scrollTop - sectionTop;
-
-        // Clamp the scroll value between 0 and section height
-        sectionScroll = Math.max(0, Math.min(sectionScroll, sectionHeight));
-
-        paralexImages2.forEach(image => {
-            const speed = parseFloat(image.dataset.scrollSpeed) || 0.2;
-            // Translate the image based on scroll progress within the section
-            const translateY = sectionScroll * speed;
-            image.style.transform = `translate(0%, ${translateY}px)`;
-        });
-    }
+    // Map the scroll position to the transform range
+    const newY = Math.min(maxY, minY + scrollTop * 0.2); // Adjust 0.2 to control speed
+    paralexImage.style.transform = `translate(0%, ${newY}px)`;
 });
+
 
 
 
