@@ -51,12 +51,83 @@ body {
     position: relative;
 }
 
+.project-section2 {
+    height: 100vh;
+    display: flex;
+    justify-content: center;
+    align-items: flex-end;
+    background-color: #190D17;
+    position: relative;
+}
+
 .text-container {
     height: 100vh;
     width: 50%;
     background-color: #d9d9d9;
     position: absolute;
     left: 0;
+}
+
+.line1 {
+    height: 1vh;
+    width: 95%;
+    background-color: #ba9067;
+    position: absolute;
+    right: 0;
+    top: 10%;
+}
+
+.line1-number {
+    height: 10%;
+    width: 5%;
+    position: absolute;
+    left: 5%;
+    top: 1%;
+    color: #ba9067;
+    font-size: 2rem;
+    margin-bottom: 1rem;
+    font-weight: bold;
+}
+
+.line1-text {
+    height: 10%;
+    width: 50%;
+    position: absolute;
+    left: 52%;
+    top: 1%;
+    color: #ba9067;
+    font-size: 2rem;
+    margin-bottom: 1rem;
+    font-weight: bold;
+}
+
+.box1-text {
+    height: 80%;
+    width: 35%;
+    position: absolute;
+    left: 52%;
+    top: 25%;
+    color: #ba9067;
+    font-size: 1rem;
+    margin-bottom: 1rem;
+    font-weight: bold;
+}
+
+/* logo Image */
+.bt1-image {
+    height: 88vh;
+    top: 12%;
+    left: 25%;
+    transform: translateX(-50%);
+    position: absolute;
+}
+
+.bt2-image {
+    height: 60vh;
+    top: 25%;
+    left: 25%;
+    transform: translateX(-50%);
+    position: absolute;
 }
 
 .image-container {
@@ -166,6 +237,7 @@ body {
     padding: 1.5vw;
     border-radius: 8px;
     box-shadow: 0 4px 6px rgba(0, 0, 0, 0.1);
+    align-items: center;
 }
 
 /* end */
@@ -173,6 +245,39 @@ body {
     position: relative;
     height: 100vh;
     overflow: hidden;
+}
+
+.portfolio-section-2 {
+    display: grid;
+
+    /* Use grid layout */
+    width: 100vw;
+
+    /* Section takes full width */
+    height: auto;
+
+    /* The height will adjust to content */
+    overflow: hidden;
+
+    /* Prevent images from overflowing */
+}
+
+.paralex-image2 {
+    grid-column: 1;
+
+    /* Images span the first column */
+    grid-row: 1;
+
+    /* All images will stack in the first row */
+    width: 100%;
+
+    /* Make images fill the container width */
+    height: auto;
+
+    /* Maintain aspect ratio */
+    will-change: transform;
+
+    /* Performance optimization for animation */
 }
 
 /* General styles for slideshow images in .portfolio-section-1 */
@@ -281,6 +386,33 @@ body {
     /* Ensure it's above all images */
 }
 
+/* pt Container */
+#pt1-container2 {
+    position: absolute;
+
+    /* Layer it on top without pushing other elements */
+    top: 14%;
+
+    /* Center vertically */
+    left: 50%;
+
+    /* Center horizontally */
+    transform: translate(-50%, -50%);
+
+    /* Perfect centering */
+    display: flex;
+    flex-direction: column;
+
+    /* Stack the title and text */
+    align-items: center;
+
+    /* Center horizontally */
+    text-align: center;
+    z-index: 4;
+
+    /* Ensure it's above all images */
+}
+
 /* pt Title */
 #pt1-header {
     color: black;
@@ -288,10 +420,23 @@ body {
     margin-bottom: 1rem;
 }
 
+#pt1-header2 {
+    color: #e5e5e5;
+    font-size: 2.5rem;
+    margin-bottom: 1rem;
+}
+
 /* pt Text */
 #pt1-text {
     color: black;
     font-size: 1rem;
+}
+
+#pt1-text2 {
+    color: #e5e5e5;
+    font-size: 1rem;
+    margin-left: 20%;
+    margin-right: 20%;
 }
 
 /* Parallax Image */
@@ -352,7 +497,7 @@ body {
     }
 
     .quadratic-element,
-        .text-box {
+    .text-box {
         width: var(--box-width);
 
         /* Maintain the same width for mobile */
@@ -384,7 +529,7 @@ body {
     }
 
     .quadratic-element,
-        .text-box {
+    .text-box {
         width: var(--box-width);
 
         /* Use dynamic width */

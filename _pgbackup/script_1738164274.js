@@ -16,42 +16,37 @@ document.addEventListener("DOMContentLoaded", function() {
     });
 });
 
-
-
-document.addEventListener('DOMContentLoaded', () => {
-    // Initialize image positions using data-initial-y
-    const images = document.querySelectorAll('.paralex-image2');
-    images.forEach(img => {
-        const initialY = parseFloat(img.dataset.initialY) || 0;
-        img.style.transform = `translateY(${initialY}px)`;
-    });
-});
-
 document.addEventListener('scroll', () => {
-    const section = document.querySelector('.portfolio-section-2');
-    if (!section) return;
-
-    // Get section position and dimensions
-    const { top: sectionTop, height: sectionHeight } = section.getBoundingClientRect();
-    const windowHeight = window.innerHeight;
-    const scrollTop = window.scrollY;
-
-    // Calculate scroll progress (0 to 1) for the section
-    const sectionStart = section.offsetTop - windowHeight;
-    const sectionEnd = section.offsetTop + sectionHeight;
-    const progress = Math.min(1, Math.max(0, (scrollTop - sectionStart) / (sectionEnd - sectionStart)));
-
-    // Apply parallax to images
-    const images = document.querySelectorAll('.paralex-image2');
-    images.forEach(img => {
-        const speed = parseFloat(img.dataset.scrollSpeed) || 0.2;
-        const initialY = parseFloat(img.dataset.initialY) || 0;
-        const maxMovement = 300; // Adjust for desired parallax range
-
-        // Combine initial offset + scroll-based movement
-        const translateY = initialY + (progress * speed * maxMovement);
-        img.style.transform = `translateY(${translateY}px)`;
+    // Handle .paralex-image (original effect)
+    const paralexImages = document.querySelectorAll('.paralex-image');
+    paralexImages.forEach(image => {
+        const speed = parseFloat(image.dataset.scrollSpeed) || 0.2;
+        const scrollTop = window.scrollY;
+        const newY = Math.min(300, scrollTop * speed);
+        image.style.transform = `translate(0%, ${newY}px)`;
     });
+
+    // Handle .paralex-image2 (new effect)
+    const paralexImages2 = document.querySelectorAll('.paralex-image2');
+    const portfolioSection2 = document.querySelector('.portfolio-section-2');
+
+    if (portfolioSection2) {
+        const { top: sectionTop, bottom: sectionBottom } = portfolioSection2.getBoundingClientRect();
+        const windowHeight = window.innerHeight;
+        const sectionHeight = portfolioSection2.offsetHeight;
+
+        // Calculate scroll progress (0 to 1) for the section
+        const startOffset = 0; // Start when section enters viewport
+        const endOffset = windowHeight; // Stop when section exits viewport
+        const progress = Math.min(1, Math.max(0, (windowHeight - sectionTop) / (windowHeight + sectionHeight)));
+
+        paralexImages2.forEach(image => {
+            const speed = parseFloat(image.dataset.scrollSpeed) || 0.2;
+            const maxTranslate = 300; // Adjust based on desired movement
+            const translateY = progress * speed * maxTranslate;
+            image.style.transform = `translate(0%, ${translateY}px)`;
+        });
+    }
 });
 
 

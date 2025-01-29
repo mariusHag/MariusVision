@@ -68,6 +68,59 @@ body {
     top: 10%;
 }
 
+.line1-number {
+    height: 10%;
+    width: 5%;
+    position: absolute;
+    left: 5%;
+    top: 1%;
+    color: #ba9067;
+    font-size: 2rem;
+    margin-bottom: 1rem;
+    font-weight: bold;
+}
+
+.line1-text {
+    height: 10%;
+    width: 50%;
+    position: absolute;
+    left: 52%;
+    top: 1%;
+    color: #ba9067;
+    font-size: 2rem;
+    margin-bottom: 1rem;
+    font-weight: bold;
+}
+
+.box1-text {
+    height: 80%;
+    width: 35%;
+    position: absolute;
+    left: 52%;
+    top: 25%;
+    color: #ba9067;
+    font-size: 1rem;
+    margin-bottom: 1rem;
+    font-weight: bold;
+}
+
+/* logo Image */
+.bt1-image {
+    height: 88vh;
+    top: 12%;
+    left: 25%;
+    transform: translateX(-50%);
+    position: absolute;
+}
+
+.bt2-image {
+    height: 60vh;
+    top: 25%;
+    left: 25%;
+    transform: translateX(-50%);
+    position: absolute;
+}
+
 .image-container {
     height: 100vh;
     width: 50%;
@@ -175,12 +228,19 @@ body {
     padding: 1.5vw;
     border-radius: 8px;
     box-shadow: 0 4px 6px rgba(0, 0, 0, 0.1);
+    align-items: center;
 }
 
 /* end */
 .portfolio-section-1 {
     position: relative;
     height: 100vh;
+    overflow: hidden;
+}
+
+.portfolio-section-2 {
+    position: relative;
+    height: 400vh;
     overflow: hidden;
 }
 
@@ -290,6 +350,33 @@ body {
     /* Ensure it's above all images */
 }
 
+/* pt Container */
+#pt1-container2 {
+    position: absolute;
+
+    /* Layer it on top without pushing other elements */
+    top: 14%;
+
+    /* Center vertically */
+    left: 50%;
+
+    /* Center horizontally */
+    transform: translate(-50%, -50%);
+
+    /* Perfect centering */
+    display: flex;
+    flex-direction: column;
+
+    /* Stack the title and text */
+    align-items: center;
+
+    /* Center horizontally */
+    text-align: center;
+    z-index: 4;
+
+    /* Ensure it's above all images */
+}
+
 /* pt Title */
 #pt1-header {
     color: black;
@@ -314,6 +401,13 @@ body {
     will-change: transform;
 
     /* Optimizes animation performance */
+}
+
+.paralex-image2 {
+    position: absolute;
+    left: 0;
+    width: 100%;
+    will-change: transform;
 }
 
 /* cover Image */
@@ -361,7 +455,7 @@ body {
     }
 
     .quadratic-element,
-        .text-box {
+    .text-box {
         width: var(--box-width);
 
         /* Maintain the same width for mobile */
@@ -393,7 +487,7 @@ body {
     }
 
     .quadratic-element,
-        .text-box {
+    .text-box {
         width: var(--box-width);
 
         /* Use dynamic width */
