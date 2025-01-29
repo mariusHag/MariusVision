@@ -130,6 +130,13 @@ body {
     position: absolute;
 }
 
+.bt3-image {
+    height: 60vh;
+    top: 25%;
+    left: 5%;
+    position: absolute;
+}
+
 .image-container {
     height: 100vh;
     width: 50%;
@@ -286,7 +293,7 @@ body {
     justify-self: center;
 
     /* Add margin to push it down slightly */
-    margin-top: 30vh;
+    margin-top: 50vh;
 
     /* Adjust this value to fine-tune */
     /* Ensure it's above images */

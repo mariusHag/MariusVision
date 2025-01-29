@@ -51,6 +51,15 @@ body {
     position: relative;
 }
 
+.project-section2 {
+    height: 100vh;
+    display: flex;
+    justify-content: center;
+    align-items: flex-end;
+    background-color: #393F3D;
+    position: relative;
+}
+
 .text-container {
     height: 100vh;
     width: 50%;
@@ -90,6 +99,35 @@ body {
     font-size: 2rem;
     margin-bottom: 1rem;
     font-weight: bold;
+}
+
+.box1-text {
+    height: 80%;
+    width: 35%;
+    position: absolute;
+    left: 52%;
+    top: 25%;
+    color: #ba9067;
+    font-size: 1rem;
+    margin-bottom: 1rem;
+    font-weight: bold;
+}
+
+/* logo Image */
+.bt1-image {
+    height: 88vh;
+    top: 12%;
+    left: 25%;
+    transform: translateX(-50%);
+    position: absolute;
+}
+
+.bt2-image {
+    height: 60vh;
+    top: 25%;
+    left: 25%;
+    transform: translateX(-50%);
+    position: absolute;
 }
 
 .image-container {
@@ -199,6 +237,7 @@ body {
     padding: 1.5vw;
     border-radius: 8px;
     box-shadow: 0 4px 6px rgba(0, 0, 0, 0.1);
+    align-items: center;
 }
 
 /* end */
@@ -206,6 +245,58 @@ body {
     position: relative;
     height: 100vh;
     overflow: hidden;
+}
+
+.portfolio-section-2 {
+    display: grid;
+
+    /* Stack images in the same grid cell */
+    position: relative;
+
+    /* Needed for section-based scroll calculations */
+    width: 100vw;
+    height: auto;
+    overflow: hidden;
+
+    /* Clip images outside the section */
+}
+
+.paralex-image2 {
+    grid-column: 1;
+    grid-row: 1;
+    width: 100%;
+    height: auto;
+
+    /* Height is consistent across images */
+    will-change: transform;
+
+    /* Optimize for smooth animations */
+    transform: translateY(0px);
+
+    /* Initial position (overridden by JS) */
+}
+
+#pt1-container2 {
+    grid-column: 1;
+    grid-row: 1;
+
+    /* Keep it in the same grid layer as images */
+    /* Position at the top but centered horizontally */
+    align-self: start;
+    justify-self: center;
+
+    /* Add margin to push it down slightly */
+    margin-top: 30vh;
+
+    /* Adjust this value to fine-tune */
+    /* Ensure it's above images */
+    z-index: 4;
+
+    /* Flexbox for content alignment */
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    text-align: center;
 }
 
 /* General styles for slideshow images in .portfolio-section-1 */
@@ -314,6 +405,7 @@ body {
     /* Ensure it's above all images */
 }
 
+/* pt Container */
 /* pt Title */
 #pt1-header {
     color: black;
@@ -321,10 +413,23 @@ body {
     margin-bottom: 1rem;
 }
 
+#pt1-header2 {
+    color: #e5e5e5;
+    font-size: 2.5rem;
+    margin-bottom: 1rem;
+}
+
 /* pt Text */
 #pt1-text {
     color: black;
     font-size: 1rem;
+}
+
+#pt1-text2 {
+    color: #e5e5e5;
+    font-size: 1rem;
+    margin-left: 20%;
+    margin-right: 20%;
 }
 
 /* Parallax Image */
