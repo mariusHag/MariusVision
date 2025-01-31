@@ -21,116 +21,59 @@ body {
 /* conact start css: */
 .contact-container {
     display: flex;
-    width: 100%;
-    margin: 0 auto;
+    width: 100vw;
 
-    /* Center the container */
-    padding: 40px;
-    background: #f9f9f9;
-    font-family: Arial, sans-serif;
-    box-sizing: border-box;
-
-    /* Include padding in width calculations */
+    /* Full viewport width */
+    height: 130vh;
+    background: white;
 }
 
-.contact-header {
+.contact-image {
     flex: 1;
-    width: 50%;
+    min-width: 0;
 
-    /* Set to 50% width */
-    padding-right: 10%;
-
-    /* Add spacing between text and form */
-    padding-left: 5%;
-
-    /* Add spacing between text and form */
-    box-sizing: border-box;
-
-    /* Include padding in width calculations */
-}
-
-.contact-header h2 {
-    font-size: 3rem;
-    color: #333;
-    margin-bottom: 20px;
-}
-
-.contact-header p {
-    font-size: 16px;
-    color: #555;
-    line-height: 1.6;
-    margin-bottom: 20px;
-}
-
-.contact-info {
-    margin-top: 20px;
-}
-
-.contact-info p {
-    font-size: 16px;
-    color: #555;
-    margin-bottom: 10px;
-}
-
-.contact-info strong {
-    color: #333;
+    /* Allows image container to shrink */
+    background: url('your-image.jpg') center/cover;
 }
 
 .contact-form {
     flex: 1;
-    width: 50%;
+    min-width: 0;
 
-    /* Set to 50% width */
-    background: #fff;
-    padding: 20px;
-    border-radius: 8px;
-    box-shadow: 0 2px 10px rgba(0, 0, 0, 0.1);
-    box-sizing: border-box;
+    /* Critical for width control */
+    padding: 40px;
+    background: #e5e5e5;
+    display: flex;
+    flex-direction: column;
+}
 
-    /* Include padding in width calculations */
+h2,
+form {
+    width: 100%;
+    max-width: 100% !important;
+
+    /* Force full width */
 }
 
 .form-group {
-    margin-bottom: 20px;
-}
-
-.form-group label {
-    display: block;
-    font-size: 14px;
-    color: #333;
-    margin-bottom: 5px;
-}
-
-.form-group input,
-.form-group select,
-.form-group textarea {
     width: 100%;
-    padding: 10px;
-    border: 1px solid #ccc;
-    border-radius: 4px;
-    font-size: 14px;
+    margin-bottom: 15px;
+}
+
+input,
+textarea {
+    width: 100%;
+    min-width: 100%;
+
+    /* Prevent any residual shrinking */
+    max-width: 100% !important;
     box-sizing: border-box;
+    display: block;
 }
 
-.form-group textarea {
-    resize: vertical;
-    min-height: 100px;
-}
-
-button {
-    width: 100%;
-    padding: 12px;
-    background-color: #ff4d4d;
-    color: white;
-    border: none;
-    border-radius: 4px;
-    font-size: 16px;
-    cursor: pointer;
-    transition: background-color 0.3s;
-}
-
-button:hover {
-    background-color: #e03e3e;
+textarea {
+    height: 150px;
+    resize: none;
 }
 
 /* contac end css: */
