@@ -1,4 +1,6 @@
 //review java start
+
+
 let currentPosition = 0;
 const visibleCards = 3;
 

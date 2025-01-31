@@ -1,4 +1,28 @@
+document.addEventListener("DOMContentLoaded", function() {
+    // Check if language is stored in localStorage, default to 'en'
+    const lang = localStorage.getItem("lang") || "en";
+    setLanguage(lang); // Set initial language based on stored preference or default
+    updateActiveFlag(lang); // Highlight the current language
+
+    // Add event listeners to the flag buttons
+    document.querySelectorAll(".flag").forEach(flag => {
+        flag.addEventListener("click", function(event) {
+            event.preventDefault(); // Prevent the default anchor behavior
+            const selectedLang = this.dataset.lang;
+            localStorage.setItem("lang", selectedLang); // Store the selected language
+            setLanguage(selectedLang); // Change the language
+            updateActiveFlag(selectedLang); // Update the active flag
+        });
+    });
+});
+
+
+
+
+
 //review java start
+
+
 let currentPosition = 0;
 const visibleCards = 3;
 
