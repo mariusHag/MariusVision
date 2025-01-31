@@ -18,113 +18,7 @@ body {
     /* Default box width for desktop */
 }
 
-/* reviews start css: */
-/* Review System Wrapper */
-.review-system-wrapper {
-    position: absolute;
-    top: 30vh;
-
-    /* Adjust this to move the entire system */
-    width: 100%;
-    max-width: 1200px;
-    margin: 0 auto;
-}
-
-/* Review Wrapper */
-.review-wrapper {
-    position: relative;
-    width: 100%;
-    //overflow: hidden;
-    top: 40vh;
-    transform: translateY(-50%);
-}
-
-.review-container {
-    display: flex;
-    transition: transform 0.5s ease-in-out;
-    gap: 20px;
-    padding: 0 60px;
-}
-
-.review-card {
-    flex: 0 0 calc(33.33% - 14px);
-    padding: 25px;
-    background: white;
-    border-radius: 10px;
-    box-shadow: 0 4px 6px rgba(0,0,0,0.1);
-    min-height: 60vh;
-    box-sizing: border-box;
-    opacity: 0.0;
-    transition: opacity 0.5s ease-in-out;
-    display: flex;
-    flex-direction: column;
-    justify-content: space-between;
-}
-
-.review-content {
-    display: flex;
-    flex-direction: column;
-    gap: 15px;
-}
-
-.review-image {
-    max-width: 100%;
-    max-height: 250px;
-    object-fit: cover;
-    border-radius: 5px;
-    margin-top: auto;
-
-    /* Pushes image to bottom */
-}
-
-.review-card.active {
-    opacity: 1;
-}
-
-.review-header {
-    display: flex;
-    justify-content: space-between;
-    align-items: center;
-    margin-bottom: 15px;
-}
-
-.stars {
-    color: #ffd700;
-    font-size: 1.2em;
-}
-
-.review-date {
-    color: #666;
-    font-size: 0.9em;
-}
-
-.nav-button {
-    position: absolute;
-    top: 50%;
-    transform: translateY(-50%);
-    background: white;
-    border: none;
-    width: 40px;
-    height: 40px;
-    border-radius: 50%;
-    box-shadow: 0 2px 4px rgba(0,0,0,0.2);
-    cursor: pointer;
-    font-size: 1.2em;
-    z-index: 10;
-    display: flex;
-    align-items: center;
-    justify-content: center;
-}
-
-.prev {
-    left: 0;
-}
-
-.next {
-    right: 0;
-}
-
-/* reviews end css: */
+/* New Section */
 /* pt Container */
 .white-cover {
     background-color: #f8f8f863;
@@ -148,7 +42,6 @@ body {
     z-index: 3;
 }
 
-/* Project Section */
 .project-section {
     height: 100vh;
     display: flex;
@@ -167,15 +60,6 @@ body {
     position: relative;
 }
 
-.project-section3 {
-    height: 120vh;
-    display: flex;
-    justify-content: center;
-    align-items: flex-end;
-    background-color: #e5e5e5;
-    position: relative;
-}
-
 .text-container {
     height: 100vh;
     width: 50%;
@@ -191,16 +75,6 @@ body {
     position: absolute;
     right: 0;
     top: 10%;
-}
-
-.shadow-line {
-    height: 3vh;
-    width: 100%;
-    position: absolute;
-    right: 0;
-    top: 0;
-    background: #393f3d;
-    box-shadow: 0px 4px 4px rgba(0, 0, 0, 0.3);
 }
 
 .line1-number {
@@ -225,36 +99,6 @@ body {
     font-size: 2rem;
     margin-bottom: 1rem;
     font-weight: bold;
-}
-
-.Big-Header {
-    position: absolute;
-    left: 50%;
-    top: 13vh;
-    transform: translateX(-50%);
-    text-align: center;
-    color: #ba9067;
-    font-size: 3rem;
-    font-weight: bold;
-    margin-bottom: 1rem;
-    white-space: nowrap;
-
-    /* Prevents line breaks */
-    /* Creates the line */
-    display: flex;
-    flex-direction: column;
-    align-items: center;
-}
-
-.Big-Header::after {
-    content: "";
-    display: block;
-    width: 100%;
-    height: 1vh;
-    background-color: #ba9067;
-    margin-top: 0.5rem;
-
-    /* Space between text and line */
 }
 
 .box1-text {

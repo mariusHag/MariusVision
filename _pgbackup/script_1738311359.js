@@ -16,10 +16,6 @@ document.addEventListener("DOMContentLoaded", function() {
     });
 });
 
-
-
-
-
 //review java start
 
 
@@ -89,37 +85,6 @@ document.addEventListener('scroll', () => {
     });
 });
 
-
-
-
-
-//paralex scrolling first img
-document.addEventListener('scroll2', () => {
-    const section = document.querySelector('.full-height-container');
-    if (!section) return;
-
-    // Get section position and dimensions
-    const { top: sectionTop, height: sectionHeight } = section.getBoundingClientRect();
-    const windowHeight = window.innerHeight;
-    const scrollTop = window.scrollY;
-
-    // Calculate scroll progress (0 to 1) for the section
-    const sectionStart = section.offsetTop - windowHeight;
-    const sectionEnd = section.offsetTop + sectionHeight;
-    const progress = Math.min(1, Math.max(0, (scrollTop - sectionStart) / (sectionEnd - sectionStart)));
-
-    // Apply parallax to images
-    const images = document.querySelectorAll('.paralex-image');
-    images.forEach(img => {
-        const speed = parseFloat(img.dataset.scrollSpeed) || 0.2;
-        const initialY = parseFloat(img.dataset.initialY) || 0;
-        const maxMovement = 300; // Adjust for desired parallax range
-
-        // Combine initial offset + scroll-based movement
-        const translateY = initialY + (progress * speed * maxMovement);
-        img.style.transform = `translateY(${translateY}px)`;
-    });
-});
 
 
 

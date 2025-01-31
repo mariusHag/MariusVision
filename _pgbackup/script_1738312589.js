@@ -16,10 +16,6 @@ document.addEventListener("DOMContentLoaded", function() {
     });
 });
 
-
-
-
-
 //review java start
 
 

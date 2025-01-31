@@ -18,67 +18,46 @@ body {
     /* Default box width for desktop */
 }
 
-/* reviews start css: */
-/* Review System Wrapper */
-.review-system-wrapper {
-    position: absolute;
-    top: 30vh;
-
-    /* Adjust this to move the entire system */
-    width: 100%;
-    max-width: 1200px;
-    margin: 0 auto;
-}
-
-/* Review Wrapper */
+/* reviews: */
 .review-wrapper {
+    width: 90%;
+    max-width: 1200px;
     position: relative;
-    width: 100%;
-    //overflow: hidden;
-    top: 40vh;
-    transform: translateY(-50%);
+    overflow: hidden;
 }
 
 .review-container {
+    width: 100%;
+    overflow: hidden;
+    position: relative;
+}
+
+.review-track {
     display: flex;
-    transition: transform 0.5s ease-in-out;
+    transition: opacity 1s ease-in-out;
     gap: 20px;
-    padding: 0 60px;
 }
 
 .review-card {
-    flex: 0 0 calc(33.33% - 14px);
+    flex: 0 0 33.33%;
     padding: 25px;
     background: white;
     border-radius: 10px;
     box-shadow: 0 4px 6px rgba(0,0,0,0.1);
-    min-height: 60vh;
+    min-height: 300px;
     box-sizing: border-box;
-    opacity: 0.0;
-    transition: opacity 0.5s ease-in-out;
-    display: flex;
-    flex-direction: column;
-    justify-content: space-between;
-}
+    opacity: 0;
 
-.review-content {
-    display: flex;
-    flex-direction: column;
-    gap: 15px;
-}
+    /* Initially hidden */
+    transition: opacity 1s ease-in-out;
 
-.review-image {
-    max-width: 100%;
-    max-height: 250px;
-    object-fit: cover;
-    border-radius: 5px;
-    margin-top: auto;
-
-    /* Pushes image to bottom */
+    /* Fade effect */
 }
 
 .review-card.active {
     opacity: 1;
+
+    /* Visible when active */
 }
 
 .review-header {
@@ -111,20 +90,16 @@ body {
     cursor: pointer;
     font-size: 1.2em;
     z-index: 10;
-    display: flex;
-    align-items: center;
-    justify-content: center;
 }
 
 .prev {
-    left: 0;
+    left: 10px;
 }
 
 .next {
-    right: 0;
+    right: 10px;
 }
 
-/* reviews end css: */
 /* pt Container */
 .white-cover {
     background-color: #f8f8f863;
@@ -148,7 +123,6 @@ body {
     z-index: 3;
 }
 
-/* Project Section */
 .project-section {
     height: 100vh;
     display: flex;
@@ -164,15 +138,6 @@ body {
     justify-content: center;
     align-items: flex-end;
     background-color: #393F3D;
-    position: relative;
-}
-
-.project-section3 {
-    height: 120vh;
-    display: flex;
-    justify-content: center;
-    align-items: flex-end;
-    background-color: #e5e5e5;
     position: relative;
 }
 
@@ -200,7 +165,11 @@ body {
     right: 0;
     top: 0;
     background: #393f3d;
+
+    /* Gradient effect */
     box-shadow: 0px 4px 4px rgba(0, 0, 0, 0.3);
+
+    /* Shadow only below */
 }
 
 .line1-number {
@@ -228,33 +197,17 @@ body {
 }
 
 .Big-Header {
+    height: 10%;
+    width: 100%;
     position: absolute;
     left: 50%;
-    top: 13vh;
-    transform: translateX(-50%);
-    text-align: center;
+    top: 10%;
     color: #ba9067;
     font-size: 3rem;
-    font-weight: bold;
     margin-bottom: 1rem;
-    white-space: nowrap;
-
-    /* Prevents line breaks */
-    /* Creates the line */
-    display: flex;
-    flex-direction: column;
-    align-items: center;
-}
-
-.Big-Header::after {
-    content: "";
-    display: block;
-    width: 100%;
-    height: 1vh;
-    background-color: #ba9067;
-    margin-top: 0.5rem;
-
-    /* Space between text and line */
+    font-weight: bold;
+    transform: translateX(-50%);
+    text-align: center;
 }
 
 .box1-text {

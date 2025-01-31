@@ -17,6 +17,14 @@ document.addEventListener("DOMContentLoaded", function() {
 });
 
 
+document.addEventListener("DOMContentLoaded", function () {
+    document.querySelectorAll(".review-card").forEach(card => {
+        let img = card.querySelector(".review-image");
+        if (img && img.src.trim() !== "") {
+            img.style.display = "block"; // Show image if it has a valid src
+        }
+    });
+});
 
 
 

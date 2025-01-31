@@ -16,50 +16,32 @@ document.addEventListener("DOMContentLoaded", function() {
     });
 });
 
-
-
-
-
-//review java start
-
-
+//review card scroll
 let currentPosition = 0;
-const visibleCards = 3;
+const cardWidthPercentage = 33.33; // Percentage per card
+const visibleCards = 3; // Number of visible cards at once
 
 function moveCards(direction) {
-    const container = document.querySelector('.review-container');
-    const cards = document.querySelectorAll('.review-card');
-    const totalCards = cards.length;
-    
-    // Calculate card width including gap
-    const cardWidth = cards[0].offsetWidth + 20;
+    const cardsContainer = document.querySelector('.review-cards');
+    const totalCards = document.querySelectorAll('.review-card').length;
     
     currentPosition += direction;
     currentPosition = Math.max(0, Math.min(currentPosition, totalCards - visibleCards));
     
-    // Apply translation
-    container.style.transform = `translateX(-${currentPosition * cardWidth}px)`;
-    
-    // Update active classes
-    cards.forEach((card, index) => {
-        const isActive = index >= currentPosition && index < currentPosition + visibleCards;
-        card.classList.toggle('active', isActive);
-    });
+    const translateValue = -currentPosition * (cardWidthPercentage + (cardWidthPercentage / 100 * 3));
+    cardsContainer.style.transform = `translateX(${translateValue}%)`;
 }
 
-// Initialize first 3 cards
-window.addEventListener('DOMContentLoaded', () => {
-    document.querySelectorAll('.review-card').forEach((card, index) => {
-        card.classList.toggle('active', index < visibleCards);
+
+//paralex image start positions
+document.addEventListener('DOMContentLoaded', () => {
+    // Initialize image positions using data-initial-y
+    const images = document.querySelectorAll('.paralex-image2');
+    images.forEach(img => {
+        const initialY = parseFloat(img.dataset.initialY) || 0;
+        img.style.transform = `translateY(${initialY}px)`;
     });
 });
-
-
-//review java end
-
-
-
-
 
 //paralex scrolling
 document.addEventListener('scroll', () => {
@@ -89,37 +71,6 @@ document.addEventListener('scroll', () => {
     });
 });
 
-
-
-
-
-//paralex scrolling first img
-document.addEventListener('scroll2', () => {
-    const section = document.querySelector('.full-height-container');
-    if (!section) return;
-
-    // Get section position and dimensions
-    const { top: sectionTop, height: sectionHeight } = section.getBoundingClientRect();
-    const windowHeight = window.innerHeight;
-    const scrollTop = window.scrollY;
-
-    // Calculate scroll progress (0 to 1) for the section
-    const sectionStart = section.offsetTop - windowHeight;
-    const sectionEnd = section.offsetTop + sectionHeight;
-    const progress = Math.min(1, Math.max(0, (scrollTop - sectionStart) / (sectionEnd - sectionStart)));
-
-    // Apply parallax to images
-    const images = document.querySelectorAll('.paralex-image');
-    images.forEach(img => {
-        const speed = parseFloat(img.dataset.scrollSpeed) || 0.2;
-        const initialY = parseFloat(img.dataset.initialY) || 0;
-        const maxMovement = 300; // Adjust for desired parallax range
-
-        // Combine initial offset + scroll-based movement
-        const translateY = initialY + (progress * speed * maxMovement);
-        img.style.transform = `translateY(${translateY}px)`;
-    });
-});
 
 
 

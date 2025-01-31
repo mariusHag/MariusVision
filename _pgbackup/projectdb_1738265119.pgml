@@ -3,10 +3,10 @@
     <dmdesigns>
         <dmdesign active>
             <dmdesignskill skill="plainhtml.colors">
-                <dmcolor key="primary" color="#393f3d"/>
-                <dmcolor key="secondary" color="#ba9067"/>
-                <dmcolor key="color3" color="#d9d9d9"/>
-                <dmcolor key="color4" color="#e5e5e5"/>
+                <dmcolor key="primary" color="#0d6efd"/>
+                <dmcolor key="secondary" color="#6c757d"/>
+                <dmcolor key="color3" color="#0dcaf0"/>
+                <dmcolor key="color4" color="#198754"/>
                 <dmcolor key="white" color="white"/>
                 <dmcolor key="light" color="#f8f9fa"/>
                 <dmcolor key="dark" color="#212529"/>

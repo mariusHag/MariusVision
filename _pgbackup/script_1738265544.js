@@ -16,47 +16,35 @@ document.addEventListener("DOMContentLoaded", function() {
     });
 });
 
-
-
-
-
-//review java start
-
-
+//review card scroll
 let currentPosition = 0;
-const visibleCards = 3;
+const visibleCards = 3; // Number of visible cards at a time
+const cards = document.querySelectorAll('.review-card');
+const totalCards = cards.length;
 
+// Function to move the cards
 function moveCards(direction) {
-    const container = document.querySelector('.review-container');
-    const cards = document.querySelectorAll('.review-card');
-    const totalCards = cards.length;
-    
-    // Calculate card width including gap
-    const cardWidth = cards[0].offsetWidth + 20;
-    
+    // Remove 'active' class from all cards
+    cards.forEach(card => card.classList.remove('active'));
+
+    // Update the current position
     currentPosition += direction;
-    currentPosition = Math.max(0, Math.min(currentPosition, totalCards - visibleCards));
-    
-    // Apply translation
-    container.style.transform = `translateX(-${currentPosition * cardWidth}px)`;
-    
-    // Update active classes
-    cards.forEach((card, index) => {
-        const isActive = index >= currentPosition && index < currentPosition + visibleCards;
-        card.classList.toggle('active', isActive);
-    });
+
+    // Prevent out-of-bounds movement
+    if (currentPosition < 0) currentPosition = totalCards - visibleCards;
+    if (currentPosition > totalCards - visibleCards) currentPosition = 0;
+
+    // Add 'active' class to the new set of cards to be displayed
+    for (let i = 0; i < visibleCards; i++) {
+        const cardIndex = (currentPosition + i) % totalCards;
+        cards[cardIndex].classList.add('active');
+    }
 }
 
-// Initialize first 3 cards
+// Initialize the first set of cards
 window.addEventListener('DOMContentLoaded', () => {
-    document.querySelectorAll('.review-card').forEach((card, index) => {
-        card.classList.toggle('active', index < visibleCards);
-    });
+    moveCards(0); // Show the first 3 cards
 });
-
-
-//review java end
-
 
 
 
@@ -89,37 +77,6 @@ document.addEventListener('scroll', () => {
     });
 });
 
-
-
-
-
-//paralex scrolling first img
-document.addEventListener('scroll2', () => {
-    const section = document.querySelector('.full-height-container');
-    if (!section) return;
-
-    // Get section position and dimensions
-    const { top: sectionTop, height: sectionHeight } = section.getBoundingClientRect();
-    const windowHeight = window.innerHeight;
-    const scrollTop = window.scrollY;
-
-    // Calculate scroll progress (0 to 1) for the section
-    const sectionStart = section.offsetTop - windowHeight;
-    const sectionEnd = section.offsetTop + sectionHeight;
-    const progress = Math.min(1, Math.max(0, (scrollTop - sectionStart) / (sectionEnd - sectionStart)));
-
-    // Apply parallax to images
-    const images = document.querySelectorAll('.paralex-image');
-    images.forEach(img => {
-        const speed = parseFloat(img.dataset.scrollSpeed) || 0.2;
-        const initialY = parseFloat(img.dataset.initialY) || 0;
-        const maxMovement = 300; // Adjust for desired parallax range
-
-        // Combine initial offset + scroll-based movement
-        const translateY = initialY + (progress * speed * maxMovement);
-        img.style.transform = `translateY(${translateY}px)`;
-    });
-});
 
 
 
