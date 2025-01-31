@@ -3,9 +3,6 @@ document.addEventListener('DOMContentLoaded', () => {
     console.log('Translation script loaded');
     
     const translations = {
-
-
-        //ENGLISH
         en: {
 introTitle: "From concept to reality\nImagine it, and I’ll bring it to life.",
         introText: "Whether it's a logo, CGI, or a product photo, I develop visuals\nthat capture your ideas with accuracy and sensibility.\nBelow you can explore my portfolio.",
@@ -38,26 +35,10 @@ introTitle: "From concept to reality\nImagine it, and I’ll bring it to life.",
         feedbackOlephb: "★★★★★ Review from fiverr WOOOOW! This guy is awesome! Made a couple of pretty fabulous characters for my website! This is... simply the best for this type of work! Thank you man, i love it!",
         letsCreateSomethingAmazingTitle: "Let's Create Something Amazing!",
         letsCreateSomethingAmazingText: "Have a vision? I'm here to transform your ideas into stunning visuals - from logos and CGI to product photography. Get started with a free concept sketch and only move forward if it captures your vision perfectly. Drop me a message anytime - I'm excited to hear about your project and typically respond within 24 hours.",
-        mailText: "<strong>Email:</strong> mariushagelskjaer@gmail.com",
-        firstnameForm: "*First Name",
-        lastnameForm: "*Last name",
-        emailForm: "*Email",
-        topicForm: "*Select your topic",
-        numberForm: "Phone Number (optional)",
-        messageForm: "*Message",
-        submitForm: "Submit",
-        opt1: "Choose a service category",
-        opt2: "Architecture",
-        opt3: "Photoshop",
-        opt4: "Illustration",
-        opt5: "Other",
-        phoneText: "<strong>Phone:</strong> +45 28 69 85 23"
+
         },
-
-
-
-//SPANISH
         es: {
+            // Spanish translations go here
         introTitle: "De concepto a realidad\nImagínalo, y lo traeré a la vida.",
         introText: "Ya sea un logotipo, CGI o una foto de producto, desarrollo visuales que capturan tus ideas con precisión y sensibilidad.\nA continuación puedes explorar mi portafolio.",
         productPhotosTitle: "Fotos de productos. Sin fotografía de productos",
@@ -88,25 +69,8 @@ introTitle: "From concept to reality\nImagine it, and I’ll bring it to life.",
         feedbackAndrewBarriault: "★★★★☆ Reseña de fiverr No obtuve exactamente lo que estaba buscando, pero eso fue principalmente debido a mi mala comunicación/inexperiencia con el servicio.",
         feedbackOlephb: "★★★★★ Reseña de fiverr ¡GUUUUAAAU! ¡Este tipo es increíble! ¡Hizo un par de personajes bastante fabulosos para mi sitio web! Esto es... simplemente lo mejor para este tipo de trabajo! ¡Gracias amigo, me encanta!",
         letsCreateSomethingAmazingTitle: "¡Creemos algo increíble!",
-        letsCreateSomethingAmazingText: "¿Tienes una visión? Estoy aquí para transformar tus ideas en visuales impresionantes: desde logotipos y CGI hasta fotografía de productos. Comienza con un boceto de concepto gratuito y solo avanza si captura tu visión perfectamente. Envíame un mensaje en cualquier momento: ¡Estoy emocionado de escuchar sobre tu proyecto y normalmente respondo dentro de las 24 horas!",
-        mailText: "<strong>correo electrónico:</strong> mariushagelskjaer@gmail.com",
-        firstnameForm: "*Nombre",
-        lastnameForm: "*Apellido",
-        emailForm: "*Correo electrónico",
-        topicForm: "*Seleccione su tema",
-        numberForm: "Número de teléfono (opcional)",
-        messageForm: "*Mensaje",
-        submitForm: "Entregar",
-        opt1: "Elija una categoría de servicio",
-        opt2: "Arquitectura",
-        opt3: "Photoshop",
-        opt4: "Ilustración",
-        opt5: "Otro",
-        phoneText: "<strong>Móvil:</strong> +45 28 69 85 23"
+        letsCreateSomethingAmazingText: "¿Tienes una visión? Estoy aquí para transformar tus ideas en visuales impresionantes: desde logotipos y CGI hasta fotografía de productos. Comienza con un boceto de concepto gratuito y solo avanza si captura tu visión perfectamente. Envíame un mensaje en cualquier momento: ¡Estoy emocionado de escuchar sobre tu proyecto y normalmente respondo dentro de las 24 horas!"
         },
-
-
-//DANISH DANISH DANISH
         da: {
         introTitle: "Fra koncept til virkelighed\nForestil dig det, og jeg vil bringe det til live.",
         introText: "Hvad enten det er et logo, CGI eller et produktfoto, udvikler jeg visuelle elementer der fanger dine ideer med præcision og følsomhed.\nHerunder kan du udforske mit portfolio.",
@@ -138,21 +102,7 @@ introTitle: "From concept to reality\nImagine it, and I’ll bring it to life.",
         feedbackAndrewBarriault: "★★★★☆ Anmeldelse fra fiverr Jeg fik ikke helt det, jeg søgte, men det skyldtes hovedsagelig min dårlige kommunikation/ufamiliaritet med servicen.",
         feedbackOlephb: "★★★★★ Anmeldelse fra fiverr WOW! Denne fyr er fantastisk! Han lavede et par ret flotte karakterer til mit website! Dette er... blot det bedste til denne slags arbejde! Tak mand, jeg elsker det!",
         letsCreateSomethingAmazingTitle: "Lad os skabe noget fantastisk!",
-        letsCreateSomethingAmazingText: "Har du en vision? Jeg er her for at forvandle dine ideer til fantastiske visuelle - fra logoer og CGI til produktfotografi. Kom i gang med en gratis konceptskitse og fortsæt kun, hvis den fanger din vision perfekt. Send mig en besked når som helst - Jeg er begejstret for at høre om dit projekt og svarer typisk inden for 24 timer.",
-        mailText: "<strong>Email:</strong> mariushagelskjaer@gmail.com",
-        firstnameForm: "*Fornavn",
-        lastnameForm: "*Efternavn",
-        emailForm: "*Email",
-        numberForm: "Telefonnummer (valgfrit)",
-        topicForm: "*Vælg dit emne",
-        messageForm: "*Besked",
-        submitForm: "Send besked",
-        opt1: "Vælg en tjenestekategori",
-        opt2: "Arkitektur",
-        opt3: "Photoshop",
-        opt4: "Ilustration",
-        opt5: "Andre",
-        phoneText: "<strong>Telefon:</strong> +45 28 69 85 23"
+        letsCreateSomethingAmazingText: "Har du en vision? Jeg er her for at forvandle dine ideer til fantastiske visuelle - fra logoer og CGI til produktfotografi. Kom i gang med en gratis konceptskitse og fortsæt kun, hvis den fanger din vision perfekt. Send mig en besked når som helst - Jeg er begejstret for at høre om dit projekt og svarer typisk inden for 24 timer."
         }
     };
 

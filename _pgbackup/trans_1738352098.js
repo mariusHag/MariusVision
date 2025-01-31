@@ -151,7 +151,7 @@ introTitle: "From concept to reality\nImagine it, and I’ll bring it to life.",
         opt2: "Arkitektur",
         opt3: "Photoshop",
         opt4: "Ilustration",
-        opt5: "Andre",
+        opt5: "Anden",
         phoneText: "<strong>Telefon:</strong> +45 28 69 85 23"
         }
     };
