@@ -694,83 +694,14 @@ button:hover {
     font-size: 1rem;
 }
 
-/* Underline pseudo-element */
-.language-selector::after {
-    content: "";
-    position: absolute;
-    bottom: 0;
-    left: var(--underline-left, 0);
-    width: var(--underline-width, 0);
-    height: 2px;
-    background: var(--light-gray-color);
-    transition: left 0.3s, width 0.3s;
-}
-
-@media (max-aspect-ratio: 5/4) {
-    .flag {
-        color: var(--black-color);
-    }
-
-    .language-selector::after {
-        content: "";
-        position: absolute;
-        bottom: 0;
-        left: var(--underline-left, 0);
-        width: var(--underline-width, 0);
-        height: 2px;
-        background: var(--black-color);
-        transition: left 0.3s, width 0.3s;
-    }
-}
-
 /* phone */
-@media (max-aspect-ratio: 1/1) {
-    .flag {
-        color: var(--light-gray-color);
-        margin: 0.4em;
-        position: relative;
-        text-decoration: none;
-
-        /* Remove default link underline */
-    }
-
-    .language-selector::after {
-        content: "";
-        position: absolute;
-        bottom: 0;
-        left: var(--underline-left, 0);
-        width: var(--underline-width, 0);
-        height: 2px;
-        background: var(--light-gray-color);
-        transition: left 0.3s, width 0.3s;
-    }
-
-    /* logo Image */
-    .logo-image {
-        display: none;
-    }
-
-    /* logo Image */
-    .logo-image2 {
-        width: 85vw;
-        max-width: 50vh;
-        bottom: 58%;
-        left: 50%;
-
-        /* Center horizontally */
-        transform: translateX(-50%);
-
-        /* Adjust position to account for the element's width */
-        position: absolute;
-    }
-
+@media (max-aspect-ratio: 3/2) {
     /* Intro Text */
     #intro-text {
         font-family: Georgia, serif;
         color: var(--black-color);
-        font-size: 1.6vmax;
+        font-size: 0.8rem;
         position: relative;
-        max-width: 50vh;
 
         /* Ensures the pseudo-element is positioned relative to this */
     }
@@ -779,12 +710,12 @@ button:hover {
     #intro-text::after {
         content: "";
         display: block;
-        width: 1.6vmax;
-        height: 1.6vmax;
-        border-right: 0.3vmax solid var(--black-color);
-        border-bottom: 0.3vmax solid var(--black-color);
+        width: 12px;
+        height: 12px;
+        border-right: 2px solid var(--black-color);
+        border-bottom: 2px solid var(--black-color);
         transform: rotate(45deg);
-        margin: 2vmax auto 0;
+        margin: 10px auto 0;
 
         /* Adds space and centers it horizontally */
     }
@@ -792,11 +723,22 @@ button:hover {
     /* Intro Title */
     #intro-title {
         color: var(--black-color);
-        font-size: 3.2vmax;
+        font-size: 1.9rem;
         line-height: 117%;
-        margin-top: 10vmax;
-        margin-bottom: 7vmax;
-        max-width: 50vh;
+        margin-top: 8rem;
+        margin-bottom: 4rem;
+    }
+
+    /* logo Image */
+    .logo-image {
+        width: 95vw;
+        left: 50%;
+        bottom: 58%
+    /* Center horizontally */;
+        transform: translateX(-50%);
+
+        /* Adjust position to account for the element's width */
+        position: absolute;
     }
 
     .cover-image {
@@ -834,8 +776,7 @@ button:hover {
     }
 
     .brown-cover {
-        background-color: var(--deep-brown-color);
-        opacity: 0.8;
+        background-color: var(--warm-brown-color);
         width: 100vw;
         height: 45%;
         position: absolute;
@@ -969,6 +910,18 @@ button:hover {
 
 .language-selector {
     position: relative;
+}
+
+/* Underline pseudo-element */
+.language-selector::after {
+    content: "";
+    position: absolute;
+    bottom: 0;
+    left: var(--underline-left, 0);
+    width: var(--underline-width, 0);
+    height: 2px;
+    background: var(--light-gray-color);
+    transition: left 0.3s, width 0.3s;
 }
 
 /* Main Section */

@@ -170,22 +170,19 @@ introTitle: "From concept to reality\nImagine it, and I’ll bring it to life.",
 document.querySelectorAll('.flag').forEach(link => {
     link.addEventListener('click', function(event) {
         event.preventDefault();
-
-        // Log the language button click
         console.log('Language button clicked:', this.dataset.lang);
+
+        // Remove active class from all flags
+        document.querySelectorAll('.flag').forEach(flag => flag.classList.remove('active'));
+
+        // Add active class to the clicked flag
+        this.classList.add('active');
 
         // Apply translation
         applyTranslation(this.dataset.lang);
-
-        // Remove the 'active' class from all flags
-        document.querySelectorAll('.flag').forEach(flag => {
-            flag.classList.remove('active');
-        });
-
-        // Add the 'active' class to the clicked flag
-        this.classList.add('active');
     });
 });
-    // Initial load
-    applyTranslation('en');
-});
+
+// Initial load
+applyTranslation('en');
+document.querySelector('.flag[data-lang="en"]').classList.add('active'); // Set initial active flag

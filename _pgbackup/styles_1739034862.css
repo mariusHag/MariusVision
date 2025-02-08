@@ -4,6 +4,7 @@ body {
     margin: 0;
     padding: 0;
     width: 100%;
+    font-family: 'Segoe ui', sans-serif;
     line-height: 1.6;
     min-height: 100vh;
     background-color: var(--soft-gray-color);
@@ -12,7 +13,6 @@ body {
 
 /* Base Styles */
 :root {
-    font-family: 'Segoe ui', sans-serif;
     --box-width: 35vw;
     --black-color: #020402;
 
@@ -398,6 +398,7 @@ button:hover {
     font-weight: bold;
 }
 
+/* logo Image */
 .bt1-image {
     height: 88vh;
     top: 12%;
@@ -613,14 +614,31 @@ button:hover {
 
 /* Intro Container */
 #intro-container {
-    --container-width: 50%;
+    --container-width: 51%;
+
+    /* The variable is now scoped to this box */
     position: absolute;
     top: 35%;
+
+    /* Vertical positioning */
     left: calc(var(--container-width) / 2);
+
+    /* Half of the container width */
     transform: translate(-50%, -50%);
+
+    /* Center horizontally and vertically */
     width: calc(var(--container-width) * 0.8);
+
+    /* Adjust width as a percentage of the container */
+    max-width: calc(var(--container-width) - 40px);
+
+    /* Ensure it stays within the container */
     padding: 20px;
+
+    /* Internal spacing */
     box-sizing: border-box;
+
+    /* Include padding in size calculations */
     display: flex;
     flex-direction: column;
     align-items: center;
@@ -635,212 +653,10 @@ button:hover {
     margin-bottom: 1rem;
 }
 
-/* Parallax Image */
-.paralex-image {
-    height: 120%;
-    bottom: -50px;
-    position: absolute;
-    transform: translate(0%, 0px);
-
-    /* Initial position */
-    will-change: transform;
-
-    /* Optimizes animation performance */
-}
-
-/* Navigation Bar Styles */
-.nav-container {
-    display: flex;
-    align-items: center;
-    justify-content: flex-end;
-    padding-top: 1.5em;
-    padding-right: 1em;
-
-    /* Center items vertically */
-    /* Align to the right */
-    background-color: transparent;
-    position: absolute;
-    width: 100%;
-    z-index: 10;
-
-    /* Ensure padding is included in width */
-}
-
-/* logo Image */
-.logo-image {
-    width: 95vw;
-    bottom: 25px;
-    left: 50%;
-
-    /* Center horizontally */
-    transform: translateX(-50%);
-
-    /* Adjust position to account for the element's width */
-    position: absolute;
-}
-
-.flag {
-    color: var(--light-gray-color);
-    margin: 0.4em;
-    position: relative;
-    text-decoration: none;
-
-    /* Remove default link underline */
-}
-
 /* Intro Text */
 #intro-text {
     color: var(--black-color);
     font-size: 1rem;
-}
-
-/* Underline pseudo-element */
-.language-selector::after {
-    content: "";
-    position: absolute;
-    bottom: 0;
-    left: var(--underline-left, 0);
-    width: var(--underline-width, 0);
-    height: 2px;
-    background: var(--light-gray-color);
-    transition: left 0.3s, width 0.3s;
-}
-
-@media (max-aspect-ratio: 5/4) {
-    .flag {
-        color: var(--black-color);
-    }
-
-    .language-selector::after {
-        content: "";
-        position: absolute;
-        bottom: 0;
-        left: var(--underline-left, 0);
-        width: var(--underline-width, 0);
-        height: 2px;
-        background: var(--black-color);
-        transition: left 0.3s, width 0.3s;
-    }
-}
-
-/* phone */
-@media (max-aspect-ratio: 1/1) {
-    .flag {
-        color: var(--light-gray-color);
-        margin: 0.4em;
-        position: relative;
-        text-decoration: none;
-
-        /* Remove default link underline */
-    }
-
-    .language-selector::after {
-        content: "";
-        position: absolute;
-        bottom: 0;
-        left: var(--underline-left, 0);
-        width: var(--underline-width, 0);
-        height: 2px;
-        background: var(--light-gray-color);
-        transition: left 0.3s, width 0.3s;
-    }
-
-    /* logo Image */
-    .logo-image {
-        display: none;
-    }
-
-    /* logo Image */
-    .logo-image2 {
-        width: 85vw;
-        max-width: 50vh;
-        bottom: 58%;
-        left: 50%;
-
-        /* Center horizontally */
-        transform: translateX(-50%);
-
-        /* Adjust position to account for the element's width */
-        position: absolute;
-    }
-
-    /* Intro Text */
-    #intro-text {
-        font-family: Georgia, serif;
-        color: var(--black-color);
-        font-size: 1.6vmax;
-        position: relative;
-        max-width: 50vh;
-
-        /* Ensures the pseudo-element is positioned relative to this */
-    }
-
-    /* Arrow Below #intro-text */
-    #intro-text::after {
-        content: "";
-        display: block;
-        width: 1.6vmax;
-        height: 1.6vmax;
-        border-right: 0.3vmax solid var(--black-color);
-        border-bottom: 0.3vmax solid var(--black-color);
-        transform: rotate(45deg);
-        margin: 2vmax auto 0;
-
-        /* Adds space and centers it horizontally */
-    }
-
-    /* Intro Title */
-    #intro-title {
-        color: var(--black-color);
-        font-size: 3.2vmax;
-        line-height: 117%;
-        margin-top: 10vmax;
-        margin-bottom: 7vmax;
-        max-width: 50vh;
-    }
-
-    .cover-image {
-        display: none;
-    }
-
-    /* Navigation Bar Styles */
-    .nav-container {
-        width: 100vw;
-        position: absolute;
-        justify-content: center;
-        padding-top: 1.5em;
-        padding-right: 0em;
-    }
-
-    #intro-container {
-        --container-width: 100%;
-        position: absolute;
-        top: 65%;
-        left: calc(var(--container-width) / 2);
-        transform: translate(-50%, -50%);
-        width: calc(var(--container-width) * 0.8);
-        padding: 20px;
-        box-sizing: border-box;
-        display: flex;
-        flex-direction: column;
-        align-items: center;
-        text-align: center;
-        z-index: 4;
-    }
-
-    /* Parallax Image */
-    .paralex-image {
-        display: none;
-    }
-
-    .brown-cover {
-        background-color: var(--deep-brown-color);
-        opacity: 0.8;
-        width: 100vw;
-        height: 45%;
-        position: absolute;
-        top: 0%;
-    }
 }
 
 /* Full-height container */
@@ -908,67 +724,143 @@ button:hover {
     margin-right: 20%;
 }
 
+/* Parallax Image */
+.paralex-image {
+    height: 120%;
+    bottom: -50px;
+    position: absolute;
+    transform: translate(0%, 0px);
+
+    /* Initial position */
+    will-change: transform;
+
+    /* Optimizes animation performance */
+}
+
 /* cover Image */
 .cover-image {
-    height: 100vh;
+    height: 100.1%;
     left: 50%;
 
     /* Center horizontally */
     transform: translateX(-50%);
 
     /* Adjust position to account for the element's width */
-    bottom: 0px;
+    bottom: -1px;
     position: absolute;
 }
 
-.intro-container {
-    flex-direction: column;
+/* logo Image */
+.logo-image {
+    width: 95vw;
+    bottom: 25px;
+    left: 50%;
 
-    /* Stack elements vertically */
-    gap: calc((100vh - 2 * var(--box-width)) / 3);
+    /* Center horizontally */
+    transform: translateX(-50%);
 
-    /* Keep original gap for desktop */
+    /* Adjust position to account for the element's width */
+    position: absolute;
 }
 
-.quadratic-element,
-.text-box {
-    width: var(--box-width);
+/* Media Queries */
+/* Mobile Styles */
+@media (max-aspect-ratio: 4/3) {
+    :root {
+        --box-width: 35vh;
 
-    /* Maintain the same width for mobile */
+        /* Adjust the box width for mobile */
+    }
+
+    .intro-container {
+        flex-direction: column;
+
+        /* Stack elements vertically */
+        gap: calc((100vh - 2 * var(--box-width)) / 3);
+
+        /* Keep original gap for desktop */
+    }
+
+    .quadratic-element,
+    .text-box {
+        width: var(--box-width);
+
+        /* Maintain the same width for mobile */
+    }
+
+    .container-image {
+        width: 301%;
+        height: auto;
+        max-height: 100vh;
+        object-position: top center;
+    }
 }
 
-.container-image {
-    width: 301%;
-    height: auto;
-    max-height: 100vh;
-    object-position: top center;
+/* Desktop Styles */
+@media (min-aspect-ratio: 4/3) {
+    :root {
+        --box-width: 35vw;
+
+        /* Set the box width for desktop */
+    }
+
+    .intro-container {
+        flex-direction: row;
+
+        /* Align elements horizontally */
+        gap: calc((100vw - 2 * var(--box-width)) / 3);
+
+        /* Keep original gap for desktop */
+    }
+
+    .quadratic-element,
+    .text-box {
+        width: var(--box-width);
+
+        /* Use dynamic width */
+    }
 }
 
-.intro-container {
-    flex-direction: row;
+/* Navigation Bar Styles */
+.nav-container {
+    display: flex;
+    align-items: center;
 
-    /* Align elements horizontally */
-    gap: calc((100vw - 2 * var(--box-width)) / 3);
+    /* Center items vertically */
+    justify-content: flex-end;
 
-    /* Keep original gap for desktop */
+    /* Align to the right */
+    background-color: transparent;
+    position: absolute;
+    width: 100%;
+    z-index: 10;
+    box-sizing: border-box;
+
+    /* Ensure padding is included in width */
 }
 
-.quadratic-element,
-.text-box {
-    width: var(--box-width);
+.flag {
+    color: var(--light-gray-color);
+    margin-right: 10px;
+    position: relative;
+    text-decoration: none;
 
-    /* Use dynamic width */
+    /* Remove default link underline */
 }
 
 /* Hover styles */
 .flag:hover,
 .flag.active {
     /* Add .active class to match hover styles */
+    color: var(--dark-gray-color);
     text-shadow: 0 10px 10px var(--color-shadow);
+    border-bottom: 1px solid var(--dark-gray-color);
 }
 
-.language-selector {
-    position: relative;
+.nav-container {
+    justify-content: flex-end;
+    padding-top: 1.5em;
+    padding-right: 1em;
 }
 
 /* Main Section */
@@ -1060,7 +952,4 @@ footer {
 
     /* Changed to relative to avoid covering content */
     bottom: 0;
-}
-}
-}
 }

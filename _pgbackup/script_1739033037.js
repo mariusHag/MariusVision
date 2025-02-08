@@ -145,41 +145,20 @@ setInterval(changeImage, 1500);
 
 
 
-//language line thing
-document.addEventListener('DOMContentLoaded', function() {
-  const langSelector = document.querySelector('.language-selector');
-  const flags = langSelector.querySelectorAll('.flag');
 
-  function updateUnderline(element) {
-    const flagRect = element.getBoundingClientRect();
-    const containerRect = langSelector.getBoundingClientRect();
-    const left = flagRect.left - containerRect.left;
-    const width = flagRect.width;
-    langSelector.style.setProperty('--underline-left', left + 'px');
-    langSelector.style.setProperty('--underline-width', width + 'px');
-  }
 
-  // Set initial underline to the active flag (or first flag if none active)
-  let activeFlag = langSelector.querySelector('.flag.active') || flags[0];
-  updateUnderline(activeFlag);
 
-  flags.forEach(flag => {
-    flag.addEventListener('mouseenter', function() {
-      updateUnderline(this);
+
+
+function updateActiveFlag(lang) {
+    // Remove the 'active' class from all flags
+    document.querySelectorAll(".flag").forEach(flag => {
+        flag.classList.remove("active");
     });
 
-    flag.addEventListener('click', function(e) {
-      e.preventDefault();
-      flags.forEach(f => f.classList.remove('active'));
-      this.classList.add('active');
-      updateUnderline(this);
-    });
-  });
-
-  // When mouse leaves the container, return the underline to the active flag
-  langSelector.addEventListener('mouseleave', function() {
-    activeFlag = langSelector.querySelector('.flag.active') || flags[0];
-    updateUnderline(activeFlag);
-  });
-});
-
+    // Add the 'active' class to the selected flag
+    const selectedFlag = document.querySelector(`.flag[data-lang="${lang}"]`);
+    if (selectedFlag) {
+        selectedFlag.classList.add("active");
+    }
+}

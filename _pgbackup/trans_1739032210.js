@@ -167,25 +167,19 @@ introTitle: "From concept to reality\nImagine it, and I’ll bring it to life.",
         });
     }
 
-document.querySelectorAll('.flag').forEach(link => {
-    link.addEventListener('click', function(event) {
-        event.preventDefault();
-
-        // Log the language button click
-        console.log('Language button clicked:', this.dataset.lang);
-
-        // Apply translation
-        applyTranslation(this.dataset.lang);
-
-        // Remove the 'active' class from all flags
-        document.querySelectorAll('.flag').forEach(flag => {
-            flag.classList.remove('active');
+    document.querySelectorAll('.flag').forEach(link => {
+        link.addEventListener('click', function(event) {
+            event.preventDefault();
+            console.log('Language button clicked:', this.dataset.lang);
+            applyTranslation(this.dataset.lang);
         });
-
-        // Add the 'active' class to the clicked flag
-        this.classList.add('active');
     });
-});
+        // Remove active class from all flags
+        document.querySelectorAll('.flag').forEach(flag => flag.classList.remove('active'));
+
+        // Add active class to the clicked flag
+        this.classList.add('active');
+
     // Initial load
     applyTranslation('en');
 });
