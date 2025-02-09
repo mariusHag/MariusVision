@@ -265,29 +265,6 @@ button:hover {
 
 /* reviews end css: */
 /* pt Container */
-.white-cover {
-    background-color: var(--light-gray-color);
-    opacity: 0.4;
-
-    /* White background */
-    position: relative;
-
-    /* Relative positioning */
-    margin-left: auto;
-
-    /* Automatically push the box to the right */
-    margin-right: 0;
-
-    /* Optional, to ensure no extra space on the right */
-    width: 50%;
-
-    /* Example width */
-    height: 100%;
-
-    /* Example height */
-    z-index: 3;
-}
-
 /* Project Section */
 .project-section {
     height: 100vh;
@@ -531,13 +508,6 @@ button:hover {
     align-items: center;
 }
 
-/* end */
-.portfolio-section-1 {
-    position: relative;
-    height: 100vh;
-    overflow: hidden;
-}
-
 .portfolio-section-2 {
     display: grid;
 
@@ -588,20 +558,6 @@ button:hover {
     flex-direction: column;
     align-items: center;
     text-align: center;
-}
-
-/* General styles for slideshow images in .portfolio-section-1 */
-.portfolio-section-1 img:not(.cover2-image) {
-    position: absolute;
-    top: 0;
-    left: 0;
-    width: 100%;
-    height: 100%;
-    object-fit: cover;
-    opacity: 0;
-
-    /* Default hidden */
-    transition: opacity 1s ease-in-out;
 }
 
 /* Make only images with the 'active' class visible */
@@ -723,8 +679,121 @@ button:hover {
     }
 }
 
+.white-cover {
+    background-color: var(--light-gray-color);
+    opacity: 0.4;
+
+    /* White background */
+    position: relative;
+
+    /* Relative positioning */
+    margin-left: auto;
+
+    /* Automatically push the box to the right */
+    margin-right: 0;
+
+    /* Optional, to ensure no extra space on the right */
+    width: 50%;
+
+    /* Example width */
+    height: 100%;
+
+    /* Example height */
+    z-index: 3;
+}
+
+/* General styles for slideshow images in .portfolio-section-1 */
+.portfolio-section-1 img:not(.cover2-image) {
+    position: absolute;
+    top: 0;
+    left: 0;
+    width: 100%;
+    height: 100%;
+    object-fit: cover;
+    opacity: 0;
+
+    /* Default hidden */
+    transition: opacity 1s ease-in-out;
+}
+
+/* end */
+.portfolio-section-1 {
+    position: relative;
+    height: 100vh;
+    overflow: hidden;
+}
+
+/* pt Container */
+#pt1-container {
+    position: absolute;
+
+    /* Layer it on top without pushing other elements */
+    top: 50%;
+
+    /* Center vertically */
+    left: 77%;
+
+    /* Center horizontally */
+    transform: translate(-50%, -50%);
+
+    /* Perfect centering */
+    display: flex;
+    flex-direction: column;
+
+    /* Stack the title and text */
+    align-items: center;
+
+    /* Center horizontally */
+    text-align: center;
+    z-index: 4;
+
+    /* Ensure it's above all images */
+}
+
+/* Full-height container */
+.full-height-container {
+    height: 100vh;
+    display: flex;
+    justify-content: center;
+    align-items: flex-end;
+    overflow: hidden;
+    background-color: transparent;
+    position: relative;
+}
+
 /* phone */
 @media (max-aspect-ratio: 1/1) {
+    /* General styles for slideshow images in .portfolio-section-1 */
+    .portfolio-section-1 img:not(.cover2-image) {
+        position: absolute;
+        top: 0;
+        width: 130%;
+        height: 50%;
+        object-fit: contain;
+        opacity: 0;
+
+        /* Default hidden */
+        transition: opacity 1s ease-in-out;
+    }
+
+    /* pt Container */
+    #pt1-container {
+        position: absolute;
+        top: 65%;
+        left: 50%;
+        transform: translate(-50%, -50%);
+        display: flex;
+        flex-direction: column;
+        align-items: center;
+        text-align: center;
+        z-index: 4;
+        width: 80%;
+    }
+
+    .white-cover {
+        display: none;
+    }
+
     .flag {
         color: var(--light-gray-color);
         margin: 0.4em;
@@ -815,12 +884,9 @@ button:hover {
     #intro-container {
         --container-width: 100%;
         position: absolute;
-        top: 65%;
-        left: calc(var(--container-width) / 2);
+        top: 72%;
         transform: translate(-50%, -50%);
-        width: calc(var(--container-width) * 0.8);
-        padding: 20px;
-        box-sizing: border-box;
+        padding: 2vw;
         display: flex;
         flex-direction: column;
         align-items: center;
@@ -841,44 +907,6 @@ button:hover {
         position: absolute;
         top: 0%;
     }
-}
-
-/* Full-height container */
-.full-height-container {
-    height: 100vh;
-    display: flex;
-    justify-content: center;
-    align-items: flex-end;
-    overflow: hidden;
-    background-color: transparent;
-    position: relative;
-}
-
-/* pt Container */
-#pt1-container {
-    position: absolute;
-
-    /* Layer it on top without pushing other elements */
-    top: 50%;
-
-    /* Center vertically */
-    left: 77%;
-
-    /* Center horizontally */
-    transform: translate(-50%, -50%);
-
-    /* Perfect centering */
-    display: flex;
-    flex-direction: column;
-
-    /* Stack the title and text */
-    align-items: center;
-
-    /* Center horizontally */
-    text-align: center;
-    z-index: 4;
-
-    /* Ensure it's above all images */
 }
 
 /* pt Container */
