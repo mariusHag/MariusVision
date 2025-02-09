@@ -582,13 +582,6 @@ button:hover {
 
 .bt1-image {
     height: 88vh;
-    max-width: 50vh;
-    width: auto;
-
-    /* Ensures aspect ratio is maintained */
-    object-fit: contain;
-
-    /* Ensures the whole image is visible without distortion */
     top: 12%;
     left: 25%;
     transform: translateX(-50%);
@@ -596,15 +589,15 @@ button:hover {
 }
 
 .bt2-image {
+    height: 60vh;
     top: 25%;
-    width: 50vh;
     left: 25%;
     transform: translateX(-50%);
     position: absolute;
 }
 
 .bt3-image {
-    width: 50vh;
+    height: 60vh;
     top: 25%;
     left: 5%;
     position: absolute;
