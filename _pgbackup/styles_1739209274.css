@@ -955,51 +955,10 @@ button:hover {
     .brown-cover {
         background-color: var(--deep-brown-color);
         opacity: 0.8;
-        width: 95vw;
-
-        /* Slightly smaller width */
-        height: 95%;
-
-        /* Slightly smaller height */
+        width: 100vw;
+        height: 45%;
         position: absolute;
-        top: 1%;
-
-        /* Centers it vertically */
-        transform: translateX(-50%);
-        left: 50%;
-        border-radius: 10px;
-
-        /* Slightly rounded corners */
-        box-shadow: 0 4px 10px var(--color-shadow));
-
-        /* Adds a subtle frame effect */
-    }
-
-    /* Underline pseudo-element */
-    .brown-cover::after {
-        content: "";
-        position: absolute;
-        bottom: 0;
-        background-color: var(--light-gray-color);
-        opacity: 0.8;
-        width: 89vw;
-
-        /* Slightly smaller width */
-        height: 40%;
-
-        /* Slightly smaller height */
-        position: absolute;
-        top: 58%;
-
-        /* Centers it vertically */
-        transform: translateX(-50%);
-        left: 50%;
-        border-radius: 10px;
-
-        /* Slightly rounded corners */
-        box-shadow: 0 4px 10px var(--color-shadow));
-
-        /* Adds a subtle frame effect */
+        top: 0%;
     }
 }
 
