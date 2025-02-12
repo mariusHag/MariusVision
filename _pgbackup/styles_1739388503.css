@@ -604,9 +604,8 @@ button:hover {
 }
 
 .bt3-image {
-    width: 40vw;
+    width: 50vh;
     top: 25%;
-    object-fit: contain;
     left: 5%;
     position: absolute;
 }
