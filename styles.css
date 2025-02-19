@@ -811,22 +811,14 @@ button:hover {
         position: absolute;
         top: 20%;
         left: 50%;
-
-        /* Shift left by 50% then add half of the 32% crop so that the 75% visible part is centered */
         transform: translate(calc(-50% + (39% / 2)), -50%);
-
-        /* Use your wide default, but allow the image to scale down if its height gets too big */
-        width: 160vw;
         height: auto;
-
-        /* We still want the image to “contain” within its box so that it’s not cropped vertically */
+        width: min(160vw, calc(100vh * 0.9));
         object-fit: contain;
 
-        /* Keep your horizontal crop exactly as before */
-        clip-path: inset(0 calc(32%) 0 0);
+        /* Using a larger crop percentage to ensure it never shows the right side */
+        clip-path: inset(0 39% 0 0);
         opacity: 0;
-
-        /* Default hidden */
         transition: opacity 1s ease-in-out;
     }
 
