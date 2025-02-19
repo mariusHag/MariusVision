@@ -416,44 +416,6 @@ button:hover {
     /* Clip images outside the section */
 }
 
-.paralex-image2 {
-    grid-column: 1;
-    grid-row: 1;
-    width: 100%;
-    height: auto;
-
-    /* Height is consistent across images */
-    will-change: transform;
-
-    /* Optimize for smooth animations */
-    transform: translateY(0px);
-
-    /* Initial position (overridden by JS) */
-}
-
-#pt1-container2 {
-    grid-column: 1;
-    grid-row: 1;
-
-    /* Keep it in the same grid layer as images */
-    /* Position at the top but centered horizontally */
-    align-self: start;
-    justify-self: center;
-
-    /* Add margin to push it down slightly */
-    margin-top: 50vh;
-
-    /* Adjust this value to fine-tune */
-    /* Ensure it's above images */
-    z-index: 4;
-
-    /* Flexbox for content alignment */
-    display: flex;
-    flex-direction: column;
-    align-items: center;
-    text-align: center;
-}
-
 /* Make only images with the 'active' class visible */
 .portfolio-section-1 img.active:not(.cover2-image) {
     opacity: 1;
@@ -739,8 +701,104 @@ button:hover {
     top: 10%;
 }
 
+.paralex-image2 {
+    grid-column: 1;
+    grid-row: 1;
+    width: 100vw;
+    height: auto;
+    object-fit: cover;
+
+    /* Ensures image fills the space without distortion */
+    /* Height is consistent across images */
+    will-change: transform;
+
+    /* Optimize for smooth animations */
+    transform: translateY(0px);
+
+    /* Initial position (overridden by JS) */
+}
+
+/* pt Container */
+#pt1-container {
+    position: absolute;
+    top: 65%;
+    left: 50%;
+    transform: translate(-50%, -50%);
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    text-align: center;
+    z-index: 4;
+    width: 80%;
+}
+
+#pt1-container2 {
+    grid-column: 1;
+    grid-row: 1;
+
+    /* Keep it in the same grid layer as images */
+    /* Position at the top but centered horizontally */
+    align-self: start;
+    justify-self: center;
+
+    /* Add margin to push it down slightly */
+    margin-top: 50vh;
+
+    /* Adjust this value to fine-tune */
+    /* Ensure it's above images */
+    z-index: 4;
+
+    /* Flexbox for content alignment */
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    text-align: center;
+}
+
+/* pt Container */
+/* pt Title */
+#pt1-header {
+    color: var(--black-color);
+    font-size: 1.8rem;
+    margin-bottom: 1rem;
+}
+
+#pt1-header2 {
+    color: var(--soft-gray-color);
+    font-size: 2.5rem;
+    margin-bottom: 1rem;
+}
+
+/* pt Text */
+#pt1-text {
+    color: var(--black-color);
+    font-size: 1rem;
+}
+
+#pt1-text2 {
+    color: var(--soft-gray-color);
+    font-size: 1rem;
+    margin-left: 20%;
+    margin-right: 20%;
+}
+
 /* phone */
 @media (max-aspect-ratio: 1/1) {
+    #pt1-header2 {
+        color: var(--soft-gray-color);
+        font-size: 6.5vw;
+        margin-bottom: 1rem;
+        margin-left: 10%;
+        margin-right: 10%;
+    }
+
+    #pt1-text2 {
+        color: var(--soft-gray-color);
+        font-size: 2.5vw;
+        margin-left: 20%;
+        margin-right: 20%;
+    }
+
     .box1-text {
         text-align: center;
         height: 35%;
@@ -753,6 +811,29 @@ button:hover {
         margin-bottom: 1rem;
         font-weight: bold;
         transform: translateX(-50%);
+    }
+
+    #pt1-container2 {
+        grid-column: 1;
+        grid-row: 1;
+
+        /* Keep it in the same grid layer as images */
+        /* Position at the top but centered horizontally */
+        align-self: start;
+        justify-self: center;
+
+        /* Add margin to push it down slightly */
+        margin-top: 5vh;
+
+        /* Adjust this value to fine-tune */
+        /* Ensure it's above images */
+        z-index: 4;
+
+        /* Flexbox for content alignment */
+        display: flex;
+        flex-direction: column;
+        align-items: center;
+        text-align: center;
     }
 
     .image-container {
@@ -835,20 +916,6 @@ button:hover {
         clip-path: inset(0 39% 0 0);
         opacity: 0;
         transition: opacity 1s ease-in-out;
-    }
-
-    /* pt Container */
-    #pt1-container {
-        position: absolute;
-        top: 65%;
-        left: 50%;
-        transform: translate(-50%, -50%);
-        display: flex;
-        flex-direction: column;
-        align-items: center;
-        text-align: center;
-        z-index: 4;
-        width: 80%;
     }
 
     .white-cover {
@@ -1003,33 +1070,6 @@ button:hover {
     .portfolio-section-1 {
         background-color: var(--light-gray-color);
     }
-}
-
-/* pt Container */
-/* pt Title */
-#pt1-header {
-    color: var(--black-color);
-    font-size: 1.8rem;
-    margin-bottom: 1rem;
-}
-
-#pt1-header2 {
-    color: var(--soft-gray-color);
-    font-size: 2.5rem;
-    margin-bottom: 1rem;
-}
-
-/* pt Text */
-#pt1-text {
-    color: var(--black-color);
-    font-size: 1rem;
-}
-
-#pt1-text2 {
-    color: var(--soft-gray-color);
-    font-size: 1rem;
-    margin-left: 20%;
-    margin-right: 20%;
 }
 
 /* cover Image */

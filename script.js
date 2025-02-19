@@ -2,6 +2,11 @@
 let currentPosition = 0;
 const visibleCards = 3;
 
+
+
+
+
+
 function moveCards(direction) {
     const container = document.querySelector('.review-container');
     const cards = document.querySelectorAll('.review-card');
