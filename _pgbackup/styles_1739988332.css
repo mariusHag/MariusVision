@@ -909,13 +909,10 @@ button:hover {
     /* Intro Title */
     #intro-title {
         color: var(--black-color);
-        font-size: 3.5vmax;
+        font-size: 3vmax;
         line-height: 117%;
         margin-top: 0vmax;
-        margin-bottom: 3.5vmax;
-        padding: 0;
-        margin-left: 0;
-        margin-right: 0;
+        margin-bottom: 1vmax;
         max-width: 50vh;
     }
 
@@ -928,17 +925,16 @@ button:hover {
         width: 100vw;
         position: absolute;
         justify-content: center;
-        padding: 0;
-        margin: 0;
-        top: 2%;
+        padding-top: 1.5em;
+        padding-right: 0em;
     }
 
     #intro-container {
-        --container-width: 95%;
+        --container-width: 55%;
         position: absolute;
-        top: 67%;
+        top: 64%;
         transform: translate(-50%, -50%);
-        padding: vw;
+        padding: 0vw;
         display: flex;
         left: 50%;
         flex-direction: column;
@@ -966,8 +962,8 @@ button:hover {
     }
 
     .brown-cover {
-        //: var(--warm-brown-color);
-        opacity: 1;
+        background-color: var(--warm-brown-color);
+        opacity: 0.8;
         width: 45vw;
 
         /* Slightly smaller width */
