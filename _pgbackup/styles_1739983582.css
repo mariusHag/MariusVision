@@ -769,7 +769,7 @@ button:hover {
         height: 13%;
         background-color: var(--warm-brown-color);
         position: absolute;
-        left: 0;
+        right: 0;
         top: 1%;
     }
 
