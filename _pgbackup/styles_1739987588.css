@@ -909,10 +909,10 @@ button:hover {
     /* Intro Title */
     #intro-title {
         color: var(--black-color);
-        font-size: 3vmax;
+        font-size: 3.2vmax;
         line-height: 117%;
-        margin-top: 0vmax;
-        margin-bottom: 1vmax;
+        margin-top: 10vmax;
+        margin-bottom: 7vmax;
         max-width: 50vh;
     }
 
@@ -930,13 +930,12 @@ button:hover {
     }
 
     #intro-container {
-        --container-width: 55%;
+        --container-width: 100%;
         position: absolute;
-        top: 64%;
+        top: 72%;
         transform: translate(-50%, -50%);
-        padding: 0vw;
+        padding: 2vw;
         display: flex;
-        left: 50%;
         flex-direction: column;
         align-items: center;
         text-align: center;
@@ -948,34 +947,25 @@ button:hover {
         display: none;
     }
 
-    /* Underline pseudo-element */
-    .brown-cover::before {
-        content: "";
-        position: absolute;
-        background-color: var(--black-color);
-        width: 100vw;
-        height: 10%;
-        position: absolute;
-        top: 0%;
-        transform: translateX(-50%);
-        left: 50%;
-    }
-
     .brown-cover {
-        background-color: var(--warm-brown-color);
+        background-color: var(--pro-brown-color);
         opacity: 0.8;
-        width: 45vw;
+        width: 97vw;
 
         /* Slightly smaller width */
-        height: 90%;
+        height: 97%;
 
         /* Slightly smaller height */
         position: absolute;
-        top: 0%;
+        top: 1%;
 
         /* Centers it vertically */
         transform: translateX(-50%);
         left: 50%;
+        border-radius: 3px;
+
+        /* Slightly rounded corners */
+        box-shadow: 0 4px 10px var(--color-shadow));
 
         /* Adds a subtle frame effect */
     }
@@ -984,13 +974,27 @@ button:hover {
     .brown-cover::after {
         content: "";
         position: absolute;
-        background-color: var(--black-color);
-        width: 100vw;
-        height: 10%;
+        bottom: 0;
+        background-color: var(--soft-gray-color);
+        opacity: 1;
+        width: 89vw;
+
+        /* Slightly smaller width */
+        height: 40%;
+
+        /* Slightly smaller height */
         position: absolute;
-        top: 38%;
+        top: 58%;
+
+        /* Centers it vertically */
         transform: translateX(-50%);
         left: 50%;
+        border-radius: 3px;
+
+        /* Slightly rounded corners */
+        box-shadow: 0 4px 10px var(--color-shadow));
+
+        /* Adds a subtle frame effect */
     }
 }
 
