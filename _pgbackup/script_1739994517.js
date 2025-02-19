@@ -52,26 +52,50 @@ document.addEventListener('scroll', () => {
     const sectionEnd = section.offsetTop + sectionHeight;
     const progress = Math.min(1, Math.max(0, (scrollTop - sectionStart) / (sectionEnd - sectionStart)));
 
-    // Calculate scale factor (equals 1 at 1080p height)
-    const REFERENCE_HEIGHT = 1080;
-    const heightScale = windowHeight / REFERENCE_HEIGHT;
-
     // Apply parallax to images
     const images = document.querySelectorAll('.paralex-image2');
     images.forEach(img => {
         const speed = parseFloat(img.dataset.scrollSpeed) || 0.2;
         const initialY = parseFloat(img.dataset.initialY) || 0;
-        const maxMovement = 300; // Original max movement value
+        const maxMovement = 300; // Adjust for desired parallax range
 
-        // Scale the movement based on screen height
-        const scaledMovement = progress * speed * maxMovement * heightScale;
-        const translateY = initialY + scaledMovement;
-        
+        // Combine initial offset + scroll-based movement
+        const translateY = initialY + (progress * speed * maxMovement);
         img.style.transform = `translateY(${translateY}px)`;
     });
 });
 
 
+
+
+
+//paralex scrolling first img
+document.addEventListener('scroll2', () => {
+    const section = document.querySelector('.full-height-container');
+    if (!section) return;
+
+    // Get section position and dimensions
+    const { top: sectionTop, height: sectionHeight } = section.getBoundingClientRect();
+    const windowHeight = window.innerHeight;
+    const scrollTop = window.scrollY;
+
+    // Calculate scroll progress (0 to 1) for the section
+    const sectionStart = section.offsetTop - windowHeight;
+    const sectionEnd = section.offsetTop + sectionHeight;
+    const progress = Math.min(1, Math.max(0, (scrollTop - sectionStart) / (sectionEnd - sectionStart)));
+
+    // Apply parallax to images
+    const images = document.querySelectorAll('.paralex-image');
+    images.forEach(img => {
+        const speed = parseFloat(img.dataset.scrollSpeed) || 0.2;
+        const initialY = parseFloat(img.dataset.initialY) || 0;
+        const maxMovement = 300; // Adjust for desired parallax range
+
+        // Combine initial offset + scroll-based movement
+        const translateY = initialY + (progress * speed * maxMovement);
+        img.style.transform = `translateY(${translateY}px)`;
+    });
+});
 
 
 

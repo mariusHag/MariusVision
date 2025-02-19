@@ -52,21 +52,15 @@ document.addEventListener('scroll', () => {
     const sectionEnd = section.offsetTop + sectionHeight;
     const progress = Math.min(1, Math.max(0, (scrollTop - sectionStart) / (sectionEnd - sectionStart)));
 
-    // Calculate scale factor (equals 1 at 1080p height)
-    const REFERENCE_HEIGHT = 1080;
-    const heightScale = windowHeight / REFERENCE_HEIGHT;
-
     // Apply parallax to images
     const images = document.querySelectorAll('.paralex-image2');
     images.forEach(img => {
         const speed = parseFloat(img.dataset.scrollSpeed) || 0.2;
         const initialY = parseFloat(img.dataset.initialY) || 0;
-        const maxMovement = 300; // Original max movement value
+        const maxMovement = 300; // Adjust for desired parallax range
 
-        // Scale the movement based on screen height
-        const scaledMovement = progress * speed * maxMovement * heightScale;
-        const translateY = initialY + scaledMovement;
-        
+        // Combine initial offset + scroll-based movement
+        const translateY = initialY + (progress * speed * maxMovement);
         img.style.transform = `translateY(${translateY}px)`;
     });
 });

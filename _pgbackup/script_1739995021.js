@@ -52,22 +52,30 @@ document.addEventListener('scroll', () => {
     const sectionEnd = section.offsetTop + sectionHeight;
     const progress = Math.min(1, Math.max(0, (scrollTop - sectionStart) / (sectionEnd - sectionStart)));
 
-    // Calculate scale factor (equals 1 at 1080p height)
-    const REFERENCE_HEIGHT = 1080;
-    const heightScale = windowHeight / REFERENCE_HEIGHT;
+    // Calculate viewport-relative maxMovement
+    const viewportScale = window.innerHeight / 1080; // Scale relative to your reference height
+    const baseMaxMovement = 300;
+    const scaledMaxMovement = baseMaxMovement * viewportScale;
 
     // Apply parallax to images
     const images = document.querySelectorAll('.paralex-image2');
     images.forEach(img => {
+        // Get image dimensions for additional scaling factor
+        const imgRect = img.getBoundingClientRect();
+        const imageScale = imgRect.height / windowHeight;
+        
         const speed = parseFloat(img.dataset.scrollSpeed) || 0.2;
         const initialY = parseFloat(img.dataset.initialY) || 0;
-        const maxMovement = 300; // Original max movement value
-
-        // Scale the movement based on screen height
-        const scaledMovement = progress * speed * maxMovement * heightScale;
-        const translateY = initialY + scaledMovement;
         
-        img.style.transform = `translateY(${translateY}px)`;
+        // Calculate the scroll-based movement
+        const movementRange = scaledMaxMovement * imageScale;
+        const scrollMovement = progress * speed * movementRange;
+        
+        // Add easing and combine with initial offset
+        const easedMovement = scrollMovement * (1 - Math.cos(progress * Math.PI)) / 2;
+        const finalPosition = initialY + easedMovement;
+        
+        img.style.transform = `translateY(${finalPosition}px)`;
     });
 });
 
