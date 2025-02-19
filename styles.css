@@ -755,6 +755,10 @@ button:hover {
         transform: translateX(-50%);
     }
 
+    .full-height-container {
+        height: 95vh;
+    }
+
     .image-container,
     .image-container2 {
         height: 100vh;
@@ -877,7 +881,7 @@ button:hover {
 
     /* logo Image */
     .logo-image2 {
-        width: 85vw;
+        width: 92vw;
         max-width: 50vh;
         bottom: 58%;
         left: 50%;
@@ -909,9 +913,9 @@ button:hover {
     /* Intro Title */
     #intro-title {
         color: var(--black-color);
-        font-size: 3.5vmax;
+        font-size: 4.2vmax;
         line-height: 117%;
-        margin-top: 0vmax;
+        margin-top: 5vmax;
         margin-bottom: 3.5vmax;
         padding: 0;
         margin-left: 0;
@@ -930,13 +934,13 @@ button:hover {
         justify-content: center;
         padding: 0;
         margin: 0;
-        top: 2%;
+        top: 1%;
     }
 
     #intro-container {
         --container-width: 95%;
         position: absolute;
-        top: 67%;
+        top: 69%;
         transform: translate(-50%, -50%);
         padding: vw;
         display: flex;
@@ -958,7 +962,7 @@ button:hover {
         position: absolute;
         background-color: var(--black-color);
         width: 100vw;
-        height: 10%;
+        height: 6%;
         position: absolute;
         top: 0%;
         transform: translateX(-50%);
@@ -990,11 +994,15 @@ button:hover {
         position: absolute;
         background-color: var(--black-color);
         width: 100vw;
-        height: 10%;
+        height: 11%;
         position: absolute;
         top: 38%;
         transform: translateX(-50%);
         left: 50%;
+    }
+
+    .portfolio-section-1 {
+        background-color: var(--light-gray-color);
     }
 }
 
