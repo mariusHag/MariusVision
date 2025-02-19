@@ -805,9 +805,11 @@ button:hover {
     }
 
     .bt3-image {
-        height: 60vh;
-        top: 25%;
-        left: 5%;
+        height: auto;
+        width: 80vw;
+        top: 20%;
+        left: 50%;
+        transform: translateX(-50%);
         position: absolute;
     }
 
