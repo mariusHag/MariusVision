@@ -38,36 +38,38 @@ window.addEventListener('DOMContentLoaded', () => {
 
 
 //paralex scrolling
-document.addEventListener('scroll', handleParallax, { passive: true });
-window.addEventListener('resize', handleParallax);
-
-function handleParallax() {
+document.addEventListener('scroll', () => {
     const section = document.querySelector('.portfolio-section-2');
     if (!section) return;
 
-    // Get viewport dimensions
+    // Get section position and dimensions
+    const { top: sectionTop, height: sectionHeight } = section.getBoundingClientRect();
     const windowHeight = window.innerHeight;
-    const scrollY = window.scrollY || window.pageYOffset;
+    const scrollTop = window.scrollY;
 
-    // Calculate section visibility progress
-    const sectionTop = section.offsetTop;
-    const sectionHeight = section.offsetHeight;
-    const sectionStart = sectionTop - windowHeight;
-    const sectionEnd = sectionTop + sectionHeight;
-    const progress = Math.min(1, Math.max(0, (scrollY - sectionStart) / (sectionEnd - sectionStart)));
+    // Calculate scroll progress (0 to 1) for the section
+    const sectionStart = section.offsetTop - windowHeight;
+    const sectionEnd = section.offsetTop + sectionHeight;
+    const progress = Math.min(1, Math.max(0, (scrollTop - sectionStart) / (sectionEnd - sectionStart)));
+
+    // Calculate scale factor (equals 1 at 1080p height)
+    const REFERENCE_HEIGHT = 1080;
+    const heightScale = windowHeight / REFERENCE_HEIGHT;
 
     // Apply parallax to images
-    document.querySelectorAll('.paralex-image2').forEach(img => {
-        // Convert vh-based values to pixels (responsive)
-        const initialY = parseFloat(img.dataset.initialY || '0vh') / 100 * windowHeight;
-        const speed = parseFloat(img.dataset.speed || '0.2');
-        const maxTravel = 0.3 * windowHeight; // 30vh equivalent
+    const images = document.querySelectorAll('.paralex-image2');
+    images.forEach(img => {
+        const speed = parseFloat(img.dataset.scrollSpeed) || 0.2;
+        const initialY = parseFloat(img.dataset.initialY) || 0;
+        const maxMovement = 300; // Original max movement value
+
+        // Scale the movement based on screen height
+        const scaledMovement = progress * speed * maxMovement * heightScale;
+        const translateY = initialY + scaledMovement;
         
-        // Calculate movement
-        const movement = initialY + (progress * speed * maxTravel);
-        img.style.transform = `translateY(${movement}px)`;
+        img.style.transform = `translateY(${translateY}px)`;
     });
-}
+});
 
 
 

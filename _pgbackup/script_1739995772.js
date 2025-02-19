@@ -38,36 +38,45 @@ window.addEventListener('DOMContentLoaded', () => {
 
 
 //paralex scrolling
-document.addEventListener('scroll', handleParallax, { passive: true });
-window.addEventListener('resize', handleParallax);
-
-function handleParallax() {
+document.addEventListener('scroll', () => {
     const section = document.querySelector('.portfolio-section-2');
     if (!section) return;
 
-    // Get viewport dimensions
+    // Get section position and dimensions
+    const { top: sectionTop, height: sectionHeight } = section.getBoundingClientRect();
     const windowHeight = window.innerHeight;
-    const scrollY = window.scrollY || window.pageYOffset;
+    const scrollTop = window.scrollY;
 
-    // Calculate section visibility progress
-    const sectionTop = section.offsetTop;
-    const sectionHeight = section.offsetHeight;
-    const sectionStart = sectionTop - windowHeight;
-    const sectionEnd = sectionTop + sectionHeight;
-    const progress = Math.min(1, Math.max(0, (scrollY - sectionStart) / (sectionEnd - sectionStart)));
+    // Calculate scroll progress (0 to 1) for the section
+    const sectionStart = section.offsetTop - windowHeight;
+    const sectionEnd = section.offsetTop + sectionHeight;
+    const progress = Math.min(1, Math.max(0, (scrollTop - sectionStart) / (sectionEnd - sectionStart)));
+
+    // Calculate viewport-relative maxMovement
+    const viewportScale = window.innerHeight / 1080; // Scale relative to your reference height
+    const baseMaxMovement = 300;
+    const scaledMaxMovement = baseMaxMovement * viewportScale;
 
     // Apply parallax to images
-    document.querySelectorAll('.paralex-image2').forEach(img => {
-        // Convert vh-based values to pixels (responsive)
-        const initialY = parseFloat(img.dataset.initialY || '0vh') / 100 * windowHeight;
-        const speed = parseFloat(img.dataset.speed || '0.2');
-        const maxTravel = 0.3 * windowHeight; // 30vh equivalent
+    const images = document.querySelectorAll('.paralex-image2');
+    images.forEach(img => {
+        // Get image dimensions for additional scaling factor
+        const imgRect = img.getBoundingClientRect();
+        const imageScale = imgRect.height / windowHeight;
         
-        // Calculate movement
-        const movement = initialY + (progress * speed * maxTravel);
-        img.style.transform = `translateY(${movement}px)`;
+        const speed = parseFloat(img.dataset.scrollSpeed) || 0.2;
+        const initialY = parseFloat(img.dataset.initialY) || 0;
+        
+        // Combine viewport scaling with image-specific scaling
+        const movementRange = scaledMaxMovement * imageScale;
+        const translateY = initialY + (progress * speed * movementRange);
+        
+        // Add easing for smoother motion
+        const easedTranslateY = translateY * (1 - Math.cos(progress * Math.PI)) / 2;
+        
+        img.style.transform = `translateY(${easedTranslateY}px)`;
     });
-}
+});
 
 
 
