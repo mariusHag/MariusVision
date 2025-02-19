@@ -755,11 +755,23 @@ button:hover {
         transform: translateX(-50%);
     }
 
-    .image-container,
-    .image-container2 {
-        height: auto;
-        width: 100vw;
+    .image-container {
+        height: 100vh;
+        width: 0%;
+        right: 50%;
+        background: transparent;
         position: absolute;
+        right: 0;
+        display: none;
+    }
+
+    .image-container2 {
+        height: 100vh;
+        width: 50%;
+        background: transparent;
+        position: absolute;
+        right: 25%;
+        display: none;
     }
 
     .full-height-container {
@@ -772,7 +784,7 @@ button:hover {
         background-color: var(--warm-brown-color);
         position: absolute;
         left: 0;
-        top: 1%;
+        top: 0%;
     }
 
     .bt1-image {
@@ -809,7 +821,7 @@ button:hover {
     /* General styles for slideshow images in .portfolio-section-1 */
     .portfolio-section-1 img:not(.cover2-image) {
         position: absolute;
-        top: 20%;
+        top: 25%;
         left: 50%;
         transform: translate(calc(-50% + (39% / 2)), -50%);
         height: auto;
