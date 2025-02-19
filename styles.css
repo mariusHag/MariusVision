@@ -755,17 +755,15 @@ button:hover {
         transform: translateX(-50%);
     }
 
-    .full-height-container {
-        height: 95vh;
-    }
-
     .image-container,
     .image-container2 {
-        height: 100vh;
-        width: 100%;
-        background-color: var(--soft-gray-color);
+        height: auto;
+        width: 100vw;
         position: absolute;
-        right: 0;
+    }
+
+    .full-height-container {
+        height: 95vh;
     }
 
     .line1 {
@@ -815,7 +813,7 @@ button:hover {
         left: 50%;
 
         /* Shift left by 50% then add half of the 32% crop so that the 75% visible part is centered */
-        transform: translate(calc(-50% + (32% / 2)), -50%);
+        transform: translate(calc(-50% + (39% / 2)), -50%);
 
         /* Use your wide default, but allow the image to scale down if its height gets too big */
         width: 160vw;

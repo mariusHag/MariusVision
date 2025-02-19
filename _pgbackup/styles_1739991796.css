@@ -4,7 +4,6 @@ body {
     margin: 0;
     padding: 0;
     width: 100%;
-    font-family: 'Segoe ui', sans-serif;
     line-height: 1.6;
     min-height: 100vh;
     background-color: var(--soft-gray-color);
@@ -13,31 +12,17 @@ body {
 
 /* Base Styles */
 :root {
+    font-family: 'Segoe ui', sans-serif;
     --box-width: 35vw;
     --black-color: #020402;
-
-    /* Deep Black */
     --light-gray-color: #f9f9f9;
-
-    /* Light Gray */
     --medium-gray-color: #d9d9d9;
-
-    /* Medium Gray */
     --soft-gray-color: #e5e5e5;
-
-    /* Soft Gray (Now distinct from Color 16) */
     --dark-gray-color: #393F3D ;
-
-    /* Dark Gray */
     --deep-brown-color: #7a5230;
-
-    /* Earthy Brown */
     --warm-brown-color: #ba9067;
-
-    /* Soft Brown */
+    --pro-brown-color: #7a5c52;
     --color-shadow: rgba(0,0,0,0.3);
-
-    /* Default box width for desktop */
 }
 
 /* conact start css: */
@@ -265,29 +250,6 @@ button:hover {
 
 /* reviews end css: */
 /* pt Container */
-.white-cover {
-    background-color: var(--light-gray-color);
-    opacity: 0.4;
-
-    /* White background */
-    position: relative;
-
-    /* Relative positioning */
-    margin-left: auto;
-
-    /* Automatically push the box to the right */
-    margin-right: 0;
-
-    /* Optional, to ensure no extra space on the right */
-    width: 50%;
-
-    /* Example width */
-    height: 100%;
-
-    /* Example height */
-    z-index: 3;
-}
-
 /* Project Section */
 .project-section {
     height: 100vh;
@@ -314,23 +276,6 @@ button:hover {
     align-items: flex-end;
     background-color: var(--medium-gray-color);
     position: relative;
-}
-
-.text-container {
-    height: 100vh;
-    width: 50%;
-    background-color: var(--medium-gray-color);
-    position: absolute;
-    left: 0;
-}
-
-.line1 {
-    height: 1vh;
-    width: 95%;
-    background-color: var(--warm-brown-color);
-    position: absolute;
-    right: 0;
-    top: 10%;
 }
 
 .shadow-line {
@@ -386,66 +331,6 @@ button:hover {
     align-items: center;
 }
 
-.box1-text {
-    height: 80%;
-    width: 35%;
-    position: absolute;
-    left: 52%;
-    top: 25%;
-    color: var(--warm-brown-color);
-    font-size: 1rem;
-    margin-bottom: 1rem;
-    font-weight: bold;
-}
-
-/* logo Image */
-.bt1-image {
-    height: 88vh;
-    top: 12%;
-    left: 25%;
-    transform: translateX(-50%);
-    position: absolute;
-}
-
-.bt2-image {
-    height: 60vh;
-    top: 25%;
-    left: 25%;
-    transform: translateX(-50%);
-    position: absolute;
-}
-
-.bt3-image {
-    height: 60vh;
-    top: 25%;
-    left: 5%;
-    position: absolute;
-}
-
-.image-container {
-    height: 100vh;
-    width: 50%;
-    background-color: var(--soft-gray-color);
-    position: absolute;
-    right: 0;
-}
-
-.image-container2 {
-    height: 100vh;
-    width: 50%;
-    background-color: var(--medium-gray-color);
-    position: absolute;
-    right: 0;
-}
-
-.text-container2 {
-    height: 100vh;
-    width: 50%;
-    background-color: var(--soft-gray-color);
-    position: absolute;
-    left: 0;
-}
-
 .left-section,
 .right-section {
     flex: 1;
@@ -483,21 +368,6 @@ button:hover {
     background-color: var(--deep-brown-color);
 }
 
-.image-container {
-    max-width: 80%;
-    aspect-ratio: 1 / 1.5;
-
-    /* Adjust ratio as needed */
-}
-
-.image-container img {
-    width: 100%;
-    height: auto;
-    object-fit: cover;
-    border-radius: 8px;
-    box-shadow: 0 4px 6px var(--color-shadow);
-}
-
 .right-section {
     background-color: var(--light-gray-color);
 
@@ -530,13 +400,6 @@ button:hover {
     border-radius: 8px;
     box-shadow: 0 4px 6px var(--color-shadow);
     align-items: center;
-}
-
-/* end */
-.portfolio-section-1 {
-    position: relative;
-    height: 100vh;
-    overflow: hidden;
 }
 
 .portfolio-section-2 {
@@ -591,20 +454,6 @@ button:hover {
     text-align: center;
 }
 
-/* General styles for slideshow images in .portfolio-section-1 */
-.portfolio-section-1 img:not(.cover2-image) {
-    position: absolute;
-    top: 0;
-    left: 0;
-    width: 100%;
-    height: 100%;
-    object-fit: cover;
-    opacity: 0;
-
-    /* Default hidden */
-    transition: opacity 1s ease-in-out;
-}
-
 /* Make only images with the 'active' class visible */
 .portfolio-section-1 img.active:not(.cover2-image) {
     opacity: 1;
@@ -614,31 +463,14 @@ button:hover {
 
 /* Intro Container */
 #intro-container {
-    --container-width: 51%;
-
-    /* The variable is now scoped to this box */
+    --container-width: 50%;
     position: absolute;
     top: 35%;
-
-    /* Vertical positioning */
     left: calc(var(--container-width) / 2);
-
-    /* Half of the container width */
     transform: translate(-50%, -50%);
-
-    /* Center horizontally and vertically */
     width: calc(var(--container-width) * 0.8);
-
-    /* Adjust width as a percentage of the container */
-    max-width: calc(var(--container-width) - 40px);
-
-    /* Ensure it stays within the container */
     padding: 20px;
-
-    /* Internal spacing */
     box-sizing: border-box;
-
-    /* Include padding in size calculations */
     display: flex;
     flex-direction: column;
     align-items: center;
@@ -653,21 +485,167 @@ button:hover {
     margin-bottom: 1rem;
 }
 
+/* Parallax Image */
+.paralex-image {
+    height: 120%;
+    bottom: -50px;
+    position: absolute;
+    transform: translate(0%, 0px);
+
+    /* Initial position */
+    will-change: transform;
+
+    /* Optimizes animation performance */
+}
+
+/* Navigation Bar Styles */
+.nav-container {
+    display: flex;
+    align-items: center;
+    justify-content: flex-end;
+    padding-top: 1.5em;
+    padding-right: 1em;
+
+    /* Center items vertically */
+    /* Align to the right */
+    background-color: transparent;
+    position: absolute;
+    width: 100%;
+    z-index: 10;
+
+    /* Ensure padding is included in width */
+}
+
+/* logo Image */
+.logo-image {
+    width: 95vw;
+    bottom: 25px;
+    left: 50%;
+
+    /* Center horizontally */
+    transform: translateX(-50%);
+
+    /* Adjust position to account for the element's width */
+    position: absolute;
+}
+
+.flag {
+    color: var(--light-gray-color);
+    margin: 0.4em;
+    position: relative;
+    text-decoration: none;
+
+    /* Remove default link underline */
+}
+
 /* Intro Text */
 #intro-text {
     color: var(--black-color);
     font-size: 1rem;
 }
 
-/* Full-height container */
-.full-height-container {
-    height: 100vh;
-    display: flex;
-    justify-content: center;
-    align-items: flex-end;
-    overflow: hidden;
-    background-color: transparent;
+/* Underline pseudo-element */
+.language-selector::after {
+    content: "";
+    position: absolute;
+    bottom: 0;
+    left: var(--underline-left, 0);
+    width: var(--underline-width, 0);
+    height: 2px;
+    background: var(--light-gray-color);
+    transition: left 0.3s, width 0.3s;
+}
+
+.bt1-image {
+    height: 88vh;
+    max-width: 50vh;
+    width: auto;
+
+    /* Ensures aspect ratio is maintained */
+    object-fit: contain;
+
+    /* Ensures the whole image is visible without distortion */
+    top: 12%;
+    left: 25%;
+    transform: translateX(-50%);
+    position: absolute;
+}
+
+.bt2-image {
+    top: 25%;
+    width: 50vh;
+    left: 25%;
+    transform: translateX(-50%);
+    position: absolute;
+}
+
+.bt3-image {
+    width: 40vw;
+    top: 25%;
+    object-fit: contain;
+    left: 5%;
+    position: absolute;
+}
+
+@media (max-aspect-ratio: 5/4) {
+    .flag {
+        color: var(--black-color);
+    }
+
+    .language-selector::after {
+        content: "";
+        position: absolute;
+        bottom: 0;
+        left: var(--underline-left, 0);
+        width: var(--underline-width, 0);
+        height: 2px;
+        background: var(--black-color);
+        transition: left 0.3s, width 0.3s;
+    }
+}
+
+.white-cover {
+    background-color: var(--light-gray-color);
+    opacity: 0.4;
+
+    /* White background */
     position: relative;
+
+    /* Relative positioning */
+    margin-left: auto;
+
+    /* Automatically push the box to the right */
+    margin-right: 0;
+
+    /* Optional, to ensure no extra space on the right */
+    width: 50%;
+
+    /* Example width */
+    height: 100%;
+
+    /* Example height */
+    z-index: 3;
+}
+
+/* General styles for slideshow images in .portfolio-section-1 */
+.portfolio-section-1 img:not(.cover2-image) {
+    position: absolute;
+    top: 0;
+    left: 0;
+    width: 100%;
+    height: 100%;
+    object-fit: cover;
+    opacity: 0;
+
+    /* Default hidden */
+    transition: opacity 1s ease-in-out;
+}
+
+/* end */
+.portfolio-section-1 {
+    position: relative;
+    height: 100vh;
+    overflow: hidden;
 }
 
 /* pt Container */
@@ -697,6 +675,331 @@ button:hover {
     /* Ensure it's above all images */
 }
 
+/* Full-height container */
+.full-height-container {
+    height: 100vh;
+    display: flex;
+    justify-content: center;
+    align-items: flex-end;
+    overflow: hidden;
+    background-color: transparent;
+    position: relative;
+}
+
+.image-container {
+    height: 100vh;
+    width: 50%;
+    background-color: var(--soft-gray-color);
+    position: absolute;
+    right: 0;
+}
+
+.image-container2 {
+    height: 100vh;
+    width: 50%;
+    background-color: var(--medium-gray-color);
+    position: absolute;
+    right: 0;
+}
+
+.text-container {
+    height: 100vh;
+    width: 50%;
+    background-color: var(--medium-gray-color);
+    position: absolute;
+    left: 0;
+}
+
+.text-container2 {
+    height: 100vh;
+    width: 50%;
+    background-color: var(--soft-gray-color);
+    position: absolute;
+    left: 0;
+}
+
+.box1-text {
+    height: 80%;
+    width: 35%;
+    position: absolute;
+    left: 52%;
+    top: 25%;
+    color: var(--warm-brown-color);
+    font-size: 1rem;
+    margin-bottom: 1rem;
+    font-weight: bold;
+}
+
+.line1 {
+    height: 1vh;
+    width: 95%;
+    background-color: var(--warm-brown-color);
+    position: absolute;
+    right: 0;
+    top: 10%;
+}
+
+/* phone */
+@media (max-aspect-ratio: 1/1) {
+    .box1-text {
+        text-align: center;
+        height: 35%;
+        width: 80%;
+        position: absolute;
+        left: 50%;
+        top: 65%;
+        color: var(--warm-brown-color);
+        font-size: 1rem;
+        margin-bottom: 1rem;
+        font-weight: bold;
+        transform: translateX(-50%);
+    }
+
+    .full-height-container {
+        height: 95vh;
+    }
+
+    .image-container,
+    .image-container2 {
+        height: 100vh;
+        width: 100%;
+        background-color: var(--soft-gray-color);
+        position: absolute;
+        right: 0;
+    }
+
+    .line1 {
+        width: 1vh;
+        height: 13%;
+        background-color: var(--warm-brown-color);
+        position: absolute;
+        left: 0;
+        top: 1%;
+    }
+
+    .bt1-image {
+        height: 38vh;
+        top: 22%;
+        left: 50%;
+        transform: translateX(-50%);
+        position: absolute;
+    }
+
+    .bt2-image {
+        height: 60vh;
+        top: 25%;
+        left: 25%;
+        transform: translateX(-50%);
+        position: absolute;
+    }
+
+    .bt3-image {
+        height: 60vh;
+        top: 25%;
+        left: 5%;
+        position: absolute;
+    }
+
+    .text-container {
+        display: none;
+    }
+
+    .text-container2 {
+        display: none;
+    }
+
+    /* General styles for slideshow images in .portfolio-section-1 */
+    .portfolio-section-1 img:not(.cover2-image) {
+        position: absolute;
+        top: 20%;
+        left: 50%;
+
+        /* Shift left by 50% then add half of the 32% crop so that the 75% visible part is centered */
+        transform: translate(calc(-50% + (32% / 2)), -50%);
+
+        /* Use your wide default, but allow the image to scale down if its height gets too big */
+        width: 160vw;
+        height: auto;
+
+        /* We still want the image to “contain” within its box so that it’s not cropped vertically */
+        object-fit: contain;
+
+        /* Keep your horizontal crop exactly as before */
+        clip-path: inset(0 calc(32%) 0 0);
+        opacity: 0;
+
+        /* Default hidden */
+        transition: opacity 1s ease-in-out;
+    }
+
+    /* pt Container */
+    #pt1-container {
+        position: absolute;
+        top: 65%;
+        left: 50%;
+        transform: translate(-50%, -50%);
+        display: flex;
+        flex-direction: column;
+        align-items: center;
+        text-align: center;
+        z-index: 4;
+        width: 80%;
+    }
+
+    .white-cover {
+        display: none;
+    }
+
+    .flag {
+        color: var(--light-gray-color);
+        margin: 0.4em;
+        position: relative;
+        text-decoration: none;
+    }
+
+    .language-selector::after {
+        content: "";
+        position: absolute;
+        bottom: 0;
+        left: var(--underline-left, 0);
+        width: var(--underline-width, 0);
+        height: 2px;
+        background: var(--light-gray-color);
+        transition: left 0.3s, width 0.3s;
+    }
+
+    /* logo Image */
+    .logo-image {
+        display: none;
+    }
+
+    /* logo Image */
+    .logo-image2 {
+        width: 92vw;
+        max-width: 50vh;
+        bottom: 58%;
+        left: 50%;
+        transform: translateX(-50%);
+        position: absolute;
+    }
+
+    /* Intro Text */
+    #intro-text {
+        //font-family: Georgia, serif;
+        color: var(--black-color);
+        font-size: 1.6vmax;
+        position: relative;
+        max-width: 50vh;
+    }
+
+    /* Arrow Below #intro-text */
+    #intro-text::after {
+        content: "";
+        display: block;
+        width: 1.6vmax;
+        height: 1.6vmax;
+        border-right: 0.3vmax solid var(--black-color);
+        border-bottom: 0.3vmax solid var(--black-color);
+        transform: rotate(45deg);
+        margin: 2vmax auto 0;
+    }
+
+    /* Intro Title */
+    #intro-title {
+        color: var(--black-color);
+        font-size: 4.2vmax;
+        line-height: 117%;
+        margin-top: 5vmax;
+        margin-bottom: 3.5vmax;
+        padding: 0;
+        margin-left: 0;
+        margin-right: 0;
+        max-width: 50vh;
+    }
+
+    .cover-image {
+        display: none;
+    }
+
+    /* Navigation Bar Styles */
+    .nav-container {
+        width: 100vw;
+        position: absolute;
+        justify-content: center;
+        padding: 0;
+        margin: 0;
+        top: 1%;
+    }
+
+    #intro-container {
+        --container-width: 95%;
+        position: absolute;
+        top: 69%;
+        transform: translate(-50%, -50%);
+        padding: vw;
+        display: flex;
+        left: 50%;
+        flex-direction: column;
+        align-items: center;
+        text-align: center;
+        z-index: 4;
+    }
+
+    /* Parallax Image */
+    .paralex-image {
+        display: none;
+    }
+
+    /* Underline pseudo-element */
+    .brown-cover::before {
+        content: "";
+        position: absolute;
+        background-color: var(--black-color);
+        width: 100vw;
+        height: 6%;
+        position: absolute;
+        top: 0%;
+        transform: translateX(-50%);
+        left: 50%;
+    }
+
+    .brown-cover {
+        //: var(--warm-brown-color);
+        opacity: 1;
+        width: 45vw;
+
+        /* Slightly smaller width */
+        height: 90%;
+
+        /* Slightly smaller height */
+        position: absolute;
+        top: 0%;
+
+        /* Centers it vertically */
+        transform: translateX(-50%);
+        left: 50%;
+
+        /* Adds a subtle frame effect */
+    }
+
+    /* Underline pseudo-element */
+    .brown-cover::after {
+        content: "";
+        position: absolute;
+        background-color: var(--black-color);
+        width: 100vw;
+        height: 11%;
+        position: absolute;
+        top: 38%;
+        transform: translateX(-50%);
+        left: 50%;
+    }
+
+    .portfolio-section-1 {
+        background-color: var(--light-gray-color);
+    }
+}
+
 /* pt Container */
 /* pt Title */
 #pt1-header {
@@ -724,143 +1027,67 @@ button:hover {
     margin-right: 20%;
 }
 
-/* Parallax Image */
-.paralex-image {
-    height: 120%;
-    bottom: -50px;
-    position: absolute;
-    transform: translate(0%, 0px);
-
-    /* Initial position */
-    will-change: transform;
-
-    /* Optimizes animation performance */
-}
-
 /* cover Image */
 .cover-image {
-    height: 100.1%;
+    height: 100vh;
     left: 50%;
 
     /* Center horizontally */
     transform: translateX(-50%);
 
     /* Adjust position to account for the element's width */
-    bottom: -1px;
+    bottom: 0px;
     position: absolute;
 }
 
-/* logo Image */
-.logo-image {
-    width: 95vw;
-    bottom: 25px;
-    left: 50%;
+.intro-container {
+    flex-direction: column;
 
-    /* Center horizontally */
-    transform: translateX(-50%);
+    /* Stack elements vertically */
+    gap: calc((100vh - 2 * var(--box-width)) / 3);
 
-    /* Adjust position to account for the element's width */
-    position: absolute;
+    /* Keep original gap for desktop */
 }
 
-/* Media Queries */
-/* Mobile Styles */
-@media (max-aspect-ratio: 4/3) {
-    :root {
-        --box-width: 35vh;
+.quadratic-element,
+.text-box {
+    width: var(--box-width);
 
-        /* Adjust the box width for mobile */
-    }
-
-    .intro-container {
-        flex-direction: column;
-
-        /* Stack elements vertically */
-        gap: calc((100vh - 2 * var(--box-width)) / 3);
-
-        /* Keep original gap for desktop */
-    }
-
-    .quadratic-element,
-    .text-box {
-        width: var(--box-width);
-
-        /* Maintain the same width for mobile */
-    }
-
-    .container-image {
-        width: 301%;
-        height: auto;
-        max-height: 100vh;
-        object-position: top center;
-    }
+    /* Maintain the same width for mobile */
 }
 
-/* Desktop Styles */
-@media (min-aspect-ratio: 4/3) {
-    :root {
-        --box-width: 35vw;
-
-        /* Set the box width for desktop */
-    }
-
-    .intro-container {
-        flex-direction: row;
-
-        /* Align elements horizontally */
-        gap: calc((100vw - 2 * var(--box-width)) / 3);
-
-        /* Keep original gap for desktop */
-    }
-
-    .quadratic-element,
-    .text-box {
-        width: var(--box-width);
-
-        /* Use dynamic width */
-    }
+.container-image {
+    width: 301%;
+    height: auto;
+    max-height: 100vh;
+    object-position: top center;
 }
 
-/* Navigation Bar Styles */
-.nav-container {
-    display: flex;
-    align-items: center;
+.intro-container {
+    flex-direction: row;
 
-    /* Center items vertically */
-    justify-content: flex-end;
+    /* Align elements horizontally */
+    gap: calc((100vw - 2 * var(--box-width)) / 3);
 
-    /* Align to the right */
-    background-color: transparent;
-    position: absolute;
-    width: 100%;
-    z-index: 10;
-    box-sizing: border-box;
-
-    /* Ensure padding is included in width */
+    /* Keep original gap for desktop */
 }
 
-.flag {
-    color: var(--light-gray-color);
-    margin-right: 10px;
-    position: relative;
-    text-decoration: none;
+.quadratic-element,
+.text-box {
+    width: var(--box-width);
 
-    /* Remove default link underline */
+    /* Use dynamic width */
 }
 
 /* Hover styles */
 .flag:hover,
 .flag.active {
     /* Add .active class to match hover styles */
-    color: var(--dark-gray-color);
     text-shadow: 0 10px 10px var(--color-shadow);
-    border-bottom: 1px solid var(--dark-gray-color);
 }
 
-.nav-container {
-    justify-content: flex-end;
-    padding-top: 1.5em;
-    padding-right: 1em;
+.language-selector {
+    position: relative;
 }
 
 /* Main Section */
@@ -952,4 +1179,7 @@ footer {
 
     /* Changed to relative to avoid covering content */
     bottom: 0;
+}
+}
+}
 }
