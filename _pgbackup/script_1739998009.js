@@ -37,37 +37,40 @@ window.addEventListener('DOMContentLoaded', () => {
 
 
 
-//paralex scrolling
 document.addEventListener('scroll', handleParallax, { passive: true });
-window.visualViewport?.addEventListener('resize', handleParallax); // Changed to visualViewport
+window.addEventListener('resize', handleParallax);
 
 function handleParallax() {
     const section = document.querySelector('.portfolio-section-2');
     if (!section) return;
 
-    // Use visualViewport to account for mobile UI changes
+    // Use visual viewport for mobile-friendly measurements
     const viewport = window.visualViewport || window;
-    const windowHeight = viewport.height;
     const scrollY = window.scrollY || window.pageYOffset;
-
-    // Calculate section visibility progress
+    
+    // Get section dimensions (based on actual content height)
     const sectionTop = section.offsetTop;
-    const sectionHeight = section.offsetHeight;
+    const sectionHeight = section.scrollHeight;
+    const windowHeight = viewport.height;
+
+    // Calculate progress using the full section height
     const sectionStart = sectionTop - windowHeight;
     const sectionEnd = sectionTop + sectionHeight;
-    const progress = Math.min(1, Math.max(0, (scrollY - sectionStart) / (sectionEnd - sectionStart)));
+    const progress = Math.min(1, Math.max(0, 
+        (scrollY - sectionStart) / (sectionEnd - sectionStart)
+    );
 
-    // Apply parallax to images
+    // Apply parallax transforms
     document.querySelectorAll('.paralex-image2').forEach(img => {
-        const initialY = parseFloat(img.dataset.initialY || '0vh') / 100 * windowHeight;
-        const speed = parseFloat(img.dataset.speed || '0.2');
-        const maxTravel = 0.3 * windowHeight;
+        // Convert vh-based values using current viewport height
+        const initialY = (parseFloat(img.dataset.initialY || 0) / 100) * windowHeight;
+        const speed = parseFloat(img.dataset.speed || 0.2);
+        const maxTravel = 0.3 * windowHeight; // 30vh equivalent
         
         const movement = initialY + (progress * speed * maxTravel);
-        img.style.transform = `translateY(${movement}px) translateZ(0)`; // Added translateZ(0)
+        img.style.transform = `translateY(${movement}px) translateZ(0)`;
     });
 }
-
 
 
 

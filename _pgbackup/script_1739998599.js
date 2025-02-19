@@ -38,36 +38,64 @@ window.addEventListener('DOMContentLoaded', () => {
 
 
 //paralex scrolling
-document.addEventListener('scroll', handleParallax, { passive: true });
-window.visualViewport?.addEventListener('resize', handleParallax); // Changed to visualViewport
+// Fixed parallax with mobile viewport compensation
+let lastKnownY = 0;
+let ticking = false;
+let cachedWindowHeight = window.visualViewport?.height || window.innerHeight;
 
-function handleParallax() {
+function updateParallax() {
     const section = document.querySelector('.portfolio-section-2');
     if (!section) return;
 
     // Use visualViewport to account for mobile UI changes
-    const viewport = window.visualViewport || window;
-    const windowHeight = viewport.height;
-    const scrollY = window.scrollY || window.pageYOffset;
+    const visualViewport = window.visualViewport;
+    const currentHeight = visualViewport?.height || cachedWindowHeight;
+    
+    // Update cached values
+    if (currentHeight !== cachedWindowHeight) {
+        cachedWindowHeight = currentHeight;
+        section.style.height = `${cachedWindowHeight}px`; // Lock section height
+    }
 
-    // Calculate section visibility progress
+    // Calculate progress using fixed height
+    const scrollY = window.scrollY || window.pageYOffset;
     const sectionTop = section.offsetTop;
     const sectionHeight = section.offsetHeight;
-    const sectionStart = sectionTop - windowHeight;
-    const sectionEnd = sectionTop + sectionHeight;
-    const progress = Math.min(1, Math.max(0, (scrollY - sectionStart) / (sectionEnd - sectionStart)));
+    const progress = Math.min(1, Math.max(0, 
+        (scrollY - sectionTop + cachedWindowHeight) / (sectionHeight + cachedWindowHeight)
+    ));
 
-    // Apply parallax to images
+    // Apply transforms
     document.querySelectorAll('.paralex-image2').forEach(img => {
-        const initialY = parseFloat(img.dataset.initialY || '0vh') / 100 * windowHeight;
-        const speed = parseFloat(img.dataset.speed || '0.2');
-        const maxTravel = 0.3 * windowHeight;
+        const initialY = (parseFloat(img.dataset.initialY || 0) / 100) * cachedWindowHeight;
+        const speed = parseFloat(img.dataset.scrollSpeed || 0.2);
+        const translateY = initialY + (progress * speed * cachedWindowHeight * 0.3);
         
-        const movement = initialY + (progress * speed * maxTravel);
-        img.style.transform = `translateY(${movement}px) translateZ(0)`; // Added translateZ(0)
+        img.style.transform = `translateY(${translateY}px)`;
+        img.style.transform = `translateY(${translateY}px) translateZ(0)`; // Force GPU layer
     });
+
+    ticking = false;
 }
 
+function handleScroll() {
+    lastKnownY = window.scrollY;
+    if (!ticking) {
+        requestAnimationFrame(() => {
+            updateParallax();
+            ticking = false;
+        });
+        ticking = true;
+    }
+}
+
+// Use both visualViewport and regular resize handlers
+window.visualViewport?.addEventListener('resize', updateParallax);
+window.addEventListener('scroll', handleScroll, { passive: true });
+window.addEventListener('resize', handleScroll);
+
+// Initial setup
+updateParallax();
 
 
 

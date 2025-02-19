@@ -421,8 +421,12 @@ button:hover {
     grid-row: 1;
     width: 100%;
     height: auto;
+
+    /* Height is consistent across images */
     will-change: transform;
-    backface-visibility: hidden;
+
+    /* Optimize for smooth animations */
+    transform: translateY(0px);
 
     /* Initial position (overridden by JS) */
 }

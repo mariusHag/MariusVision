@@ -38,64 +38,38 @@ window.addEventListener('DOMContentLoaded', () => {
 
 
 //paralex scrolling
-document.addEventListener('scroll', () => {
+document.addEventListener('scroll', handleParallax, { passive: true });
+window.addEventListener('resize', handleParallax);
+
+function handleParallax() {
     const section = document.querySelector('.portfolio-section-2');
     if (!section) return;
 
-    // Get section position and dimensions
-    const { top: sectionTop, height: sectionHeight } = section.getBoundingClientRect();
+    // Get viewport dimensions
     const windowHeight = window.innerHeight;
-    const scrollTop = window.scrollY;
+    const scrollY = window.scrollY || window.pageYOffset;
 
-    // Calculate scroll progress (0 to 1) for the section
-    const sectionStart = section.offsetTop - windowHeight;
-    const sectionEnd = section.offsetTop + sectionHeight;
-    const progress = Math.min(1, Math.max(0, (scrollTop - sectionStart) / (sectionEnd - sectionStart)));
+    // Calculate section visibility progress
+    const sectionTop = section.offsetTop;
+    const sectionHeight = section.offsetHeight;
+    const sectionStart = sectionTop - windowHeight;
+    const sectionEnd = sectionTop + sectionHeight;
+    const progress = Math.min(1, Math.max(0, (scrollY - sectionStart) / (sectionEnd - sectionStart)));
 
     // Apply parallax to images
-    const images = document.querySelectorAll('.paralex-image2');
-    images.forEach(img => {
-        const speed = parseFloat(img.dataset.scrollSpeed) || 0.2;
-        const initialY = parseFloat(img.dataset.initialY) || 0;
-        const maxMovement = 300; // Adjust for desired parallax range
-
-        // Combine initial offset + scroll-based movement
-        const translateY = initialY + (progress * speed * maxMovement);
-        img.style.transform = `translateY(${translateY}px)`;
+    document.querySelectorAll('.paralex-image2').forEach(img => {
+        // Convert vh-based values to pixels (responsive)
+        const initialY = parseFloat(img.dataset.initialY || '0vh') / 100 * windowHeight;
+        const speed = parseFloat(img.dataset.speed || '0.2');
+        const maxTravel = 0.3 * windowHeight; // 30vh equivalent
+        
+        // Calculate movement
+        const movement = initialY + (progress * speed * maxTravel);
+        img.style.transform = `translateY(${movement}px)`;
     });
-});
+}
 
 
-
-
-
-//paralex scrolling first img
-document.addEventListener('scroll2', () => {
-    const section = document.querySelector('.full-height-container');
-    if (!section) return;
-
-    // Get section position and dimensions
-    const { top: sectionTop, height: sectionHeight } = section.getBoundingClientRect();
-    const windowHeight = window.innerHeight;
-    const scrollTop = window.scrollY;
-
-    // Calculate scroll progress (0 to 1) for the section
-    const sectionStart = section.offsetTop - windowHeight;
-    const sectionEnd = section.offsetTop + sectionHeight;
-    const progress = Math.min(1, Math.max(0, (scrollTop - sectionStart) / (sectionEnd - sectionStart)));
-
-    // Apply parallax to images
-    const images = document.querySelectorAll('.paralex-image');
-    images.forEach(img => {
-        const speed = parseFloat(img.dataset.scrollSpeed) || 0.2;
-        const initialY = parseFloat(img.dataset.initialY) || 0;
-        const maxMovement = 300; // Adjust for desired parallax range
-
-        // Combine initial offset + scroll-based movement
-        const translateY = initialY + (progress * speed * maxMovement);
-        img.style.transform = `translateY(${translateY}px)`;
-    });
-});
 
 
 
@@ -145,20 +119,41 @@ setInterval(changeImage, 1500);
 
 
 
+//language line thing
+document.addEventListener('DOMContentLoaded', function() {
+  const langSelector = document.querySelector('.language-selector');
+  const flags = langSelector.querySelectorAll('.flag');
 
+  function updateUnderline(element) {
+    const flagRect = element.getBoundingClientRect();
+    const containerRect = langSelector.getBoundingClientRect();
+    const left = flagRect.left - containerRect.left;
+    const width = flagRect.width;
+    langSelector.style.setProperty('--underline-left', left + 'px');
+    langSelector.style.setProperty('--underline-width', width + 'px');
+  }
 
+  // Set initial underline to the active flag (or first flag if none active)
+  let activeFlag = langSelector.querySelector('.flag.active') || flags[0];
+  updateUnderline(activeFlag);
 
-
-
-function updateActiveFlag(lang) {
-    // Remove the 'active' class from all flags
-    document.querySelectorAll(".flag").forEach(flag => {
-        flag.classList.remove("active");
+  flags.forEach(flag => {
+    flag.addEventListener('mouseenter', function() {
+      updateUnderline(this);
     });
 
-    // Add the 'active' class to the selected flag
-    const selectedFlag = document.querySelector(`.flag[data-lang="${lang}"]`);
-    if (selectedFlag) {
-        selectedFlag.classList.add("active");
-    }
-}
+    flag.addEventListener('click', function(e) {
+      e.preventDefault();
+      flags.forEach(f => f.classList.remove('active'));
+      this.classList.add('active');
+      updateUnderline(this);
+    });
+  });
+
+  // When mouse leaves the container, return the underline to the active flag
+  langSelector.addEventListener('mouseleave', function() {
+    activeFlag = langSelector.querySelector('.flag.active') || flags[0];
+    updateUnderline(activeFlag);
+  });
+});
+

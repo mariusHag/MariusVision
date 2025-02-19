@@ -15,29 +15,14 @@ body {
     font-family: 'Segoe ui', sans-serif;
     --box-width: 35vw;
     --black-color: #020402;
-
-    /* Deep Black */
     --light-gray-color: #f9f9f9;
-
-    /* Light Gray */
     --medium-gray-color: #d9d9d9;
-
-    /* Medium Gray */
     --soft-gray-color: #e5e5e5;
-
-    /* Soft Gray (Now distinct from Color 16) */
     --dark-gray-color: #393F3D ;
-
-    /* Dark Gray */
     --deep-brown-color: #7a5230;
-
-    /* Earthy Brown */
     --warm-brown-color: #ba9067;
-
-    /* Soft Brown */
+    --pro-brown-color: #7a5c52;
     --color-shadow: rgba(0,0,0,0.3);
-
-    /* Default box width for desktop */
 }
 
 /* conact start css: */
@@ -293,23 +278,6 @@ button:hover {
     position: relative;
 }
 
-.text-container {
-    height: 100vh;
-    width: 50%;
-    background-color: var(--medium-gray-color);
-    position: absolute;
-    left: 0;
-}
-
-.line1 {
-    height: 1vh;
-    width: 95%;
-    background-color: var(--warm-brown-color);
-    position: absolute;
-    right: 0;
-    top: 10%;
-}
-
 .shadow-line {
     height: 3vh;
     width: 100%;
@@ -363,65 +331,6 @@ button:hover {
     align-items: center;
 }
 
-.box1-text {
-    height: 80%;
-    width: 35%;
-    position: absolute;
-    left: 52%;
-    top: 25%;
-    color: var(--warm-brown-color);
-    font-size: 1rem;
-    margin-bottom: 1rem;
-    font-weight: bold;
-}
-
-.bt1-image {
-    height: 88vh;
-    top: 12%;
-    left: 25%;
-    transform: translateX(-50%);
-    position: absolute;
-}
-
-.bt2-image {
-    height: 60vh;
-    top: 25%;
-    left: 25%;
-    transform: translateX(-50%);
-    position: absolute;
-}
-
-.bt3-image {
-    height: 60vh;
-    top: 25%;
-    left: 5%;
-    position: absolute;
-}
-
-.image-container {
-    height: 100vh;
-    width: 50%;
-    background-color: var(--soft-gray-color);
-    position: absolute;
-    right: 0;
-}
-
-.image-container2 {
-    height: 100vh;
-    width: 50%;
-    background-color: var(--medium-gray-color);
-    position: absolute;
-    right: 0;
-}
-
-.text-container2 {
-    height: 100vh;
-    width: 50%;
-    background-color: var(--soft-gray-color);
-    position: absolute;
-    left: 0;
-}
-
 .left-section,
 .right-section {
     flex: 1;
@@ -457,21 +366,6 @@ button:hover {
     /* Adjusted to fill 95% width */
     height: 2px;
     background-color: var(--deep-brown-color);
-}
-
-.image-container {
-    max-width: 80%;
-    aspect-ratio: 1 / 1.5;
-
-    /* Adjust ratio as needed */
-}
-
-.image-container img {
-    width: 100%;
-    height: auto;
-    object-fit: cover;
-    border-radius: 8px;
-    box-shadow: 0 4px 6px var(--color-shadow);
 }
 
 .right-section {
@@ -510,31 +404,27 @@ button:hover {
 
 .portfolio-section-2 {
     display: grid;
-
-    /* Stack images in the same grid cell */
     position: relative;
-
-    /* Needed for section-based scroll calculations */
     width: 100vw;
     height: auto;
-    overflow: hidden;
 
-    /* Clip images outside the section */
+    /* Let content determine height */
+    min-height: 100vh;
+
+    /* Ensure minimum full viewport height */
+    overflow: hidden;
+    contain: strict;
+
+    /* Prevent layout shifts */
 }
 
 .paralex-image2 {
-    grid-column: 1;
-    grid-row: 1;
-    width: 100%;
-    height: auto;
-
-    /* Height is consistent across images */
+    grid-area: 1/1;
     will-change: transform;
+    backface-visibility: hidden;
+    transform: translateZ(0);
 
-    /* Optimize for smooth animations */
-    transform: translateY(0px);
-
-    /* Initial position (overridden by JS) */
+    /* Hardware acceleration */
 }
 
 #pt1-container2 {
@@ -662,6 +552,37 @@ button:hover {
     transition: left 0.3s, width 0.3s;
 }
 
+.bt1-image {
+    height: 88vh;
+    max-width: 50vh;
+    width: auto;
+
+    /* Ensures aspect ratio is maintained */
+    object-fit: contain;
+
+    /* Ensures the whole image is visible without distortion */
+    top: 12%;
+    left: 25%;
+    transform: translateX(-50%);
+    position: absolute;
+}
+
+.bt2-image {
+    top: 25%;
+    width: 50vh;
+    left: 25%;
+    transform: translateX(-50%);
+    position: absolute;
+}
+
+.bt3-image {
+    width: 40vw;
+    top: 25%;
+    object-fit: contain;
+    left: 5%;
+    position: absolute;
+}
+
 @media (max-aspect-ratio: 5/4) {
     .flag {
         color: var(--black-color);
@@ -761,18 +682,154 @@ button:hover {
     position: relative;
 }
 
+.image-container {
+    height: 100vh;
+    width: 50%;
+    background-color: var(--soft-gray-color);
+    position: absolute;
+    right: 0;
+}
+
+.image-container2 {
+    height: 100vh;
+    width: 50%;
+    background-color: var(--medium-gray-color);
+    position: absolute;
+    right: 0;
+}
+
+.text-container {
+    height: 100vh;
+    width: 50%;
+    background-color: var(--medium-gray-color);
+    position: absolute;
+    left: 0;
+}
+
+.text-container2 {
+    height: 100vh;
+    width: 50%;
+    background-color: var(--soft-gray-color);
+    position: absolute;
+    left: 0;
+}
+
+.box1-text {
+    height: 80%;
+    width: 35%;
+    position: absolute;
+    left: 52%;
+    top: 25%;
+    color: var(--warm-brown-color);
+    font-size: 1rem;
+    margin-bottom: 1rem;
+    font-weight: bold;
+}
+
+.line1 {
+    height: 1vh;
+    width: 95%;
+    background-color: var(--warm-brown-color);
+    position: absolute;
+    right: 0;
+    top: 10%;
+}
+
 /* phone */
 @media (max-aspect-ratio: 1/1) {
+    .box1-text {
+        text-align: center;
+        height: 35%;
+        width: 80%;
+        position: absolute;
+        left: 50%;
+        top: 65%;
+        color: var(--warm-brown-color);
+        font-size: 1rem;
+        margin-bottom: 1rem;
+        font-weight: bold;
+        transform: translateX(-50%);
+    }
+
+    .image-container {
+        height: 100vh;
+        width: 0%;
+        right: 50%;
+        background: transparent;
+        position: absolute;
+        right: 0;
+        display: none;
+    }
+
+    .image-container2 {
+        height: 100vh;
+        width: 50%;
+        background: transparent;
+        position: absolute;
+        right: 25%;
+        display: none;
+    }
+
+    .full-height-container {
+        height: 95vh;
+    }
+
+    .line1 {
+        width: 1vh;
+        height: 13%;
+        background-color: var(--warm-brown-color);
+        position: absolute;
+        left: 0;
+        top: 0%;
+    }
+
+    .bt1-image {
+        height: 38vh;
+        top: 22%;
+        left: 50%;
+        transform: translateX(-50%);
+        position: absolute;
+    }
+
+    .bt2-image {
+        height: auto;
+        width: 50vw;
+        top: 20%;
+        left: 50%;
+        transform: translateX(-50%);
+        position: absolute;
+    }
+
+    .bt3-image {
+        height: auto;
+        width: 80vw;
+        top: 20%;
+        left: 50%;
+        transform: translateX(-50%);
+        position: absolute;
+    }
+
+    .text-container {
+        display: none;
+    }
+
+    .text-container2 {
+        display: none;
+    }
+
     /* General styles for slideshow images in .portfolio-section-1 */
     .portfolio-section-1 img:not(.cover2-image) {
         position: absolute;
-        top: 0;
-        width: 130%;
-        height: 50%;
+        top: 25%;
+        left: 50%;
+        transform: translate(calc(-50% + (39% / 2)), -50%);
+        height: auto;
+        width: min(160vw, calc(100vh * 0.9));
         object-fit: contain;
-        opacity: 0;
 
-        /* Default hidden */
+        /* Using a larger crop percentage to ensure it never shows the right side */
+        clip-path: inset(0 39% 0 0);
+        opacity: 0;
         transition: opacity 1s ease-in-out;
     }
 
@@ -799,8 +856,6 @@ button:hover {
         margin: 0.4em;
         position: relative;
         text-decoration: none;
-
-        /* Remove default link underline */
     }
 
     .language-selector::after {
@@ -821,27 +876,21 @@ button:hover {
 
     /* logo Image */
     .logo-image2 {
-        width: 85vw;
+        width: 92vw;
         max-width: 50vh;
         bottom: 58%;
         left: 50%;
-
-        /* Center horizontally */
         transform: translateX(-50%);
-
-        /* Adjust position to account for the element's width */
         position: absolute;
     }
 
     /* Intro Text */
     #intro-text {
-        font-family: Georgia, serif;
+        //font-family: Georgia, serif;
         color: var(--black-color);
         font-size: 1.6vmax;
         position: relative;
         max-width: 50vh;
-
-        /* Ensures the pseudo-element is positioned relative to this */
     }
 
     /* Arrow Below #intro-text */
@@ -854,17 +903,18 @@ button:hover {
         border-bottom: 0.3vmax solid var(--black-color);
         transform: rotate(45deg);
         margin: 2vmax auto 0;
-
-        /* Adds space and centers it horizontally */
     }
 
     /* Intro Title */
     #intro-title {
         color: var(--black-color);
-        font-size: 3.2vmax;
+        font-size: 4.2vmax;
         line-height: 117%;
-        margin-top: 10vmax;
-        margin-bottom: 7vmax;
+        margin-top: 5vmax;
+        margin-bottom: 3.5vmax;
+        padding: 0;
+        margin-left: 0;
+        margin-right: 0;
         max-width: 50vh;
     }
 
@@ -877,17 +927,19 @@ button:hover {
         width: 100vw;
         position: absolute;
         justify-content: center;
-        padding-top: 1.5em;
-        padding-right: 0em;
+        padding: 0;
+        margin: 0;
+        top: 1%;
     }
 
     #intro-container {
-        --container-width: 100%;
+        --container-width: 95%;
         position: absolute;
-        top: 72%;
+        top: 69%;
         transform: translate(-50%, -50%);
-        padding: 2vw;
+        padding: vw;
         display: flex;
+        left: 50%;
         flex-direction: column;
         align-items: center;
         text-align: center;
@@ -899,13 +951,53 @@ button:hover {
         display: none;
     }
 
-    .brown-cover {
-        background-color: var(--deep-brown-color);
-        opacity: 0.8;
+    /* Underline pseudo-element */
+    .brown-cover::before {
+        content: "";
+        position: absolute;
+        background-color: var(--black-color);
         width: 100vw;
-        height: 45%;
+        height: 6%;
         position: absolute;
         top: 0%;
+        transform: translateX(-50%);
+        left: 50%;
+    }
+
+    .brown-cover {
+        //: var(--warm-brown-color);
+        opacity: 1;
+        width: 45vw;
+
+        /* Slightly smaller width */
+        height: 90%;
+
+        /* Slightly smaller height */
+        position: absolute;
+        top: 0%;
+
+        /* Centers it vertically */
+        transform: translateX(-50%);
+        left: 50%;
+
+        /* Adds a subtle frame effect */
+    }
+
+    /* Underline pseudo-element */
+    .brown-cover::after {
+        content: "";
+        position: absolute;
+        background-color: var(--black-color);
+        width: 100vw;
+        height: 11%;
+        position: absolute;
+        top: 38%;
+        transform: translateX(-50%);
+        left: 50%;
+    }
+
+    .portfolio-section-1 {
+        background-color: var(--light-gray-color);
     }
 }
 
