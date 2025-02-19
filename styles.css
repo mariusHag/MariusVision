@@ -796,9 +796,10 @@ button:hover {
     }
 
     .bt2-image {
-        height: 60vh;
-        top: 25%;
-        left: 25%;
+        height: auto;
+        width: 50vw;
+        top: 20%;
+        left: 50%;
         transform: translateX(-50%);
         position: absolute;
     }
