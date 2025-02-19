@@ -821,12 +821,6 @@ button:hover {
         width: 160vw;
         height: auto;
 
-        /* Constrain the height so the image never grows taller than the viewport (or your chosen max) */
-        max-height: 100vh;
-
-        /* Optionally, also keep the width from growing too big if needed */
-        max-width: 100vw;
-
         /* We still want the image to “contain” within its box so that it’s not cropped vertically */
         object-fit: contain;
 
