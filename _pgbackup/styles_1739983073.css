@@ -15,14 +15,29 @@ body {
     font-family: 'Segoe ui', sans-serif;
     --box-width: 35vw;
     --black-color: #020402;
+
+    /* Deep Black */
     --light-gray-color: #f9f9f9;
+
+    /* Light Gray */
     --medium-gray-color: #d9d9d9;
+
+    /* Medium Gray */
     --soft-gray-color: #e5e5e5;
+
+    /* Soft Gray (Now distinct from Color 16) */
     --dark-gray-color: #393F3D ;
+
+    /* Dark Gray */
     --deep-brown-color: #7a5230;
+
+    /* Earthy Brown */
     --warm-brown-color: #ba9067;
-    --pro-brown-color: #7a5c52;
+
+    /* Soft Brown */
     --color-shadow: rgba(0,0,0,0.3);
+
+    /* Default box width for desktop */
 }
 
 /* conact start css: */
@@ -276,6 +291,15 @@ button:hover {
     align-items: flex-end;
     background-color: var(--medium-gray-color);
     position: relative;
+}
+
+.line1 {
+    height: 1vh;
+    width: 95%;
+    background-color: var(--warm-brown-color);
+    position: absolute;
+    right: 0;
+    top: 10%;
 }
 
 .shadow-line {
@@ -730,15 +754,6 @@ button:hover {
     font-weight: bold;
 }
 
-.line1 {
-    height: 1vh;
-    width: 95%;
-    background-color: var(--warm-brown-color);
-    position: absolute;
-    right: 0;
-    top: 10%;
-}
-
 /* phone */
 @media (max-aspect-ratio: 1/1) {
     .box1-text {
@@ -762,15 +777,6 @@ button:hover {
         background-color: var(--soft-gray-color);
         position: absolute;
         right: 0;
-    }
-
-    .line1 {
-        width: 1vh;
-        height: 13%;
-        background-color: var(--warm-brown-color);
-        position: absolute;
-        right: 0;
-        top: 1%;
     }
 
     .bt1-image {
@@ -887,7 +893,7 @@ button:hover {
 
     /* Intro Text */
     #intro-text {
-        //font-family: Georgia, serif;
+        font-family: Georgia, serif;
         color: var(--black-color);
         font-size: 1.6vmax;
         position: relative;
@@ -948,12 +954,12 @@ button:hover {
     }
 
     .brown-cover {
-        background-color: var(--pro-brown-color);
+        background-color: var(--deep-brown-color);
         opacity: 0.8;
-        width: 97vw;
+        width: 95vw;
 
         /* Slightly smaller width */
-        height: 97%;
+        height: 95%;
 
         /* Slightly smaller height */
         position: absolute;
@@ -962,7 +968,7 @@ button:hover {
         /* Centers it vertically */
         transform: translateX(-50%);
         left: 50%;
-        border-radius: 3px;
+        border-radius: 10px;
 
         /* Slightly rounded corners */
         box-shadow: 0 4px 10px var(--color-shadow));
@@ -975,8 +981,8 @@ button:hover {
         content: "";
         position: absolute;
         bottom: 0;
-        background-color: var(--soft-gray-color);
-        opacity: 1;
+        background-color: var(--light-gray-color);
+        opacity: 0.8;
         width: 89vw;
 
         /* Slightly smaller width */
@@ -989,7 +995,7 @@ button:hover {
         /* Centers it vertically */
         transform: translateX(-50%);
         left: 50%;
-        border-radius: 3px;
+        border-radius: 10px;
 
         /* Slightly rounded corners */
         box-shadow: 0 4px 10px var(--color-shadow));
