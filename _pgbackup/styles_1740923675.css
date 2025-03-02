@@ -15,29 +15,14 @@ body {
     font-family: 'Segoe ui', sans-serif;
     --box-width: 35vw;
     --black-color: #020402;
-
-    /* Deep Black */
     --light-gray-color: #f9f9f9;
-
-    /* Light Gray */
     --medium-gray-color: #d9d9d9;
-
-    /* Medium Gray */
     --soft-gray-color: #e5e5e5;
-
-    /* Soft Gray (Now distinct from Color 16) */
     --dark-gray-color: #393F3D ;
-
-    /* Dark Gray */
     --deep-brown-color: #7a5230;
-
-    /* Earthy Brown */
     --warm-brown-color: #ba9067;
-
-    /* Soft Brown */
+    --pro-brown-color: #7a5c52;
     --color-shadow: rgba(0,0,0,0.3);
-
-    /* Default box width for desktop */
 }
 
 /* conact start css: */
@@ -293,15 +278,6 @@ button:hover {
     position: relative;
 }
 
-.line1 {
-    height: 1vh;
-    width: 95%;
-    background-color: var(--warm-brown-color);
-    position: absolute;
-    right: 0;
-    top: 10%;
-}
-
 .shadow-line {
     height: 3vh;
     width: 100%;
@@ -440,44 +416,6 @@ button:hover {
     /* Clip images outside the section */
 }
 
-.paralex-image2 {
-    grid-column: 1;
-    grid-row: 1;
-    width: 100%;
-    height: auto;
-
-    /* Height is consistent across images */
-    will-change: transform;
-
-    /* Optimize for smooth animations */
-    transform: translateY(0px);
-
-    /* Initial position (overridden by JS) */
-}
-
-#pt1-container2 {
-    grid-column: 1;
-    grid-row: 1;
-
-    /* Keep it in the same grid layer as images */
-    /* Position at the top but centered horizontally */
-    align-self: start;
-    justify-self: center;
-
-    /* Add margin to push it down slightly */
-    margin-top: 50vh;
-
-    /* Adjust this value to fine-tune */
-    /* Ensure it's above images */
-    z-index: 4;
-
-    /* Flexbox for content alignment */
-    display: flex;
-    flex-direction: column;
-    align-items: center;
-    text-align: center;
-}
-
 /* Make only images with the 'active' class visible */
 .portfolio-section-1 img.active:not(.cover2-image) {
     opacity: 1;
@@ -604,8 +542,9 @@ button:hover {
 }
 
 .bt3-image {
-    width: 50vh;
+    width: 40vw;
     top: 25%;
+    object-fit: contain;
     left: 5%;
     position: absolute;
 }
@@ -753,8 +692,113 @@ button:hover {
     font-weight: bold;
 }
 
+.line1 {
+    height: 1vh;
+    width: 95%;
+    background-color: var(--warm-brown-color);
+    position: absolute;
+    right: 0;
+    top: 10%;
+}
+
+.paralex-image2 {
+    grid-column: 1;
+    grid-row: 1;
+    width: 100vw;
+    height: auto;
+    object-fit: cover;
+
+    /* Ensures image fills the space without distortion */
+    /* Height is consistent across images */
+    will-change: transform;
+
+    /* Optimize for smooth animations */
+    transform: translateY(0px);
+
+    /* Initial position (overridden by JS) */
+}
+
+/* pt Container */
+#pt1-container {
+    position: absolute;
+    top: 65%;
+    left: 50%;
+    transform: translate(-50%, -50%);
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    text-align: center;
+    z-index: 4;
+    width: 80%;
+}
+
+#pt1-container2 {
+    grid-column: 1;
+    grid-row: 1;
+
+    /* Keep it in the same grid layer as images */
+    /* Position at the top but centered horizontally */
+    align-self: start;
+    justify-self: center;
+
+    /* Add margin to push it down slightly */
+    margin-top: 50vh;
+
+    /* Adjust this value to fine-tune */
+    /* Ensure it's above images */
+    z-index: 4;
+
+    /* Flexbox for content alignment */
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    text-align: center;
+}
+
+/* pt Container */
+/* pt Title */
+#pt1-header {
+    color: var(--black-color);
+    font-size: 1.8rem;
+    margin-bottom: 1rem;
+}
+
+#pt1-header2 {
+    color: var(--soft-gray-color);
+    font-size: 2.5rem;
+    margin-bottom: 1rem;
+}
+
+/* pt Text */
+#pt1-text {
+    color: var(--black-color);
+    font-size: 1rem;
+}
+
+#pt1-text2 {
+    color: var(--soft-gray-color);
+    font-size: 1rem;
+    margin-left: 20%;
+    margin-right: 20%;
+}
+
 /* phone */
 @media (max-aspect-ratio: 1/1) {
+    #pt1-header2 {
+        color: var(--soft-gray-color);
+        font-size: 6.5vw;
+        margin-bottom: 1rem;
+        margin-left: 10%;
+        margin-right: 10%;
+    }
+
+    #pt1-text2 {
+        color: var(--soft-gray-color);
+        font-size: 2.5vw;
+        margin-left: 20%;
+        margin-right: 20%;
+    }
+
     .box1-text {
         text-align: center;
         height: 35%;
@@ -769,13 +813,59 @@ button:hover {
         transform: translateX(-50%);
     }
 
-    .image-container,
-    .image-container2 {
+    #pt1-container2 {
+        grid-column: 1;
+        grid-row: 1;
+
+        /* Keep it in the same grid layer as images */
+        /* Position at the top but centered horizontally */
+        align-self: start;
+        justify-self: center;
+
+        /* Add margin to push it down slightly */
+        margin-top: 5vh;
+
+        /* Adjust this value to fine-tune */
+        /* Ensure it's above images */
+        z-index: 4;
+
+        /* Flexbox for content alignment */
+        display: flex;
+        flex-direction: column;
+        align-items: center;
+        text-align: center;
+    }
+
+    .image-container {
         height: 100vh;
-        width: 100%;
-        background-color: var(--soft-gray-color);
+        width: 0%;
+        right: 50%;
+        background: transparent;
         position: absolute;
         right: 0;
+        display: none;
+    }
+
+    .image-container2 {
+        height: 100vh;
+        width: 50%;
+        background: transparent;
+        position: absolute;
+        right: 25%;
+        display: none;
+    }
+
+    .full-height-container {
+        height: 95vh;
+    }
+
+    .line1 {
+        width: 1vh;
+        height: 13%;
+        background-color: var(--warm-brown-color);
+        position: absolute;
+        left: 0;
+        top: 0%;
     }
 
     .bt1-image {
@@ -787,17 +877,20 @@ button:hover {
     }
 
     .bt2-image {
-        height: 60vh;
-        top: 25%;
-        left: 25%;
+        height: auto;
+        width: 50vw;
+        top: 20%;
+        left: 50%;
         transform: translateX(-50%);
         position: absolute;
     }
 
     .bt3-image {
-        height: 60vh;
-        top: 25%;
-        left: 5%;
+        height: auto;
+        width: 80vw;
+        top: 20%;
+        left: 50%;
+        transform: translateX(-50%);
         position: absolute;
     }
 
@@ -812,45 +905,17 @@ button:hover {
     /* General styles for slideshow images in .portfolio-section-1 */
     .portfolio-section-1 img:not(.cover2-image) {
         position: absolute;
-        top: 20%;
+        top: 25%;
         left: 50%;
-
-        /* Shift left by 50% then add half of the 32% crop so that the 75% visible part is centered */
-        transform: translate(calc(-50% + (32% / 2)), -50%);
-
-        /* Use your wide default, but allow the image to scale down if its height gets too big */
-        width: 160vw;
+        transform: translate(calc(-50% + (39% / 2)), -50%);
         height: auto;
-
-        /* Constrain the height so the image never grows taller than the viewport (or your chosen max) */
-        max-height: 100vh;
-
-        /* Optionally, also keep the width from growing too big if needed */
-        max-width: 100vw;
-
-        /* We still want the image to “contain” within its box so that it’s not cropped vertically */
+        width: min(160vw, calc(100vh * 0.9));
         object-fit: contain;
 
-        /* Keep your horizontal crop exactly as before */
-        clip-path: inset(0 calc(32%) 0 0);
+        /* Using a larger crop percentage to ensure it never shows the right side */
+        clip-path: inset(0 39% 0 0);
         opacity: 0;
-
-        /* Default hidden */
         transition: opacity 1s ease-in-out;
-    }
-
-    /* pt Container */
-    #pt1-container {
-        position: absolute;
-        top: 65%;
-        left: 50%;
-        transform: translate(-50%, -50%);
-        display: flex;
-        flex-direction: column;
-        align-items: center;
-        text-align: center;
-        z-index: 4;
-        width: 80%;
     }
 
     .white-cover {
@@ -882,7 +947,7 @@ button:hover {
 
     /* logo Image */
     .logo-image2 {
-        width: 85vw;
+        width: 92vw;
         max-width: 50vh;
         bottom: 58%;
         left: 50%;
@@ -892,7 +957,7 @@ button:hover {
 
     /* Intro Text */
     #intro-text {
-        font-family: Georgia, serif;
+        //font-family: Georgia, serif;
         color: var(--black-color);
         font-size: 1.6vmax;
         position: relative;
@@ -914,10 +979,13 @@ button:hover {
     /* Intro Title */
     #intro-title {
         color: var(--black-color);
-        font-size: 3.2vmax;
+        font-size: 4.2vmax;
         line-height: 117%;
-        margin-top: 10vmax;
-        margin-bottom: 7vmax;
+        margin-top: 5vmax;
+        margin-bottom: 3.5vmax;
+        padding: 0;
+        margin-left: 0;
+        margin-right: 0;
         max-width: 50vh;
     }
 
@@ -930,17 +998,19 @@ button:hover {
         width: 100vw;
         position: absolute;
         justify-content: center;
-        padding-top: 1.5em;
-        padding-right: 0em;
+        padding: 0;
+        margin: 0;
+        top: 1%;
     }
 
     #intro-container {
-        --container-width: 100%;
+        --container-width: 95%;
         position: absolute;
-        top: 72%;
+        top: 69%;
         transform: translate(-50%, -50%);
-        padding: 2vw;
+        padding: vw;
         display: flex;
+        left: 50%;
         flex-direction: column;
         align-items: center;
         text-align: center;
@@ -952,25 +1022,34 @@ button:hover {
         display: none;
     }
 
+    /* Underline pseudo-element */
+    .brown-cover::before {
+        content: "";
+        position: absolute;
+        background-color: var(--black-color);
+        width: 100vw;
+        height: 6%;
+        position: absolute;
+        top: 0%;
+        transform: translateX(-50%);
+        left: 50%;
+    }
+
     .brown-cover {
-        background-color: var(--deep-brown-color);
-        opacity: 0.8;
-        width: 95vw;
+        //: var(--warm-brown-color);
+        opacity: 1;
+        width: 45vw;
 
         /* Slightly smaller width */
-        height: 95%;
+        height: 90%;
 
         /* Slightly smaller height */
         position: absolute;
-        top: 1%;
+        top: 0%;
 
         /* Centers it vertically */
         transform: translateX(-50%);
         left: 50%;
-        border-radius: 10px;
-
-        /* Slightly rounded corners */
-        box-shadow: 0 4px 10px var(--color-shadow));
 
         /* Adds a subtle frame effect */
     }
@@ -979,55 +1058,18 @@ button:hover {
     .brown-cover::after {
         content: "";
         position: absolute;
-        bottom: 0;
-        background-color: var(--light-gray-color);
-        opacity: 0.8;
-        width: 89vw;
-
-        /* Slightly smaller width */
-        height: 40%;
-
-        /* Slightly smaller height */
+        background-color: var(--black-color);
+        width: 100vw;
+        height: 11%;
         position: absolute;
-        top: 58%;
-
-        /* Centers it vertically */
+        top: 38%;
         transform: translateX(-50%);
         left: 50%;
-        border-radius: 10px;
-
-        /* Slightly rounded corners */
-        box-shadow: 0 4px 10px var(--color-shadow));
-
-        /* Adds a subtle frame effect */
     }
-}
 
-/* pt Container */
-/* pt Title */
-#pt1-header {
-    color: var(--black-color);
-    font-size: 1.8rem;
-    margin-bottom: 1rem;
-}
-
-#pt1-header2 {
-    color: var(--soft-gray-color);
-    font-size: 2.5rem;
-    margin-bottom: 1rem;
-}
-
-/* pt Text */
-#pt1-text {
-    color: var(--black-color);
-    font-size: 1rem;
-}
-
-#pt1-text2 {
-    color: var(--soft-gray-color);
-    font-size: 1rem;
-    margin-left: 20%;
-    margin-right: 20%;
+    .portfolio-section-1 {
+        background-color: var(--light-gray-color);
+    }
 }
 
 /* cover Image */
