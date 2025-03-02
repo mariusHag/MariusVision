@@ -288,30 +288,6 @@ button:hover {
     box-shadow: 0px 4px 4px var(--color-shadow);
 }
 
-.line1-number {
-    height: 10%;
-    width: 40%;
-    position: absolute;
-    left: 5%;
-    top: 1%;
-    color: var(--warm-brown-color);
-    font-size: 2rem;
-    margin-bottom: 1rem;
-    font-weight: bold;
-}
-
-.line1-text {
-    height: 10%;
-    width: 50%;
-    position: absolute;
-    left: 52%;
-    top: 1%;
-    color: var(--warm-brown-color);
-    font-size: 2rem;
-    margin-bottom: 1rem;
-    font-weight: bold;
-}
-
 .Big-Header {
     position: absolute;
     left: 50%;
@@ -768,6 +744,30 @@ button:hover {
     margin-right: 20%;
 }
 
+.line1-number {
+    height: 10%;
+    width: 40%;
+    position: absolute;
+    left: 5%;
+    top: 1%;
+    color: var(--warm-brown-color);
+    font-size: 2rem;
+    margin-bottom: 1rem;
+    font-weight: bold;
+}
+
+.line1-text {
+    height: 10%;
+    width: 50%;
+    position: absolute;
+    left: 52%;
+    top: 1%;
+    color: var(--warm-brown-color);
+    font-size: 2rem;
+    margin-bottom: 1rem;
+    font-weight: bold;
+}
+
 /* phone */
 @media (max-aspect-ratio: 1/1) {
     #pt1-header2 {
@@ -776,6 +776,32 @@ button:hover {
         margin-bottom: 1rem;
         margin-left: 10%;
         margin-right: 10%;
+    }
+
+    .line1-number {
+        height: 10%;
+        width: 100%;
+        position: absolute;
+        left: 0%;
+        top: 1%;
+        color: var(--warm-brown-color);
+        font-size: 2rem;
+        margin-bottom: 1rem;
+        font-weight: bold;
+        text-align: center;
+    }
+
+    .line1-text {
+        height: 10%;
+        width: 100%;
+        position: absolute;
+        left: 0%;
+        text-align: center;
+        top: 10%;
+        color: var(--warm-brown-color);
+        font-size: 2rem;
+        margin-bottom: 1rem;
+        font-weight: bold;
     }
 
     /* pt Container */
@@ -860,8 +886,8 @@ button:hover {
     }
 
     .line1 {
-        width: 1vh;
-        height: 13%;
+        width: 100vh;
+        height: 1%;
         background-color: var(--warm-brown-color);
         position: absolute;
         left: 0;
