@@ -166,8 +166,8 @@ button:hover {
 .review-container {
     display: flex;
     transition: transform 0.5s ease-in-out;
-    gap: 20px;
-    padding: 0 60px;
+    gap: 33px;
+    padding: 33px;
 }
 
 .review-card {
@@ -770,6 +770,23 @@ button:hover {
 
 /* phone */
 @media (max-aspect-ratio: 1/1) {
+    .review-wrapper {
+        position: relative;
+        width: 100%;
+        //overflow: hidden;
+        top: 20vh;
+        transform: translateY(-50%);
+    }
+
+    .project-section3 {
+        height: 90vh;
+        display: flex;
+        justify-content: center;
+        align-items: flex-end;
+        background-color: var(--medium-gray-color);
+        position: relative;
+    }
+
     .contact-header,
     .contact-form {
         width: 100%;
@@ -807,25 +824,27 @@ button:hover {
     }
 
     .review-card {
-        padding: 25px;
-        background: var(--light-gray-color);
-        border-radius: 10px;
-        box-shadow: 0 4px 6px var(--color-shadow);
-        max-height: 50vh;
-        min-height: 80vw;
-        min-width: 80vw;
-        opacity: 0.0;
-        transition: opacity 0.5s ease-in-out;
-        display: flex;
-        flex-direction: column;
-        justify-content: space-between;
+        flex: 0 0 calc(100vw - 60px);
+
+        /* Full width minus padding */
+        max-width: calc(100vw - 60px);
+        min-width: calc(100vw - 60px);
+        opacity: 0.5;
+        transition: opacity 0.5s ease-in-out, transform 0.3s ease;
+        transform: scale(0.95);
+    }
+
+    .review-card.active {
+        opacity: 1;
+        transform: scale(1);
     }
 
     .review-container {
         display: flex;
         transition: transform 0.5s ease-in-out;
-        gap: 33px;
-        padding: 33px;
+        gap: 20px;
+        padding: 20px;
+        width: 100%;
     }
 
     #intro-text,

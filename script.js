@@ -1,11 +1,7 @@
 //review java start
+/* phone */
 let currentPosition = 0;
-const visibleCards = 3;
-
-
-
-
-
+let visibleCards = window.matchMedia('(max-aspect-ratio: 1/1)').matches ? 1 : 3;
 
 function moveCards(direction) {
     const container = document.querySelector('.review-container');
@@ -13,13 +9,19 @@ function moveCards(direction) {
     const totalCards = cards.length;
     
     // Calculate card width including gap
-    const cardWidth = cards[0].offsetWidth + 20;
+    const cardWidth = cards[0].offsetWidth;
+    const gap = parseInt(window.getComputedStyle(container).gap) || 20;
+    const totalSlideWidth = cardWidth + gap;
     
+    // Adjust max position based on visible cards
+    const maxPosition = totalCards - visibleCards;
+    
+    // Update position
     currentPosition += direction;
-    currentPosition = Math.max(0, Math.min(currentPosition, totalCards - visibleCards));
+    currentPosition = Math.max(0, Math.min(currentPosition, maxPosition));
     
-    // Apply translation
-    container.style.transform = `translateX(-${currentPosition * cardWidth}px)`;
+    // Apply smooth translation
+    container.style.transform = `translateX(-${currentPosition * totalSlideWidth}px)`;
     
     // Update active classes
     cards.forEach((card, index) => {
@@ -28,14 +30,45 @@ function moveCards(direction) {
     });
 }
 
-// Initialize first 3 cards
+// Responsive layout adjustment
+function updateCarouselLayout() {
+    // Adjust visible cards based on aspect ratio
+    visibleCards = window.matchMedia('(max-aspect-ratio: 1/1)').matches ? 1 : 3;
+    
+    const container = document.querySelector('.review-container');
+    const cards = document.querySelectorAll('.review-card');
+
+    // Recalculate max position based on new visible cards
+    const maxPosition = cards.length - visibleCards;
+
+    // Reset position if current position is now out of bounds
+    currentPosition = Math.min(currentPosition, Math.max(0, maxPosition));
+
+    // Reapply initial active states
+    cards.forEach((card, index) => {
+        const isActive = index >= currentPosition && index < currentPosition + visibleCards;
+        card.classList.toggle('active', isActive);
+    });
+
+    // Reapply translation with new layout
+    const cardWidth = cards[0].offsetWidth;
+    const gap = parseInt(window.getComputedStyle(container).gap) || 20;
+    container.style.transform = `translateX(-${currentPosition * (cardWidth + gap)}px)`;
+}
+
+// Initialize on DOM load
 window.addEventListener('DOMContentLoaded', () => {
-    document.querySelectorAll('.review-card').forEach((card, index) => {
+    const cards = document.querySelectorAll('.review-card');
+    
+    // Initial active card setup
+    cards.forEach((card, index) => {
         card.classList.toggle('active', index < visibleCards);
     });
+
+    // Add media query listener for responsiveness
+    const aspectRatioMedia = window.matchMedia('(max-aspect-ratio: 1/1)');
+    aspectRatioMedia.addListener(updateCarouselLayout);
 });
-
-
 //review java end
 
 

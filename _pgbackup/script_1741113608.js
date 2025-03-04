@@ -2,6 +2,11 @@
 let currentPosition = 0;
 const visibleCards = 3;
 
+
+
+
+
+
 function moveCards(direction) {
     const container = document.querySelector('.review-container');
     const cards = document.querySelectorAll('.review-card');
@@ -38,46 +43,36 @@ window.addEventListener('DOMContentLoaded', () => {
 
 
 //paralex scrolling
-document.addEventListener('scroll', () => {
+document.addEventListener('scroll', handleParallax, { passive: true });
+window.visualViewport?.addEventListener('resize', handleParallax); // Changed to visualViewport
+
+function handleParallax() {
     const section = document.querySelector('.portfolio-section-2');
     if (!section) return;
 
-    // Get section position and dimensions
-    const { top: sectionTop, height: sectionHeight } = section.getBoundingClientRect();
-    const windowHeight = window.innerHeight;
-    const scrollTop = window.scrollY;
+    // Use visualViewport to account for mobile UI changes
+    const viewport = window.visualViewport || window;
+    const windowHeight = viewport.height;
+    const scrollY = window.scrollY || window.pageYOffset;
 
-    // Calculate scroll progress (0 to 1) for the section
-    const sectionStart = section.offsetTop - windowHeight;
-    const sectionEnd = section.offsetTop + sectionHeight;
-    const progress = Math.min(1, Math.max(0, (scrollTop - sectionStart) / (sectionEnd - sectionStart)));
-
-    // Calculate viewport-relative maxMovement
-    const viewportScale = window.innerHeight / 1080; // Scale relative to your reference height
-    const baseMaxMovement = 300;
-    const scaledMaxMovement = baseMaxMovement * viewportScale;
+    // Calculate section visibility progress
+    const sectionTop = section.offsetTop;
+    const sectionHeight = section.offsetHeight;
+    const sectionStart = sectionTop - windowHeight;
+    const sectionEnd = sectionTop + sectionHeight;
+    const progress = Math.min(1, Math.max(0, (scrollY - sectionStart) / (sectionEnd - sectionStart)));
 
     // Apply parallax to images
-    const images = document.querySelectorAll('.paralex-image2');
-    images.forEach(img => {
-        // Get image dimensions for additional scaling factor
-        const imgRect = img.getBoundingClientRect();
-        const imageScale = imgRect.height / windowHeight;
+    document.querySelectorAll('.paralex-image2').forEach(img => {
+        const initialY = parseFloat(img.dataset.initialY || '0vh') / 100 * windowHeight;
+        const speed = parseFloat(img.dataset.speed || '0.2');
+        const maxTravel = 0.3 * windowHeight;
         
-        const speed = parseFloat(img.dataset.scrollSpeed) || 0.2;
-        const initialY = parseFloat(img.dataset.initialY) || 0;
-        
-        // Calculate the scroll-based movement
-        const movementRange = scaledMaxMovement * imageScale;
-        const scrollMovement = progress * speed * movementRange;
-        
-        // Add easing and combine with initial offset
-        const easedMovement = scrollMovement * (1 - Math.cos(progress * Math.PI)) / 2;
-        const finalPosition = initialY + easedMovement;
-        
-        img.style.transform = `translateY(${finalPosition}px)`;
+        const movement = initialY + (progress * speed * maxTravel);
+        img.style.transform = `translateY(${movement}px) translateZ(0)`; // Added translateZ(0)
     });
-});
+}
+
 
 
 

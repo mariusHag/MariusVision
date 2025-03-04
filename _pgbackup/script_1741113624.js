@@ -2,27 +2,70 @@
 let currentPosition = 0;
 const visibleCards = 3;
 
+
+
+
+
+
+// Improved Card Carousel Functionality
+let currentPosition = 0;
+let visibleCards = window.innerWidth > 768 ? 3 : 1; // Responsive card count
+
 function moveCards(direction) {
     const container = document.querySelector('.review-container');
     const cards = document.querySelectorAll('.review-card');
     const totalCards = cards.length;
-    
-    // Calculate card width including gap
-    const cardWidth = cards[0].offsetWidth + 20;
-    
+
+    // Calculate card width dynamically
+    const cardWidth = cards[0].offsetWidth;
+    const gap = parseInt(window.getComputedStyle(container).gap) || 20;
+
+    // Calculate total slide width (card width + gap)
+    const slideWidth = cardWidth + gap;
+
+    // Update position
     currentPosition += direction;
     currentPosition = Math.max(0, Math.min(currentPosition, totalCards - visibleCards));
-    
-    // Apply translation
-    container.style.transform = `translateX(-${currentPosition * cardWidth}px)`;
-    
-    // Update active classes
+
+    // Apply smooth translation
+    container.style.transform = `translateX(-${currentPosition * slideWidth}px)`;
+
+    // Update active states
     cards.forEach((card, index) => {
         const isActive = index >= currentPosition && index < currentPosition + visibleCards;
         card.classList.toggle('active', isActive);
     });
 }
 
+// Responsive card count and layout
+function updateCarouselLayout() {
+    visibleCards = window.innerWidth > 768 ? 3 : 1;
+    
+    const container = document.querySelector('.review-container');
+    const cards = document.querySelectorAll('.review-card');
+
+    // Reset position if needed
+    currentPosition = Math.min(currentPosition, Math.max(0, cards.length - visibleCards));
+
+    // Reapply initial active states
+    cards.forEach((card, index) => {
+        const isActive = index >= currentPosition && index < currentPosition + visibleCards;
+        card.classList.toggle('active', isActive);
+    });
+}
+
+// Initialize on DOM load
+window.addEventListener('DOMContentLoaded', () => {
+    const cards = document.querySelectorAll('.review-card');
+    
+    // Initial active card setup
+    cards.forEach((card, index) => {
+        card.classList.toggle('active', index < visibleCards);
+    });
+
+    // Add resize listener for responsiveness
+    window.addEventListener('resize', updateCarouselLayout);
+});
 // Initialize first 3 cards
 window.addEventListener('DOMContentLoaded', () => {
     document.querySelectorAll('.review-card').forEach((card, index) => {
@@ -38,32 +81,36 @@ window.addEventListener('DOMContentLoaded', () => {
 
 
 //paralex scrolling
-document.addEventListener('scroll', () => {
+document.addEventListener('scroll', handleParallax, { passive: true });
+window.visualViewport?.addEventListener('resize', handleParallax); // Changed to visualViewport
+
+function handleParallax() {
     const section = document.querySelector('.portfolio-section-2');
     if (!section) return;
 
-    // Get section position and dimensions
-    const { top: sectionTop, height: sectionHeight } = section.getBoundingClientRect();
-    const windowHeight = window.innerHeight;
-    const scrollTop = window.scrollY;
+    // Use visualViewport to account for mobile UI changes
+    const viewport = window.visualViewport || window;
+    const windowHeight = viewport.height;
+    const scrollY = window.scrollY || window.pageYOffset;
 
-    // Calculate scroll progress (0 to 1) for the section
-    const sectionStart = section.offsetTop - windowHeight;
-    const sectionEnd = section.offsetTop + sectionHeight;
-    const progress = Math.min(1, Math.max(0, (scrollTop - sectionStart) / (sectionEnd - sectionStart)));
+    // Calculate section visibility progress
+    const sectionTop = section.offsetTop;
+    const sectionHeight = section.offsetHeight;
+    const sectionStart = sectionTop - windowHeight;
+    const sectionEnd = sectionTop + sectionHeight;
+    const progress = Math.min(1, Math.max(0, (scrollY - sectionStart) / (sectionEnd - sectionStart)));
 
     // Apply parallax to images
-    const images = document.querySelectorAll('.paralex-image2');
-    images.forEach(img => {
-        const speed = parseFloat(img.dataset.scrollSpeed) || 0.2;
-        const initialY = parseFloat(img.dataset.initialY) || 0;
-        const maxMovement = 300; // Adjust for desired parallax range
-
-        // Combine initial offset + scroll-based movement
-        const translateY = initialY + (progress * speed * maxMovement);
-        img.style.transform = `translateY(${translateY}px)`;
+    document.querySelectorAll('.paralex-image2').forEach(img => {
+        const initialY = parseFloat(img.dataset.initialY || '0vh') / 100 * windowHeight;
+        const speed = parseFloat(img.dataset.speed || '0.2');
+        const maxTravel = 0.3 * windowHeight;
+        
+        const movement = initialY + (progress * speed * maxTravel);
+        img.style.transform = `translateY(${movement}px) translateZ(0)`; // Added translateZ(0)
     });
-});
+}
+
 
 
 
