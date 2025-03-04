@@ -775,6 +775,10 @@ button:hover {
         width: 100%;
         margin-left: 0;
         margin-right: 0;
+        padding-right: 10%;
+
+        /* Add spacing between text and form */
+        padding-left: 10%;
     }
 
     /* conact start css: */
