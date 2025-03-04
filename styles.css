@@ -774,13 +774,14 @@ button:hover {
         position: relative;
         width: 100%;
         //overflow: hidden;
-        top: 20vh;
+        top: 12vh;
+        max-height: 50vh;
         transform: translateY(-50%);
         text-align: center;
     }
 
     .project-section3 {
-        height: 90vh;
+        height: 100vh;
         display: flex;
         justify-content: center;
         align-items: flex-end;
