@@ -14,14 +14,14 @@ body {
 :root {
     font-family: 'Segoe ui', sans-serif;
     --box-width: 35vw;
-    --black-color: #020402;
+    --color-black: #020402;
     --light-gray-color: #f9f9f9;
     --medium-gray-color: #d9d9d9;
     --soft-gray-color: #e5e5e5;
-    --dark-gray-color: #393F3D ;
-    --deep-brown-color: #7a5230;
-    --warm-brown-color: #ba9067;
-    --pro-brown-color: #7a5c52;
+    --dark-gray-color: #e5e5e5;
+    --deep-brown-color: #d9d9d9;
+    --warm-brown-color: #020402;
+    --pro-brown-color: #d9d9d9;
     --color-shadow: rgba(0,0,0,0.3);
 }
 
@@ -58,13 +58,13 @@ body {
 
 .contact-header h2 {
     font-size: 3rem;
-    color: var(--dark-gray-color);
+    color: var(--color-black);
     margin-bottom: 20px;
 }
 
 .contact-header p {
     font-size: 16px;
-    color: var(--dark-gray-color);
+    color: var(--color-black);
     line-height: 1.6;
     margin-bottom: 20px;
 }
@@ -75,12 +75,12 @@ body {
 
 .contact-info p {
     font-size: 16px;
-    color: var(--dark-gray-color);
+    color: var(--color-black);
     margin-bottom: 10px;
 }
 
 .contact-info strong {
-    color: var(--dark-gray-color);
+    color: var(--color-black);
 }
 
 .contact-form {
@@ -104,7 +104,7 @@ body {
 .form-group label {
     display: block;
     font-size: 14px;
-    color: var(--dark-gray-color);
+    color: var(--color-black);
     margin-bottom: 5px;
 }
 
@@ -296,7 +296,6 @@ button:hover {
     text-align: center;
     color: var(--warm-brown-color);
     font-size: 2.5rem;
-    font-weight: bold;
     margin-bottom: 1rem;
     white-space: nowrap;
 
@@ -418,7 +417,7 @@ button:hover {
 
 /* Intro Title */
 #intro-title {
-    color: var(--black-color);
+    color: var(--color-black);
     font-size: 1.8rem;
     margin-bottom: 1rem;
 }
@@ -478,7 +477,7 @@ button:hover {
 
 /* Intro Text */
 #intro-text {
-    color: var(--black-color);
+    color: var(--color-black);
     font-size: 1rem;
 }
 
@@ -527,7 +526,7 @@ button:hover {
 
 @media (max-aspect-ratio: 5/4) {
     .flag {
-        color: var(--black-color);
+        color: var(--color-black);
     }
 
     .language-selector::after {
@@ -537,7 +536,7 @@ button:hover {
         left: var(--underline-left, 0);
         width: var(--underline-width, 0);
         height: 2px;
-        background: var(--black-color);
+        background: var(--color-black);
         transition: left 0.3s, width 0.3s;
     }
 }
@@ -665,12 +664,11 @@ button:hover {
     color: var(--warm-brown-color);
     font-size: 1rem;
     margin-bottom: 1rem;
-    font-weight: bold;
 }
 
 .line1 {
     height: 1vh;
-    width: 95%;
+    width: 100%;
     background-color: var(--warm-brown-color);
     position: absolute;
     right: 0;
@@ -728,7 +726,6 @@ button:hover {
     color: var(--warm-brown-color);
     font-size: 2rem;
     margin-bottom: 1rem;
-    font-weight: bold;
 }
 
 .line1-text {
@@ -740,11 +737,10 @@ button:hover {
     color: var(--warm-brown-color);
     font-size: 2rem;
     margin-bottom: 1rem;
-    font-weight: bold;
 }
 
 #pt1-header {
-    color: var(--black-color);
+    color: var(--color-black);
     font-size: 1.8rem;
     margin-bottom: 1rem;
 }
@@ -757,7 +753,7 @@ button:hover {
 
 /* pt Text */
 #pt1-text {
-    color: var(--black-color);
+    color: var(--color-black);
     font-size: 1rem;
 }
 
@@ -857,7 +853,7 @@ button:hover {
     .contact-info p ,
     .box1-text {
         //font-family: Georgia, serif;
-        color: var(--black-color);
+        color: var(--color-black);
         font-size: 1.6vmax;
         position: relative;
         max-width: min(50vh,80vw);
@@ -871,7 +867,6 @@ button:hover {
 
     .box1-text {
         color: var(--warm-brown-color);
-        font-weight: bold;
     }
 
     #pt1-text2 {
@@ -883,7 +878,7 @@ button:hover {
     pt1-header2,
     .Big-Header,
     #intro-title {
-        color: var(--black-color);
+        color: var(--color-black);
         font-size: 4.2vmax;
         line-height: 117%;
         margin-bottom: 3.5vmax;
@@ -907,7 +902,6 @@ button:hover {
         color: var(--warm-brown-color);
         font-size: 2rem;
         margin-bottom: 1rem;
-        font-weight: bold;
         text-align: center;
     }
 
@@ -921,7 +915,6 @@ button:hover {
         color: var(--warm-brown-color);
         font-size: 2rem;
         margin-bottom: 1rem;
-        font-weight: bold;
     }
 
     /* pt Container */
@@ -1086,8 +1079,8 @@ button:hover {
         display: block;
         width: 1.6vmax;
         height: 1.6vmax;
-        border-right: 0.3vmax solid var(--black-color);
-        border-bottom: 0.3vmax solid var(--black-color);
+        border-right: 0.3vmax solid var(--color-black);
+        border-bottom: 0.3vmax solid var(--color-black);
         transform: rotate(45deg);
         margin: 2vmax auto 0;
     }
@@ -1129,7 +1122,7 @@ button:hover {
     .brown-cover::before {
         content: "";
         position: absolute;
-        background-color: var(--black-color);
+        background-color: var(--color-black);
         width: 100vw;
         height: 6%;
         position: absolute;
@@ -1161,7 +1154,7 @@ button:hover {
     .brown-cover::after {
         content: "";
         position: absolute;
-        background-color: var(--black-color);
+        background-color: var(--color-black);
         width: 100vw;
         height: 11%;
         position: absolute;
@@ -1280,7 +1273,7 @@ button {
     padding: 0.5em;
     margin-top: 0.5em;
     background-color: var(--light-gray-color);
-    border: 1px solid var(--black-color);
+    border: 1px solid var(--color-black);
 
     /* Dark Charcoal borders */
     border-radius: 5px;
@@ -1295,7 +1288,7 @@ button {
     margin-top: 1em;
 
     /* Slate Gray background for the button */
-    color: var(--black-color);
+    color: var(--color-black);
 
     /* Light Mint text color for the button */
     border: none;
@@ -1307,7 +1300,7 @@ button:hover {
     background-color: var(--medium-gray-color);
 
     /* Soft Green background on hover */
-    color: var(--black-color);
+    color: var(--color-black);
 
     /* Dark Charcoal text color on hover */
 }
