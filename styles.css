@@ -60,6 +60,13 @@ body {
     font-size: 3rem;
     color: var(--color-black);
     margin-bottom: 20px;
+    text-align: center;
+}
+
+.self-image {
+    max-width: 100%;
+    object-fit: cover;
+    flex-direction: column;
 }
 
 .contact-header p {
