@@ -1,0 +1,86 @@
+<!DOCTYPE html>
+<html lang="en">
+    <head>
+        <meta charset="UTF-8">
+        <meta name="viewport" content="width=device-width, initial-scale=1.0">
+        <section id="pricing">
+            <div class="container">
+                <div class="section-title">
+                    <h2>Pricing</h2>
+                    <p>Customized pricing tailored to your specific needs. We also offer a free sample to showcase our quality.</p>
+                </div>
+                <div class="accordion">
+                    <div class="accordion-item">
+                        <input type="checkbox" id="service1" class="accordion-toggle">
+                        <label for="service1" class="accordion-header">Architectural Rendering</label>
+                        <div class="accordion-content">
+                            <p>Photorealistic renders and stylish illustrations to bring your architectural projects to life.</p>
+                            <p class="price-tag">Pricing varies based on project scope.</p><a href="#contact" class="btn">Request a Quote</a>
+                        </div>
+                    </div>
+                    <div class="accordion-item">
+                        <input type="checkbox" id="service2" class="accordion-toggle">
+                        <label for="service2" class="accordion-header">Concept Design</label>
+                        <div class="accordion-content">
+                            <p>From USB sticks to apartment complexes, we'll elaborate on your ideas with a professional creative process.</p>
+                            <p class="price-tag">Pricing varies based on project scope.</p><a href="#contact" class="btn">Request a Quote</a>
+                        </div>
+                    </div>
+                    <div class="accordion-item">
+                        <input type="checkbox" id="service3" class="accordion-toggle">
+                        <label for="service3" class="accordion-header">On-Site Photography</label>
+                        <div class="accordion-content">
+                            <p>Currently based in Denmark, send your product or invite us to your location for professional photography.</p>
+                            <p class="price-tag">Pricing varies based on project scope.</p><a href="#contact" class="btn">Request a Quote</a>
+                        </div>
+                    </div>
+                    <div class="accordion-item">
+                        <input type="checkbox" id="service4" class="accordion-toggle">
+                        <label for="service4" class="accordion-header">Product Rendering</label>
+                        <div class="accordion-content">
+                            <p>With just a photo or a 3D model of your product, we can create beautiful lifestyle photos.</p>
+                            <p class="price-tag">Pricing varies based on project scope.</p><a href="#contact" class="btn">Request a Quote</a>
+                        </div>
+                    </div>
+                    <div class="accordion-item">
+                        <input type="checkbox" id="service5" class="accordion-toggle">
+                        <label for="service5" class="accordion-header">Image Retouching</label>
+                        <div class="accordion-content">
+                            <p>Realistic background changes and more to enhance your existing images.</p>
+                            <p class="price-tag">Pricing varies based on project scope.</p><a href="#contact" class="btn">Request a Quote</a>
+                        </div>
+                    </div>
+                    <div class="accordion-item">
+                        <input type="checkbox" id="service6" class="accordion-toggle">
+                        <label for="service6" class="accordion-header">Illustration</label>
+                        <div class="accordion-content">
+                            <p>Logos, business cards, and more to establish your brand identity.</p>
+                            <p class="price-tag">Pricing varies based on project scope.</p><a href="#contact" class="btn">Request a Quote</a>
+                        </div>
+                    </div>
+                </div>
+            </div>
+        </section>
+        <style>:root { --primary: #1e2631; --secondary: #f8f8f8; --accent: #e63946; --text: #333; --light-text: #777; --spacing-sm: 1rem; --spacing-md: 2rem; --spacing-lg: 4rem; --transition: 0.3s ease; --shadow: 0 2px 10px rgba(0, 0, 0, 0.08); } *, body { margin: 0; padding: 0; box-sizing: border-box; font-family: 'Segoe UI', Tahoma, Geneva, Verdana, sans-serif; color: var(--text); line-height: 1.6; } body { background-color: #fff; } a { text-decoration: none; color: inherit; } .container { width: 90%; max-width: 1200px; margin: 0 auto; } /* Pricing Section */#pricing { padding: 80px 0; background-color: var(--secondary); } .accordion { max-width: 800px; margin: 0 auto; } .accordion-item { margin-bottom: 15px; border-radius: 4px; overflow: hidden; } .accordion-toggle { display: none; } .accordion-header { display: block; padding: 15px 20px; background-color: white; font-weight: 500; cursor: pointer; position: relative; box-shadow: var(--shadow); transition: background-color var(--transition); } .accordion-header:hover { background-color: #f3f3f3; } .accordion-header::after { content: '+'; position: absolute; right: 20px; top: 50%; transform: translateY(-50%); } .accordion-toggle:checked + .accordion-header::after { content: '-'; } .accordion-content { max-height: 0; overflow: hidden; background-color: white; transition: max-height 0.3s ease; padding: 0 20px; } .accordion-toggle:checked ~ .accordion-content { max-height: 300px; padding: 20px; } .price-tag { font-weight: 500; margin: 15px 0; } .price { font-weight: 600; color: var(--accent); margin-bottom: 15px; }
+        .btn {
+    display: inline-block;
+    background-color: var(--accent);
+    color: white;
+    padding: 10px 20px;
+    border-radius: 4px;
+    font-weight: 500;
+    transition: background-color var(--transition);
+    border: none;
+    cursor: pointer;
+    text-align: center;
+}
+
+.btn:hover {
+    background-color: #d32f2f;
+}</style>
+    </head>
+    <body>
+        <div class="content">
+</div>
+    </body>
+</html>
