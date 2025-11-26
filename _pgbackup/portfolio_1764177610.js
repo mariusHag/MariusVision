@@ -35,27 +35,27 @@ document.write(`
                 <a href="portfolio-item-2.html" class="service-card-link">
                     <div class="service-card">
                         <div class="service-img">
-                            <img src="images/service2.jpg" alt="first semester project at architechture school">
+                            <img src="images/service2.jpg" alt="The Stair">
                         </div>
-                        <div class="service-title"><p>first semester project at architechture school</p></div>
+                        <div class="service-title"><p>The Stair</p></div>
                     </div>
                 </a>
 
                 <a href="portfolio-item-3.html" class="service-card-link">
                     <div class="service-card">
                         <div class="service-img">
-                            <img src="images/service3.jpg" alt="Prestudies work">
+                            <img src="images/service3.jpg" alt="On-Site Photography">
                         </div>
-                        <div class="service-title"><p>Prestudies work</p></div>
+                        <div class="service-title"><p>On-Site Photography</p></div>
                     </div>
                 </a>
 
                 <a href="portfolio-item-4.html" class="service-card-link">
                     <div class="service-card">
                         <div class="service-img">
-                            <img src="images/service4.jpg" alt="Video game">
+                            <img src="images/service4.jpg" alt="Product Rendering">
                         </div>
-                        <div class="service-title"><p>Game development</p></div>
+                        <div class="service-title"><p>Product Rendering</p></div>
                     </div>
                 </a>
             </div>

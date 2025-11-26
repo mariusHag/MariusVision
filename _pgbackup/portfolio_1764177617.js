@@ -46,7 +46,7 @@ document.write(`
                         <div class="service-img">
                             <img src="images/service3.jpg" alt="Prestudies work">
                         </div>
-                        <div class="service-title"><p>Prestudies work</p></div>
+                        <div class="service-title"><p>Prestudies wor</p></div>
                     </div>
                 </a>
 
