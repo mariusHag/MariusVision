@@ -53,7 +53,15 @@ document.write(`
                                 </div>
                                 <div class="service-title"><p>Product Rendering</p></div>
                             </div>
-  
+                        </a>
+                        <a href="portfolio-item-5.html" class="service-card-link">
+                            <div class="service-card">
+                                <div class="service-img">
+                                    <img src="images/service5.jpg" alt="Image Retouching">
+                                </div>
+                                <div class="service-title"><p>Image Retouching</p></div>
+                            </div>
+                        </a>
                         <a href="portfolio-item-6.html" class="service-card-link">
                             <div class="service-card">
                                 <div class="service-img">
