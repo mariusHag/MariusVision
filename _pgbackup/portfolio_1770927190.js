@@ -20,11 +20,9 @@ document.write(`
                         <i class="fa fa-linkedin"></i>
                     </a>
 
-                    <a href="contact-details.html"class="social-icon">
+                    <a href="mailto:mariushagelskjaer@gmail.com?subject=Portfolio%20Inquiry" class="social-icon">
                         <i class="fa fa-envelope"></i>
                     </a>
-                    
-                         
                 </div>
 
                 <div class="qr-code">

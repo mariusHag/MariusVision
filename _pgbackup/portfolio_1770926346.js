@@ -5,12 +5,14 @@ document.write(`
             <div class="portfolio-sidebar">
                 <h3>Portfolio</h3>
 
+                <!-- Portfolio Description -->
                 <div class="portfolio-description">
-                    I’m driven by curiosity and a strong sensitivity toward aesthetics. 
-                    My work explores how form, light, and material create atmosphere 
-                    and shape a distinct spatial mood.
+                    I’m deeply curious about how space, material, and light shape the way we feel. 
+                    My work explores aesthetics and atmosphere — always searching for a distinct mood 
+                    and a clear visual language.
                 </div>
 
+                <!-- Social Media Links -->
                 <div class="social-links">
                     <a href="https://www.instagram.com/mariushagelskjaer" target="_blank" class="social-icon">
                         <i class="fa fa-instagram"></i>
@@ -20,13 +22,12 @@ document.write(`
                         <i class="fa fa-linkedin"></i>
                     </a>
 
-                    <a href="contact-details.html"class="social-icon">
+                    <a href="mailto:mariushagelskjaer@gmail.com" class="social-icon">
                         <i class="fa fa-envelope"></i>
                     </a>
-                    
-                         
                 </div>
 
+                <!-- Contact QR Code -->
                 <div class="qr-code">
                     <img src="/images/MV1.png" alt="Contact QR Code">
                     <span>Scan to connect</span>

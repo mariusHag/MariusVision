@@ -4,32 +4,21 @@ document.write(`
         <div class="services-container">
             <div class="portfolio-sidebar">
                 <h3>Portfolio</h3>
-
+                <!-- Portfolio Description -->
                 <div class="portfolio-description">
-                    I’m driven by curiosity and a strong sensitivity toward aesthetics. 
-                    My work explores how form, light, and material create atmosphere 
-                    and shape a distinct spatial mood.
+                    Specializing in architectural visualization and product design. 
+                    Creative solutions with meticulous attention to detail and aesthetics.
                 </div>
-
+                <!-- Social Media Links -->
                 <div class="social-links">
-                    <a href="https://www.instagram.com/mariushagelskjaer" target="_blank" class="social-icon">
-                        <i class="fa fa-instagram"></i>
-                    </a>
-
-                    <a href="https://dk.linkedin.com/in/marius-hagelskj%C3%A6r" target="_blank" class="social-icon">
-                        <i class="fa fa-linkedin"></i>
-                    </a>
-
-                    <a href="contact-details.html"class="social-icon">
-                        <i class="fa fa-envelope"></i>
-                    </a>
-                    
-                         
+                    <a href="#" class="social-icon"><i class="fa fa-instagram"></i></a>
+                    <a href="#" class="social-icon"><i class="fa fa-behance"></i></a>
+                    <a href="#" class="social-icon"><i class="fa fa-linkedin"></i></a>
+                    <a href="#" class="social-icon"><i class="fa fa-dribbble"></i></a>
                 </div>
-
+                <!-- Contact QR Code -->
                 <div class="qr-code">
-                    <img src="/images/MV1.png" alt="Contact QR Code">
-                    <span>Scan to connect</span>
+                    <img src="/images/MV1.png" alt="Contact QR Code"><span>Scan to connect</span>
                 </div>
             </div>
 
@@ -37,7 +26,7 @@ document.write(`
                 <a href="portfolio-item-1.html" class="service-card-link">
                     <div class="service-card">
                         <div class="service-img">
-                            <img src="images/service1.jpg" alt="Portrait of Us">
+                            <img src="images/service1.jpg" alt="Architectural Rendering">
                         </div>
                         <div class="service-title"><p>Portrait of Us</p></div>
                     </div>
@@ -46,27 +35,27 @@ document.write(`
                 <a href="portfolio-item-2.html" class="service-card-link">
                     <div class="service-card">
                         <div class="service-img">
-                            <img src="images/service2.jpg" alt="First semester project">
+                            <img src="images/service2.jpg" alt="first semester project at architechture school">
                         </div>
-                        <div class="service-title"><p>First Semester Project</p></div>
+                        <div class="service-title"><p>first semester project at architechture school</p></div>
                     </div>
                 </a>
 
                 <a href="portfolio-item-3.html" class="service-card-link">
                     <div class="service-card">
                         <div class="service-img">
-                            <img src="images/service3.jpg" alt="Prestudies Work">
+                            <img src="images/service3.jpg" alt="Prestudies work">
                         </div>
-                        <div class="service-title"><p>Prestudies Work</p></div>
+                        <div class="service-title"><p>Prestudies work</p></div>
                     </div>
                 </a>
 
                 <a href="portfolio-item-4.html" class="service-card-link">
                     <div class="service-card">
                         <div class="service-img">
-                            <img src="images/service4.jpg" alt="Game Development">
+                            <img src="images/service4.jpg" alt="Video game">
                         </div>
-                        <div class="service-title"><p>Game Development</p></div>
+                        <div class="service-title"><p>Game development</p></div>
                     </div>
                 </a>
             </div>

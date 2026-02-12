@@ -3,9 +3,10 @@
     <head>
         <link href="style.css" rel="stylesheet" type="text/css">
         <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/4.7.0/css/font-awesome.min.css">
+        <link rel="icon" href="images/mvicon.ico" type="image/x-icon">
         <meta charset="UTF-8">
         <meta name="viewport" content="width=device-width, initial-scale=1.0">
-        <title>marius-vision - Contact</title>
+        <title>marius-vision</title>
     </head>
     <body>
         <header>
@@ -16,12 +17,12 @@
                     </div>
                     <div style="display: flex; align-items: center;">
                         <ul class="nav-menu">
-                            <li><a href="portfolio-details.html">Portfolio</a>
+                            <li><a href="index.html#services">Portfolio</a>
                             </li>
-                            <li>
-</li>
-                            <li>
-</li>
+                            <li><a href="price-details.html">Pricing</a>
+                            </li>
+                            <li><a href="testimonial-details.html">Testimonials</a>
+                            </li>
                             <li><a href="contact-details.html">Contact</a>
                             </li>
                         </ul>
@@ -34,10 +35,27 @@
                 </nav>
             </div>
         </header>
-        <section id="pricing-hero" class="about-section">
+        <section id="about" class="about-section">
             <div class="container">
-</div>
+                <div class="about">
+                    <div class="about-img">
+                        <img src="images/portrait.jpg" alt="Designer Portrait">
+                    </div>
+                    <div class="about-content">
+                        <h1>Imagine it, and I'll bring it to life.</h1>
+                        <p1>
+                            Whether it's a logo, CGI, or a product photo, I develop visuals
+                            that capture your ideas with accuracy and sensibility.<br><br>
+                        </p1>
+                    </div>
+                </div>
+            </div>
+            <!-- MOVED THE ID HERE -->
+            <div id="services" class="container line">
+                <span>Below you can explore my portfolio.</span>
+            </div>
         </section>
+        <!-- SECTION NO LONGER HAS THE ID, but now sits perfectly below the line -->
         <script src="portfolio.js"></script>
         <script src="footer.js"></script>
     </body>
