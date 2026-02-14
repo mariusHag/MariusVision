@@ -1,12 +1,10 @@
 // Shrink header on scroll
 // Triggers after scrolling past 60px — adjust threshold to taste
 (function () {
-    // Only run on desktop — same breakpoint as the CSS media query
-    if (!window.matchMedia('(min-aspect-ratio: 7/10)').matches) return;
-
     const header = document.querySelector('header');
-    const SHRINK_AT = 80;
-    const GROW_AT   = 40;
+    const SHRINK_AT = 80;   // scrollY must exceed this to shrink
+    const GROW_AT   = 40;   // scrollY must drop below this to un-shrink
+    // The gap between the two (40px) is the dead zone that stops the flicker loop.
 
     function onScroll() {
         const y = window.scrollY;
