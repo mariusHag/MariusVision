@@ -55,10 +55,9 @@ document.write(`
                 <a href="portfolio-item-3.html" class="service-card-link">
                     <div class="service-card">
                         <div class="service-img">
-                            <img src="images/service3.jpg" alt="Architectural Work (Before-University)">
+                            <img src="images/service3.jpg" alt="Architectural Work (Pre-University)">
                         </div>
-                        <div class="service-title"><p>Architecture Early Works
-                        </p></div>
+                        <div class="service-title"><p>Architectural Work (Pre-University)</p></div>
                     </div>
                 </a>
 

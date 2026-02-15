@@ -57,7 +57,7 @@ document.write(`
                         <div class="service-img">
                             <img src="images/service3.jpg" alt="Architectural Work (Before-University)">
                         </div>
-                        <div class="service-title"><p>Architecture Early Works
+                        <div class="service-title"><p>Architecture: Early Works
                         </p></div>
                     </div>
                 </a>
