@@ -82,8 +82,6 @@ header.scrolled {
 }
 
 .logo {
-    display: flex;
-    align-items: center;
     transition: transform 0.5s ease, filter 0.5s ease;
 }
 
@@ -643,6 +641,138 @@ nav > div {
     font-weight: 500;
 }
 
+/* Pricing Section Styling */
+#pricing-hero {
+    padding-bottom: 0;
+}
+
+.pricing-container {
+    flex: 1;
+    padding: clamp(24px, 4vw, 50px);
+}
+
+.accordion {
+    width: 100%;
+}
+
+.accordion-item {
+    margin-bottom: 15px;
+    border: var(--border);
+    border-radius: var(--border-radius);
+    overflow: hidden;
+    background-color: var(--secondary);
+}
+
+.accordion-toggle {
+    display: none;
+}
+
+.accordion-header {
+    display: block;
+    padding: 15px 20px;
+    font-weight: 500;
+    cursor: pointer;
+    position: relative;
+    transition: background-color var(--transition);
+    font-size: var(--font-size-sm);
+}
+
+.accordion-header:hover {
+    background-color: var(--primary);
+}
+
+.accordion-header::after {
+    content: '+';
+    position: absolute;
+    right: 20px;
+    top: 50%;
+    transform: translateY(-50%);
+}
+
+.accordion-toggle:checked + .accordion-header {
+    background-color: var(--primary);
+}
+
+.accordion-toggle:checked + .accordion-header::after {
+    content: '−';
+}
+
+.accordion-content {
+    max-height: 0;
+    overflow: hidden;
+    transition: max-height 0.3s ease;
+    padding: 0 20px;
+}
+
+.accordion-toggle:checked ~ .accordion-content {
+    max-height: 300px;
+    padding: 20px;
+    border-top: var(--border);
+}
+
+.accordion-content p {
+    font-size: var(--font-size-sm);
+    margin-bottom: 15px;
+}
+
+.price-tag {
+    font-weight: 500;
+    margin: 15px 0;
+    font-size: var(--font-size-sm);
+}
+
+.pricing-btn {
+    display: inline-block;
+    padding: 8px 20px;
+    background-color: var(--primary);
+    border: var(--border);
+    border-radius: var(--border-radius);
+    font-size: var(--font-size-sm);
+    cursor: pointer;
+    transition: all var(--transition);
+}
+
+.pricing-btn:hover {
+    background-color: var(--accent);
+    color: white;
+}
+
+.testimonials-grid {
+    flex: 1;
+    display: grid;
+    grid-template-columns: repeat(2, 1fr);
+    gap: clamp(16px, 2.5vw, 30px);
+    padding: clamp(24px, 4vw, 50px);
+}
+
+.testimonial-card {
+    border: var(--border);
+    border-radius: var(--border-radius);
+    background-color: var(--secondary);
+    transition: transform var(--transition);
+}
+
+.testimonial-card:hover {
+    transform: translateY(-5px);
+}
+
+.testimonial-content {
+    padding: clamp(16px, 2.5vw, 30px);
+}
+
+.testimonial-content p {
+    font-size: var(--font-size-sm);
+    margin-bottom: 20px;
+    font-style: italic;
+}
+
+.testimonial-author {
+    display: flex;
+    align-items: center;
+    border-top: var(--border);
+    padding-top: 20px;
+}
+
 .author-info {
     flex: 1;
 }
@@ -655,6 +785,42 @@ nav > div {
 .author-info span {
     font-size: calc(var(--font-size-sm) * 0.9);
     color: #666;
+}
+
+/* Share Project Section */
+.share-project,
+.download-brief {
+    padding: 0 20px;
+    margin-bottom: 30px;
+    text-align: center;
+}
+
+.download-btn {
+    display: block;
+    padding: 10px 15px;
+    background-color: var(--secondary);
+    border: var(--border);
+    border-radius: var(--border-radius);
+    text-align: center;
+    margin-bottom: 10px;
+    transition: all var(--transition);
+}
+
+.download-btn:hover {
+    background-color: var(--accent);
+    color: #fff;
+}
+
+.similar-projects {
+    padding: 20px;
+    background-color: var(--primary);
+    border-radius: var(--border-radius);
+    text-align: center;
+}
+
+.similar-projects p {
+    font-size: var(--font-size-sm);
+    margin-bottom: 15px;
 }
 
 .contact-btn {
@@ -737,7 +903,7 @@ footer {
        Contact, and [EN DA ES] are all direct nav flex children.
        space-between then distributes all 4 with equal gaps.
        !important overrides the inline style="display:flex" on the wrapper div. */
-    nav > div:not(.logo) {
+    nav > div {
         display: contents !important;
     }
 
