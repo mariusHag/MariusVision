@@ -190,7 +190,7 @@ nav > div {
     display: block;
 }
 
-.greybox {
+.project-images.two-column.link-row {
     background-color: var(--primary);
 
     /* light grey */
