@@ -1,0 +1,876 @@
+/* Main Variables */
+:root {
+    /* Colors */
+    --primary: #f8f8f8;
+    --secondary: #fff;
+    --accent: #B01E23;
+    --text-dark: #333;
+
+    /* Typography — fluid, relative, no hard px */
+    --font-family: 'helvetica', 'Courier New', monospace;
+    --font-size-lg: clamp(1.4rem, 3.5vw, 2rem);
+    --font-size-sm: clamp(0.78rem, 1.1vw + 0.3rem, 0.85rem);
+
+    /* Spacing — scales with viewport, anchored to ~700px baseline */
+    --spacing-sm: clamp(0.75rem, 1.4vw, 1rem);
+    --spacing-md: clamp(1.25rem, 2.8vw, 2rem);
+    --spacing-lg: clamp(2rem, 5.7vw, 4rem);
+
+    /* Effects */
+    --transition: 0.3s ease;
+    --border: 1px solid #eee;
+    --border-radius: 2px;
+
+    /* scroll */
+    scroll-behavior: smooth;
+}
+
+/* Reset & Base */
+*,
+body {
+    margin: 0;
+    padding: 0;
+    box-sizing: border-box;
+    font-family: var(--font-family);
+    color: var(--text-dark);
+    line-height: 1.6;
+}
+
+body {
+    background-color: var(--secondary);
+}
+
+a {
+    text-decoration: none;
+    color: inherit;
+    transition: color var(--transition);
+}
+
+p1 {
+    font-size: var(--font-size-sm);
+}
+
+a:hover {
+    color: var(--accent);
+}
+
+span {
+    font-size: var(--font-size-sm);
+}
+
+.container {
+    max-width: min(72%, 1200px);
+    margin: 0 auto;
+    padding: 0 20px;
+}
+
+/* Header & Navigation */
+header {
+    background-color: var(--secondary);
+    position: static;
+    top: 0;
+    z-index: 100;
+    border-bottom: var(--border);
+    padding: 0;
+
+    /* do not animate padding on the sticky element */
+}
+
+.header-inner {
+    padding: clamp(10px, 2vw, 20px) 0;
+    transition: transform 0.35s ease;
+    transform-origin: top center;
+}
+
+.logo {
+    display: flex;
+    align-items: center;
+    transition: transform 0.5s ease, filter 0.5s ease;
+}
+
+.logo img {
+    height: clamp(28px, 3.5vw, 40px);
+    transition: height 0.35s ease;
+}
+
+/* Nav: space-between across all 4 direct children —
+   logo | Portfolio | Contact | [EN DA ES] */
+nav {
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+    padding: clamp(8px, 1.5vw, 15px) 0;
+    transition: padding 0.35s ease;
+}
+
+/* Wrapper div: restored to original — no gap override, margins handle spacing */
+nav > div {
+    display: flex;
+    align-items: center;
+}
+
+.nav-menu {
+    display: flex;
+    list-style: none;
+    align-items: center;
+    gap: clamp(10px, 1.4vw, 20px);
+    margin-right: clamp(8px, 1.4vw, 20px);
+}
+
+.nav-menu li {
+    margin-left: 0;
+}
+
+.nav-menu a {
+    font-size: var(--font-size-sm);
+    line-height: 1;
+    padding: 5px 0;
+    position: relative;
+    transition: color var(--transition);
+    display: inline-flex;
+    align-items: center;
+}
+
+.nav-menu a:hover {
+    color: var(--accent);
+}
+
+.nav-menu a.active::after {
+    content: '';
+    position: absolute;
+    bottom: 0;
+    left: 0;
+    width: 100%;
+    height: 2px;
+    background-color: var(--accent);
+}
+
+.services-menu {
+    display: flex;
+    list-style: none;
+    gap: clamp(8px, 1vw, 15px);
+    overflow-x: auto;
+    padding-bottom: 5px;
+}
+
+.services-menu li a {
+    font-size: var(--font-size-sm);
+    white-space: nowrap;
+    padding: 5px clamp(5px, 0.8vw, 10px);
+    border-radius: var(--border-radius);
+}
+
+.services-menu li a:hover {
+    background-color: rgba(0, 0, 0, 0.1);
+}
+
+.project-images.one-plus-caption .image-container {
+    flex: 0 0 40%;
+}
+
+.project-images.one-plus-caption .image-caption-col {
+    flex: 0 0 60%;
+}
+
+.project-images.one-plus-caption img {
+    width: 100%;
+    height: auto;
+    display: block;
+}
+
+.greybox {
+    background-color: var(--primary);
+
+    /* light grey */
+    padding: 2rem;
+
+    /* optional: adds breathing room inside */
+}
+
+/* Language Buttons */
+.language-buttons {
+    display: flex;
+    gap: clamp(6px, 0.8vw, 12px);
+    align-items: center;
+    margin-left: clamp(8px, 1vw, 15px);
+}
+
+.language-button {
+    background: transparent;
+    border: none;
+
+    /* Match nav-menu a exactly: same font, same padding, same line-height */
+    padding: 5px 0;
+    cursor: pointer;
+    font-size: var(--font-size-sm);
+    line-height: 1;
+    display: inline-flex;
+    align-items: center;
+    transition: all var(--transition);
+}
+
+.language-button.active {
+    color: var(--accent);
+}
+
+/* About Section */
+.about-section {
+    padding: clamp(32px, 5.5vw, 60px) 0 clamp(24px, 3.5vw, 40px);
+    text-align: center;
+}
+
+.about {
+    display: flex;
+    align-items: center;
+    gap: clamp(20px, 3.5vw, 40px);
+    margin-bottom: clamp(20px, 3.5vw, 40px);
+    justify-content: center;
+}
+
+.about-img {
+    flex: 0 0 50%;
+    padding-right: 3%;
+    max-width: 500px;
+}
+
+.about-img img {
+    width: 100%;
+    height: auto;
+    border-radius: var(--border-radius);
+}
+
+.about-content {
+    flex: 1;
+    margin-right: clamp(16px, 3.5vw, 50px);
+}
+
+.about-content h1 {
+    margin-bottom: 1.39vw;
+}
+
+.about-content p1 {
+    margin-bottom: 1.39vw;
+}
+
+.container.line {
+    border-top: var(--border);
+    margin-top: 1.39vw;
+    padding-top: 20px;
+    text-align: center;
+}
+
+.line span {
+    font-size: var(--font-size-sm);
+    color: #666;
+}
+
+/* Services Section */
+#services {
+    padding: clamp(32px, 5vw, 56px) 0;
+}
+
+.section-title {
+    text-align: center;
+    margin-bottom: clamp(20px, 3.5vw, 40px);
+}
+
+.section-title h2 {
+    font-size: var(--font-size-lg);
+    margin-bottom: 10px;
+}
+
+.section-title p {
+    max-width: 700px;
+    margin: 0 auto;
+}
+
+.services-container {
+    display: flex;
+    border: var(--border);
+    min-height: 600px;
+}
+
+/* Portfolio Sidebar */
+.portfolio-sidebar {
+    flex: 0 0 200px;
+    border-right: var(--border);
+    background-color: transparent;
+    display: flex;
+    flex-direction: column;
+    height: auto;
+}
+
+.portfolio-sidebar h3,
+.portfolio-description,
+.social-links,
+.qr-code {
+    padding: clamp(12px, 1.8vw, 20px);
+}
+
+.portfolio-sidebar h3 {
+    margin-bottom: 20px;
+    padding-bottom: 15px;
+    border-bottom: var(--border);
+    text-align: center;
+}
+
+.portfolio-description {
+    font-size: var(--font-size-sm);
+    margin-bottom: 30px;
+    text-align: center;
+}
+
+.social-links {
+    display: flex;
+    justify-content: center;
+    gap: 15px;
+    margin-bottom: 30px;
+}
+
+.social-icon {
+    width: 36px;
+    height: 36px;
+    border-radius: 50%;
+    background-color: #f0f0f0;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    transition: all var(--transition);
+}
+
+.social-icon:hover {
+    background-color: #e0e0e0;
+    transform: translateY(-2px);
+}
+
+.qr-code {
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    margin-top: auto;
+    padding-top: 50px;
+    border-top: var(--border);
+}
+
+.qr-code img {
+    width: clamp(80px, 10vw, 120px);
+    height: clamp(80px, 10vw, 120px);
+    margin-bottom: 10px;
+}
+
+/* Services Grid */
+.services-grid {
+    flex: 1;
+    display: grid;
+    grid-template-columns: repeat(3, 1fr);
+    gap: clamp(24px, 4vw, 50px);
+    margin: clamp(24px, 4vw, 50px);
+}
+
+.service-card {
+    border-radius: var(--border-radius);
+    overflow: hidden;
+    transition: transform var(--transition);
+    position: relative;
+}
+
+.service-card:hover {
+    transform: scale(1.05);
+}
+
+/* Service Images */
+.service-img {
+    position: relative;
+    width: 100%;
+    padding-bottom: 100%;
+    overflow: hidden;
+}
+
+.service-img.small img {
+    position: absolute;
+    top: 50%;
+    left: 50%;
+    width: 80%;
+    height: 80%;
+    object-fit: cover;
+    transition: transform 0.5s ease, filter 0.5s ease;
+    filter: grayscale(100%);
+    transform: translate(-50%, -50%);
+}
+
+.service-card:hover .service-img.small img {
+    transform: scale(1.05);
+    filter: grayscale(0%);
+    transform: translate(-50%, -50%);
+}
+
+.service-img img {
+    position: absolute;
+    top: 0;
+    left: 0;
+    width: 100%;
+    height: 100%;
+    object-fit: cover;
+    transition: transform 0.5s ease, filter 0.5s ease;
+    filter: grayscale(100%);
+}
+
+.service-card:hover .service-img img {
+    transform: scale(1.05);
+    filter: grayscale(0%);
+}
+
+.service-title {
+    padding-top: 12px;
+}
+
+.service-title.small {
+    padding-top: 1px;
+    text-align: center;
+    padding-bottom: 20px;
+}
+
+/* Contact Form Styling */
+.contact-form-container {
+    flex: 1;
+    padding: clamp(24px, 4vw, 50px);
+}
+
+#contact-form {
+    margin-bottom: clamp(40px, 7vw, 80px);
+}
+
+.contact-form {
+    width: 100%;
+}
+
+.form-row {
+    display: flex;
+    gap: clamp(14px, 2.5vw, 30px);
+    margin-bottom: 20px;
+}
+
+.form-row .form-group {
+    flex: 1;
+}
+
+.form-group {
+    margin-bottom: 20px;
+}
+
+.form-group label {
+    display: block;
+    margin-bottom: 5px;
+    font-size: var(--font-size-sm);
+}
+
+.form-group input,
+.form-group select,
+.form-group textarea {
+    width: 100%;
+    padding: 10px;
+    border: var(--border);
+    border-radius: var(--border-radius);
+    font-size: var(--font-size-sm);
+    background-color: var(--secondary);
+}
+
+.form-group textarea {
+    height: 150px;
+    resize: vertical;
+}
+
+.submit-btn {
+    padding: 10px 25px;
+    background-color: var(--secondary);
+    border: var(--border);
+    border-radius: var(--border-radius);
+    cursor: pointer;
+    font-size: var(--font-size-sm);
+    transition: all var(--transition);
+}
+
+.submit-btn:hover {
+    background-color: var(--accent);
+    color: white;
+}
+
+.project-content {
+    flex: 1;
+    padding: clamp(24px, 4vw, 50px);
+}
+
+.project-description {
+    margin-bottom: clamp(20px, 3.5vw, 40px);
+}
+
+.project-description h2 {
+    margin-bottom: 20px;
+    font-size: calc(var(--font-size-sm) * 1.5);
+}
+
+.project-description p {
+    font-size: var(--font-size-sm);
+    margin-bottom: 20px;
+}
+
+.project-image {
+    margin: clamp(20px, 3.5vw, 40px) 0;
+}
+
+.project-image img {
+    width: 100%;
+    height: auto;
+    border-radius: var(--border-radius);
+}
+
+.project-images {
+    display: flex;
+    gap: clamp(10px, 1.8vw, 20px);
+    margin: clamp(20px, 3.5vw, 40px) 0;
+}
+
+.project-image.mini {
+    display: block;
+    margin: clamp(40px, 7vw, 80px) auto;
+    width: 20%;
+    height: auto;
+    border-radius: var(--border-radius);
+}
+
+.image-container img {
+    width: 100%;
+    height: auto;
+    border-radius: var(--border-radius);
+}
+
+.image-container a img {
+    transition: transform var(--transition);
+}
+
+.image-container a:hover img {
+    transform: scale(1.02);
+}
+
+.project-text {
+    //margin: clamp(20px, 3.5vw, 40px) 0;
+}
+
+.project-text h3 {
+    margin-bottom: 15px;
+    font-size: calc(var(--font-size-sm) * 1.2);
+}
+
+.project-text p {
+    font-size: var(--font-size-sm);
+}
+
+.project-testimonial {
+    padding: clamp(16px, 2.5vw, 30px);
+    background-color: var(--secondary);
+    border: var(--border);
+    border-radius: var(--border-radius);
+    margin: clamp(20px, 3.5vw, 40px) 0;
+}
+
+.project-testimonial p {
+    font-size: var(--font-size-sm);
+    font-style: italic;
+    margin-bottom: 15px;
+}
+
+.testimonial-author span {
+    font-size: var(--font-size-sm);
+    color: #555;
+}
+
+.project-navigation {
+    display: flex;
+    justify-content: space-between;
+    margin-top: clamp(32px, 5vw, 60px);
+    padding-top: clamp(16px, 2.5vw, 30px);
+    border-top: var(--border);
+}
+
+.nav-item {
+    display: flex;
+    flex-direction: column;
+    transition: transform var(--transition);
+}
+
+.nav-item:hover {
+    transform: translateY(-3px);
+}
+
+.nav-label {
+    font-size: calc(var(--font-size-sm) * 0.9);
+    color: #555;
+    margin-bottom: 5px;
+}
+
+.nav-title {
+    font-size: var(--font-size-sm);
+    font-weight: 500;
+}
+
+.project-info {
+    padding: 0 20px;
+    margin-bottom: 30px;
+}
+
+.info-item {
+    display: flex;
+    flex-direction: column;
+    margin-bottom: 15px;
+    text-align: center;
+}
+
+.info-label {
+    font-size: calc(var(--font-size-sm) * 0.9);
+    color: #555;
+    margin-bottom: 5px;
+}
+
+.info-value {
+    font-size: var(--font-size-sm);
+    font-weight: 500;
+}
+
+.author-info {
+    flex: 1;
+}
+
+.author-info h4 {
+    margin-bottom: 5px;
+    font-size: var(--font-size-sm);
+}
+
+.author-info span {
+    font-size: calc(var(--font-size-sm) * 0.9);
+    color: #666;
+}
+
+.contact-btn {
+    display: inline-block;
+    padding: 10px 20px;
+    background-color: var(--accent);
+    color: #fff;
+    border-radius: var(--border-radius);
+    font-weight: 500;
+    transition: all var(--transition);
+}
+
+.contact-btn:hover {
+    background-color: #333;
+}
+
+/* Footer */
+footer {
+    margin-top: clamp(32px, 5vw, 60px);
+    background-color: var(--primary);
+    padding: 20px 0;
+    font-size: var(--font-size-sm);
+    text-align: center;
+}
+
+.footer-nav {
+    display: flex;
+    justify-content: center;
+    gap: clamp(14px, 2.5vw, 30px);
+    margin-bottom: 15px;
+}
+
+.footer-nav a,
+.social-links a {
+    font-size: var(--font-size-sm);
+}
+
+.footer-info {
+    margin-bottom: 15px;
+    display: inline-flex;
+    gap: clamp(10px, 1.8vw, 20px);
+}
+
+/* ─────────────────────────────────────────────────────────────
+   SINGLE MOBILE BREAKPOINT — portrait phones only
+   Triggers when aspect ratio is narrower than 7:10
+   (e.g. 390×844 ≈ 0.46, 430×932 ≈ 0.46 — both trigger)
+   (e.g. 700×1000 ≈ 0.70 — does NOT trigger, stays desktop)
+   ───────────────────────────────────────────────────────────── */
+@media (max-aspect-ratio: 7/10) {
+    /* ── Scale the root typographic and spacing tokens
+       using the viewport WIDTH as the fluid driver.
+       At ~390px wide: --font-size-sm ≈ 0.82rem, lg ≈ 1.5rem
+       This mimics how things looked at 700px desktop width,
+       just proportionally compressed. ── */
+    :root {
+        --font-size-lg: clamp(1.3rem, 5.5vw, 1.8rem);
+        --font-size-sm: clamp(0.75rem, 3.2vw, 0.9rem);
+        --spacing-sm: clamp(0.6rem, 2.5vw, 0.9rem);
+        --spacing-md: clamp(1rem, 4vw, 1.5rem);
+        --spacing-lg: clamp(1.5rem, 6vw, 2.5rem);
+    }
+
+    header {
+        position: sticky;
+    }
+
+    /* ── Container: use more of the available width ── */
+    .container {
+        max-width: 92%;
+        padding: 0 clamp(12px, 3vw, 18px);
+    }
+
+    /* ── Header / nav ── */
+    .logo {
+        width: auto;
+    }
+
+    .logo img {
+        height: clamp(26px, 6vw, 34px);
+    }
+
+    /* Mobile only: dissolve the wrapper div and nav-menu so logo, Portfolio,
+       Contact, and [EN DA ES] are all direct nav flex children.
+       space-between then distributes all 4 with equal gaps.
+       !important overrides the inline style="display:flex" on the wrapper div. */
+    nav > div:not(.logo) {
+        display: contents !important;
+    }
+
+    .nav-menu {
+        display: contents;
+        margin-right: 0;
+    }
+
+    .nav-menu li:empty {
+        display: none;
+    }
+
+    nav {
+        flex-wrap: nowrap;
+        padding: var(--spacing-sm) 0;
+        gap: 0;
+    }
+
+    /* Language buttons: EN DA ES grouped but with readable spacing */
+    .language-buttons {
+        gap: clamp(5px, 2vw, 10px);
+        margin-left: 0;
+    }
+
+    .services-menu {
+        width: 100%;
+        gap: clamp(6px, 2vw, 10px);
+    }
+
+    /* ── About section ── */
+    .about-section {
+        padding: var(--spacing-lg) 0 var(--spacing-md);
+    }
+
+    .about {
+        flex-direction: column;
+        text-align: center;
+        gap: var(--spacing-md);
+        margin-bottom: var(--spacing-md);
+    }
+
+    .about-img {
+        flex: none;
+        width: 80%;
+        max-width: 100%;
+        padding-right: 0;
+        border-bottom: var(--border);
+        padding-bottom: var(--spacing-md);
+        margin-bottom: var(--spacing-md);
+        margin: 0 auto;
+    }
+
+    .about-content {
+        margin-right: 0;
+    }
+
+    /* ── Services container: stack vertically ── */
+    .services-container {
+        flex-direction: column;
+        min-height: unset;
+    }
+
+    /* ── Sidebar: collapsed, icons only ── */
+    .portfolio-sidebar {
+        width: 100%;
+        flex: none;
+        flex-direction: row;
+        align-items: center;
+        justify-content: center;
+        border-right: none;
+        border-bottom: var(--border);
+        padding: var(--spacing-sm) 0;
+        order: 2;
+    }
+
+    .portfolio-sidebar h3,
+    .portfolio-description,
+    .qr-code {
+        display: none;
+    }
+
+    .social-links {
+        margin: 0;
+        padding: 0;
+        justify-content: center;
+        order: 1;
+    }
+
+    /* ── Services grid: 2 columns on portrait phone ── */
+    .services-grid {
+        order: 1;
+        grid-template-columns: repeat(2, 1fr);
+        gap: clamp(14px, 4vw, 24px);
+        margin: clamp(16px, 4vw, 28px) clamp(12px, 3vw, 20px);
+    }
+
+    /* ── Project / pricing / contact content areas ── */
+    .project-content,
+    .contact-form-container {
+        padding: clamp(16px, 4vw, 28px);
+    }
+
+    /* ── Contact form: stack the row into a column ── */
+    .form-row {
+        flex-direction: column;
+        gap: 0;
+    }
+
+    /* ── Testimonials: single column ── */
+    .testimonials-grid {
+        grid-template-columns: 1fr;
+        padding: clamp(16px, 4vw, 28px);
+        gap: clamp(12px, 3.5vw, 20px);
+    }
+
+    /* ── Project images: single column ── */
+    .project-images.three-column {
+        flex-direction: column;
+    }
+
+    /* ── Footer ── */
+    footer {
+        margin-top: var(--spacing-lg);
+    }
+
+    .footer-nav {
+        flex-wrap: wrap;
+        gap: clamp(10px, 3vw, 18px);
+        padding: 0 var(--spacing-sm);
+    }
+
+    .footer-info {
+        flex-wrap: wrap;
+        justify-content: center;
+        gap: clamp(8px, 2.5vw, 14px);
+    }
+}
+
+
