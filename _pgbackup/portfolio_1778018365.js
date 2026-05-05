@@ -34,7 +34,7 @@ document.write(`
             </div>
 
             <div class="services-grid">
-                <a href="portrait-of-us.html" class="service-card-link">
+                <a href="portfolio-item-1.html" class="service-card-link">
                     <div class="service-card">
                         <div class="service-img">
                             <img src="images/service1.jpg" alt="Portrait of Us">
