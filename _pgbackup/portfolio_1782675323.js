@@ -6,8 +6,9 @@ document.write(`
                 <h3>Portfolio</h3>
 
                 <div class="portfolio-description">
-        I'm driven by curiosity about how we perceive and create reality. I explore this through traditional methods and new technologies, with a particular interest in how beauty and meaning are created.
-
+                    I'm driven by curiosity and a strong sensitivity toward aesthetics. 
+                    My work explores how form, light, and material create atmosphere 
+                    and shape a distinct spatial mood.
                 </div>
 
                 <div class="social-links">
