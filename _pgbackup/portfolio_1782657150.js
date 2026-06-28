@@ -55,13 +55,21 @@ document.write(`
                 <a href="portfolio-item-3.html" class="service-card-link">
                     <div class="service-card">
                         <div class="service-img">
-                            <img src="images/service3.jpg" alt="Seccond Semester project">
+                            <img src="images/service3.jpg" alt="Architectural Work (Before-University)">
                         </div>
-                        <div class="service-title"><p>Seccond Semester project</p></div>
+                        <div class="service-title"><p>Architecture Early Works
+                        </p></div>
                     </div>
                 </a>
 
-
+                <a href="portfolio-item-4.html" class="service-card-link">
+                    <div class="service-card">
+                        <div class="service-img">
+                            <img src="images/service4.jpg" alt="Game Development">
+                        </div>
+                        <div class="service-title"><p>Game Development</p></div>
+                    </div>
+                </a>
             </div>
 
         </div>
