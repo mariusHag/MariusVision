@@ -1,31 +1,26 @@
-/* Main Variables */
+/* ─────────────────────────────────────────────────────────────
+   MAIN VARIABLES
+   ───────────────────────────────────────────────────────────── */
 :root {
-    /* Colors */
     --primary: #f8f8f8;
     --secondary: #fff;
     --accent: #B01E23;
     --text-dark: #333;
-
-    /* Typography — fluid, relative, no hard px */
     --font-family: 'helvetica', 'Courier New', monospace;
     --font-size-lg: clamp(1.4rem, 3.5vw, 2rem);
     --font-size-sm: clamp(0.78rem, 1.1vw + 0.3rem, 0.85rem);
-
-    /* Spacing — scales with viewport, anchored to ~700px baseline */
     --spacing-sm: clamp(0.75rem, 1.4vw, 1rem);
     --spacing-md: clamp(1.25rem, 2.8vw, 2rem);
     --spacing-lg: clamp(2rem, 5.7vw, 4rem);
-
-    /* Effects */
     --transition: 0.3s ease;
     --border: 1px solid #eee;
     --border-radius: 2px;
-
-    /* scroll */
     scroll-behavior: smooth;
 }
 
-/* Reset & Base */
+/* ─────────────────────────────────────────────────────────────
+   RESET & BASE
+   ───────────────────────────────────────────────────────────── */
 *,
 body {
     margin: 0;
@@ -46,12 +41,12 @@ a {
     transition: color var(--transition);
 }
 
-p1 {
-    font-size: var(--font-size-sm);
-}
-
 a:hover {
     color: var(--accent);
+}
+
+p1 {
+    font-size: var(--font-size-sm);
 }
 
 span {
@@ -64,7 +59,9 @@ span {
     padding: 0 20px;
 }
 
-/* Header & Navigation */
+/* ─────────────────────────────────────────────────────────────
+   HEADER & NAVIGATION
+   ───────────────────────────────────────────────────────────── */
 header {
     background-color: var(--secondary);
     position: static;
@@ -72,8 +69,6 @@ header {
     z-index: 100;
     border-bottom: var(--border);
     padding: 0;
-
-    /* do not animate padding on the sticky element */
 }
 
 .header-inner {
@@ -93,8 +88,6 @@ header {
     transition: height 0.35s ease;
 }
 
-/* Nav: space-between across all 4 direct children —
-   logo | Portfolio | Contact | [EN DA ES] */
 nav {
     display: flex;
     justify-content: space-between;
@@ -103,7 +96,6 @@ nav {
     transition: padding 0.35s ease;
 }
 
-/* Wrapper div: restored to original — no gap override, margins handle spacing */
 nav > div {
     display: flex;
     align-items: center;
@@ -164,29 +156,6 @@ nav > div {
     background-color: rgba(0, 0, 0, 0.1);
 }
 
-.project-images.one-plus-caption .image-container {
-    flex: 0 0 40%;
-}
-
-.project-images.one-plus-caption .image-caption-col {
-    flex: 0 0 60%;
-}
-
-.project-images.one-plus-caption img {
-    width: 100%;
-    height: auto;
-    display: block;
-}
-
-.greybox {
-    background-color: var(--primary);
-
-    /* light grey */
-    padding: 2rem;
-
-    /* optional: adds breathing room inside */
-}
-
 /* Language Buttons */
 .language-buttons {
     display: flex;
@@ -198,8 +167,6 @@ nav > div {
 .language-button {
     background: transparent;
     border: none;
-
-    /* Match nav-menu a exactly: same font, same padding, same line-height */
     padding: 5px 0;
     cursor: pointer;
     font-size: var(--font-size-sm);
@@ -213,7 +180,9 @@ nav > div {
     color: var(--accent);
 }
 
-/* About Section */
+/* ─────────────────────────────────────────────────────────────
+   ABOUT SECTION
+   ───────────────────────────────────────────────────────────── */
 .about-section {
     padding: clamp(32px, 5.5vw, 60px) 0 clamp(24px, 3.5vw, 40px);
     text-align: center;
@@ -264,7 +233,14 @@ nav > div {
     color: #666;
 }
 
-/* Services Section */
+.greybox {
+    background-color: var(--primary);
+    padding: 2rem;
+}
+
+/* ─────────────────────────────────────────────────────────────
+   SERVICES SECTION
+   ───────────────────────────────────────────────────────────── */
 #services {
     padding: clamp(32px, 5vw, 56px) 0;
 }
@@ -290,7 +266,9 @@ nav > div {
     min-height: 600px;
 }
 
-/* Portfolio Sidebar */
+/* ─────────────────────────────────────────────────────────────
+   PORTFOLIO SIDEBAR
+   ───────────────────────────────────────────────────────────── */
 .portfolio-sidebar {
     flex: 0 0 200px;
     border-right: var(--border);
@@ -358,13 +336,51 @@ nav > div {
     margin-bottom: 10px;
 }
 
-/* Services Grid */
-.services-grid {
+/* ─────────────────────────────────────────────────────────────
+   PORTFOLIO GROUPS & CATEGORY DIVIDERS
+   ───────────────────────────────────────────────────────────── */
+.services-groups {
     flex: 1;
+    min-width: 0;
+    display: flex;
+    flex-direction: column;
+    padding: clamp(24px, 4vw, 50px);
+    gap: clamp(28px, 4.5vw, 52px);
+}
+
+.portfolio-group {
+    display: flex;
+    flex-direction: column;
+}
+
+.category-divider {
+    margin-bottom: clamp(12px, 1.8vw, 18px);
+}
+
+.category-line {
+    border: none;
+    border-top: 1px solid #eee;
+    margin: 0 0 7px 0;
+}
+
+.category-label {
+    font-size: calc(var(--font-size-sm) * 0.82);
+    letter-spacing: 0.09em;
+    text-transform: uppercase;
+    color: #bbb;
+}
+
+/* ─────────────────────────────────────────────────────────────
+   SERVICES GRID & CARDS
+   ───────────────────────────────────────────────────────────── */
+.services-grid {
     display: grid;
     grid-template-columns: repeat(3, 1fr);
-    gap: clamp(24px, 4vw, 50px);
-    margin: clamp(24px, 4vw, 50px);
+    gap: clamp(20px, 3vw, 40px);
+}
+
+.service-card-link {
+    display: block;
 }
 
 .service-card {
@@ -386,24 +402,6 @@ nav > div {
     overflow: hidden;
 }
 
-.service-img.small img {
-    position: absolute;
-    top: 50%;
-    left: 50%;
-    width: 80%;
-    height: 80%;
-    object-fit: cover;
-    transition: transform 0.5s ease, filter 0.5s ease;
-    filter: grayscale(100%);
-    transform: translate(-50%, -50%);
-}
-
-.service-card:hover .service-img.small img {
-    transform: scale(1.05);
-    filter: grayscale(0%);
-    transform: translate(-50%, -50%);
-}
-
 .service-img img {
     position: absolute;
     top: 0;
@@ -420,8 +418,30 @@ nav > div {
     filter: grayscale(0%);
 }
 
+.service-img.small img {
+    position: absolute;
+    top: 50%;
+    left: 50%;
+    width: 80%;
+    height: 80%;
+    object-fit: cover;
+    transition: transform 0.5s ease, filter 0.5s ease;
+    filter: grayscale(100%);
+    transform: translate(-50%, -50%);
+}
+
+.service-card:hover .service-img.small img {
+    filter: grayscale(0%);
+    transform: translate(-50%, -50%) scale(1.05);
+}
+
 .service-title {
     padding-top: 12px;
+}
+
+.service-title p {
+    font-size: var(--font-size-sm);
+    margin: 0;
 }
 
 .service-title.small {
@@ -430,7 +450,9 @@ nav > div {
     padding-bottom: 20px;
 }
 
-/* Contact Form Styling */
+/* ─────────────────────────────────────────────────────────────
+   CONTACT FORM
+   ───────────────────────────────────────────────────────────── */
 .contact-form-container {
     flex: 1;
     padding: clamp(24px, 4vw, 50px);
@@ -495,6 +517,9 @@ nav > div {
     color: white;
 }
 
+/* ─────────────────────────────────────────────────────────────
+   PROJECT CONTENT
+   ───────────────────────────────────────────────────────────── */
 .project-content {
     flex: 1;
     padding: clamp(24px, 4vw, 50px);
@@ -524,18 +549,32 @@ nav > div {
     border-radius: var(--border-radius);
 }
 
-.project-images {
-    display: flex;
-    gap: clamp(10px, 1.8vw, 20px);
-    margin: clamp(20px, 3.5vw, 40px) 0;
-}
-
 .project-image.mini {
     display: block;
     margin: clamp(40px, 7vw, 80px) auto;
     width: 20%;
     height: auto;
     border-radius: var(--border-radius);
+}
+
+.project-images {
+    display: flex;
+    gap: clamp(10px, 1.8vw, 20px);
+    margin: clamp(20px, 3.5vw, 40px) 0;
+}
+
+.project-images.one-plus-caption .image-container {
+    flex: 0 0 40%;
+}
+
+.project-images.one-plus-caption .image-caption-col {
+    flex: 0 0 60%;
+}
+
+.project-images.one-plus-caption img {
+    width: 100%;
+    height: auto;
+    display: block;
 }
 
 .image-container img {
@@ -550,10 +589,6 @@ nav > div {
 
 .image-container a:hover img {
     transform: scale(1.02);
-}
-
-.project-text {
-    //margin: clamp(20px, 3.5vw, 40px) 0;
 }
 
 .project-text h3 {
@@ -664,7 +699,9 @@ nav > div {
     background-color: #333;
 }
 
-/* Footer */
+/* ─────────────────────────────────────────────────────────────
+   FOOTER
+   ───────────────────────────────────────────────────────────── */
 footer {
     margin-top: clamp(32px, 5vw, 60px);
     background-color: var(--primary);
@@ -692,17 +729,9 @@ footer {
 }
 
 /* ─────────────────────────────────────────────────────────────
-   SINGLE MOBILE BREAKPOINT — portrait phones only
-   Triggers when aspect ratio is narrower than 7:10
-   (e.g. 390×844 ≈ 0.46, 430×932 ≈ 0.46 — both trigger)
-   (e.g. 700×1000 ≈ 0.70 — does NOT trigger, stays desktop)
+   MOBILE BREAKPOINT — portrait phones (aspect ratio < 7:10)
    ───────────────────────────────────────────────────────────── */
 @media (max-aspect-ratio: 7/10) {
-    /* ── Scale the root typographic and spacing tokens
-       using the viewport WIDTH as the fluid driver.
-       At ~390px wide: --font-size-sm ≈ 0.82rem, lg ≈ 1.5rem
-       This mimics how things looked at 700px desktop width,
-       just proportionally compressed. ── */
     :root {
         --font-size-lg: clamp(1.3rem, 5.5vw, 1.8rem);
         --font-size-sm: clamp(0.75rem, 3.2vw, 0.9rem);
@@ -715,13 +744,12 @@ footer {
         position: sticky;
     }
 
-    /* ── Container: use more of the available width ── */
     .container {
         max-width: 92%;
         padding: 0 clamp(12px, 3vw, 18px);
     }
 
-    /* ── Header / nav ── */
+    /* Header / nav */
     .logo {
         width: auto;
     }
@@ -730,10 +758,6 @@ footer {
         height: clamp(26px, 6vw, 34px);
     }
 
-    /* Mobile only: dissolve the wrapper div and nav-menu so logo, Portfolio,
-       Contact, and [EN DA ES] are all direct nav flex children.
-       space-between then distributes all 4 with equal gaps.
-       !important overrides the inline style="display:flex" on the wrapper div. */
     nav > div:not(.logo) {
         display: contents !important;
     }
@@ -753,7 +777,6 @@ footer {
         gap: 0;
     }
 
-    /* Language buttons: EN DA ES grouped but with readable spacing */
     .language-buttons {
         gap: clamp(5px, 2vw, 10px);
         margin-left: 0;
@@ -764,7 +787,7 @@ footer {
         gap: clamp(6px, 2vw, 10px);
     }
 
-    /* ── About section ── */
+    /* About section */
     .about-section {
         padding: var(--spacing-lg) 0 var(--spacing-md);
     }
@@ -783,7 +806,6 @@ footer {
         padding-right: 0;
         border-bottom: var(--border);
         padding-bottom: var(--spacing-md);
-        margin-bottom: var(--spacing-md);
         margin: 0 auto;
     }
 
@@ -791,13 +813,13 @@ footer {
         margin-right: 0;
     }
 
-    /* ── Services container: stack vertically ── */
+    /* Services container: stack vertically */
     .services-container {
         flex-direction: column;
         min-height: unset;
     }
 
-    /* ── Sidebar: collapsed, icons only ── */
+    /* Sidebar: collapsed, icons only */
     .portfolio-sidebar {
         width: 100%;
         flex: none;
@@ -823,39 +845,36 @@ footer {
         order: 1;
     }
 
-    /* ── Services grid: 2 columns on portrait phone ── */
-    .services-grid {
+    /* Groups & grid */
+    .services-groups {
         order: 1;
-        grid-template-columns: repeat(2, 1fr);
-        gap: clamp(14px, 4vw, 24px);
-        margin: clamp(16px, 4vw, 28px) clamp(12px, 3vw, 20px);
+        padding: clamp(16px, 4vw, 28px) clamp(12px, 3vw, 20px);
+        gap: clamp(20px, 5vw, 32px);
     }
 
-    /* ── Project / pricing / contact content areas ── */
+    .services-grid {
+        grid-template-columns: repeat(2, 1fr);
+        gap: clamp(14px, 4vw, 24px);
+    }
+
+    /* Project / contact content areas */
     .project-content,
     .contact-form-container {
         padding: clamp(16px, 4vw, 28px);
     }
 
-    /* ── Contact form: stack the row into a column ── */
+    /* Contact form: stack rows */
     .form-row {
         flex-direction: column;
         gap: 0;
     }
 
-    /* ── Testimonials: single column ── */
-    .testimonials-grid {
-        grid-template-columns: 1fr;
-        padding: clamp(16px, 4vw, 28px);
-        gap: clamp(12px, 3.5vw, 20px);
-    }
-
-    /* ── Project images: single column ── */
+    /* Project images: single column */
     .project-images.three-column {
         flex-direction: column;
     }
 
-    /* ── Footer ── */
+    /* Footer */
     footer {
         margin-top: var(--spacing-lg);
     }
@@ -872,5 +891,3 @@ footer {
         gap: clamp(8px, 2.5vw, 14px);
     }
 }
-
-
