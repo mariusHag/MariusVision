@@ -330,6 +330,39 @@ nav > div {
 }
 
 /* ─────────────────────────────────────────────────────────────
+   VISION (front page, below the work list)
+   ───────────────────────────────────────────────────────────── */
+#vision {
+    border-top: 1px solid var(--line);
+    padding: 26px 0 20px;
+}
+
+.vision-head {
+    margin-bottom: 44px;
+    max-width: 660px;
+}
+
+.vision-head h2 {
+    margin-bottom: 8px;
+}
+
+.vision-head .subtitle {
+    color: var(--muted);
+}
+
+#vision .project-text h3 {
+    border-top: 1px solid var(--line);
+    margin: 56px 0 20px;
+    padding-top: 18px;
+}
+
+#vision .project-text h3:first-child {
+    border-top: 0;
+    margin-top: 0;
+    padding-top: 0;
+}
+
+/* ─────────────────────────────────────────────────────────────
    PROJECT PAGES
    ───────────────────────────────────────────────────────────── */
 #project-details,

@@ -8,7 +8,7 @@
         'portfolio-item-3.html': '/second-semester-project/',
         'portfolio-item-4.html': '/where-is-alhambra/',
         'portfolio-item-5.html': '/kurama-dera-rhythm/',
-        'mission.html': '/mission/',
+        'teahouse-game.html': '/teahouse-game/',
         'testimonial-details.html': '/testimonials/'
     };
 

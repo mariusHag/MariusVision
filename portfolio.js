@@ -6,6 +6,26 @@ document.write(`
                 <div class="portfolio-group">
                     <div class="category-divider">
                         <hr class="category-line">
+                        <span class="category-label">Game development</span>
+                    </div>
+                    <div class="services-grid">
+                        <a href="/teahouse-game/" class="service-card-link">
+                            <article class="service-card">
+                                <div class="service-img">
+                                    <img src="/images/game/game-waterfront.jpg" alt="Waterfront built inside the game">
+                                </div>
+                                <div class="service-title">
+                                    <p>Teahouse and Spirit World</p>
+                                    <p class="service-note">Building without scarcity — and what the building system turned out to teach</p>
+                                </div>
+                            </article>
+                        </a>
+                    </div>
+                </div>
+
+                <div class="portfolio-group">
+                    <div class="category-divider">
+                        <hr class="category-line">
                         <span class="category-label">Architecture</span>
                     </div>
                     <div class="services-grid">
@@ -37,20 +57,9 @@ document.write(`
                 <div class="portfolio-group">
                     <div class="category-divider">
                         <hr class="category-line">
-                        <span class="category-label">Essays and direction</span>
+                        <span class="category-label">Essays</span>
                     </div>
                     <div class="services-grid">
-                        <a href="/mission/" class="service-card-link">
-                            <article class="service-card">
-                                <div class="service-img">
-                                    <img src="/images/vis-garden.jpg" alt="Mission article thumbnail">
-                                </div>
-                                <div class="service-title">
-                                    <p>Mission</p>
-                                    <p class="service-note">What this work is, and where it is going</p>
-                                </div>
-                            </article>
-                        </a>
                         <a href="/where-is-alhambra/" class="service-card-link">
                             <article class="service-card">
                                 <div class="service-img">
