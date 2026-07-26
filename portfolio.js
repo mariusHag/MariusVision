@@ -2,36 +2,31 @@ document.write(`
 <section class="content-section">
     <div class="container">
         <div class="services-container">
-            <aside class="portfolio-sidebar">
-                <h3>Marius Vision</h3>
-
-                <div class="portfolio-description">
-                    A collection of architecture projects, image work, essays and game-world experiments. The direction is meaning, but not as a solved thesis or a responsible design slogan. I use projects to keep the question active.
-                </div>
-
-                <div class="social-links">
-                    <a href="https://www.instagram.com/mariushagelskjaer" target="_blank" rel="noopener" class="social-icon" aria-label="Instagram">
-                        <i class="fa fa-instagram"></i>
-                    </a>
-                    <a href="https://dk.linkedin.com/in/marius-hagelskj%C3%A6r" target="_blank" rel="noopener" class="social-icon" aria-label="LinkedIn">
-                        <i class="fa fa-linkedin"></i>
-                    </a>
-                    <a href="/contact/" class="social-icon" aria-label="Email">
-                        <i class="fa fa-envelope"></i>
-                    </a>
-                </div>
-
-                <div class="qr-code">
-                    <img src="/images/MV1.png" alt="Marius Vision QR code">
-                    <span>Scan to connect</span>
-                </div>
-            </aside>
-
             <div class="services-groups">
                 <div class="portfolio-group">
                     <div class="category-divider">
                         <hr class="category-line">
-                        <span class="category-label">Architecture projects</span>
+                        <span class="category-label">Game development</span>
+                    </div>
+                    <div class="services-grid">
+                        <a href="/teahouse-game/" class="service-card-link">
+                            <article class="service-card">
+                                <div class="service-img">
+                                    <img src="/images/game/game-waterfront.jpg" alt="Waterfront built inside the game">
+                                </div>
+                                <div class="service-title">
+                                    <p>Teahouse and Spirit World</p>
+                                    <p class="service-note">Building without scarcity — and what the building system turned out to teach</p>
+                                </div>
+                            </article>
+                        </a>
+                    </div>
+                </div>
+
+                <div class="portfolio-group">
+                    <div class="category-divider">
+                        <hr class="category-line">
+                        <span class="category-label">Architecture</span>
                     </div>
                     <div class="services-grid">
                         <a href="/first-semester-project/" class="service-card-link">
@@ -39,7 +34,10 @@ document.write(`
                                 <div class="service-img">
                                     <img src="/images/service2.jpg" alt="Bathhouse model from the first semester project">
                                 </div>
-                                <div class="service-title"><p>First Semester Project</p></div>
+                                <div class="service-title">
+                                    <p>First Semester Project</p>
+                                    <p class="service-note">A bathhouse held between structure and atmosphere</p>
+                                </div>
                             </article>
                         </a>
                         <a href="/second-semester-project/" class="service-card-link">
@@ -47,7 +45,10 @@ document.write(`
                                 <div class="service-img">
                                     <img src="/images/service3.jpg" alt="Ritual space from the second semester project">
                                 </div>
-                                <div class="service-title"><p>Second Semester Project</p></div>
+                                <div class="service-title">
+                                    <p>Second Semester Project</p>
+                                    <p class="service-note">A secular naming ritual for Frederiksberg Hospital</p>
+                                </div>
                             </article>
                         </a>
                     </div>
@@ -56,23 +57,18 @@ document.write(`
                 <div class="portfolio-group">
                     <div class="category-divider">
                         <hr class="category-line">
-                        <span class="category-label">Essays and direction</span>
+                        <span class="category-label">Essays</span>
                     </div>
                     <div class="services-grid">
-                        <a href="/mission/" class="service-card-link">
-                            <article class="service-card">
-                                <div class="service-img">
-                                    <img src="/images/vis-garden.jpg" alt="Mission article thumbnail">
-                                </div>
-                                <div class="service-title"><p>Marius Vision: Mission</p></div>
-                            </article>
-                        </a>
                         <a href="/where-is-alhambra/" class="service-card-link">
                             <article class="service-card">
                                 <div class="service-img">
                                     <img src="/images/service4.jpg" alt="Research drawing for Alhambra">
                                 </div>
-                                <div class="service-title"><p>Where is Alhambra?</p></div>
+                                <div class="service-title">
+                                    <p>Where is Alhambra?</p>
+                                    <p class="service-note">An essay on where a building stands, physically and metaphysically</p>
+                                </div>
                             </article>
                         </a>
                         <a href="/kurama-dera-rhythm/" class="service-card-link">
@@ -80,7 +76,10 @@ document.write(`
                                 <div class="service-img">
                                     <img src="/images/service5.jpg" alt="Drawing study of Kurama-dera">
                                 </div>
-                                <div class="service-title"><p>Kurama-dera Rhythm Analysis</p></div>
+                                <div class="service-title">
+                                    <p>Kurama-dera Rhythm Analysis</p>
+                                    <p class="service-note">Drawing as a way to study how a temple meets its mountain</p>
+                                </div>
                             </article>
                         </a>
                     </div>
@@ -97,7 +96,10 @@ document.write(`
                                 <div class="service-img">
                                     <img src="/images/service1.jpg" alt="Portrait of Us campaign image">
                                 </div>
-                                <div class="service-title"><p>Portrait of Us</p></div>
+                                <div class="service-title">
+                                    <p>Portrait of Us</p>
+                                    <p class="service-note">A commissioned image joining hundreds of fans in one virtual room</p>
+                                </div>
                             </article>
                         </a>
                     </div>
