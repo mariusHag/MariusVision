@@ -469,6 +469,26 @@ nav > div {
     color: var(--muted);
 }
 
+/* Intro text with a tall picture or clip beside it */
+.intro-media {
+    display: grid;
+    grid-template-columns: minmax(0, 420px) minmax(180px, 280px);
+    gap: min(7vw, 100px);
+    align-items: start;
+    margin-top: 18px;
+}
+
+.project-description .intro-media p {
+    margin-top: 0;
+}
+
+.intro-media-frame img,
+.intro-media-frame video {
+    width: 100%;
+    height: auto;
+    display: block;
+}
+
 .project-text {
     max-width: 660px;
 }
@@ -868,6 +888,15 @@ body {
 
     .about-content {
         padding-top: 0;
+    }
+
+    .intro-media {
+        grid-template-columns: 1fr;
+        gap: 28px;
+    }
+
+    .intro-media-frame {
+        max-width: 280px;
     }
 
     #work {
