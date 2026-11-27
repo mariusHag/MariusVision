@@ -1,0 +1,25 @@
+.game-article-intro {
+    display: grid;
+    grid-template-columns: minmax(0, 1fr) minmax(0, 1fr);
+    align-items: start;
+    gap: 32px;
+}
+
+.game-article-intro video {
+    display: block;
+    width: min(100%, 270px);
+    height: auto;
+    justify-self: center;
+    background: #111;
+}
+
+.game-article .project-text h2 {
+    margin: 48px 0 14px;
+}
+
+@media (max-width: 600px) {
+    .game-article-intro {
+        grid-template-columns: 1fr;
+        gap: 24px;
+    }
+}
